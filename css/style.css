@@ -582,11 +582,16 @@ ul.footer-grid {
 .about-bottom{
 	margin-top:2%;
   	text-align: justify;
+
 	
 }
 
+.about-bottom p{
+	margin-top: 1.5em;
+}
+
 .about-bottom-home p{
-  font-size: 1.9em !important;
+  //font-size: 1.9em !important;
   
 }
 .about-top{
