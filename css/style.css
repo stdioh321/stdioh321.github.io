@@ -586,9 +586,7 @@ ul.footer-grid {
 	
 }
 
-.about-bottom p{
-	margin-top: 1.5em;
-}
+
 
 .about-bottom-home p{
   //font-size: 1.9em !important;
@@ -602,11 +600,9 @@ ul.footer-grid {
   	line-height: 1.9em;
   	color: #7c7c7c;
   	padding: 3px 0;
+  	margin-top: 30px;
 }
-/*.about-bottom p:nth-child(2){
-	width:90%;
-	margin:1% auto 0;
-}*/
+
 .about-btm{
 	  width: 80%;
   margin: 3em auto 0;
