@@ -60,9 +60,7 @@ background: -ms-linear-gradient(-45deg,  rgba(255,255,255,1) 0%,rgba(255,252,253
 background: linear-gradient(135deg,  rgba(255,255,255,1) 0%,rgba(255,252,253,1) 21%,rgba(50,118,201,1) 33%,rgba(50,118,201,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#3276c9',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
 
-	border-top-right-radius: 50px;
-	border-bottom-right-radius: 500px;
-  	padding: 1em 0;	
+	padding: 1em 0;	
 }
 .logo {
 	float:left;  
@@ -92,12 +90,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	display: inline-block;
 	color: #fff;
 	text-decoration: none;		
-	font-size: 2em;
+	font-size: 2.5em;
 	margin:0em 0.5em;
 	transition: border-bottom 0.5s transform 1s;
 }
 .top-nav ul li{
-	transition:transform 1s;
+	transition:transform 0.5s;
 
 }
 .top-nav ul li:not(.active) a:hover{
@@ -110,19 +108,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 .top-nav ul li:not(.active):hover{
 		box-shadow: 0px 10px 30px #0E5DCC;
-		//transform: skew(7deg, -7deg) scale(1.35,1.35);
+		
 
 }
 .top-nav ul li.active{
 	
-	border-bottom: 1px white solid;
-	font-size: 1.2em;
-	transform: skew(-10deg, -10deg);
 	
+	border-bottom: 2px white groove;
+	transform: skew(-5deg, -5deg) scale(1.1);
+	
+
 }
 .top-nav ul li.active a{
 	font-weight: bolder;
-	font-size: 1.8em;
+	
 }
 .top-nav ul{
 		/*transition: font-size 1s;*/
@@ -153,6 +152,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	
 	
 }
+
+.container{
+	width: 95% !important;
+}
+
 .blog{
 
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#528bb2+0,528bb2+1,ffffff+11,ffffff+11,ffffff+87,528bb2+99,528bb2+99,528bb2+100&amp;1+0,0.51+11,0.49+91,1+100 */
@@ -446,6 +450,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3276c9', end
 .footer-top .top-footer{
 	display: inline-block !important;
 }
+.top-footer ul li{
+		font-size: 1.2em;
+}
 .top-footer ul li i{
 	background:url(../images/twitterIcon.png);
 	display: inline-block;
@@ -481,7 +488,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3276c9', end
 	display: inline-block;
 	color:#fff;
 
-	font-size: 1.6em;
+	font-size: 2.2em;
   	text-decoration: none;
   	margin: 0 1em;
 }
@@ -579,11 +586,14 @@ ul.footer-grid {
 .about-bottom{
 	margin-top:2%;
   	text-align: justify;
+
 	
 }
 
+
+
 .about-bottom-home p{
-  font-size: 1.6em !important;
+  //font-size: 1.9em !important;
   
 }
 .about-top{
@@ -594,11 +604,9 @@ ul.footer-grid {
   	line-height: 1.9em;
   	color: #7c7c7c;
   	padding: 3px 0;
+  	margin-top: 30px;
 }
-/*.about-bottom p:nth-child(2){
-	width:90%;
-	margin:1% auto 0;
-}*/
+
 .about-btm{
 	  width: 80%;
   margin: 3em auto 0;
@@ -874,7 +882,7 @@ ul.footer-grid {
 }
 
 .blog-grid h4{
-	font-size: 1.2em;
+	font-size: 1.8em;
 	text-transform: uppercase;
 	font-family: 'Philosopher-Bold';
 }
@@ -893,7 +901,7 @@ ul.footer-grid {
 
 
 .blog-grid p{
-   	font-size: 1.4em;
+   	font-size: 1.7em;
 	  color: #7C7C7C;
 	  line-height: 1.9em;
 	  margin:  0.8em 0;
@@ -903,7 +911,7 @@ ul.footer-grid {
 
 }
 .blog-grid {
-	padding: 1.6em 1em;
+	padding: 1.6em 0.3em;
 }
 .blog-in {
     border: 1px solid #BDBCBC;
@@ -986,7 +994,8 @@ i.glyphicon.glyphicon-comment {
   text-align: center;
 }
 .blog {
-  padding: 1em 0;
+  padding: 0.4em 0;
+  
 }
 
 a.news-btn{
@@ -1058,11 +1067,7 @@ a.news-btn{
 .more-top {
   text-align: center;
   margin: 1em 0em 0;
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
-
+  
   margin-bottom: 5px;
 }
 /*--//blog--*/
@@ -1289,983 +1294,6 @@ ul.nav.nav-pills {
 .page {
   padding: 4em 0 4em;
 }
-/*--//typo--*/
-/*--responsive--*/
-@media(max-width:1366px){
-	
-}
-@media(max-width:1280px){
-	
-}
-@media(max-width:1200px){
-.ban-grid1 img {
-  left: 219px;
-}	
-.ban-grid2 img {
-  left: 447px;
-}
-.ban-grid3 img {
-  left: 676px;
-}
-	
-}
-@media(max-width:1024px){
-		.ban-grid1 img {
-		  left: 219px;
-		}	
-		.ban-grid2 img {
-		  left: 447px;
-		}
-		.ban-grid3 img {
-		  left: 676px;
-		}
-		.ban {
-		  min-height: 270px;
-		}
-		.col-top-bottom {
-		  padding: 1.9em;
-		}
-		.six {
-		  padding: 9em 1em 0;
-		  width: 87%;
-		}
-		.col {
-		  padding: 4em 1em 0;
-		  width: 91%;
-		}
-		.content-middle {
-		  padding: 5em 0;
-		}
-		.bottom-content ul li a {
-		  font-size: 0.79em;
-		}
-		.tab_desc {
-		  padding: 13.5em 2em 0;
-		}
-		.resp-tab-item {
-		  width: 11%;
-		}
-		/*--games--*/
-		.da-thumbs li a div h5 {
-		  margin: 1.9em 0 0 0;
-		}
-		/*--blog--*/
-		.blog-grid h3 {
-		  font-size: 1em;
-		}
-		a.more {
-		  width: 45%;
-		}
-}
-@media(max-width:1000px){
-			.ban-grid1 img {
-			  left: 165px;
-			}	
-			.ban-grid2 img {
-			  left: 345px;
-			}
-			.ban-grid3 img {
-			  left: 518px;
-			}
-
-}
-@media (max-width: 475px){
-
-	.top-nav{
-		float: right;
-	}
-	.top-nav{
-		
-		
-	}
-}
-
-@media(max-width:410px){
-	.top-nav{
-		float: left;
-	}
-	.top-nav ul{
-		font-size: 0.8em;
-		
-	}
-}
-
-@media(max-width:355px){
-	
-	.top-nav{
-		float: left;
-	}
-	.top-nav ul li a{
-		font-size: 0.7em;
-	}
-}
-
-@media(max-width:768px){
-		span.menu{
-			display: block;
-			text-align: right;
-			cursor: pointer;
-			position: relative;
-		}
-		/*.top-nav ul{
-			display: none;
-			position:absolute;
-			width: 100%;
-			z-index: 9999;
-			left: 0%;
-			margin:1.1em 0em;
-			background:#000;
-			border:0;
-		}
-		.top-nav span.menu{
-			display: block;
-		}
-		.top-nav ul li{
-			display: block;
-			float:none;
-			padding:  0.3em;
-			text-align: center;
-		}
-		.top-nav ul li a{
-			color:#fff;
-			display:block;
-			margin:0;
-			background: none;
-			border:none;
-			padding:0.4em;
-		}	
-		.top-nav {
-		  margin-top: 0em;
-		}
-		*/
-		/*----*/
-		.ban-grid1 img {
-		  left: 170px;
-		}
-		.ban-grid2 img {
-		  left: 342px;
-		}
-		.ban-grid3 img {
-		  left: 519px;
-		}
-		.ban {
-		  min-height: 205px;
-		}
-		.banner {
-		  padding: 2em 0 5em;
-		}
-		/*----*/	
-		.black {
-		  float: left;
-		  width: 50%;
-		}
-		.bottom-content ul li a {
-		  font-size: 0.95em;
-		}
-		.tab_desc {
-		  padding: 10em 2em 0;
-		}
-		.per img{
-			margin: 0 auto;
-		}
-		.six {
-		  padding: 13em 1em 0;
-		  width: 40.5%;
-		  left: 15.3em;
-		}
-		.resp-tab-item {
-		  width: 15%;
-		}
-		.bottom-content {
-		  margin: 1em 0 0;
-		}
-		.per {
-		  margin: 2em 0 0;
-		}
-		.top-footer {
-
-		  /*float: left;
-		  width: 33.3%;*/
-		}
-		.banner h2 {
-		  margin: 0 0 0.8em;
-		  font-size: 3em;
-		}
-		/*--games--*/
-		.da-thumbs li a div h5 {
-		  margin: 1em 0 0 0;
-		}
-		.da-thumbs li a div span {
-		  padding: 0px 0; 
-		  font-size: 1em;
-		}
-		.games {
-		  padding: 3em 0;
-		}
-		.games h3 {
-		  font-size: 3em;
-		}
-		/*--about--*/
-		.about-btm {
-		  width: 67%;
-		  margin: 2em auto 0;
-		}
-		.about-right {
-		  margin-top: 2em;
-		}
-		.advantages {
-		  padding: 1em 0 3em;
-		}
-		.advn-one,.advn-two {
-		  margin-top: 3%;
-		}
-		.advantages-left {
-		  margin-top: 2em;
-		}
-		.ch-grid li {
-		  margin: 6px;
-		}
-		.about-top h3 {
-		  font-size: 3em;
-		}
-		.advantages-left h3 {
-		  font-size: 2em;
-		}
-		.about {
-		  padding: 3em 0px;
-		}
-		/*--blog--*/
-		.blog-top {
-		  float: left;
-		  width: 33.3%;
-		  padding: 0 5px;
-		}
-		.blog-grid {
-		  padding: 1.5em 0.7em;
-		}
-		.blog-grid h3 {
-		  font-size: 0.85em;
-		}
-		.blog-grid p {
-		  margin: 0.5em 0;
-		  font-size: 1.6em;
-		}
-		a.more {
-		  width: 54%;
-		}
-		.blog-head {
-		  padding: 1em 0 0;
-		}
-		.blog h3 {
-		  font-size: 3em;
-		}
-		/*--single--*/
-		.comment-bottom input[type="submit"] {
-		  width: 13%;
-		}
-		/*--contact--*/
-		.in-contact {
-		  margin-bottom: 1em;
-		}
-		.contact-bottom-top {
-		  margin: 0em 15px 0;
-		}
-		.address-grid {
-		  margin-bottom: 1em;
-		}
-		.contact h3 {
-		  font-size: 3em;
-		}
-		/*--typo--*/
-		h1.grid2 {
-		  font-size: 2.3em;
-		}
-}
-@media(max-width:736px){
-		.ban-grid1 img {
-		  left: 165px;
-		}
-		.ban-grid2 img {
-		  left: 333px;
-		}
-		.ban-grid3 img {
-		  left: 496px;
-		}
-}
-@media(max-width:667px){
-	.ban-grid1 img {
-	  left: 147px;
-	}
-	.ban-grid2 img {
-	  left: 294px;
-	}
-	.ban-grid3 img {
-	  left: 444px;
-	}
-}
-@media(max-width:640px){
-		/*----*/
-		.ban-grid1 img {
-		  left: 140px;
-		}
-		.ban-grid2 img {
-		  left: 282px;
-		}
-		.ban-grid3 img {
-		  left: 427px;
-		}
-		/*----*/
-		.banner {
-		  padding: 2em 0 3em;
-		}	
-		.col {
-		  padding: 3.5em 1em 0;
-		  width: 90%;
-		}
-		.six {
-		  padding: 12em 1em 0;
-		  width: 49%;
-		  left: 10.8em;
-		}
-		.tab_desc {
-		  padding: 7.5em 2em 0;
-		}
-		.resp-tab-item {
-		  width: 18%;
-		}
-		.content-bottom {
-		  padding: 3em 0;
-		}
-		.content-top {
-		  padding: 3em 0 0;
-		}
-		/*--games--*/
-		.da-thumbs li a div span {
-		  font-size: 0.8em;
-		}
-		.da-thumbs li a div h5 {
-		    margin: 0.7em 0 0 0;
-		  font-size: 1.7em;
-		}
-		.games h3 {
-		  font-size: 2.2em;
-		}
-		/*--blog--*/
-		.blog h3 {
-		  font-size: 2.2em;
-		}
-		.blog {
-		  padding: 3em 0;
-		}
-		a.more {
-		  width: 64%;
-		  font-size: 0.9em;
-		}
-		/*--single--*/
-		.comments-top h3, .comment-bottom h3 {
-		  font-size: 2em;
-		}
-		.comment-bottom input[type="submit"] {
-		  width: 15%;
-		}
-		.single {
-		  padding: 3em 0;
-		}
-		/*--contact--*/
-		.contact {
-		  padding: 3em 0;
-		}
-		.contact h3 {
-		  font-size: 2.2em;
-		}
-		.address1 p {
-		  font-size: 1.5em;
-		}
-		.contact-grids {
-		  padding: 2em 0 0;
-		}
-		/*--typo--*/
-		button.btn.btn-lg {
-		  font-size: 1.1em;
-		}
-		h1.grid2 {
-		  font-size: 2em;
-		}
-		h2.grid2 {
-		  font-size: 1.9em;
-		}
-		h3.typo1 {
-		  font-size: 2.5em;
-		}
-		.page {
-		  padding: 3em 0;
-		}
-}
-@media(max-width:600px){
-		.ban-grid1 img {
-		  left: 130px;
-		}
-		.ban-grid2 img {
-		  left: 263px;
-		}
-		.ban-grid3 img {
-		  left: 394px;
-		}
-}
-@media(max-width:568px){
-		.ban-grid1 img {
-		  left: 120px;
-		}
-		.ban-grid2 img {
-		  left: 248px;
-		}
-
-		.ban-grid3 img {
-		  left: 375px;
-		}
-}
-@media(max-width:480px){
-		.ban-grid1 img {
-		  left: 162px;
-		}
-		.ban {
-		  min-height: 378px;
-		  width: 80%;
-		  margin: 0 auto;
-		}
-		.ban-in {
-		  float: left;
-		  width: 53%;
-		}
-		.ban-grid2 img {
-		  left: 0px;
-		  top:190px;
-		}
-		.ban-grid3 img {
-		  left:162px;
-		  top:190px;
-		}
-		.logo {
-		  margin-top: 5px;
-		}
-		/*----*/
-		.banner h2 {
-		  margin: 0 0 0.5em;
-		  font-size: 2.5em;
-		}
-		.col h4 {
-		  font-size: 2.5em;
-		}
-		.col {
-		  padding: 2.5em 1em 0;
-		  width: 87%;
-		}
-		h3.menber {
-		  font-size: 1.8em;
-		}
-		a.now-in {
-		  font-size: 0.9em;
-		}
-		.six {
-		  width: 67.2%;
-		  left: 5em;
-		}
-		.content-bottom {
-		  padding: 2em 0;
-		}
-
-		.content-top {
-		  padding: 2em 0 0em;
-		}
-		.bottom-content h4 {
-		  font-size: 1.6em;
-		}
-		.resp-tab-item {
-		  width: 21%;
-		}
-		.round-top li i {
-		  width: 30px;
-		  height: 30px;
-		  line-height: 2em;
-		    font-size: 1em;
-		}
-		.tab_desc {
-		  padding: 5.7em 0em 0;
-		}
-		.resp-tab-item {
-		  font-size: 1em;
-		}
-		.footer-grid li a {
-		  margin: 0 0.5em;
-		}
-		.footer p {
-		  font-size: 0.9em;
-		}
-		.footer {
-		  padding: 2em 0;
-		}
-		.sap_tabs {
-		  padding: 0em 0 0em;
-		}
-		.logo h1 {
-		  font-size: 2.5em;
-		}
-		.top-footer ul li a {
-		  font-size: 0.8em;
-		  margin: 0 0% 0 0%;
-		}
-		/*--games--*/
-		.da-thumbs li {
-		  width: 49.2%;
-		}
-		.da-thumbs li a div h5 {
-		  margin: 1.4em 0 0 0;
-		}
-		.games h3 {
-		  font-size: 2.3em;
-		}
-		.games {
-		  padding: 2em 0;
-		}
-		/*--about--*/
-		.about-top h3 {
-		  font-size: 2.3em;
-		}
-		.advantages-left h3 {
-		  font-size: 1.7em;
-		}
-		.advantages {
-		  padding: 1em 0 2em;
-		}
-		.about {
-		  padding: 2em 0px;
-		}
-		.about-btm {
-		  width: 100%;
-		}
-		/*--blog--*/
-		.blog {
-		  padding: 2em 0;
-		}
-		.blog-top {
-		  width: 100%;
-		  padding: 0 30px;
-		  margin: 0 0em 1em;
-		}
-		.blog h3 {
-		  font-size: 2.3em;
-		}
-		/*--single--*/
-		.single-grid h4 {
-		  font-size: 1.2em;
-		}
-		.comments-top {
-		  padding: 2em 0;
-		}
-		.comment-bottom input[type="submit"] {
-		  width: 19%;
-		}
-		.single {
-		  padding: 2em 0;
-		}
-		/*--contact--*/
-		.contact {
-		  padding: 2em 0;
-		}
-		.contact-grids {
-		  padding: 2em 0 0;
-		}
-		.address-grid i {
-		  font-size: 2.8em;
-		}
-		.address1 p {
-		  font-size: 1.4em;
-		}
-		.address-more h2 {
-		  font-size: 1.5em;
-		}
-		.address {
-		  padding: 2em 0 0;
-		}
-		.contact h3 {
-		  font-size: 2.3em;
-		}
-		/*--typo--*/
-		.page-header h3 {
-		  font-size: 2em; 
-		}
-		button.btn.btn-lg {
-		  font-size: 1em;
-		  padding: 7px;
-		}
-		button.btn.btn-1 {
-		  font-size: 0.9em;
-		  padding: 8px;
-		}
-		button.btn.btn-sm {
-		  font-size: 0.8em;
-		  padding: 9px;
-		}
-		h1#h1-bootstrap-heading {
-		  font-size: 2.2em;
-		}
-		h2#h2-bootstrap-heading {
-		  font-size: 2em;
-		}
-		h1.grid2 {
-		  font-size: 1.45em;
-		}
-		h2.grid2 {
-		  font-size: 1.35em;
-		}
-		h3.grid2 {
-		  font-size: 1.3em;
-		}
-		h4.grid2 {
-		  font-size: 1.2em;
-		}
-		h3.typo1 {
-		  font-size: 2em;
-		}
-		.page {
-		  padding: 2em 0;
-		}
-
-}
-@media(max-width:414px){
-		.ban {
-		  width: 90%;
-		}
-		.col-top-bottom {
-		  padding: 1em;
-		}
-		h3.menber {
-		  font-size: 1.5em;
-		}
-}
-@media(max-width:375px){
-		.ban-in img {
-		  border: 4px solid #fff;
-		}
-		.ban-grid1 img {
-		  left: 150px;
-		}
-		.ban-grid2 img {
-		  left: 0px;
-		  top: 162px;
-		}
-		.ban-grid3 img {
-		  left: 150px;
-		  top: 162px;
-		}
-		.ban {
-		  min-height: 327px;
-		}
-		h3.menber {
-		  font-size: 1.3em;
-		}
-}
-@media(max-width:320px){
-		.logo h1 {
-		  font-size: 2em;
-		}
-		.banner h2 {
-		  font-size: 2em;
-		}	
-		.ban-grid1 img {
-		  left: 122px;
-		}
-		.ban-grid2 img {
-		  left: 0px;
-		  top: 138px;
-		}
-		.ban-grid3 img {
-		  left: 122px;
-		  top: 138px;
-		}
-		.ban {
-		  min-height: 275px;
-		}
-		.banner {
-		  padding: 1em 0 2em;
-		}
-		.black {
-		  padding: 0 4px;
-		}
-		h3.menber {
-		  font-size: 1.2em;
-		  margin-top: 0.2em;
-		}
-		a.now-in {
-		  font-size: 0.75em;
-		}
-		.col h4 {
-		  font-size: 1.5em;
-		}
-		.col {
-		  padding: 1.7em 1em 0;
-		  width: 94%;
-		}
-		.six h4 {
-		  font-size: 2.5em;
-		}
-		.six {
-		  width: 89%;
-		  left: 1.1em;
-		  padding: 11em 0 0;
-		}
-		.col-top-bottom {
-		  margin: 1em 0em 0;
-		}
-		.bottom-content1 iframe {
-		  min-height: 180px;
-		}
-		.bottom-content1 ,.bottom-content{
-		  padding: 0;
-		}
-		.bottom-content h4 {
-		  font-size: 1.1em;
-		}
-		.bottom-content ul li a {
-		  font-size: 0.85em;
-		  line-height: 1.7em;
-		}
-		.resp-tab-item {
-		  font-size: 0.9em;
-		  width: 29%;
-		  padding: 3px;
-		  margin: 0 0.5em 0 0;
-		}
-		.tab_img {
-		  padding: 1.5em 0em 2em;
-		}
-		.tab_desc {
-		  padding: 3.7em 0em 0;
-		}
-		.top-footer ul li a {
-		  font-size: 1em;
-		}
-		.footer-grid li a {
-		  font-size: 1em;
-		}
-		ul.footer-grid {
-		  padding: 1em 0;
-		}
-		/*.top-nav{
-		  width: 13%;
-		}
-		.top-nav span.menu img{
-		  width: 100%;
-		}*/
-		.logo {
-		  margin-top: 4px;
-		}
-		/*--games--*/
-		.games h3 {
-		  font-size: 2em;
-		}
-		.da-thumbs li a div span {
-		  font-size: 0.7em;
-		  margin: 0.3em 0 0;
-		}
-		.da-thumbs li a div h5 {
-		  margin: 0.4em 0 0 0;
-		  font-size: 1.1em;
-		}
-		.games {
-		  padding: 1.5em 0;
-		}
-		/*--about--*/
-		.about-top h3 {
-		  font-size: 2em;
-		}
-		.about-bottom p {
-		  font-size: 1.5em;
-		}
-		.about-btm {
-		  margin: 1em auto 0;
-		}
-		.about-right {
-		  margin-top: 1em;
-		}
-		.about-bottom p:nth-child(2) {
-		  width: 100%;
-		}
-		.advantages-left {
-		  margin-top: 1em;
-		  padding: 0;
-		}
-		.advantages-left h3 {
-		  font-size: 1.5em;
-		}
-
-		.ad-left {
-		  width: 17%;
-		}
-		.ad-left p {
-		  font-size: 1.2em;
-		  width: 40px;
-		  height: 40px;
-		  line-height: 2.3em;
-		}
-		.ad-right {
-		  width: 82%;
-		}
-		.ad-right p,.advn-two p,.advn-two ul li a {
-		  font-size: 0.9em;
-		}
-		.advantages {
-		  padding: 1em 0 1em;
-		}
-		/*--blog--*/
-		.blog h3 {
-		  font-size: 2em;
-		}
-		.blog-top {
-		  width: 100%;
-		  padding: 0 15px;
-		  margin: 0 0em 1em;
-		}
-		.blog-grid h4 {
-		  font-size: 1em;
-		  line-height: 1.9em;
-		}
-		.blog-grid p {
-		  font-size: 1em;
-		}
-		.blog {
-		  padding: 1em 0;
-		}
-		/*--single--*/
-		.single-grid h4 {
-		  font-size: 1em;
-		  line-height: 1.7em;
-		}
-		.single-grid p ,.media-body p{
-		  font-size: 0.9em;
-		}
-		.comments-top h3, .comment-bottom h3 {
-		  font-size: 1.7em;
-		}
-		h4.media-heading {
-		  font-size: 1.2em;
-		}
-		.comment-bottom form {
-		  width: 100%;
-		}
-		.comment-bottom input[type="text"], .comment-bottom textarea {
-		  padding: 0.6em;
-		}
-		.comment-bottom input[type="submit"] {
-		  width: 22%;
-		}
-		.comment-bottom textarea {
-		  min-height: 130px;
-		}
-		/*--contact--*/
-		.contact h3 {
-		  font-size: 2em;
-		}
-		.map iframe {
-		  min-height: 150px;
-		  padding: 0;
-		}
-		.contact-grids {
-		  padding: 1em 0 0;
-		}
-		.in-contact {
-		  padding: 0;
-		}
-		.contact-bottom input[type="text"] {
-		  padding: 0.6em;
-		}
-		.contact-bottom-top textarea {
-		  padding: 0.6em;
-		  min-height: 160px
-		}
-		.contact-bottom-top {
-		  margin: 0;
-		}
-		.contact-form input[type="submit"] {
-		  margin: 0.5em 0px 0;
-		}
-		.address {
-		  padding: 1em 0 0;
-		}
-		.address-more h4 {
-		  font-size: 1.5em;
-		}
-		.address-grid {
-		  padding: 0;
-		}
-		.address1 {
-		  margin-top: 0.5em;
-		}
-		.map ,.contact-form{
-		  padding: 0;
-		}
-		.address1 p {
-		  font-size: 1.1em;
-		}
-		/*--typo--*/
-		h1#h1-bootstrap-heading {
-		  font-size: 1.5em;
-		}
-		h2#h2-bootstrap-heading {
-		  font-size: 1.4em;
-		}
-		h3#h3-bootstrap-heading {
-		  font-size: 1.3em;
-		}
-		button.btn.btn-lg {
-		  font-size: 0.9em;
-		  margin: 0 0 0.5em 0px;
-		  padding: 9px;
-		}
-		.grid1 {
-		  margin: 0.7em 0 0;
-		}
-		button.btn.btn-1 {
-		  font-size: 0.8em;
-		  margin: 0 0 0.5em;
-		}
-		button.btn.btn-sm {
-		  font-size: 0.7em;
-		  padding: 5px;
-		  margin: 0 0 0.5em;
-		}
-		button.btn.btn-xs {
-		  font-size: 0.7em;
-		}
-		ul.nav.nav-pills a{
-			padding: 0.5em;
-		  font-size: 0.9em;
-		}
-		span.label {
-		  margin: 0 0 0.5em;
-		  display: inline-block;
-		}
-		.page {
-		  padding: 1.5em 0;
-		}
-		.page-header {
-		  margin: 16px 0 9px;
-		}
-		.grid2 {
-		  margin: 0.4em 0 0;
-		}
-		h3.typo1 {
-		  font-size: 1.7em;
-		}
-		.page-header h3 {
-		  font-size: 1.8em;
-		} 
-}
-
-
-
-
-
 
 /********************************************************************************************************************************************************
 *********************************************************************************************************************************************************
@@ -3979,8 +3007,8 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
   margin-right: auto;
   margin-left: auto;
 }
