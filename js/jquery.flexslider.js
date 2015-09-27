@@ -10,7 +10,7 @@
  */
 
 $( window ).bind("load", function(){
-		alert("OLA - carregou");
+		
 		$(".flexslider").flexslider(
 			{animation:"slide"})
 		}); 
