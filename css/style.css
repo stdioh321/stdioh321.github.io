@@ -151,6 +151,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	
 	
 }
+
+.container{
+	width: 95% !important;
+}
+
 .blog{
 
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#528bb2+0,528bb2+1,ffffff+11,ffffff+11,ffffff+87,528bb2+99,528bb2+99,528bb2+100&amp;1+0,0.51+11,0.49+91,1+100 */
@@ -984,7 +989,8 @@ i.glyphicon.glyphicon-comment {
   text-align: center;
 }
 .blog {
-  padding: 1em 0;
+  padding: 0.4em 0;
+  
 }
 
 a.news-btn{
@@ -1056,12 +1062,7 @@ a.news-btn{
 .more-top {
   text-align: center;
   margin: 1em 0em 0;
-  border: solid red 1px;
-  /*position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;*/
-
+  
   margin-bottom: 5px;
 }
 /*--//blog--*/
