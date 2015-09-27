@@ -581,7 +581,7 @@ ul.footer-grid {
 }
 
 .about-bottom-home p{
-  font-size: 1.6em !important;
+  font-size: 1.9em !important;
   
 }
 .about-top{
@@ -872,7 +872,7 @@ ul.footer-grid {
 }
 
 .blog-grid h4{
-	font-size: 1.2em;
+	font-size: 1.8em;
 	text-transform: uppercase;
 	font-family: 'Philosopher-Bold';
 }
@@ -891,7 +891,7 @@ ul.footer-grid {
 
 
 .blog-grid p{
-   	font-size: 1.4em;
+   	font-size: 1.7em;
 	  color: #7C7C7C;
 	  line-height: 1.9em;
 	  margin:  0.8em 0;
@@ -901,7 +901,7 @@ ul.footer-grid {
 
 }
 .blog-grid {
-	padding: 1.6em 1em;
+	padding: 1.6em 0.3em;
 }
 .blog-in {
     border: 1px solid #BDBCBC;
@@ -1056,10 +1056,11 @@ a.news-btn{
 .more-top {
   text-align: center;
   margin: 1em 0em 0;
-  position: absolute;
+  border: solid red 1px;
+  /*position: absolute;
   right: 0;
   left: 0;
-  bottom: 0;
+  bottom: 0;*/
 
   margin-bottom: 5px;
 }
@@ -3000,8 +3001,8 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 5px;
+  padding-left: 5px;
   margin-right: auto;
   margin-left: auto;
 }
