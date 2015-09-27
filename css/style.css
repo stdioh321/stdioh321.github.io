@@ -90,7 +90,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 	display: inline-block;
 	color: #fff;
 	text-decoration: none;		
-	font-size: 2em;
+	font-size: 2.8em;
 	margin:0em 0.5em;
 	transition: border-bottom 0.5s transform 1s;
 }
@@ -114,9 +114,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 .top-nav ul li.active{
 	
 	border-bottom: 1px white solid;
-	font-size: 1.2em;
-	transform: skew(-10deg, -10deg);
-	
+	font-size: 1em;
+	transform: scale(1.5) skew(-10deg, -10deg);
+		
 }
 .top-nav ul li.active a{
 	font-weight: bolder;
