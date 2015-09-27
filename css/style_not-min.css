@@ -454,7 +454,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3276c9', end
 		font-size: 1.2em;
 }
 .top-footer ul li i{
-	background:url(../images/twitterIcon.png);
+	background:url(../images/twitterIcon.jpg);
 	display: inline-block;
 	width: 40px;
 	height:40px;
@@ -462,14 +462,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3276c9', end
 	vertical-align: middle;
 }
 .top-footer ul li i.apresenta{
-	background-image: url(../images/slideshare.png);
+	background-image: url(../images/slideshare.jpg);
 	width: 40px;
 	height:40px;
 	background-size: 100% 100%;
 
 }
 .top-footer ul li i.facebook{
-	background-image: url(../images/facebookIcon.png);
+	background-image: url(../images/facebookIcon.jpg);
 	background-size: 100% 100%;	
 
 }
@@ -1361,7 +1361,7 @@ html[xmlns] .slides {display: block;}
 	  width: 35px;
   height: 35px;
   display: block;
-  background: url('../images/img-sprite.png') no-repeat ;
+  background: url('../images/img-sprite.jpg') no-repeat ;
    position: absolute;
     top: 47%; 
    z-index: 10; 

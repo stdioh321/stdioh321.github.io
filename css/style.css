@@ -5,6 +5,10 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 
+img{
+		//transform: scale(1.25);
+}
+
 *{
 	font-family: 'Arial' !important;
 }
@@ -1365,7 +1369,7 @@ html[xmlns] .slides {display: block;}
 	  width: 35px;
   height: 35px;
   display: block;
-  background: url('../images/img-sprite.png') no-repeat ;
+  background: url('../images/img-sprite.jpg') no-repeat ;
    position: absolute;
     top: 47%; 
    z-index: 10; 
