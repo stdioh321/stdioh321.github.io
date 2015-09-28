@@ -4,49 +4,39 @@
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<title>lixo</title>
 	<style type="text/css">
-		p{
-			width: 95%;
 			
-			border: 3px solid red;
-			font-size: 1em;
-			font-family: "Arial";
-			margin-left: auto; 
-			margin-right: auto;
-			word-wrap: break-word;
-			text-align: justify;
-		}
+			.container{
+				border: 1px solid green;
+				width: 100%;
+				overflow: hidden;
+			}
+			.main{
+				width: 95%;
+				padding: 10px;
+				border: 1px solid red;
+				/*float: left;*/
+				overflow: hidden;
+			}
 
+			.son1,
+			.son2{
+				width: 100px;
+				height: 980px;
+				border: 1px solid green;
+				float: left;
+			}
 	</style>
 </head>
 <body>
-	<p>
-			Responsive Web Design - The Viewport
-« Previous
-Next Chapter »
-What is The Viewport?
+	<div class="container">
+		<div class="main">
+				<div class="son1">
+					<p>asd</p>
+				</div>
+				<div class="son2">
 
-The viewport is the user's visible area of a web page.
-
-The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen.
-
-Before tablets and mobile phones, web pages were designed only for computer screens, and it was common for web pages to have a static design and a fixed size.
-
-Then, when we started surfing the internet using tablets and mobile phones, fixed size web pages were too large to fit the viewport. To fix this, browsers on those devices scaled down the entire web page to fit the screen.
-
-This was not perfect, but a quick fix.
-Setting The Viewport
-
-HTML5 introduced a method to let web designers take control over the viewport, through the <meta> tag.
-
-You should include the following <meta> tag in all your web pages:
-
-The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
-
-The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
-
-Here is an example of a web page without the viewport meta tag, and the same web page with the viewport meta tag:
-
-Tip: If you are browsing this page with a phone or a tablet, you can click on the two links to see the difference.
-	</p>
+				</div>
+		</div>
+	</div>
 </body>
 </html>
