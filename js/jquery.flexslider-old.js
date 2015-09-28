@@ -9,11 +9,11 @@
  * Contributing author: Tyler Smith (@mbmufffin)
  */
 
-$(document).ready(function(){
-		$(".flexslider").flexslider(
-		{animation:"slide"}
-		)
-		}); 
+$( window ).bind("load", function(){
+    
+    $(".flexslider").flexslider(
+      {animation:"slide"})
+    }); 
 
 ;(function ($) {
 

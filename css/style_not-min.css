@@ -5,6 +5,10 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 
+img{
+		//transform: scale(1.25);
+}
+
 *{
 	font-family: 'Arial' !important;
 }
@@ -33,6 +37,10 @@ h1,h2,h3,h4,h5,h6,label,p{
 @font-face {
     font-family: 'nobile';
     src:url(../fonts/nobile.ttf) format('truetype');
+}
+
+.header, .banner, .blog, .container, .footer{
+	width: 100%;
 }
 
 /*--logo--*/
@@ -454,7 +462,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3276c9', end
 		font-size: 1.2em;
 }
 .top-footer ul li i{
-	background:url(../images/twitterIcon.jpg);
+	background:url(../images/twitterIcon.png);
 	display: inline-block;
 	width: 40px;
 	height:40px;
@@ -462,14 +470,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3276c9', end
 	vertical-align: middle;
 }
 .top-footer ul li i.apresenta{
-	background-image: url(../images/slideshare.jpg);
+	background-image: url(../images/slideshare.png);
 	width: 40px;
 	height:40px;
 	background-size: 100% 100%;
 
 }
 .top-footer ul li i.facebook{
-	background-image: url(../images/facebookIcon.jpg);
+	background-image: url(../images/facebookIcon.png);
 	background-size: 100% 100%;	
 
 }
@@ -593,7 +601,7 @@ ul.footer-grid {
 
 
 .about-bottom-home p{
-  //font-size: 1.9em !important;
+  font-size: 2em !important;
   
 }
 .about-top{
