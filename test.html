@@ -1,40 +1,62 @@
 <!DOCYTIPE html>
 <html>
 <head>
-	<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta name=viewport contnt="width=device-width, initial-scale=1">
 	<title>lixo</title>
-	<style type="text/css">
-			*{
-				font-family: "Arial";
-				font-size: 1em;
-			}
 
-			.son1,.son2{
-				border: solid 1px red;
-				padding: 0.2em;
-				font-size: 3em;
-			}
-			img{
-				border: solid 1px green;
-				width: 3em;
-			}
-			p{
-				border: solid 1px yellow;
-				margin: 0.25em;
-			}
-			
-	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="main">
-				<div class="son1">
-					<p>Casa</p>
-				</div>
-				<div class="son2">
-						<img src="images/casa.gif" alt="Casa" title="Casa Propia" />
-				</div>
+			<h2>Texto Titulo</h2>
+			<p>
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+				Conteudo
+			</p>
 		</div>
 	</div>
 </body>
+<style type="text/css">
+			*{
+				font-family: "Arial";
+				margin: 0px;
+
+			}
+			h1,h2,h3,h4,p{
+				padding: 0px 10px;
+
+			}
+			h2{
+				font-size: 2.2em;
+				
+			}
+			p{
+				font-size: 1.3em;
+				word-wrap: break-word;
+			}
+			.main{
+				margin: 3px;
+				border: solid 1px red;
+			
+			}
+			
+
+			@media screen and (max-width: 380px){.main{/*width: 380px;*/ background-color: red; } }
+			@media screen and (max-width: 350px){.main{/*width: 380px;*/ background-color: blue; } }
+			@media screen and (max-width: 320px){.main{/*width: 380px;*/ background-color: yellow; } }
+			@media screen and (max-width: 317px){.main{/*width: 380px;*/ background-color: pink; } }
+	</style>
 </html>

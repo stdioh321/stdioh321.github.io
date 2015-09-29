@@ -88,7 +88,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#12ffffff', e
 
 
 .top-nav{
-	float:left;
+	float:right;
 
 	margin-top: 0.9em;
 }
@@ -108,7 +108,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#12ffffff', e
 }
 .top-nav ul li{
 	transition:transform 0.5s;
-
 }
 .top-nav ul li:not(.active) a:hover{
 		//border-bottom: 1px white solid;
@@ -128,6 +127,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#12ffffff', e
 	
 	border-bottom: 2px white groove;
 	transform: skew(-5deg, -5deg) scale(1.1);
+	
 	
 
 }
