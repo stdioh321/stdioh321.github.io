@@ -15,10 +15,42 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
 
 
-<script  async src="js/jquery.min.js"></script>
+<script  src="js/jquery.min.js"></script>
 
 <script  async type="text/javascript" src="js/jquery.flexslider.js"></script>
 <!-- <script type="text/javascript" src="js/js.js"></script> -->
+
+<script  type="text/javascript">
+		$(document).ready(function(){
+				
+				$("#frmContato").submit(function(event){
+							event.preventDefault();
+		
+
+							$url = "http://g4virtual.hol.es/send_email.php";
+							// $url = "http://g4virtual.hol.es/test_php.php";
+							$nome = $("#frmNome").val();
+							$email = $("#frmEmail").val();
+							$mensagem = $("#frmMensagem").val();
+							$.post($url, {
+									frmNome: $nome,
+									frmEmail: $email,
+									frmMensagem: $mensagem
+
+							},function(data, status){
+									console.log("Data: " + data + "\nStatus: " + status);
+									$("#msgSucesso").addClass("alert alert-success msgSucesso")
+									.hide()
+									.html("<strong>Successo!</strong> Obrigado.")
+									
+									$("#msgSucesso").fadeIn( "slow", function(){});
+
+									$("#frmContato").trigger("reset");
+							});
+
+				});
+		});
+</script>
 
 </head>
 <body> 
@@ -113,12 +145,15 @@
 					
 				</div>
 					<div class="col-md-6 contact-form">
-							<form>
+							<form  id="frmContato" method="POST" action="http://g4virtual.hol.es/send_email.php" >
 								<div class="contact-bottom">
-									<input type="text" placeholder="Nome">
-									<input type="text"  placeholder="Email">
-									<textarea placeholder="Menssagem" required=""></textarea>								
-									<input type="submit" value="Enviar">
+									<input type="text" placeholder="Nome" name="frmNome" id="frmNome" required>
+									<input type="email"  placeholder="Email" name="frmEmail" id="frmEmail" required>
+									<textarea placeholder="Menssagem"  name="frmMensagem" id="frmMensagem" required></textarea>								
+									<input id="frmSubmit" type="submit" value="Enviar">
+									<div id="msgSucesso" >
+
+									</div>
 								</div>
 							</form>
 						</div>

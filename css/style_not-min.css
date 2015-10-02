@@ -4,7 +4,9 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
-
+.msgSucesso{
+	margin-top: 5px;	
+}
 img{
 		//transform: scale(1.25);
 }
@@ -1188,7 +1190,8 @@ h4.media-heading{
 	width:100%;
 	border:none;
 }
-.contact-bottom  input[type="text"]{
+.contact-bottom  input[type="text"],
+.contact-bottom  input[type="email"]{
 	width:100%;
 	padding:1em;	
 	border:1px solid #bbb;
