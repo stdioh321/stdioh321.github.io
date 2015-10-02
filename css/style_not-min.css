@@ -53,6 +53,11 @@ h1,h2,h3,h4,h5,h6,label,p{
 	border-radius: 10px;
 	
 }
+.banner .slides li img{
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+}
 .header{
 		
 
