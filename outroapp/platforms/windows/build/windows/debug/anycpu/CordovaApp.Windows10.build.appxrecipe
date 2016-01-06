@@ -1,0 +1,1033 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>DESKTOP-S8BIS4D</Machine>
+    <WindowsUser>hdias</WindowsUser>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetOsVersion>10.0</TargetOsVersion>
+    <TargetOsDescription>Windows 10.0</TargetOsDescription>
+    <SolutionConfiguration>debug|anycpu</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+    <PackageIdentityName>e82e1d40-ae6e-11e5-b62e-b3770db41926</PackageIdentityName>
+    <IntermediateOutputPath>C:\Users\hdias\Desktop\outroapp\platforms\windows\build\windows\bld\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\build\windows\debug\anycpu\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\SplashScreen.scale-100.png">
+      <PackagePath>images\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\Square150x150Logo.scale-100.png">
+      <PackagePath>images\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\Square30x30Logo.scale-100.png">
+      <PackagePath>images\Square30x30Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\Square310x310Logo.scale-100.png">
+      <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\Square44x44Logo.scale-100.png">
+      <PackagePath>images\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\Square70x70Logo.scale-100.png">
+      <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\Square71x71Logo.scale-100.png">
+      <PackagePath>images\Square71x71Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\StoreLogo.scale-100.png">
+      <PackagePath>images\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\images\Wide310x150Logo.scale-100.png">
+      <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\app.js">
+      <PackagePath>www\app.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\cordova-js-src\exec.js">
+      <PackagePath>www\cordova-js-src\exec.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\cordova-js-src\platform.js">
+      <PackagePath>www\cordova-js-src\platform.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\cordova.js">
+      <PackagePath>www\cordova.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\cordova_plugins.js">
+      <PackagePath>www\cordova_plugins.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\jxTest.js">
+      <PackagePath>www\jxTest.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\angular.js">
+      <PackagePath>www\node_modules\angular\angular.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\angular.min.js">
+      <PackagePath>www\node_modules\angular\angular.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\index.js">
+      <PackagePath>www\node_modules\angular\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\js\bootstrap.js">
+      <PackagePath>www\node_modules\bootstrap\dist\js\bootstrap.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\js\bootstrap.min.js">
+      <PackagePath>www\node_modules\bootstrap\dist\js\bootstrap.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\js\npm.js">
+      <PackagePath>www\node_modules\bootstrap\dist\js\npm.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\Gruntfile.js">
+      <PackagePath>www\node_modules\bootstrap\Gruntfile.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\grunt\bs-commonjs-generator.js">
+      <PackagePath>www\node_modules\bootstrap\grunt\bs-commonjs-generator.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js">
+      <PackagePath>www\node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\grunt\bs-lessdoc-parser.js">
+      <PackagePath>www\node_modules\bootstrap\grunt\bs-lessdoc-parser.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\grunt\bs-raw-files-generator.js">
+      <PackagePath>www\node_modules\bootstrap\grunt\bs-raw-files-generator.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\affix.js">
+      <PackagePath>www\node_modules\bootstrap\js\affix.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\alert.js">
+      <PackagePath>www\node_modules\bootstrap\js\alert.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\button.js">
+      <PackagePath>www\node_modules\bootstrap\js\button.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\carousel.js">
+      <PackagePath>www\node_modules\bootstrap\js\carousel.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\collapse.js">
+      <PackagePath>www\node_modules\bootstrap\js\collapse.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\dropdown.js">
+      <PackagePath>www\node_modules\bootstrap\js\dropdown.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\modal.js">
+      <PackagePath>www\node_modules\bootstrap\js\modal.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\popover.js">
+      <PackagePath>www\node_modules\bootstrap\js\popover.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\scrollspy.js">
+      <PackagePath>www\node_modules\bootstrap\js\scrollspy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\tab.js">
+      <PackagePath>www\node_modules\bootstrap\js\tab.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\tooltip.js">
+      <PackagePath>www\node_modules\bootstrap\js\tooltip.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\js\transition.js">
+      <PackagePath>www\node_modules\bootstrap\js\transition.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\connect\index.js">
+      <PackagePath>www\node_modules\connect\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\browser.js">
+      <PackagePath>www\node_modules\debug\browser.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\debug.js">
+      <PackagePath>www\node_modules\debug\debug.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\node.js">
+      <PackagePath>www\node_modules\debug\node.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ee-first\index.js">
+      <PackagePath>www\node_modules\ee-first\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\escape-html\index.js">
+      <PackagePath>www\node_modules\escape-html\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\finalhandler\index.js">
+      <PackagePath>www\node_modules\finalhandler\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\dist\jquery.js">
+      <PackagePath>www\node_modules\jquery\dist\jquery.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\dist\jquery.min.js">
+      <PackagePath>www\node_modules\jquery\dist\jquery.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax.js">
+      <PackagePath>www\node_modules\jquery\src\ajax.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax\jsonp.js">
+      <PackagePath>www\node_modules\jquery\src\ajax\jsonp.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax\load.js">
+      <PackagePath>www\node_modules\jquery\src\ajax\load.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax\parseJSON.js">
+      <PackagePath>www\node_modules\jquery\src\ajax\parseJSON.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax\parseXML.js">
+      <PackagePath>www\node_modules\jquery\src\ajax\parseXML.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax\script.js">
+      <PackagePath>www\node_modules\jquery\src\ajax\script.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax\var\nonce.js">
+      <PackagePath>www\node_modules\jquery\src\ajax\var\nonce.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax\var\rquery.js">
+      <PackagePath>www\node_modules\jquery\src\ajax\var\rquery.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\ajax\xhr.js">
+      <PackagePath>www\node_modules\jquery\src\ajax\xhr.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\attributes.js">
+      <PackagePath>www\node_modules\jquery\src\attributes.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\attributes\attr.js">
+      <PackagePath>www\node_modules\jquery\src\attributes\attr.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\attributes\classes.js">
+      <PackagePath>www\node_modules\jquery\src\attributes\classes.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\attributes\prop.js">
+      <PackagePath>www\node_modules\jquery\src\attributes\prop.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\attributes\support.js">
+      <PackagePath>www\node_modules\jquery\src\attributes\support.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\attributes\val.js">
+      <PackagePath>www\node_modules\jquery\src\attributes\val.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\callbacks.js">
+      <PackagePath>www\node_modules\jquery\src\callbacks.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\core.js">
+      <PackagePath>www\node_modules\jquery\src\core.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\core\access.js">
+      <PackagePath>www\node_modules\jquery\src\core\access.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\core\init.js">
+      <PackagePath>www\node_modules\jquery\src\core\init.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\core\parseHTML.js">
+      <PackagePath>www\node_modules\jquery\src\core\parseHTML.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\core\ready.js">
+      <PackagePath>www\node_modules\jquery\src\core\ready.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\core\var\rsingleTag.js">
+      <PackagePath>www\node_modules\jquery\src\core\var\rsingleTag.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css.js">
+      <PackagePath>www\node_modules\jquery\src\css.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\addGetHookIf.js">
+      <PackagePath>www\node_modules\jquery\src\css\addGetHookIf.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\curCSS.js">
+      <PackagePath>www\node_modules\jquery\src\css\curCSS.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\defaultDisplay.js">
+      <PackagePath>www\node_modules\jquery\src\css\defaultDisplay.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\hiddenVisibleSelectors.js">
+      <PackagePath>www\node_modules\jquery\src\css\hiddenVisibleSelectors.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\support.js">
+      <PackagePath>www\node_modules\jquery\src\css\support.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\swap.js">
+      <PackagePath>www\node_modules\jquery\src\css\swap.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\var\cssExpand.js">
+      <PackagePath>www\node_modules\jquery\src\css\var\cssExpand.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\var\getStyles.js">
+      <PackagePath>www\node_modules\jquery\src\css\var\getStyles.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\var\isHidden.js">
+      <PackagePath>www\node_modules\jquery\src\css\var\isHidden.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\var\rmargin.js">
+      <PackagePath>www\node_modules\jquery\src\css\var\rmargin.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\css\var\rnumnonpx.js">
+      <PackagePath>www\node_modules\jquery\src\css\var\rnumnonpx.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\data.js">
+      <PackagePath>www\node_modules\jquery\src\data.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\data\accepts.js">
+      <PackagePath>www\node_modules\jquery\src\data\accepts.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\data\Data.js">
+      <PackagePath>www\node_modules\jquery\src\data\Data.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\data\var\data_priv.js">
+      <PackagePath>www\node_modules\jquery\src\data\var\data_priv.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\data\var\data_user.js">
+      <PackagePath>www\node_modules\jquery\src\data\var\data_user.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\deferred.js">
+      <PackagePath>www\node_modules\jquery\src\deferred.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\deprecated.js">
+      <PackagePath>www\node_modules\jquery\src\deprecated.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\dimensions.js">
+      <PackagePath>www\node_modules\jquery\src\dimensions.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\effects.js">
+      <PackagePath>www\node_modules\jquery\src\effects.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\effects\animatedSelector.js">
+      <PackagePath>www\node_modules\jquery\src\effects\animatedSelector.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\effects\Tween.js">
+      <PackagePath>www\node_modules\jquery\src\effects\Tween.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\event.js">
+      <PackagePath>www\node_modules\jquery\src\event.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\event\ajax.js">
+      <PackagePath>www\node_modules\jquery\src\event\ajax.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\event\alias.js">
+      <PackagePath>www\node_modules\jquery\src\event\alias.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\event\support.js">
+      <PackagePath>www\node_modules\jquery\src\event\support.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\exports\amd.js">
+      <PackagePath>www\node_modules\jquery\src\exports\amd.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\exports\global.js">
+      <PackagePath>www\node_modules\jquery\src\exports\global.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\intro.js">
+      <PackagePath>www\node_modules\jquery\src\intro.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\jquery.js">
+      <PackagePath>www\node_modules\jquery\src\jquery.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\manipulation.js">
+      <PackagePath>www\node_modules\jquery\src\manipulation.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\manipulation\support.js">
+      <PackagePath>www\node_modules\jquery\src\manipulation\support.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\manipulation\var\rcheckableType.js">
+      <PackagePath>www\node_modules\jquery\src\manipulation\var\rcheckableType.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\manipulation\_evalUrl.js">
+      <PackagePath>www\node_modules\jquery\src\manipulation\_evalUrl.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\offset.js">
+      <PackagePath>www\node_modules\jquery\src\offset.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\outro.js">
+      <PackagePath>www\node_modules\jquery\src\outro.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\queue.js">
+      <PackagePath>www\node_modules\jquery\src\queue.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\queue\delay.js">
+      <PackagePath>www\node_modules\jquery\src\queue\delay.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\selector-native.js">
+      <PackagePath>www\node_modules\jquery\src\selector-native.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\selector-sizzle.js">
+      <PackagePath>www\node_modules\jquery\src\selector-sizzle.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\selector.js">
+      <PackagePath>www\node_modules\jquery\src\selector.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\serialize.js">
+      <PackagePath>www\node_modules\jquery\src\serialize.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\dist\sizzle.js">
+      <PackagePath>www\node_modules\jquery\src\sizzle\dist\sizzle.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\dist\sizzle.min.js">
+      <PackagePath>www\node_modules\jquery\src\sizzle\dist\sizzle.min.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\test\data\empty.js">
+      <PackagePath>www\node_modules\jquery\src\sizzle\test\data\empty.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\test\data\testinit.js">
+      <PackagePath>www\node_modules\jquery\src\sizzle\test\data\testinit.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\test\jquery.js">
+      <PackagePath>www\node_modules\jquery\src\sizzle\test\jquery.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\test\unit\extending.js">
+      <PackagePath>www\node_modules\jquery\src\sizzle\test\unit\extending.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\test\unit\selector.js">
+      <PackagePath>www\node_modules\jquery\src\sizzle\test\unit\selector.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\test\unit\utilities.js">
+      <PackagePath>www\node_modules\jquery\src\sizzle\test\unit\utilities.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\traversing.js">
+      <PackagePath>www\node_modules\jquery\src\traversing.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\traversing\findFilter.js">
+      <PackagePath>www\node_modules\jquery\src\traversing\findFilter.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\traversing\var\rneedsContext.js">
+      <PackagePath>www\node_modules\jquery\src\traversing\var\rneedsContext.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\arr.js">
+      <PackagePath>www\node_modules\jquery\src\var\arr.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\class2type.js">
+      <PackagePath>www\node_modules\jquery\src\var\class2type.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\concat.js">
+      <PackagePath>www\node_modules\jquery\src\var\concat.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\hasOwn.js">
+      <PackagePath>www\node_modules\jquery\src\var\hasOwn.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\indexOf.js">
+      <PackagePath>www\node_modules\jquery\src\var\indexOf.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\pnum.js">
+      <PackagePath>www\node_modules\jquery\src\var\pnum.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\push.js">
+      <PackagePath>www\node_modules\jquery\src\var\push.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\rnotwhite.js">
+      <PackagePath>www\node_modules\jquery\src\var\rnotwhite.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\slice.js">
+      <PackagePath>www\node_modules\jquery\src\var\slice.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\strundefined.js">
+      <PackagePath>www\node_modules\jquery\src\var\strundefined.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\support.js">
+      <PackagePath>www\node_modules\jquery\src\var\support.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\var\toString.js">
+      <PackagePath>www\node_modules\jquery\src\var\toString.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\wrap.js">
+      <PackagePath>www\node_modules\jquery\src\wrap.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ms\index.js">
+      <PackagePath>www\node_modules\ms\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\on-finished\index.js">
+      <PackagePath>www\node_modules\on-finished\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\parseurl\index.js">
+      <PackagePath>www\node_modules\parseurl\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\unpipe\index.js">
+      <PackagePath>www\node_modules\unpipe\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\utils-merge\index.js">
+      <PackagePath>www\node_modules\utils-merge\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-camera\src\windows\CameraProxy.js">
+      <PackagePath>www\plugins\cordova-plugin-camera\src\windows\CameraProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-camera\www\Camera.js">
+      <PackagePath>www\plugins\cordova-plugin-camera\www\Camera.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-camera\www\CameraConstants.js">
+      <PackagePath>www\plugins\cordova-plugin-camera\www\CameraConstants.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-camera\www\CameraPopoverHandle.js">
+      <PackagePath>www\plugins\cordova-plugin-camera\www\CameraPopoverHandle.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js">
+      <PackagePath>www\plugins\cordova-plugin-camera\www\CameraPopoverOptions.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-console\www\console-via-logger.js">
+      <PackagePath>www\plugins\cordova-plugin-console\www\console-via-logger.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-console\www\logger.js">
+      <PackagePath>www\plugins\cordova-plugin-console\www\logger.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-device\src\windows\DeviceProxy.js">
+      <PackagePath>www\plugins\cordova-plugin-device\src\windows\DeviceProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-device\www\device.js">
+      <PackagePath>www\plugins\cordova-plugin-device\www\device.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-dialogs\src\windows\NotificationProxy.js">
+      <PackagePath>www\plugins\cordova-plugin-dialogs\src\windows\NotificationProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-dialogs\www\notification.js">
+      <PackagePath>www\plugins\cordova-plugin-dialogs\www\notification.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\src\windows\FileProxy.js">
+      <PackagePath>www\plugins\cordova-plugin-file\src\windows\FileProxy.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\DirectoryEntry.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\DirectoryEntry.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\DirectoryReader.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\DirectoryReader.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\Entry.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\Entry.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\File.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\File.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\FileEntry.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileEntry.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\FileError.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileError.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\FileReader.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileReader.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\FileSystem.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileSystem.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\fileSystems.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\fileSystems.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\FileUploadOptions.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileUploadOptions.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\FileUploadResult.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileUploadResult.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\FileWriter.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\FileWriter.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\Flags.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\Flags.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\LocalFileSystem.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\LocalFileSystem.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\Metadata.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\Metadata.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\ProgressEvent.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\ProgressEvent.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\requestFileSystem.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\requestFileSystem.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js">
+      <PackagePath>www\plugins\cordova-plugin-file\www\resolveLocalFileSystemURI.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\WinJS\js\base.js">
+      <PackagePath>www\WinJS\js\base.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\index.html">
+      <PackagePath>www\index.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\test\data\mixed_sort.html">
+      <PackagePath>www\node_modules\jquery\src\sizzle\test\data\mixed_sort.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\test\index.html">
+      <PackagePath>www\node_modules\jquery\src\sizzle\test\index.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\angular-csp.css">
+      <PackagePath>www\node_modules\angular\angular-csp.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\css\bootstrap-theme.css">
+      <PackagePath>www\node_modules\bootstrap\dist\css\bootstrap-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\css\bootstrap-theme.min.css">
+      <PackagePath>www\node_modules\bootstrap\dist\css\bootstrap-theme.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\css\bootstrap.css">
+      <PackagePath>www\node_modules\bootstrap\dist\css\bootstrap.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\css\bootstrap.min.css">
+      <PackagePath>www\node_modules\bootstrap\dist\css\bootstrap.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\angular.min.js.gzip">
+      <PackagePath>www\node_modules\angular\angular.min.js.gzip</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\angular.min.js.map">
+      <PackagePath>www\node_modules\angular\angular.min.js.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\css\bootstrap-theme.css.map">
+      <PackagePath>www\node_modules\bootstrap\dist\css\bootstrap-theme.css.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map">
+      <PackagePath>www\node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\css\bootstrap.css.map">
+      <PackagePath>www\node_modules\bootstrap\dist\css\bootstrap.css.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\css\bootstrap.min.css.map">
+      <PackagePath>www\node_modules\bootstrap\dist\css\bootstrap.min.css.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\dist\jquery.min.map">
+      <PackagePath>www\node_modules\jquery\dist\jquery.min.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\src\sizzle\dist\sizzle.min.map">
+      <PackagePath>www\node_modules\jquery\src\sizzle\dist\sizzle.min.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\bower.json">
+      <PackagePath>www\node_modules\angular\bower.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\package.json">
+      <PackagePath>www\node_modules\angular\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\grunt\configBridge.json">
+      <PackagePath>www\node_modules\bootstrap\grunt\configBridge.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\package.json">
+      <PackagePath>www\node_modules\bootstrap\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\connect\package.json">
+      <PackagePath>www\node_modules\connect\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\bower.json">
+      <PackagePath>www\node_modules\debug\bower.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\component.json">
+      <PackagePath>www\node_modules\debug\component.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\package.json">
+      <PackagePath>www\node_modules\debug\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ee-first\package.json">
+      <PackagePath>www\node_modules\ee-first\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\escape-html\package.json">
+      <PackagePath>www\node_modules\escape-html\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\finalhandler\package.json">
+      <PackagePath>www\node_modules\finalhandler\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\bower.json">
+      <PackagePath>www\node_modules\jquery\bower.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\package.json">
+      <PackagePath>www\node_modules\jquery\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ms\package.json">
+      <PackagePath>www\node_modules\ms\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\on-finished\package.json">
+      <PackagePath>www\node_modules\on-finished\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\parseurl\package.json">
+      <PackagePath>www\node_modules\parseurl\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\unpipe\package.json">
+      <PackagePath>www\node_modules\unpipe\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\utils-merge\package.json">
+      <PackagePath>www\node_modules\utils-merge\package.json</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\angular\README.md">
+      <PackagePath>www\node_modules\angular\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\CHANGELOG.md">
+      <PackagePath>www\node_modules\bootstrap\CHANGELOG.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\README.md">
+      <PackagePath>www\node_modules\bootstrap\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\connect\History.md">
+      <PackagePath>www\node_modules\connect\History.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\connect\Readme.md">
+      <PackagePath>www\node_modules\connect\Readme.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\History.md">
+      <PackagePath>www\node_modules\debug\History.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\Readme.md">
+      <PackagePath>www\node_modules\debug\Readme.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ee-first\README.md">
+      <PackagePath>www\node_modules\ee-first\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\escape-html\Readme.md">
+      <PackagePath>www\node_modules\escape-html\Readme.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\finalhandler\HISTORY.md">
+      <PackagePath>www\node_modules\finalhandler\HISTORY.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\finalhandler\README.md">
+      <PackagePath>www\node_modules\finalhandler\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\CONTRIBUTING.md">
+      <PackagePath>www\node_modules\jquery\CONTRIBUTING.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\README.md">
+      <PackagePath>www\node_modules\jquery\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ms\History.md">
+      <PackagePath>www\node_modules\ms\History.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ms\README.md">
+      <PackagePath>www\node_modules\ms\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\on-finished\HISTORY.md">
+      <PackagePath>www\node_modules\on-finished\HISTORY.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\on-finished\README.md">
+      <PackagePath>www\node_modules\on-finished\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\parseurl\HISTORY.md">
+      <PackagePath>www\node_modules\parseurl\HISTORY.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\parseurl\README.md">
+      <PackagePath>www\node_modules\parseurl\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\unpipe\HISTORY.md">
+      <PackagePath>www\node_modules\unpipe\HISTORY.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\unpipe\README.md">
+      <PackagePath>www\node_modules\unpipe\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\utils-merge\README.md">
+      <PackagePath>www\node_modules\utils-merge\README.md</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot">
+      <PackagePath>www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot">
+      <PackagePath>www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg">
+      <PackagePath>www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg">
+      <PackagePath>www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf">
+      <PackagePath>www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf">
+      <PackagePath>www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff">
+      <PackagePath>www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff">
+      <PackagePath>www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2">
+      <PackagePath>www\node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2">
+      <PackagePath>www\node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\grunt\.jshintrc">
+      <PackagePath>www\node_modules\bootstrap\grunt\.jshintrc</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\.jshintrc">
+      <PackagePath>www\node_modules\debug\.jshintrc</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\grunt\sauce_browsers.yml">
+      <PackagePath>www\node_modules\bootstrap\grunt\sauce_browsers.yml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\utils-merge\.travis.yml">
+      <PackagePath>www\node_modules\utils-merge\.travis.yml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\alerts.less">
+      <PackagePath>www\node_modules\bootstrap\less\alerts.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\badges.less">
+      <PackagePath>www\node_modules\bootstrap\less\badges.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\bootstrap.less">
+      <PackagePath>www\node_modules\bootstrap\less\bootstrap.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\breadcrumbs.less">
+      <PackagePath>www\node_modules\bootstrap\less\breadcrumbs.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\button-groups.less">
+      <PackagePath>www\node_modules\bootstrap\less\button-groups.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\buttons.less">
+      <PackagePath>www\node_modules\bootstrap\less\buttons.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\carousel.less">
+      <PackagePath>www\node_modules\bootstrap\less\carousel.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\close.less">
+      <PackagePath>www\node_modules\bootstrap\less\close.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\code.less">
+      <PackagePath>www\node_modules\bootstrap\less\code.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\component-animations.less">
+      <PackagePath>www\node_modules\bootstrap\less\component-animations.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\dropdowns.less">
+      <PackagePath>www\node_modules\bootstrap\less\dropdowns.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\forms.less">
+      <PackagePath>www\node_modules\bootstrap\less\forms.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\glyphicons.less">
+      <PackagePath>www\node_modules\bootstrap\less\glyphicons.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\grid.less">
+      <PackagePath>www\node_modules\bootstrap\less\grid.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\input-groups.less">
+      <PackagePath>www\node_modules\bootstrap\less\input-groups.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\jumbotron.less">
+      <PackagePath>www\node_modules\bootstrap\less\jumbotron.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\labels.less">
+      <PackagePath>www\node_modules\bootstrap\less\labels.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\list-group.less">
+      <PackagePath>www\node_modules\bootstrap\less\list-group.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\media.less">
+      <PackagePath>www\node_modules\bootstrap\less\media.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\alerts.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\alerts.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\background-variant.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\background-variant.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\border-radius.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\border-radius.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\buttons.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\buttons.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\center-block.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\center-block.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\clearfix.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\clearfix.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\forms.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\forms.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\gradients.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\gradients.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\grid-framework.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\grid-framework.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\grid.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\grid.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\hide-text.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\hide-text.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\image.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\image.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\labels.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\labels.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\list-group.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\list-group.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\nav-divider.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\nav-divider.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\nav-vertical-align.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\nav-vertical-align.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\opacity.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\opacity.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\pagination.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\pagination.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\panels.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\panels.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\progress-bar.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\progress-bar.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\reset-filter.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\reset-filter.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\reset-text.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\reset-text.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\resize.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\resize.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\responsive-visibility.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\responsive-visibility.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\size.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\size.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\tab-focus.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\tab-focus.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\table-row.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\table-row.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\text-emphasis.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\text-emphasis.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\text-overflow.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\text-overflow.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\mixins\vendor-prefixes.less">
+      <PackagePath>www\node_modules\bootstrap\less\mixins\vendor-prefixes.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\modals.less">
+      <PackagePath>www\node_modules\bootstrap\less\modals.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\navbar.less">
+      <PackagePath>www\node_modules\bootstrap\less\navbar.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\navs.less">
+      <PackagePath>www\node_modules\bootstrap\less\navs.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\normalize.less">
+      <PackagePath>www\node_modules\bootstrap\less\normalize.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\pager.less">
+      <PackagePath>www\node_modules\bootstrap\less\pager.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\pagination.less">
+      <PackagePath>www\node_modules\bootstrap\less\pagination.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\panels.less">
+      <PackagePath>www\node_modules\bootstrap\less\panels.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\popovers.less">
+      <PackagePath>www\node_modules\bootstrap\less\popovers.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\print.less">
+      <PackagePath>www\node_modules\bootstrap\less\print.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\progress-bars.less">
+      <PackagePath>www\node_modules\bootstrap\less\progress-bars.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\responsive-embed.less">
+      <PackagePath>www\node_modules\bootstrap\less\responsive-embed.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\responsive-utilities.less">
+      <PackagePath>www\node_modules\bootstrap\less\responsive-utilities.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\scaffolding.less">
+      <PackagePath>www\node_modules\bootstrap\less\scaffolding.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\tables.less">
+      <PackagePath>www\node_modules\bootstrap\less\tables.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\theme.less">
+      <PackagePath>www\node_modules\bootstrap\less\theme.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\thumbnails.less">
+      <PackagePath>www\node_modules\bootstrap\less\thumbnails.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\tooltip.less">
+      <PackagePath>www\node_modules\bootstrap\less\tooltip.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\type.less">
+      <PackagePath>www\node_modules\bootstrap\less\type.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\utilities.less">
+      <PackagePath>www\node_modules\bootstrap\less\utilities.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\variables.less">
+      <PackagePath>www\node_modules\bootstrap\less\variables.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\less\wells.less">
+      <PackagePath>www\node_modules\bootstrap\less\wells.less</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\bootstrap\LICENSE">
+      <PackagePath>www\node_modules\bootstrap\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\connect\LICENSE">
+      <PackagePath>www\node_modules\connect\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\Makefile">
+      <PackagePath>www\node_modules\debug\Makefile</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ee-first\LICENSE">
+      <PackagePath>www\node_modules\ee-first\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\escape-html\LICENSE">
+      <PackagePath>www\node_modules\escape-html\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\finalhandler\LICENSE">
+      <PackagePath>www\node_modules\finalhandler\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ms\LICENSE">
+      <PackagePath>www\node_modules\ms\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\on-finished\LICENSE">
+      <PackagePath>www\node_modules\on-finished\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\parseurl\LICENSE">
+      <PackagePath>www\node_modules\parseurl\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\unpipe\LICENSE">
+      <PackagePath>www\node_modules\unpipe\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\utils-merge\LICENSE">
+      <PackagePath>www\node_modules\utils-merge\LICENSE</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\debug\.npmignore">
+      <PackagePath>www\node_modules\debug\.npmignore</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\.npmignore">
+      <PackagePath>www\node_modules\jquery\.npmignore</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\ms\.npmignore">
+      <PackagePath>www\node_modules\ms\.npmignore</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\parseurl\.npmignore">
+      <PackagePath>www\node_modules\parseurl\.npmignore</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\.bowerrc">
+      <PackagePath>www\node_modules\jquery\.bowerrc</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\.jscsrc">
+      <PackagePath>www\node_modules\jquery\.jscsrc</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\AUTHORS.txt">
+      <PackagePath>www\node_modules\jquery\AUTHORS.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\www\node_modules\jquery\MIT-LICENSE.txt">
+      <PackagePath>www\node_modules\jquery\MIT-LICENSE.txt</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\config.xml">
+      <PackagePath>config.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\hdias\Desktop\outroapp\platforms\windows\build\windows\debug\anycpu\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>

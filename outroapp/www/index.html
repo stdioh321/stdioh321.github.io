@@ -1,0 +1,178 @@
+<html ng-app='ang'>
+<head>
+	<title>Index HTML</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css" >
+		
+		<style type="text/css">
+			.table thead{
+					font-weight: bolder;
+			}
+			.container h2{
+				text-align: center;
+			}
+			form > *{
+				margin-bottom: 1.5em;
+			}
+
+		</style>
+
+		<script type="text/javascript" src="node_modules/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+		<script type="text/javascript">
+			angular.module('ang', []);
+			angular.module('ang').directive('uiUtil', function(){
+				return {
+						require: 'ngModel',
+						link: function(scope, elem, attr, ctrl){
+								var _att = attr.uiUtil.replace(/\s/ig, "");
+
+								var _formatTelefone = function(telefone){
+										telefone = telefone.replace(/[^0-9]/ig, "");
+										if(telefone.length == 8){
+												telefone = telefone.substring(0,4) + '-' + telefone.substring(4);
+										}else if(telefone.length > 8){
+												telefone = telefone.substring(0,5) + '-' + telefone.substring(5,9);
+										}
+										return telefone;
+								};
+								if(attr.uiUtil.replace(/\s/ig, "") == "telefone")
+								{	
+										$(elem).bind('keyup', function(){
+												ctrl.$setViewValue(_formatTelefone(ctrl.$viewValue));
+												ctrl.$render();
+		
+										});
+
+										ctrl.$parsers.push(function(value){
+												value = value.replace(/\-/ig, "");
+												return value;
+										});
+								}
+						}
+				}
+			});
+
+			angular.module('ang').controller('angCtrl', function($scope){
+					$scope.msg = "Ola Angular";
+					$scope.contatos = [{nome:"Jao", telefone: "23032111"}];
+
+					$scope.addContato = function(contato){
+							console.log(contato);
+							$scope.contatos.push(angular.copy(contato));
+							delete $scope.contato;
+							$scope.formContato.$setPristine();
+					};
+					$scope.removeContato = function(contatos){
+							// ok = confirm("Realmente Remover??");
+							// if(ok){
+							// 	$scope.contatos = contatos.filter(function(item){
+							// 			if(item.selecionado){
+
+							// 			}else{
+							// 				return item;
+							// 			}
+							// 	}); 
+								
+							// }else{
+							// 	$scope.contatos = contatos.map(function(item){
+								
+							// 		delete item.selecionado;
+							// 		return item;
+								
+							// 	});
+							// }
+							navigator.notification.confirm(
+							    'You are the winner!',  // message
+							    onConfirm,         // callback
+							    'Game Over',            // title
+							    ['OK', 'Exit']                  // buttonName
+							);
+							
+							function onConfirm(buttonIndex) {
+							    // ok = confirm("Realmente Remover??");
+								if(buttonIndex==1){
+									console.log('Yes OK');
+									$scope.contatos = contatos.filter(function(item){
+											if(item.selecionado){
+
+											}else{
+												return item;
+											}
+									}); 
+									
+									
+								}else{
+										console.log('Not OK');
+										$scope.contatos = contatos.map(function(item){
+									
+										console.log('Item Delete..');
+										delete item.selecionado;
+										return item;
+									
+									});
+								}
+								$scope.$apply();
+							}
+
+
+							
+					};
+			});
+
+			document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady() {
+			    console.log(navigator.notification);
+			}
+		</script>
+		
+</head>
+<body ng-controller='angCtrl'>
+	<div class='container'>
+		<h2>Hello Index In File</h2>
+		<hr />
+		<div class="col-md-5">
+			<form name='formContato'>
+				<input type="text"  class="form-control" ng-required='true' name='nome' ng-model="contato.nome" placeholder="Nome" />
+				<input type="text" ui-Util='telefone' class="form-control" ng-required='true' ng-pattern='/^\d{4,5}-\d{4}$/' name='telefone' ng-model="contato.telefone" placeholder="Telefone" />
+				<button class="btn btn-primary btn-block" ng-disabled='formContato.$invalid' ng-click="addContato(contato)">Add Contato</button>
+			</form>
+			
+
+			<div class="alert alert-danger" ng-show='formContato.nome.$error.required && formContato.nome.$dirty'>
+					Digite o <strong>Nome</strong>
+			</div>
+			<div class="alert alert-danger" ng-show='formContato.telefone.$error.required && formContato.telefone.$dirty'>
+					Digite o <strong>Telefone</strong>
+			</div>
+			<div class="alert alert-danger" ng-show='formContato.telefone.$error.pattern'>
+					Padrão do <strong>Telefone</strong> incorreto. (Ex: 1234-5678, 12345-6789)
+			</div>
+			<span class='badge'>{{contato}}</span>
+		</div>
+		<div class="col-md-5 col-md-offset-2">
+			
+			<table class="table" ng-show="contatos.length > 0">
+					<thead>
+						<tr>	
+							<td>#</td>
+							<td>Nome</td>
+							<td>Telefone</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in contatos">
+							<td><a href="" ng-click="item.selecionado = 'true'; removeContato(contatos)"><span class='glyphicon glyphicon-remove'></span></a></td>
+							<td>{{item.nome}}</td>
+							<td>{{item.telefone}}</td>
+						</tr>
+					</tbody>
+			</table>
+			{{contatos}}
+		</div>
+	</div>
+
+</body>
+</html>
