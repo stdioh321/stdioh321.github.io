@@ -4,21 +4,33 @@ var fs		= require("fs");
 var app		= connect();
 
 doAnswer = function(request, response){
-
+	console.log(request.headers.accept);
+	accept = request.headers.accept;
 	url = request.url;
-
+	
 	if(url == '/'){
 		fs.createReadStream('./index.html').pipe(response);
 	}else{
 
 			fs.stat('.'+url, function(err, stat){
 				if(err){
-					console.log('Dont Exists.');
+					console.log('URL: ' + url +' - Dont Exists, stat: ' + stat);
 				}
 				if(stat){
 					if(stat.isFile()){
 						console.log("is FIle: " + url);
-						fs.createReadStream('.'+url).pipe(response);
+						accept = accept.split(',')[0];
+						console.log("ACCEPT --> " + accept);	
+						if(accept == "*/*"){
+
+						}else{
+							response.writeHead(200, {"Content-Type": accept});
+						}
+						fs.createReadStream('.'+url).on('end', function(){
+							console.log("end file");
+							// response.end();
+						}).pipe(response);
+	
 					}else if(stat.isDirectory()){
 						console.log("is Directory: " + url);
 
