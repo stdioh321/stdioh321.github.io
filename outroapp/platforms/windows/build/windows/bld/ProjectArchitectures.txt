@@ -1,1 +1,0 @@
-C:\Users\hdias\Documents\GitHub\stdioh321.github.io\outroapp\platforms\windows\CordovaApp.Windows10.jsproj;neutral

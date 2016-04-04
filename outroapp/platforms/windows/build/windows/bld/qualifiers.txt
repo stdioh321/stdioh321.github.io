@@ -1,2 +1,0 @@
-Language=MS
-Scale=100
