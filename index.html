@@ -34,7 +34,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8" /> 
 	<link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css">
-	
+	<style type="text/css">
+			.table-right td{
+				text-align: right;
+				padding: 0.3em;
+			}
+			.table-center{
+				border: solid 1px red;
+
+			}
+			 .table-center td{
+				text-align: center;
+				padding: 0.3em;
+			}
+			.scroll{
+				overflow: auto;
+			}
+	</style>	
 	<script type="text/javascript" src="resources/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
 	<script type="text/javascript" src="estados.js"></script>
@@ -89,17 +105,32 @@
 				$scope.carregaWeather = function(praia){
 					console.log(praia);
 					if(praia != null){
+						
+						//weather.ashx?q=
 						$http({
 							method: "GET",
-							url: urlBase+ "marine.ashx?key="+key+"&format=json&q=" + praia.lat +"," + praia.lon
+							url: urlBase+ "marine.ashx?key="+key+"&lang=pt&tide=yes&format=json&q=" + praia.lat +"," + praia.lon
 						}).then(function(data){
 							console.log(data);
-							$scope.result = data.data.data;
+							$scope.resultMarine = data.data.data;
 
 						},function(data){
 							console.log("ERROR");
 							console.log(data);
 						});
+
+						$http({
+							method: "GET",
+							url: urlBase+ "weather.ashx?key="+key+"&lang=pt&showmap=yes&format=json&q=" + praia.lat +"," + praia.lon
+						}).then(function(data){
+							console.log(data);
+							$scope.resultWeather = data.data.data;
+
+						},function(data){
+							console.log("ERROR");
+							console.log(data);
+						});
+
 					}
 				};
 
@@ -134,11 +165,124 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-6">
 					<table class="table">
-						<tr ng-repeat="(key,value) in result">
-							<td>{{key}}</td>
-							<td>{{value}}</td>
+						<tr>
+							<td>Tamanho</td>
+							<td>Direção</td>
+							<td>Periodo</td>
+							<td>Potencia</td>
+							<td>Vento</td>
+							<td>Direção</td>
+						</tr>
+						<tr>
+							<td>{{resultMarine.weather[0].hourly[0].swellHeight_m}}</td>
+							<td>{{resultMarine.weather[0].hourly[0].swellDir}}</td>
+							<td>{{resultMarine.weather[0].hourly[0].swellPeriod_secs}}</td>
+							<td>{{resultMarine.weather[0].hourly[0].WindGustKmph}}</td>
+							<td>{{resultMarine.weather[0].hourly[0].WindChillC}}</td>
+							<td>{{resultMarine.weather[0].hourly[0].swellDir16Point}}</td>
+						</tr>
+
+						<tr>
+							<td colspan="6">abc</td>
+						</tr>
+
+						<tr>
+							<td>Temperatura</td>
+							<td>Probabilidade</td>
+							<td>Chuva</td>
+							<td>Nascer</td>
+							<td>Pôr do Sol</td>
+							<td>Lua</td>
+						</tr>
+						<tr>
+							<td>{{resultMarine.weather[0].hourly[0].tempC}}</td>
+							<td>{{resultWeather.weather[0].hourly[0].chanceofrain}}%</td>
+							<td>{{resultWeather.weather[0].hourly[0].precipMM}}mm</td>
+							<td>{{resultMarine.weather[0].astronomy[0].sunrise}}</td>
+							<td>{{resultMarine.weather[0].astronomy[0].sunset}}</td>
+							<td></td>
+						</tr>
+
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 scroll">
+					<table>
+						<tr >
+							<td>
+								<table class="table-right">
+									<tr>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>Horário</td>
+									</tr>
+									<tr>
+										<td>Direção da Onda</td>
+									</tr>
+									<tr>
+										<td>Tamanho(m)</td>
+									</tr>
+									<tr>
+										<td>Período(seg)</td>
+									</tr>
+									<tr>
+										<td>Direção do Vento</td>
+									</tr>
+									<tr>
+										<td>Velocidade(km/h)</td>
+									</tr>
+									<tr>
+										<td>Potência</td>
+									</tr>
+
+								</table>
+							</td>
+							<td ng-repeat="item in resultMarine.weather">
+								<table class="table-center">
+									<tr>
+										<td colspan="8">{{item.date}}</td>
+									</tr>
+									<tr>
+										<td ng-repeat="item2 in item.hourly">
+											{{item2.time}}
+										</td>
+									</tr>
+									<tr>
+										<td ng-repeat="item2 in item.hourly">
+											{{item2.swellDir16Point}}
+										</td>
+									</tr>
+									<tr>
+										<td ng-repeat="item2 in item.hourly">
+											{{item2.swellHeight_m}}
+										</td>
+									</tr>
+									<tr>
+										<td ng-repeat="item2 in item.hourly">
+											{{item2.swellPeriod_secs}}
+										</td>
+									</tr>
+									<tr>
+										<td ng-repeat="item2 in item.hourly">
+											{{item2.winddir16Point}}
+										</td>
+									</tr>
+									<tr>
+										<td ng-repeat="item2 in item.hourly">
+											{{item2.windspeedKmph}}
+										</td>
+									</tr>
+									<tr>
+										<td ng-repeat="item2 in item.hourly">
+											{{item2.WindGustKmph}}
+										</td>
+									</tr>
+								</table>
+							</td>
 						</tr>
 					</table>
 				</div>
