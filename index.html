@@ -34,7 +34,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8" /> 
 	<link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="resources/lib/angular-chart.js/dist/angular-chart.css">
+
+
 	<style type="text/css">
+
 			.table-right td{
 				text-align: right;
 				padding: 0.3em;
@@ -53,6 +57,14 @@
 	</style>	
 	<script type="text/javascript" src="resources/lib/angular/angular.js"></script>
 	<script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
+
+	<script src="resources/lib/Chart.js/Chart.js"></script>	
+	<script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
+
+
+
+
+
 	<script type="text/javascript" src="estados.js"></script>
 	<script type="text/javascript" src="cidades.js"></script>
 	<script type="text/javascript" src="praias.js"></script>
@@ -62,9 +74,27 @@
 		var url = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=f2ae69adff674902a3c13610160504&format=json&q=";
 		var key = "f2ae69adff674902a3c13610160504";
 
-		var app = angular.module("noSurf", []);
+		var app = angular.module("noSurf", ['chart.js']);
 		
-		app.controller("noSurfCtrl", function($scope, $http){
+		app.filter('toHour' , function(){
+			return function(input){
+				
+				if(input.length == 4){
+					input = input.substring(0,2) + "h" + input.substring(2);
+				}
+				if(input.length == 3){
+					input = "0" + input.substring(0,1) + "h" + input.substring(1);
+				}
+
+				if(input.length == 1){
+					input = "00" +	 "h" + "00";
+				}
+				return input;
+			};
+
+		});
+
+		app.controller("noSurfCtrl", function($scope, $http, $filter){
 				$scope.estados = estados;
 				$scope.cidades = cidades;
 				$scope.praias = praias;
@@ -113,6 +143,7 @@
 						}).then(function(data){
 							console.log(data);
 							$scope.resultMarine = data.data.data;
+							$scope.carregaChart($scope.resultMarine);
 
 						},function(data){
 							console.log("ERROR");
@@ -133,6 +164,48 @@
 
 					}
 				};
+
+				$scope.series = ["Tamanho Onda(m)"];
+				$scope.data = [];
+				$scope.dataChart = [];
+				$scope.labels = [];
+				$scope.indexDate = 0;
+				
+				$scope.carregaChart= function(resultMarine){
+					$scope.dataChart = [];
+					$scope.tmpLabel = [];
+
+					resultMarine.weather.forEach(function(elem, index, arr){
+						if(index == $scope.indexDate){
+
+
+							elem.hourly.filter(function(elem2){
+								$scope.dataChart.push(parseFloat(elem2.swellHeight_m));
+								$scope.tmpLabel.push($filter('toHour')(elem2.time));
+							});
+						}
+					});
+
+
+
+					$scope.labels = $scope.tmpLabel;
+					$scope.data[0] = $scope.dataChart;
+
+
+					console.log($scope.data);
+					console.log($scope.labels);
+					
+				};
+
+				$scope.modDate = function(val){
+					if($scope.indexDate + val < 0 || $scope.indexDate + val > 6){
+
+					}else{
+						$scope.indexDate += val;
+						$scope.carregaChart($scope.resultMarine);
+					}
+				};
+				  
 
 		});
 	</script>
@@ -161,12 +234,26 @@
 								<option value="">Selecione o Praias</option>
 							</select>
 						</li>
+
 					</ul>
 				</div>
 			</div>
+
 			<div class="row">
-				<div class="col-md-6">
-					<table class="table">
+				<div class="col-md-1">
+					<button class="btn btn-primary" ng-click="modDate(-1)">Prev</button>
+				</div>
+				<div class="col-md-10">
+					 <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}"></canvas> 
+				</div>
+				<div class="col-md-1">
+					<button class="btn btn-primary" ng-click="modDate(1)">Next</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 table-responsive">
+					<table class="table ">
 						<tr>
 							<td>Tamanho</td>
 							<td>Direção</td>
@@ -209,7 +296,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12 scroll">
+				<div class="col-md-12 table-responsive">
 					<table>
 						<tr >
 							<td>
