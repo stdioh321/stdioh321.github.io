@@ -19,7 +19,15 @@
 	FORECAST.IO
 	3633ce3ab311df404ee0fd9dc979541d
 	https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
+
 	https://api.forecast.io/forecast/3633ce3ab311df404ee0fd9dc979541d/37.8267,-122.423
+
+
+
+	WORLD WEATHER ONLINE
+
+	http://api.worldweatheronline.com/free/v1/marine.ashx?key=d7pesx54engabthjcznhanfa&format=json&q=-25.8685,-48.5589
+
 -->
 <head>
 	<title>Teste</title>
@@ -34,6 +42,8 @@
 	<script type="text/javascript" src="praias.js"></script>
 	
 	<script type="text/javascript">
+		var urlBase = "http://api.worldweatheronline.com/free/v1/";
+		var url = "http://api.worldweatheronline.com/free/v1/marine.ashx?key=d7pesx54engabthjcznhanfa&format=json&q=";
 
 		var app = angular.module("noSurf", []);
 		
@@ -80,10 +90,10 @@
 					if(praia != null){
 						$http({
 							method: "GET",
-							url: "http://api.openweathermap.org/data/2.5/weather?lat=" + praia.lat +"&lon=" + praia.lon +"&appid=51cb531a971ca10554a6ae517b90efe6"
+							url: urlBase+ "marine.ashx?key=d7pesx54engabthjcznhanfa&format=json&q=" + praia.lat +"," + praia.lon
 						}).then(function(data){
-							//console.log(data);
-							$scope.result = data.data;
+							console.log(data);
+							$scope.result = data.data.data;
 
 						},function(data){
 							console.log("ERROR");
@@ -125,9 +135,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<table class="table">
-						<tr ng-repeat="(key,value) in result">
-							<td>{{key | uppercase}}</td>
-							<td>{{value}}</td>
+						<tr >
+							<td>Teperatura</td>
+							<td>{{result.weather[0].hourly[0].tempC}}</td>
 						</tr>
 					</table>
 				</div>
