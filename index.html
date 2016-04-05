@@ -177,8 +177,7 @@
 
 					resultMarine.weather.forEach(function(elem, index, arr){
 						if(index == $scope.indexDate){
-
-
+							console.log(elem);
 							elem.hourly.filter(function(elem2){
 								$scope.dataChart.push(parseFloat(elem2.swellHeight_m));
 								$scope.tmpLabel.push($filter('toHour')(elem2.time));
@@ -214,29 +213,24 @@
 <body ng-controller="noSurfCtrl">
 	<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-12">
-					<ul class="list-group list-inline">
-						<li class="list-group-item">
+				<div class="col-md-4 col-sm-4">
 						
 							<select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
 								<option value="">Selecione o Estado</option>
 							</select>
-						</li>
-						<li class="list-group-item">
-						
+				</div>
+				<div class="col-md-4 col-sm-4">
 							<select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
 								<option value="">Selecione o Cidade</option>
 							</select>
-						</li>
-						<li class="list-group-item">
-						
+				</div>	
+				<div class="col-md-4 col-sm-4">
 							<select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
 								<option value="">Selecione o Praias</option>
 							</select>
-						</li>
-
-					</ul>
-				</div>
+				</div>	
+				<hr />
+				<br />
 			</div>
 
 			<div class="row">
@@ -244,6 +238,7 @@
 					<button class="btn btn-primary" ng-click="modDate(-1)">Prev</button>
 				</div>
 				<div class="col-md-10">
+					 <p class="text-center">{{now}}</p>
 					 <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}"></canvas> 
 				</div>
 				<div class="col-md-1">
