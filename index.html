@@ -56,6 +56,9 @@
 			}
 	</style>	
 	<script type="text/javascript" src="resources/lib/angular/angular.js"></script>
+
+	<script type="text/javascript" src="angular-locale_pt-br.js"></script>
+	
 	<script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
 
 	<script src="resources/lib/Chart.js/Chart.js"></script>	
@@ -141,7 +144,6 @@
 							method: "GET",
 							url: urlBase+ "marine.ashx?key="+key+"&lang=pt&tide=yes&format=json&q=" + praia.lat +"," + praia.lon
 						}).then(function(data){
-							console.log(data);
 							$scope.resultMarine = data.data.data;
 							$scope.carregaChart($scope.resultMarine);
 
@@ -154,9 +156,8 @@
 							method: "GET",
 							url: urlBase+ "weather.ashx?key="+key+"&lang=pt&showmap=yes&format=json&q=" + praia.lat +"," + praia.lon
 						}).then(function(data){
-							console.log(data);
 							$scope.resultWeather = data.data.data;
-
+							$scope.carregaAtual();
 						},function(data){
 							console.log("ERROR");
 							console.log(data);
@@ -177,7 +178,7 @@
 
 					resultMarine.weather.forEach(function(elem, index, arr){
 						if(index == $scope.indexDate){
-							console.log(elem);
+							$scope.now = elem.date;
 							elem.hourly.filter(function(elem2){
 								$scope.dataChart.push(parseFloat(elem2.swellHeight_m));
 								$scope.tmpLabel.push($filter('toHour')(elem2.time));
@@ -191,8 +192,6 @@
 					$scope.data[0] = $scope.dataChart;
 
 
-					console.log($scope.data);
-					console.log($scope.labels);
 					
 				};
 
@@ -205,14 +204,28 @@
 					}
 				};
 				  
-
+				$scope.carregaAtual = function(){
+					var a = [00,03,06,09,12,15,18,21];
+					d = new Date();
+					var atual = 0;
+					a = a.forEach(function(elem, index, arr){
+						if(d.getHours() >= 21){
+							atual = index;
+						}else  if(d.getHours() < elem){
+							atual = index-1;
+						}
+					});
+					$scope.atualMarine = $scope.resultMarine.weather[0].hourly[atual];
+					$scope.atualWeather = $scope.resultWeather.weather[0].hourly[atual];
+					console.log($scope.atualMarine);
+				};
 		});
 	</script>
 
 </head>
 <body ng-controller="noSurfCtrl">
 	<div class="container-fluid">
-		
+
 			<div class="row">
 				<div class="col-md-4 col-sm-4">
 						
@@ -239,7 +252,8 @@
 					<button class="btn btn-primary" ng-click="modDate(-1)">Prev</button>
 				</div>
 				<div class="col-md-10">
-					 <p class="text-center">{{now}}</p>
+					 <p class="text-center">{{now | date:'EEEE'}}</p>
+
 					 <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}"></canvas> 
 				</div>
 				<div class="col-md-1">
@@ -259,12 +273,12 @@
 							<td>Direção</td>
 						</tr>
 						<tr>
-							<td>{{resultMarine.weather[0].hourly[0].swellHeight_m}}</td>
-							<td>{{resultMarine.weather[0].hourly[0].swellDir}}</td>
-							<td>{{resultMarine.weather[0].hourly[0].swellPeriod_secs}}</td>
-							<td>{{resultMarine.weather[0].hourly[0].WindGustKmph}}</td>
-							<td>{{resultMarine.weather[0].hourly[0].WindChillC}}</td>
-							<td>{{resultMarine.weather[0].hourly[0].swellDir16Point}}</td>
+							<td>{{atualMarine.swellHeight_m}}</td>
+							<td>{{atualMarine.swellDir}}</td>
+							<td>{{atualMarine.swellPeriod_secs}}</td>
+							<td>{{atualMarine.WindGustKmph}}</td>
+							<td>{{atualMarine.WindChillC}}</td>
+							<td>{{atualMarine.swellDir16Point}}</td>
 						</tr>
 
 						<tr>
@@ -280,9 +294,9 @@
 							<td>Lua</td>
 						</tr>
 						<tr>
-							<td>{{resultMarine.weather[0].hourly[0].tempC}}</td>
-							<td>{{resultWeather.weather[0].hourly[0].chanceofrain}}%</td>
-							<td>{{resultWeather.weather[0].hourly[0].precipMM}}mm</td>
+							<td>{{atualMarine.tempC}}</td>
+							<td>{{atualWeather.chanceofrain}}%</td>
+							<td>{{atualWeather.precipMM}}mm</td>
 							<td>{{resultMarine.weather[0].astronomy[0].sunrise}}</td>
 							<td>{{resultMarine.weather[0].astronomy[0].sunset}}</td>
 							<td></td>
@@ -327,11 +341,11 @@
 							<td ng-repeat="item in resultMarine.weather">
 								<table class="table-center">
 									<tr>
-										<td colspan="8">{{item.date}}</td>
+										<td colspan="8">{{item.date | date:'EEEE'}}</td>
 									</tr>
 									<tr>
 										<td ng-repeat="item2 in item.hourly">
-											{{item2.time}}
+											{{item2.time | toHour}}
 										</td>
 									</tr>
 									<tr>
