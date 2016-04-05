@@ -1,0 +1,1533 @@
+var praias = [{
+    'id_cidade': 56,
+    'praias': [{
+        "id": 718,
+        "lat": -23.7612,
+        "link": "surf\/ondas\/sao-paulo\/bertioga\/boraceia-(passarela)",
+        "lon": -45.8636,
+        "name": "Boracéia (Passarela)",
+        "tideId": "50225"
+    }, {
+        "id": 720,
+        "lat": -23.839,
+        "link": "surf\/ondas\/sao-paulo\/bertioga\/enseada-(centro)",
+        "lon": -46.116,
+        "name": "Enseada (Centro)",
+        "tideId": "50225"
+    }, {
+        "id": 723,
+        "lat": -23.8148,
+        "link": "surf\/ondas\/sao-paulo\/bertioga\/riviera-canto-direito",
+        "lon": -46.0356,
+        "name": "Riviera (Canto Direito)",
+        "tideId": "50225"
+    }, {
+        "id": 724,
+        "lat": -23.8076,
+        "link": "surf\/ondas\/sao-paulo\/bertioga\/riviera-meio",
+        "lon": -46.0156,
+        "name": "Riviera (Meio)",
+        "tideId": "50225"
+    }, {
+        "id": 796,
+        "lat": -23.844,
+        "link": "surf\/ondas\/sao-paulo\/bertioga\/sesc",
+        "lon": -46.1225,
+        "name": "Sesc",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 106,
+    'praias': []
+}, {
+    'id_cidade': 1,
+    'praias': [{
+        "id": 726,
+        "lat": -24.006,
+        "link": "surf\/ondas\/sao-paulo\/guaruja\/asturias",
+        "lon": -46.267,
+        "name": "Astúrias",
+        "tideId": "50225"
+    }, {
+        "id": 734,
+        "lat": -24.0039,
+        "link": "surf\/ondas\/sao-paulo\/guaruja\/canal-pitangueiras",
+        "lon": -46.2642,
+        "name": "Canal Pitangueiras",
+        "tideId": "50225"
+    }, {
+        "id": 727,
+        "lat": -23.9943,
+        "link": "surf\/ondas\/sao-paulo\/guaruja\/enseada-(canto-direito)",
+        "lon": -46.2449,
+        "name": "Enseada (Canto Direito)",
+        "tideId": "50225"
+    }, {
+        "id": 729,
+        "lat": -24.0017,
+        "link": "surf\/ondas\/sao-paulo\/guaruja\/ilha-pitangueiras",
+        "lon": -46.2575,
+        "name": "Ilha Pitangueiras",
+        "tideId": "50225"
+    }, {
+        "id": 731,
+        "lat": -23.9986,
+        "link": "surf\/ondas\/sao-paulo\/guaruja\/maluf-pitangueiras",
+        "lon": -46.2518,
+        "name": "Maluf Pitangueiras",
+        "tideId": "50225"
+    }, {
+        "id": 730,
+        "lat": -24.0027,
+        "link": "surf\/ondas\/sao-paulo\/guaruja\/monduba",
+        "lon": -46.262,
+        "name": "Monduba",
+        "tideId": "50225"
+    }, {
+        "id": 735,
+        "lat": -24.015,
+        "link": "surf\/ondas\/sao-paulo\/guaruja\/tombo",
+        "lon": -46.273,
+        "name": "Tombo",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 57,
+    'praias': [{
+        "id": 736,
+        "lat": -24.738,
+        "link": "surf\/ondas\/sao-paulo\/ilha-comprida\/adriana",
+        "lon": -47.526,
+        "name": "Adriana",
+        "tideId": "50225"
+    }, {
+        "id": 737,
+        "lat": -24.74,
+        "link": "surf\/ondas\/sao-paulo\/ilha-comprida\/boqueirao-norte",
+        "lon": -47.533,
+        "name": "Boqueirão Norte",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 127,
+    'praias': null
+}, {
+    'id_cidade': 58,
+    'praias': [{
+        "id": 741,
+        "lat": -24.2004,
+        "link": "surf\/ondas\/sao-paulo\/itanhaem\/cibratel-(canto)",
+        "lon": -46.8131,
+        "name": "Cibratel (canto)",
+        "tideId": "50225"
+    }, {
+        "id": 743,
+        "lat": -24.192,
+        "link": "surf\/ondas\/sao-paulo\/itanhaem\/pescadores",
+        "lon": -46.792,
+        "name": "Pescadores",
+        "tideId": "50225"
+    }, {
+        "id": 2412,
+        "lat": -24.1848,
+        "link": "surf\/ondas\/sao-paulo\/itanhaem\/praiao\/",
+        "lon": -46.7851,
+        "name": "Praião",
+        "tideId": "50225"
+    }, {
+        "id": 747,
+        "lat": -24.196,
+        "link": "surf\/ondas\/sao-paulo\/itanhaem\/sonhos-(meio)",
+        "lon": -46.797,
+        "name": "Sonhos (Meio)",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 93,
+    'praias': [{
+        "id": 840,
+        "lat": -23.793,
+        "link": "surf\/ondas\/sao-paulo\/litoral-paulista\/special-point",
+        "lon": -45.577,
+        "name": "Special Point",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 59,
+    'praias': [{
+        "id": 749,
+        "lat": -24.1374,
+        "link": "surf\/ondas\/sao-paulo\/mongagua\/lado-direito-do-pier",
+        "lon": -46.6928,
+        "name": "Lado direito do pier",
+        "tideId": "50225"
+    }, {
+        "id": 750,
+        "lat": -24.1357,
+        "link": "surf\/ondas\/sao-paulo\/mongagua\/lado-esq-do-pier",
+        "lon": -46.6905,
+        "name": "Lado esquerdo do pier",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 60,
+    'praias': [{
+        "id": 755,
+        "lat": -24.326,
+        "link": "surf\/ondas\/sao-paulo\/peruibe\/bombeiro",
+        "lon": -46.992,
+        "name": "Bombeiro",
+        "tideId": "50225"
+    }, {
+        "id": 753,
+        "lat": -24.326,
+        "link": "surf\/ondas\/sao-paulo\/peruibe\/centro",
+        "lon": -46.992,
+        "name": "Centro",
+        "tideId": "50225"
+    }, {
+        "id": 2419,
+        "lat": -24.3699,
+        "link": "surf\/ondas\/sao-paulo\/peruibe\/guarau\/",
+        "lon": -47.0119,
+        "name": "Guaraú",
+        "tideId": "50225"
+    }, {
+        "id": 757,
+        "lat": -24.326,
+        "link": "surf\/ondas\/sao-paulo\/peruibe\/mirante",
+        "lon": -46.992,
+        "name": "Mirante",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 61,
+    'praias': []
+}, {
+    'id_cidade': 2,
+    'praias': [{
+        "id": 767,
+        "lat": -23.9718,
+        "link": "surf\/ondas\/sao-paulo\/santos\/canal-1",
+        "lon": -46.3459,
+        "name": "Canal 1",
+        "tideId": "50225"
+    }, {
+        "id": 768,
+        "lat": -23.9725,
+        "link": "surf\/ondas\/sao-paulo\/santos\/divisa",
+        "lon": -46.3552,
+        "name": "Divisa",
+        "tideId": "50225"
+    }, {
+        "id": 769,
+        "lat": -23.9716,
+        "link": "surf\/ondas\/sao-paulo\/santos\/posto-2",
+        "lon": -46.3425,
+        "name": "Posto 2",
+        "tideId": "50225"
+    }, {
+        "id": 770,
+        "lat": -23.9741,
+        "link": "surf\/ondas\/sao-paulo\/santos\/quebramar",
+        "lon": -46.3487,
+        "name": "Quebra-Mar",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 62,
+    'praias': [{
+        "id": 772,
+        "lat": -23.777,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/baleia",
+        "lon": -45.674,
+        "name": "Baleia",
+        "tideId": "50210"
+    }, {
+        "id": 1045,
+        "lat": -23.7735,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/barra-do-sahy",
+        "lon": -45.7001,
+        "name": "Barra do Sahy",
+        "tideId": "50210"
+    }, {
+        "id": 775,
+        "lat": -23.7631,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/barra-do-una-(meio)",
+        "lon": -45.7657,
+        "name": "Barra do Una (Meio)",
+        "tideId": "50210"
+    }, {
+        "id": 719,
+        "lat": -23.7602,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/boraceia-(curva)",
+        "lon": -45.8094,
+        "name": "Boracéia (Curva)",
+        "tideId": "50210"
+    }, {
+        "id": 777,
+        "lat": -23.781,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/camburi",
+        "lon": -45.651,
+        "name": "Camburi",
+        "tideId": "50210"
+    }, {
+        "id": 779,
+        "lat": -23.769,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/juquei",
+        "lon": -45.751,
+        "name": "Juquei",
+        "tideId": "50210"
+    }, {
+        "id": 781,
+        "lat": -23.7979,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/maresias",
+        "lon": -45.5791,
+        "name": "Maresias",
+        "tideId": "50210"
+    }, {
+        "id": 2418,
+        "lat": -23.7931,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/maresias-canto\/",
+        "lon": -45.5836,
+        "name": "Maresias Canto",
+        "tideId": "50210"
+    }, {
+        "id": 783,
+        "lat": -23.793,
+        "link": "surf\/ondas\/sao-paulo\/sao-sebastiao\/spe-point",
+        "lon": -45.577,
+        "name": "Special Point",
+        "tideId": "50210"
+    }]
+}, {
+    'id_cidade': 63,
+    'praias': [{
+        "id": 784,
+        "lat": -23.9728,
+        "link": "surf\/ondas\/sao-paulo\/sao-vicente\/escolinha",
+        "lon": -46.358,
+        "name": "Escolinha",
+        "tideId": "50225"
+    }, {
+        "id": 785,
+        "lat": -23.9794,
+        "link": "surf\/ondas\/sao-paulo\/sao-vicente\/porta-do-sol",
+        "lon": -46.3771,
+        "name": "Porta do Sol",
+        "tideId": "50225"
+    }, {
+        "id": 822,
+        "lat": -23.9747,
+        "link": "surf\/ondas\/sao-paulo\/sao-vicente\/teleferico",
+        "lon": -46.3615,
+        "name": "Teleférico",
+        "tideId": "50225"
+    }]
+}, {
+    'id_cidade': 64,
+    'praias': [{
+        "id": 786,
+        "lat": -23.388,
+        "link": "surf\/ondas\/sao-paulo\/ubatuba\/felix",
+        "lon": -44.968,
+        "name": "Félix",
+        "tideId": "50210"
+    }, {
+        "id": 787,
+        "lat": -23.408,
+        "link": "surf\/ondas\/sao-paulo\/ubatuba\/itamambuca",
+        "lon": -45.006,
+        "name": "Itamambuca",
+        "tideId": "50210"
+    }, {
+        "id": 788,
+        "lat": -23.469,
+        "link": "surf\/ondas\/sao-paulo\/ubatuba\/praia-grande",
+        "lon": -45.061,
+        "name": "Praia Grande",
+        "tideId": "50210"
+    }, {
+        "id": 789,
+        "lat": -23.485,
+        "link": "surf\/ondas\/sao-paulo\/ubatuba\/toninhas",
+        "lon": -45.071,
+        "name": "Toninhas",
+        "tideId": "50210"
+    }, {
+        "id": 790,
+        "lat": -23.466,
+        "link": "surf\/ondas\/sao-paulo\/ubatuba\/vermelha-do-centro",
+        "lon": -45.049,
+        "name": "Vermelha do Centro",
+        "tideId": "50210"
+    }, {
+        "id": 791,
+        "lat": -23.419,
+        "link": "surf\/ondas\/sao-paulo\/ubatuba\/vermelha-do-norte",
+        "lon": -45.035,
+        "name": "Vermelha do Norte",
+        "tideId": "50210"
+    }]
+}, {
+    'id_cidade': 126,
+    'praias': null
+}, {
+    'id_cidade': 27,
+    'praias': [{
+        "id": 575,
+        "lat": -22.95,
+        "link": "surf\/ondas\/rio-de-janeiro\/arraial-do-cabo\/chamine",
+        "lon": -42.02,
+        "name": "Chaminé",
+        "tideId": "50140"
+    }, {
+        "id": 576,
+        "lat": -22.95,
+        "link": "surf\/ondas\/rio-de-janeiro\/arraial-do-cabo\/estacionamento",
+        "lon": -42.02,
+        "name": "Estacionamento",
+        "tideId": "50140"
+    }, {
+        "id": 574,
+        "lat": -22.972,
+        "link": "surf\/ondas\/rio-de-janeiro\/arraial-do-cabo\/praia-grande",
+        "lon": -42.038,
+        "name": "Praia Grande",
+        "tideId": "50140"
+    }]
+}, {
+    'id_cidade': 28,
+    'praias': [{
+        "id": 580,
+        "lat": -22.781,
+        "link": "surf\/ondas\/rio-de-janeiro\/buzios\/geriba-(canto-direito)",
+        "lon": -41.91,
+        "name": "Geribá (Canto Direito)",
+        "tideId": "50140"
+    }, {
+        "id": 582,
+        "lat": -22.788,
+        "link": "surf\/ondas\/rio-de-janeiro\/buzios\/geriba-(meio)",
+        "lon": -41.921,
+        "name": "Geribá (Meio)",
+        "tideId": "50140"
+    }]
+}, {
+    'id_cidade': 29,
+    'praias': [{
+        "id": 588,
+        "lat": -22.86,
+        "link": "surf\/ondas\/rio-de-janeiro\/cabo-frio\/pero",
+        "lon": -42.02,
+        "name": "Pero",
+        "tideId": "50140"
+    }, {
+        "id": 587,
+        "lat": -22.886,
+        "link": "surf\/ondas\/rio-de-janeiro\/cabo-frio\/praia-do-forte",
+        "lon": -42.011,
+        "name": "Praia do Forte",
+        "tideId": "50140"
+    }]
+}, {
+    'id_cidade': 30,
+    'praias': []
+}, {
+    'id_cidade': 31,
+    'praias': [{
+        "id": 595,
+        "lat": -22.9769,
+        "link": "surf\/ondas\/rio-de-janeiro\/niteroi\/itacoatiara-(costao)",
+        "lon": -43.0312,
+        "name": "Itacoatiara (Costão)",
+        "tideId": "50140"
+    }, {
+        "id": 596,
+        "lat": -22.9757,
+        "link": "surf\/ondas\/rio-de-janeiro\/niteroi\/itacoatiara-(meio)",
+        "lon": -43.0335,
+        "name": "Itacoatiara (Meio)",
+        "tideId": "50140"
+    }, {
+        "id": 594,
+        "lat": -22.9759,
+        "link": "surf\/ondas\/rio-de-janeiro\/niteroi\/itacoatiara-(pampo)",
+        "lon": -43.0364,
+        "name": "Itacoatiara (Pampo)",
+        "tideId": "50140"
+    }]
+}, {
+    'id_cidade': 32,
+    'praias': [{
+        "id": 597,
+        "lat": -23.344,
+        "link": "surf\/ondas\/rio-de-janeiro\/parati\/cepilho",
+        "lon": -44.702,
+        "name": "Cepilho",
+        "tideId": "50210"
+    }]
+}, {
+    'id_cidade': 72,
+    'praias': []
+}, {
+    'id_cidade': 33,
+    'praias': [{
+        "id": 598,
+        "lat": -22.9899,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/arpoador",
+        "lon": -43.1925,
+        "name": "Arpoador",
+        "tideId": "50140"
+    }, {
+        "id": 600,
+        "lat": -22.9744,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/copacabana",
+        "lon": -43.1835,
+        "name": "Copacabana",
+        "tideId": "50140"
+    }, {
+        "id": 606,
+        "lat": -22.9886,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/diabo",
+        "lon": -43.1889,
+        "name": "Diabo",
+        "tideId": "50140"
+    }, {
+        "id": 601,
+        "lat": -23.053,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/grumari",
+        "lon": -43.534,
+        "name": "Grumari",
+        "tideId": "50140"
+    }, {
+        "id": 602,
+        "lat": -22.989,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/ipanema",
+        "lon": -43.208,
+        "name": "Ipanema",
+        "tideId": "50140"
+    }, {
+        "id": 603,
+        "lat": -22.99,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/leblon",
+        "lon": -43.226,
+        "name": "Leblon",
+        "tideId": "50140"
+    }, {
+        "id": 604,
+        "lat": -23.034,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/macumba",
+        "lon": -43.476,
+        "name": "Macumba",
+        "tideId": "50140"
+    }, {
+        "id": 599,
+        "lat": -23.0124,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/postinho-da-barra",
+        "lon": -43.3277,
+        "name": "Postinho da Barra",
+        "tideId": "50140"
+    }, {
+        "id": 605,
+        "lat": -23.043,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/prainha",
+        "lon": -43.505,
+        "name": "Prainha",
+        "tideId": "50140"
+    }, {
+        "id": 607,
+        "lat": -23.031,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/recreio",
+        "lon": -43.465,
+        "name": "Recreio",
+        "tideId": "50140"
+    }, {
+        "id": 608,
+        "lat": -23.0168,
+        "link": "surf\/ondas\/rio-de-janeiro\/rio-de-janeiro\/reserva",
+        "lon": -43.4048,
+        "name": "Reserva",
+        "tideId": "50140"
+    }]
+}, {
+    'id_cidade': 34,
+    'praias': [{
+        "id": 612,
+        "lat": -22.9403,
+        "link": "surf\/ondas\/rio-de-janeiro\/saquarema\/itauna",
+        "lon": -42.4777,
+        "name": "Itaúna",
+        "tideId": "50140"
+    }, {
+        "id": 613,
+        "lat": -22.936,
+        "link": "surf\/ondas\/rio-de-janeiro\/saquarema\/praia-da-vila",
+        "lon": -42.496,
+        "name": "Praia da Vila",
+        "tideId": "50140"
+    }]
+}, {
+    'id_cidade': 23,
+    'praias': [{
+        "id": 1954,
+        "lat": -25.8908,
+        "link": "surf\/ondas\/parana\/guaratuba\/direitas",
+        "lon": -48.5598,
+        "name": "Direitas",
+        "tideId": "60135"
+    }, {
+        "id": 561,
+        "lat": -25.915,
+        "link": "surf\/ondas\/parana\/guaratuba\/paraguaios",
+        "lon": -48.573,
+        "name": "Paraguaios",
+        "tideId": "60135"
+    }, {
+        "id": 562,
+        "lat": -25.915,
+        "link": "surf\/ondas\/parana\/guaratuba\/pico-de-guaratuba",
+        "lon": -48.573,
+        "name": "Pico de Guaratuba",
+        "tideId": "60135"
+    }, {
+        "id": 1955,
+        "lat": -25.8803,
+        "link": "surf\/ondas\/parana\/guaratuba\/praia-central",
+        "lon": -48.5674,
+        "name": "Praia Central",
+        "tideId": "60135"
+    }]
+}, {
+    'id_cidade': 25,
+    'praias': [{
+        "id": 570,
+        "lat": -25.5425,
+        "link": "surf\/ondas\/parana\/ilha-do-mel\/praia-de-fora",
+        "lon": -48.291,
+        "name": "Praia de Fora",
+        "tideId": "60135"
+    }, {
+        "id": 571,
+        "lat": -25.55,
+        "link": "surf\/ondas\/parana\/ilha-do-mel\/praia-grande",
+        "lon": -48.294,
+        "name": "Praia Grande",
+        "tideId": "60135"
+    }, {
+        "id": 572,
+        "lat": -25.5558,
+        "link": "surf\/ondas\/parana\/ilha-do-mel\/vo-maria",
+        "lon": -48.2984,
+        "name": "Vó Maria",
+        "tideId": "60135"
+    }]
+}, {
+    'id_cidade': 24,
+    'praias': [{
+        "id": 568,
+        "lat": -25.8263,
+        "link": "surf\/ondas\/parana\/matinhos\/brava",
+        "lon": -48.5322,
+        "name": "Brava",
+        "tideId": "60135"
+    }, {
+        "id": 569,
+        "lat": -25.8177,
+        "link": "surf\/ondas\/parana\/matinhos\/pico-de-matinhos",
+        "lon": -48.5299,
+        "name": "Pico de Matinhos",
+        "tideId": "60135"
+    }]
+}, {
+    'id_cidade': 26,
+    'praias': []
+}, {
+    'id_cidade': 123,
+    'praias': [{
+        "id": 2424,
+        "lat": -28.7163,
+        "link": "surf\/ondas\/santa-catarina\/arroio\/centro",
+        "lon": -49.0457,
+        "name": "Centro",
+        "tideId": "60250"
+    }]
+}, {
+    'id_cidade': 43,
+    'praias': [{
+        "id": 645,
+        "lat": -26.9757,
+        "link": "surf\/ondas\/santa-catarina\/balneario-camboriu\/marambaia",
+        "lon": -48.6337,
+        "name": "Marambaia",
+        "tideId": "60235"
+    }, {
+        "id": 646,
+        "lat": -26.9855,
+        "link": "surf\/ondas\/santa-catarina\/balneario-camboriu\/maxim",
+        "lon": -48.6314,
+        "name": "Maxim",
+        "tideId": "60235"
+    }]
+}, {
+    'id_cidade': 129,
+    'praias': [{
+        "id": 2415,
+        "lat": -28.8235,
+        "link": "surf\/ondas\/santa-catarina\/balneario-rincao\/plataforma-norte",
+        "lon": -49.2173,
+        "name": "Plataforma Norte",
+        "tideId": "60250"
+    }]
+}, {
+    'id_cidade': 44,
+    'praias': []
+}, {
+    'id_cidade': 45,
+    'praias': [{
+        "id": 812,
+        "lat": -26.6436,
+        "link": "surf\/ondas\/santa-catarina\/barra-velha\/costao",
+        "lon": -48.6818,
+        "name": "Costão",
+        "tideId": "60220"
+    }, {
+        "id": 652,
+        "lat": -26.635,
+        "link": "surf\/ondas\/santa-catarina\/barra-velha\/peninsula",
+        "lon": -48.671,
+        "name": "Península",
+        "tideId": "60220"
+    }]
+}, {
+    'id_cidade': 104,
+    'praias': [{
+        "id": 2311,
+        "lat": -27.1329,
+        "link": "surf\/ondas\/santa-catarina\/bombinhas\/costao-de-bombas",
+        "lon": -48.5136,
+        "name": "Costão de Bombas",
+        "tideId": "60245"
+    }, {
+        "id": 1012,
+        "lat": -27.1752,
+        "link": "surf\/ondas\/santa-catarina\/bombinhas\/mariscal-(meio)",
+        "lon": -48.4981,
+        "name": "Mariscal (Meio)",
+        "tideId": "60245"
+    }, {
+        "id": 1016,
+        "lat": -27.1752,
+        "link": "surf\/ondas\/santa-catarina\/bombinhas\/mariscal-(canto-esq)",
+        "lon": -48.4981,
+        "name": "Mariscal - Canto Esquerdo",
+        "tideId": "60245"
+    }, {
+        "id": 1013,
+        "lat": -27.1571,
+        "link": "surf\/ondas\/santa-catarina\/bombinhas\/quatro-ilhas",
+        "lon": -48.4842,
+        "name": "Quatro Ilhas",
+        "tideId": "60245"
+    }]
+}, {
+    'id_cidade': 46,
+    'praias': []
+}, {
+    'id_cidade': 47,
+    'praias': [{
+        "id": 660,
+        "lat": -27.5728,
+        "link": "surf\/ondas\/santa-catarina\/florianopolis\/barra-da-lagoa",
+        "lon": -48.4235,
+        "name": "Barra da Lagoa",
+        "tideId": "60245"
+    }, {
+        "id": 663,
+        "lat": -27.5672,
+        "link": "surf\/ondas\/santa-catarina\/florianopolis\/camping-da-barra",
+        "lon": -48.4273,
+        "name": "Camping da Barra",
+        "tideId": "60245"
+    }, {
+        "id": 665,
+        "lat": -27.4632,
+        "link": "surf\/ondas\/santa-catarina\/florianopolis\/ingleses",
+        "lon": -48.3761,
+        "name": "Ingleses",
+        "tideId": "60245"
+    }, {
+        "id": 666,
+        "lat": -27.6322,
+        "link": "surf\/ondas\/santa-catarina\/florianopolis\/joaquina",
+        "lon": -48.4488,
+        "name": "Joaquina",
+        "tideId": "60245"
+    }, {
+        "id": 669,
+        "lat": -27.4942,
+        "link": "surf\/ondas\/santa-catarina\/florianopolis\/mocambique",
+        "lon": -48.3898,
+        "name": "Moçambique",
+        "tideId": "60245"
+    }, {
+        "id": 670,
+        "lat": -27.6035,
+        "link": "surf\/ondas\/santa-catarina\/florianopolis\/mole",
+        "lon": -48.4319,
+        "name": "Mole",
+        "tideId": "60245"
+    }, {
+        "id": 671,
+        "lat": -27.6077,
+        "link": "surf\/ondas\/santa-catarina\/florianopolis\/mole-(gravata)",
+        "lon": -48.4341,
+        "name": "Mole (Gravatá)",
+        "tideId": "60245"
+    }]
+}, {
+    'id_cidade': 48,
+    'praias': [{
+        "id": 679,
+        "lat": -28.0852,
+        "link": "surf\/ondas\/santa-catarina\/garopaba\/barrinha",
+        "lon": -48.6293,
+        "name": "Barrinha",
+        "tideId": "60250"
+    }, {
+        "id": 680,
+        "lat": -28.0204,
+        "link": "surf\/ondas\/santa-catarina\/garopaba\/centro",
+        "lon": -48.6195,
+        "name": "Centro",
+        "tideId": "60250"
+    }, {
+        "id": 681,
+        "lat": -28.0765,
+        "link": "surf\/ondas\/santa-catarina\/garopaba\/ferrugem-norte",
+        "lon": -48.6245,
+        "name": "Ferrugem Norte",
+        "tideId": "60250"
+    }, {
+        "id": 682,
+        "lat": -28.0803,
+        "link": "surf\/ondas\/santa-catarina\/garopaba\/ferrugem-sul",
+        "lon": -48.6271,
+        "name": "Ferrugem Sul",
+        "tideId": "60250"
+    }, {
+        "id": 684,
+        "lat": -28.105,
+        "link": "surf\/ondas\/santa-catarina\/garopaba\/ouvidor-sul",
+        "lon": -48.634,
+        "name": "Ouvidor",
+        "tideId": "60250"
+    }, {
+        "id": 686,
+        "lat": -28.0359,
+        "link": "surf\/ondas\/santa-catarina\/garopaba\/silveira-norte",
+        "lon": -48.6035,
+        "name": "Silveira Norte",
+        "tideId": "60250"
+    }, {
+        "id": 687,
+        "lat": -28.0439,
+        "link": "surf\/ondas\/santa-catarina\/garopaba\/silveira-sul",
+        "lon": -48.6079,
+        "name": "Silveira Sul",
+        "tideId": "60250"
+    }, {
+        "id": 685,
+        "lat": -28.008,
+        "link": "surf\/ondas\/santa-catarina\/garopaba\/siriu-(sul)",
+        "lon": -48.629,
+        "name": "Siriu",
+        "tideId": "60250"
+    }]
+}, {
+    'id_cidade': 103,
+    'praias': []
+}, {
+    'id_cidade': 49,
+    'praias': [{
+        "id": 688,
+        "lat": -28.154,
+        "link": "surf\/ondas\/santa-catarina\/imbituba\/ibiraquera",
+        "lon": -48.6462,
+        "name": "Ibiraquera",
+        "tideId": "60250"
+    }, {
+        "id": 799,
+        "lat": -28.1466,
+        "link": "surf\/ondas\/santa-catarina\/imbituba\/luz",
+        "lon": -48.6421,
+        "name": "Luz",
+        "tideId": "60250"
+    }, {
+        "id": 689,
+        "lat": -28.2154,
+        "link": "surf\/ondas\/santa-catarina\/imbituba\/porto",
+        "lon": -48.6651,
+        "name": "Porto",
+        "tideId": "60250"
+    }, {
+        "id": 690,
+        "lat": -28.1872,
+        "link": "surf\/ondas\/santa-catarina\/imbituba\/ribanceira",
+        "lon": -48.6602,
+        "name": "Ribanceira",
+        "tideId": "60250"
+    }, {
+        "id": 691,
+        "lat": -28.1245,
+        "link": "surf\/ondas\/santa-catarina\/imbituba\/rosa-norte",
+        "lon": -48.6368,
+        "name": "Rosa Norte",
+        "tideId": "60250"
+    }, {
+        "id": 692,
+        "lat": -28.1343,
+        "link": "surf\/ondas\/santa-catarina\/imbituba\/rosa-sul",
+        "lon": -48.6407,
+        "name": "Rosa Sul",
+        "tideId": "60250"
+    }, {
+        "id": 693,
+        "lat": -28.2429,
+        "link": "surf\/ondas\/santa-catarina\/imbituba\/vila",
+        "lon": -48.6545,
+        "name": "Vila",
+        "tideId": "60250"
+    }]
+}, {
+    'id_cidade': 50,
+    'praias': [{
+        "id": 696,
+        "lat": -26.9469,
+        "link": "surf\/ondas\/santa-catarina\/itajai\/praia-brava",
+        "lon": -48.627,
+        "name": "Praia Brava",
+        "tideId": "60235"
+    }]
+}, {
+    'id_cidade': 98,
+    'praias': [{
+        "id": 849,
+        "lat": -27.133,
+        "link": "surf\/ondas\/santa-catarina\/itapema\/central",
+        "lon": -48.5954,
+        "name": "Central",
+        "tideId": "60235"
+    }]
+}, {
+    'id_cidade': 119,
+    'praias': [{
+        "id": 2416,
+        "lat": -26.031,
+        "link": "surf\/ondas\/santa-catarina\/itapoa\/barra-do-sai\/",
+        "lon": -48.6082,
+        "name": "Barra do Sai",
+        "tideId": "60220"
+    }]
+}, {
+    'id_cidade': 51,
+    'praias': [{
+        "id": 699,
+        "lat": -28.6097,
+        "link": "surf\/ondas\/santa-catarina\/laguna\/cardoso",
+        "lon": -48.8286,
+        "name": "Cardoso",
+        "tideId": "60250"
+    }]
+}, {
+    'id_cidade': 52,
+    'praias': [{
+        "id": 703,
+        "lat": -26.834,
+        "link": "surf\/ondas\/santa-catarina\/navegantes\/gravata",
+        "lon": -48.624,
+        "name": "Gravatá",
+        "tideId": "60235"
+    }]
+}, {
+    'id_cidade': 102,
+    'praias': []
+}, {
+    'id_cidade': 101,
+    'praias': []
+}, {
+    'id_cidade': 53,
+    'praias': [{
+        "id": 710,
+        "lat": -26.784,
+        "link": "surf\/ondas\/santa-catarina\/penha\/quilombo-(meio)",
+        "lon": -48.625,
+        "name": "Quilombo (Meio)",
+        "tideId": "60220"
+    }, {
+        "id": 709,
+        "lat": -26.771,
+        "link": "surf\/ondas\/santa-catarina\/penha\/quilombo-(pico)",
+        "lon": -48.638,
+        "name": "Quilombo (Pico)",
+        "tideId": "60220"
+    }]
+}, {
+    'id_cidade': 105,
+    'praias': []
+}, {
+    'id_cidade': 54,
+    'praias': [{
+        "id": 2423,
+        "lat": -26.3891,
+        "link": "surf\/ondas\/santa-catarina\/sao-francisco-do-sul\/praia-do-ervino\/",
+        "lon": -48.5838,
+        "name": "Praia do Ervino",
+        "tideId": "60220"
+    }, {
+        "id": 713,
+        "lat": -26.2381,
+        "link": "surf\/ondas\/santa-catarina\/sao-francisco-do-sul\/praia-grande",
+        "lon": -48.5027,
+        "name": "Praia Grande",
+        "tideId": "60220"
+    }, {
+        "id": 714,
+        "lat": -26.2308,
+        "link": "surf\/ondas\/santa-catarina\/sao-francisco-do-sul\/prainha",
+        "lon": -48.4982,
+        "name": "Prainha",
+        "tideId": "60220"
+    }]
+}, {
+    'id_cidade': 37,
+    'praias': [{
+        "id": 886,
+        "lat": -29.743,
+        "link": "surf\/ondas\/rio-grande-do-sul\/capao-da-canoa\/final-do-calcadao",
+        "lon": -50.0,
+        "name": "Final do Calçadão",
+        "tideId": "60370"
+    }, {
+        "id": 626,
+        "lat": -29.7395,
+        "link": "surf\/ondas\/rio-grande-do-sul\/capao-da-canoa\/special-point",
+        "lon": -49.9975,
+        "name": "Special Point",
+        "tideId": "60370"
+    }]
+}, {
+    'id_cidade': 38,
+    'praias': [{
+        "id": 1860,
+        "lat": -30.178,
+        "link": "surf\/ondas\/rio-grande-do-sul\/cidreira\/pier",
+        "lon": -50.1999,
+        "name": "Pier",
+        "tideId": "60370"
+    }]
+}, {
+    'id_cidade': 39,
+    'praias': [{
+        "id": 630,
+        "lat": -29.9645,
+        "link": "surf\/ondas\/rio-grande-do-sul\/imbe\/imbe",
+        "lon": -50.1109,
+        "name": "Imbé",
+        "tideId": "60370"
+    }]
+}, {
+    'id_cidade': 121,
+    'praias': []
+}, {
+    'id_cidade': 40,
+    'praias': [{
+        "id": 631,
+        "lat": -29.351,
+        "link": "surf\/ondas\/rio-grande-do-sul\/torres\/cal",
+        "lon": -49.728,
+        "name": "Cal",
+        "tideId": "60370"
+    }, {
+        "id": 633,
+        "lat": -29.321,
+        "link": "surf\/ondas\/rio-grande-do-sul\/torres\/mampituba",
+        "lon": -49.709,
+        "name": "Mampituba",
+        "tideId": "60370"
+    }, {
+        "id": 634,
+        "lat": -29.327,
+        "link": "surf\/ondas\/rio-grande-do-sul\/torres\/molhes",
+        "lon": -49.711,
+        "name": "Molhes",
+        "tideId": "60370"
+    }, {
+        "id": 636,
+        "lat": -29.344,
+        "link": "surf\/ondas\/rio-grande-do-sul\/torres\/prainha",
+        "lon": -49.724,
+        "name": "Prainha",
+        "tideId": "60370"
+    }]
+}, {
+    'id_cidade': 41,
+    'praias': [{
+        "id": 637,
+        "lat": -30.005,
+        "link": "surf\/ondas\/rio-grande-do-sul\/tramandai\/backdoor",
+        "lon": -50.129,
+        "name": "Backdoor",
+        "tideId": "60370"
+    }, {
+        "id": 2162,
+        "lat": -29.979,
+        "link": "surf\/ondas\/rio-grande-do-sul\/tramandai\/barrinha",
+        "lon": -50.1181,
+        "name": "Barrinha",
+        "tideId": "60370"
+    }, {
+        "id": 640,
+        "lat": -30.0018,
+        "link": "surf\/ondas\/rio-grande-do-sul\/tramandai\/meio",
+        "lon": -50.1264,
+        "name": "Meio",
+        "tideId": "60370"
+    }, {
+        "id": 638,
+        "lat": -30.0058,
+        "link": "surf\/ondas\/rio-grande-do-sul\/tramandai\/pier",
+        "lon": -50.127,
+        "name": "Píer",
+        "tideId": "60370"
+    }]
+}, {
+    'id_cidade': 42,
+    'praias': [{
+        "id": 641,
+        "lat": -29.7858,
+        "link": "surf\/ondas\/rio-grande-do-sul\/xangrila\/atlandida-(pier)",
+        "lon": -50.0225,
+        "name": "Atlândida (Píer)",
+        "tideId": "60370"
+    }, {
+        "id": 643,
+        "lat": -29.8135,
+        "link": "surf\/ondas\/rio-grande-do-sul\/xangrila\/xangrila",
+        "lon": -50.0371,
+        "name": "Xangri-lá",
+        "tideId": "60370"
+    }]
+}, {
+    'id_cidade': 13,
+    'praias': []
+}, {
+    'id_cidade': 14,
+    'praias': [{
+        "id": 494,
+        "lat": -20.5396,
+        "link": "surf\/ondas\/espirito-santo\/guarapari\/ule",
+        "lon": -40.3776,
+        "name": "Ulé",
+        "tideId": "40255"
+    }]
+}, {
+    'id_cidade': 15,
+    'praias': []
+}, {
+    'id_cidade': 16,
+    'praias': [{
+        "id": 499,
+        "lat": -20.31,
+        "link": "surf\/ondas\/espirito-santo\/serra\/amigao",
+        "lon": -40.28,
+        "name": "Amigão",
+        "tideId": "40255"
+    }, {
+        "id": 501,
+        "lat": -20.31,
+        "link": "surf\/ondas\/espirito-santo\/serra\/barrote",
+        "lon": -40.28,
+        "name": "Barrote",
+        "tideId": "40255"
+    }, {
+        "id": 508,
+        "lat": -20.31,
+        "link": "surf\/ondas\/espirito-santo\/serra\/solemar",
+        "lon": -40.28,
+        "name": "Solemar",
+        "tideId": "40255"
+    }]
+}, {
+    'id_cidade': 17,
+    'praias': []
+}, {
+    'id_cidade': 132,
+    'praias': null
+}, {
+    'id_cidade': 107,
+    'praias': []
+}, {
+    'id_cidade': 95,
+    'praias': []
+}, {
+    'id_cidade': 5,
+    'praias': []
+}, {
+    'id_cidade': 10,
+    'praias': []
+}, {
+    'id_cidade': 7,
+    'praias': []
+}, {
+    'id_cidade': 8,
+    'praias': [{
+        "id": 436,
+        "lat": -14.289,
+        "link": "surf\/ondas\/bahia\/itacare\/tiririca",
+        "lon": -38.983,
+        "name": "Tiririca",
+        "tideId": "40145"
+    }]
+}, {
+    'id_cidade': 131,
+    'praias': [{
+        "id": 456,
+        "lat": -12.9008,
+        "link": "surf\/ondas\/bahia\/salvador\/villas-do-atlantico",
+        "lon": -38.2937,
+        "name": "Villas do Atlântico",
+        "tideId": "40140"
+    }]
+}, {
+    'id_cidade': 6,
+    'praias': []
+}, {
+    'id_cidade': 9,
+    'praias': [{
+        "id": 437,
+        "lat": -12.928,
+        "link": "surf\/ondas\/bahia\/salvador\/aleluia",
+        "lon": -38.316,
+        "name": "Aleluia",
+        "tideId": "40140"
+    }, {
+        "id": 438,
+        "lat": -13.011,
+        "link": "surf\/ondas\/bahia\/salvador\/barravento",
+        "lon": -38.525,
+        "name": "Barravento",
+        "tideId": "40140"
+    }, {
+        "id": 441,
+        "lat": -13.006,
+        "link": "surf\/ondas\/bahia\/salvador\/espanhol",
+        "lon": -38.533,
+        "name": "Espanhol",
+        "tideId": "40140"
+    }, {
+        "id": 442,
+        "lat": -13.011,
+        "link": "surf\/ondas\/bahia\/salvador\/farol-da-barra",
+        "lon": -38.525,
+        "name": "Farol da Barra",
+        "tideId": "40140"
+    }, {
+        "id": 1969,
+        "lat": -13.0111,
+        "link": "surf\/ondas\/bahia\/salvador\/paciencia",
+        "lon": -38.497,
+        "name": "Paciência",
+        "tideId": "40140"
+    }, {
+        "id": 448,
+        "lat": -13.011,
+        "link": "surf\/ondas\/bahia\/salvador\/praia-da-onda",
+        "lon": -38.525,
+        "name": "Praia da Onda",
+        "tideId": "40140"
+    }, {
+        "id": 453,
+        "lat": -12.936,
+        "link": "surf\/ondas\/bahia\/salvador\/stella",
+        "lon": -38.326,
+        "name": "Stella",
+        "tideId": "40140"
+    }, {
+        "id": 455,
+        "lat": -13.012,
+        "link": "surf\/ondas\/bahia\/salvador\/tonys",
+        "lon": -38.508,
+        "name": "Tonys",
+        "tideId": "40140"
+    }, {
+        "id": 1968,
+        "lat": -13.0137,
+        "link": "surf\/ondas\/bahia\/salvador\/torrefacao",
+        "lon": -38.4911,
+        "name": "Torrefação",
+        "tideId": "40140"
+    }]
+}, {
+    'id_cidade': 124,
+    'praias': null
+}, {
+    'id_cidade': 4,
+    'praias': []
+}, {
+    'id_cidade': 3,
+    'praias': [{
+        "id": 1881,
+        "lat": -9.77749,
+        "link": "surf\/ondas\/alagoas\/marechal-deodoro\/coqueiral",
+        "lon": -35.8467,
+        "name": "Coqueiral",
+        "tideId": "30725"
+    }, {
+        "id": 402,
+        "lat": -9.736,
+        "link": "surf\/ondas\/alagoas\/marechal-deodoro\/fortunato",
+        "lon": -35.814,
+        "name": "Fortunato",
+        "tideId": "30725"
+    }, {
+        "id": 403,
+        "lat": -9.736,
+        "link": "surf\/ondas\/alagoas\/marechal-deodoro\/leprosario",
+        "lon": -35.814,
+        "name": "Leprosário",
+        "tideId": "30725"
+    }]
+}, {
+    'id_cidade': 120,
+    'praias': []
+}, {
+    'id_cidade': 118,
+    'praias': []
+}, {
+    'id_cidade': 115,
+    'praias': []
+}, {
+    'id_cidade': 116,
+    'praias': []
+}, {
+    'id_cidade': 11,
+    'praias': [{
+        "id": 463,
+        "lat": -3.68622,
+        "link": "surf\/ondas\/ceara\/caucaia\/icarai",
+        "lon": -38.6341,
+        "name": "Icaraí",
+        "tideId": "30340"
+    }]
+}, {
+    'id_cidade': 125,
+    'praias': null
+}, {
+    'id_cidade': 12,
+    'praias': [{
+        "id": 472,
+        "lat": -3.753,
+        "link": "surf\/ondas\/ceara\/fortaleza\/portao",
+        "lon": -38.441,
+        "name": "Portão",
+        "tideId": "30340"
+    }, {
+        "id": 466,
+        "lat": -3.753,
+        "link": "surf\/ondas\/ceara\/fortaleza\/praia-do-futuro",
+        "lon": -38.441,
+        "name": "Praia do Futuro",
+        "tideId": "30340"
+    }, {
+        "id": 2136,
+        "lat": -3.70864,
+        "link": "surf\/ondas\/ceara\/fortaleza\/praia-do-vizinho",
+        "lon": -38.4618,
+        "name": "Praia do Vizinho",
+        "tideId": "30340"
+    }, {
+        "id": 473,
+        "lat": -3.70696,
+        "link": "surf\/ondas\/ceara\/fortaleza\/titanzinho",
+        "lon": -38.4675,
+        "name": "Titanzinho",
+        "tideId": "30340"
+    }]
+}, {
+    'id_cidade': 117,
+    'praias': []
+}, {
+    'id_cidade': 130,
+    'praias': []
+}, {
+    'id_cidade': 18,
+    'praias': [{
+        "id": 530,
+        "lat": -2.498,
+        "link": "surf\/ondas\/maranhao\/sao-luis\/ponta-dareia",
+        "lon": -44.318,
+        "name": "Ponta D'Areia",
+        "tideId": "30120"
+    }, {
+        "id": 531,
+        "lat": -2.487,
+        "link": "surf\/ondas\/maranhao\/sao-luis\/sao-marcos",
+        "lon": -44.292,
+        "name": "São Marcos",
+        "tideId": "30120"
+    }]
+}, {
+    'id_cidade': 19,
+    'praias': [{
+        "id": 534,
+        "lat": -0.595103,
+        "link": "surf\/ondas\/para\/salinas\/atalaia",
+        "lon": -47.3015,
+        "name": "Atalaia",
+        "tideId": "20520"
+    }, {
+        "id": 535,
+        "lat": -0.593357,
+        "link": "surf\/ondas\/para\/salinas\/farol-velho",
+        "lon": -47.3249,
+        "name": "Farol velho",
+        "tideId": "20520"
+    }]
+}, {
+    'id_cidade': 20,
+    'praias': [{
+        "id": 537,
+        "lat": -7.089,
+        "link": "surf\/ondas\/paraiba\/cabedelo\/mar-dos-macacos",
+        "lon": -34.831,
+        "name": "Mar dos Macacos",
+        "tideId": "30540"
+    }]
+}, {
+    'id_cidade': 21,
+    'praias': [{
+        "id": 539,
+        "lat": -7.063,
+        "link": "surf\/ondas\/paraiba\/joao-pessoa\/bessa",
+        "lon": -34.839,
+        "name": "Bessa",
+        "tideId": "30540"
+    }]
+}, {
+    'id_cidade': 22,
+    'praias': []
+}, {
+    'id_cidade': 84,
+    'praias': [{
+        "id": 912,
+        "lat": -8.46628,
+        "link": "surf\/ondas\/pernambuco\/ipojuca\/cupe",
+        "lon": -34.9881,
+        "name": "Cupe",
+        "tideId": "30645"
+    }, {
+        "id": 815,
+        "lat": -8.52631,
+        "link": "surf\/ondas\/pernambuco\/ipojuca\/maracaipe",
+        "lon": -35.0074,
+        "name": "Maracaípe",
+        "tideId": "30645"
+    }]
+}, {
+    'id_cidade': 90,
+    'praias': [{
+        "id": 845,
+        "lat": -5.792,
+        "link": "surf\/ondas\/rio-grande-do-norte\/baia-formosa\/mar-aberto",
+        "lon": -35.185,
+        "name": "Mar Aberto",
+        "tideId": "30540"
+    }, {
+        "id": 830,
+        "lat": -5.792,
+        "link": "surf\/ondas\/rio-grande-do-norte\/baia-formosa\/pontal",
+        "lon": -35.185,
+        "name": "Pontal",
+        "tideId": "30540"
+    }, {
+        "id": 831,
+        "lat": -5.792,
+        "link": "surf\/ondas\/rio-grande-do-norte\/baia-formosa\/porto",
+        "lon": -35.185,
+        "name": "Porto",
+        "tideId": "30540"
+    }]
+}, {
+    'id_cidade': 35,
+    'praias': [{
+        "id": 614,
+        "lat": -5.792,
+        "link": "surf\/ondas\/rio-grande-do-norte\/natal\/artistas",
+        "lon": -35.185,
+        "name": "Artistas",
+        "tideId": "30540"
+    }, {
+        "id": 616,
+        "lat": -5.792,
+        "link": "surf\/ondas\/rio-grande-do-norte\/natal\/astral",
+        "lon": -35.185,
+        "name": "Astral",
+        "tideId": "30540"
+    }, {
+        "id": 2411,
+        "lat": -5.87646,
+        "link": "surf\/ondas\/rio-grande-do-norte\/natal\/escadaria\/",
+        "lon": -35.1754,
+        "name": "Escadaria",
+        "tideId": "30540"
+    }, {
+        "id": 804,
+        "lat": -5.792,
+        "link": "surf\/ondas\/rio-grande-do-norte\/natal\/manary",
+        "lon": -35.185,
+        "name": "Manary",
+        "tideId": "30540"
+    }, {
+        "id": 1819,
+        "lat": -5.79218,
+        "link": "surf\/ondas\/rio-grande-do-norte\/natal\/miami",
+        "lon": -35.1853,
+        "name": "Miami",
+        "tideId": "30540"
+    }, {
+        "id": 619,
+        "lat": -5.879,
+        "link": "surf\/ondas\/rio-grande-do-norte\/natal\/posto-b",
+        "lon": -35.167,
+        "name": "Posto B",
+        "tideId": "30540"
+    }, {
+        "id": 805,
+        "lat": -5.792,
+        "link": "surf\/ondas\/rio-grande-do-norte\/natal\/sesc",
+        "lon": -35.185,
+        "name": "Sesc",
+        "tideId": "30540"
+    }, {
+        "id": 621,
+        "lat": -6.04616,
+        "link": "surf\/ondas\/rio-grande-do-norte\/natal\/tabatinga",
+        "lon": -35.1087,
+        "name": "Tabatinga",
+        "tideId": "30540"
+    }]
+}, {
+    'id_cidade': 36,
+    'praias': []
+}, {
+    'id_cidade': 55,
+    'praias': [{
+        "id": 716,
+        "lat": -10.967,
+        "link": "surf\/ondas\/sergipe\/aracaju\/havaizinho",
+        "lon": -37.026,
+        "name": "Havaizinho",
+        "tideId": "30810"
+    }]
+}, ]
