@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html ng-app="noSurf">
 <!--
 	API Key
@@ -35,21 +35,24 @@
 	<meta charset="UTF-8" /> 
 	<link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="resources/lib/angular-chart.js/dist/angular-chart.css">
+	<link rel="stylesheet" href="resources/lib/jquery-ui/themes/base/accordion.css">
+	<link rel="stylesheet" href="resources/lib/jquery-ui/themes/black-tie/jquery-ui.css">
 
 
 	<style type="text/css">
 
 			.table-right td{
 				text-align: right;
-				padding: 0.3em;
+				padding: 0.2em;
 			}
-			.table-center{
-				border: solid 1px red;
+			.table-center table{
+				border: solid black 1px;				
 
 			}
-			 .table-center td{
+		 .table-center td{
 				text-align: center;
-				padding: 0.3em;
+				padding: 0.1em;
+				font-size: 0.8em;
 			}
 			.scroll{
 				overflow: auto;
@@ -60,6 +63,7 @@
 	<script type="text/javascript" src="angular-locale_pt-br.js"></script>
 	
 	<script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="resources/lib/jquery-ui/jquery-ui.js"></script>
 
 	<script src="resources/lib/Chart.js/Chart.js"></script>	
 	<script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
@@ -76,6 +80,8 @@
 		var urlBase = "http://api.worldweatheronline.com/premium/v1/";
 		var url = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=f2ae69adff674902a3c13610160504&format=json&q=";
 		var key = "f2ae69adff674902a3c13610160504";
+		
+		
 
 		var app = angular.module("noSurf", ['chart.js']);
 		
@@ -83,20 +89,26 @@
 			return function(input){
 				
 				if(input.length == 4){
-					input = input.substring(0,2) + "h" + input.substring(2);
+					input = input.substring(0,2) + "h";
 				}
 				if(input.length == 3){
-					input = "0" + input.substring(0,1) + "h" + input.substring(1);
+					input = "0" + input.substring(0,1) + "h";
 				}
 
 				if(input.length == 1){
-					input = "00" +	 "h" + "00";
+					input = "00" +	 "h";
 				}
 				return input;
 			};
 
 		});
 
+
+		app.filter('compassDeg', function(){
+			return function(input){
+
+			}
+		});
 		app.controller("noSurfCtrl", function($scope, $http, $filter){
 				$scope.estados = estados;
 				$scope.cidades = cidades;
@@ -136,7 +148,7 @@
 				};
 
 				$scope.carregaWeather = function(praia){
-					console.log(praia);
+					// console.log(praia);
 					if(praia != null){
 						
 						//weather.ashx?q=
@@ -146,13 +158,11 @@
 						}).then(function(data){
 							$scope.resultMarine = data.data.data;
 							$scope.carregaChart($scope.resultMarine);
+							console.log($scope.resultMarine);
+							
 
-						},function(data){
-							console.log("ERROR");
-							console.log(data);
-						});
 
-						$http({
+							$http({
 							method: "GET",
 							url: urlBase+ "weather.ashx?key="+key+"&lang=pt&showmap=yes&format=json&q=" + praia.lat +"," + praia.lon
 						}).then(function(data){
@@ -162,6 +172,23 @@
 							console.log("ERROR");
 							console.log(data);
 						});
+
+
+
+
+
+
+
+
+
+
+
+						},function(data){
+							console.log("ERROR");
+							console.log(data);
+						});
+
+						
 
 					}
 				};
@@ -218,205 +245,141 @@
 					});
 					$scope.atualMarine = $scope.resultMarine.weather[0].hourly[atual];
 					$scope.atualWeather = $scope.resultWeather.weather[0].hourly[atual];
-					console.log($scope.atualMarine);
+					
 				};
+
+
 		});
 	</script>
 
 </head>
 <body ng-controller="noSurfCtrl">
-	<div class="container-fluid">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-4 col-sm-4">
+            <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
+               <option value="">Selecione o Estado</option>
+            </select>
+         </div>
+         <div class="col-md-4 col-sm-4">
+            <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
+               <option value="">Selecione o Cidade</option>
+            </select>
+         </div>
+         <div class="col-md-4 col-sm-4">
+            <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
+               <option value="">Selecione o Praias</option>
+            </select>
+         </div>
+         <hr />
+         <br />
+      </div>
+      <div class="row" >
+         <div class="col-md-1">
+            <button class="btn btn-primary" ng-click="modDate(-1)">Prev</button>
+         </div>
+         <div class="col-md-10">
+            <p class="text-center">{{now | date:'EEEE' | uppercase}}</p>
+            <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}"></canvas>
+         </div>
+         <div class="col-md-1">
+            <button class="btn btn-primary" ng-click="modDate(1)">Next</button>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6 table-responsive">
+            <table class="table ">
+               <tr>
+                  <td>Tamanho</td>
+                  <td>{{atualMarine.swellHeight_m}}</td>
+              	</tr>
+              	  <td>Direção</td>
+              	  <td>{{atualMarine.swellDir}}</td>
+          	  	</tr>
+                  <td>Periodo</td>
+                  <td>{{atualMarine.swellPeriod_secs}}</td>
+              	</tr>
+                  <td>Potencia</td>
+                   <td>{{atualMarine.WindGustKmph}}</td>
+              	</tr>
+                  <td>Vento</td>
+                  <td>{{atualMarine.WindChillC}}</td>
+              	</tr>
+                  <td>Direção</td>
+                  <td>{{atualMarine.swellDir16Point}}</td>
+				</tr>
+                  
+                  
+               
+               <tr>
+					<td>Temperatura</td>
+					<td>{{atualMarine.tempC}}</td>
+				</tr>
+				<tr>
+					<td>Probabilidade</td>
+					<td>{{atualWeather.chanceofrain}}%</td>
+</tr>
+<tr>
+					<td>Chuva</td>
+					<td>{{atualWeather.precipMM}}mm</td>
+</tr>
+<tr>
+					<td>Nascer</td>
+					<td>{{resultMarine.weather[0].astronomy[0].sunrise}}</td>
+</tr>
+<tr>
+					<td>Pôr do Sol</td>
+					<td>{{resultMarine.weather[0].astronomy[0].sunset}}</td>	
+</tr>
+<tr>
+					<td>Lua</td>
+					<td></td>
+               </tr>
+               
+            </table>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-6"  ng-repeat="item in resultMarine.weather">
+            <table class="table-center table-responsive">
+               <tr>
+                  <td colspan="7">{{item.date | date:'EEEE'}}</td>
+               </tr>
+               <tr>
+                  <td ng-repeat="item2 in item.hourly">{{item2.time | toHour}}</td>
+               </tr>
+               <tr>
+                  <td  ng-repeat="item2 in item.hourly">
+                  	<span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
+                  </td>
+               </tr>
+               <tr>
+                  <td ng-repeat="item2 in item.hourly">{{item2.swellHeight_m}}</td>
+               </tr>
+               <tr>
+                  <td ng-repeat="item2 in item.hourly">{{item2.swellPeriod_secs}}</td>
+               </tr>
+               <tr>
+                  <td ng-repeat="item2 in item.hourly">
 
-			<div class="row">
-				<div class="col-md-4 col-sm-4">
-						
-							<select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
-								<option value="">Selecione o Estado</option>
-							</select>
-				</div>
-				<div class="col-md-4 col-sm-4">
-							<select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
-								<option value="">Selecione o Cidade</option>
-							</select>
-				</div>	
-				<div class="col-md-4 col-sm-4">
-							<select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
-								<option value="">Selecione o Praias</option>
-							</select>
-				</div>	
-				<hr />
-				<br />
-			</div>
-
-			<div class="row">
-				<div class="col-md-1">
-					<button class="btn btn-primary" ng-click="modDate(-1)">Prev</button>
-				</div>
-				<div class="col-md-10">
-					 <p class="text-center">{{now | date:'EEEE' | uppercase}}</p>
-
-					 <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}"></canvas> 
-				</div>
-				<div class="col-md-1">
-					<button class="btn btn-primary" ng-click="modDate(1)">Next</button>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-6 table-responsive">
-					<table class="table ">
-						<tr>
-							<td>Tamanho</td>
-							<td>Direção</td>
-							<td>Periodo</td>
-							<td>Potencia</td>
-							<td>Vento</td>
-							<td>Direção</td>
-						</tr>
-						<tr>
-							<td>{{atualMarine.swellHeight_m}}</td>
-							<td>{{atualMarine.swellDir}}</td>
-							<td>{{atualMarine.swellPeriod_secs}}</td>
-							<td>{{atualMarine.WindGustKmph}}</td>
-							<td>{{atualMarine.WindChillC}}</td>
-							<td>{{atualMarine.swellDir16Point}}</td>
-						</tr>
-
-						<tr>
-							<td colspan="6">abc</td>
-						</tr>
-
-						<tr>
-							<td>Temperatura</td>
-							<td>Probabilidade</td>
-							<td>Chuva</td>
-							<td>Nascer</td>
-							<td>Pôr do Sol</td>
-							<td>Lua</td>
-						</tr>
-						<tr>
-							<td>{{atualMarine.tempC}}</td>
-							<td>{{atualWeather.chanceofrain}}%</td>
-							<td>{{atualWeather.precipMM}}mm</td>
-							<td>{{resultMarine.weather[0].astronomy[0].sunrise}}</td>
-							<td>{{resultMarine.weather[0].astronomy[0].sunset}}</td>
-							<td></td>
-						</tr>
-
-					</table>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 ">
-					<div class="col-md-2 col-sm-2">
-
-						<table class="table-right">
-									<tr>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td>Horário</td>
-									</tr>
-									<tr>
-										<td>Direção da Onda</td>
-									</tr>
-									<tr>
-										<td>Tamanho(m)</td>
-									</tr>
-									<tr>
-										<td>Período(seg)</td>
-									</tr>
-									<tr>
-										<td>Direção do Vento</td>
-									</tr>
-									<tr>
-										<td>Velocidade(km/h)</td>
-									</tr>
-									<tr>
-										<td>Potência</td>
-									</tr>
-
-								</table>
-					</div>
-					<div class="col-md-10 col-sm-10 table-responsive">
-					<table>
-						<tr >
-							<td>
-								<!-- <table class="table-right">
-									<tr>
-										<td>&nbsp;</td>
-									</tr>
-									<tr>
-										<td>Horário</td>
-									</tr>
-									<tr>
-										<td>Direção da Onda</td>
-									</tr>
-									<tr>
-										<td>Tamanho(m)</td>
-									</tr>
-									<tr>
-										<td>Período(seg)</td>
-									</tr>
-									<tr>
-										<td>Direção do Vento</td>
-									</tr>
-									<tr>
-										<td>Velocidade(km/h)</td>
-									</tr>
-									<tr>
-										<td>Potência</td>
-									</tr>
-
-								</table> -->
-							</td>
-							<td ng-repeat="item in resultMarine.weather">
-								<table class="table-center">
-									<tr>
-										<td colspan="8">{{item.date | date:'EEEE'}}</td>
-									</tr>
-									<tr>
-										<td ng-repeat="item2 in item.hourly">
-											{{item2.time | toHour}}
-										</td>
-									</tr>
-									<tr>
-										<td ng-repeat="item2 in item.hourly">
-											{{item2.swellDir16Point}}
-										</td>
-									</tr>
-									<tr>
-										<td ng-repeat="item2 in item.hourly">
-											{{item2.swellHeight_m}}
-										</td>
-									</tr>
-									<tr>
-										<td ng-repeat="item2 in item.hourly">
-											{{item2.swellPeriod_secs}}
-										</td>
-									</tr>
-									<tr>
-										<td ng-repeat="item2 in item.hourly">
-											{{item2.winddir16Point}}
-										</td>
-									</tr>
-									<tr>
-										<td ng-repeat="item2 in item.hourly">
-											{{item2.windspeedKmph}}
-										</td>
-									</tr>
-									<tr>
-										<td ng-repeat="item2 in item.hourly">
-											{{item2.WindGustKmph}}
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-					</table>
-				</div>
-				</div>
-			</div>
-	</div>
+                  	<span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
+                  	
+                  </td>
+               </tr>
+               <tr>
+                  <td ng-repeat="item2 in item.hourly">{{item2.windspeedKmph}}</td>
+               </tr>
+               <tr>
+                  <td ng-repeat="item2 in item.hourly">{{item2.WindGustKmph}}</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+         </div>
+      </div>
+   </div>
+   
 </body>
 </html>
