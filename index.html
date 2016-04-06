@@ -253,7 +253,7 @@
 					<button class="btn btn-primary" ng-click="modDate(-1)">Prev</button>
 				</div>
 				<div class="col-md-10">
-					 <p class="text-center">{{now | date:'EEEE'}}</p>
+					 <p class="text-center">{{now | date:'EEEE' | uppercase}}</p>
 
 					 <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}"></canvas> 
 				</div>
