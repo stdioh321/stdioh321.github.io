@@ -211,7 +211,8 @@
 					a = a.forEach(function(elem, index, arr){
 						if(d.getHours() >= 21){
 							atual = index;
-						}else  if(d.getHours() < elem){
+						}else 
+						if(d.getHours() < elem){
 							atual = index-1;
 						}
 					});
@@ -306,11 +307,9 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12 table-responsive">
-					<table>
-						<tr >
-							<td>
-								<table class="table-right">
+				<div class="col-md-12 ">
+					<div class="col-md-2 col-sm-2">
+						<table class="table-right">
 									<tr>
 										<td>&nbsp;</td>
 									</tr>
@@ -337,6 +336,38 @@
 									</tr>
 
 								</table>
+					</div>
+					<div class="col-md-10 col-sm-10 table-responsive">
+					<table>
+						<tr >
+							<td>
+								<!-- <table class="table-right">
+									<tr>
+										<td>&nbsp;</td>
+									</tr>
+									<tr>
+										<td>Horário</td>
+									</tr>
+									<tr>
+										<td>Direção da Onda</td>
+									</tr>
+									<tr>
+										<td>Tamanho(m)</td>
+									</tr>
+									<tr>
+										<td>Período(seg)</td>
+									</tr>
+									<tr>
+										<td>Direção do Vento</td>
+									</tr>
+									<tr>
+										<td>Velocidade(km/h)</td>
+									</tr>
+									<tr>
+										<td>Potência</td>
+									</tr>
+
+								</table> -->
 							</td>
 							<td ng-repeat="item in resultMarine.weather">
 								<table class="table-center">
@@ -382,6 +413,7 @@
 							</td>
 						</tr>
 					</table>
+				</div>
 				</div>
 			</div>
 	</div>
