@@ -241,13 +241,18 @@
 
                 };
 
-
+                $scope.limpa = function(){
+                    $scope.atualMarine = null;
+                    $scope.atualWeather = null;
+                    $scope.
+                    $scope.carregaCidade(null);
+                }
             });
         </script>
 
     </head>
     <body ng-controller="noSurfCtrl">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
 
                 <div class="col-md-4 col-sm-4">
@@ -267,11 +272,19 @@
 
 
                 </div>
+                <hr />
+                <div class="col-md-4 col-md-offset-4">
+                    <button class="btn btn-primary btn-block" ng-click="limpa()">
+                    Limpar
+                </button>
+                </div>
+                <hr />
+                <br />
                 <br />
 
                 
             </div>
-            <div class="row" >
+            <div class="row" ng-show="atualMarine">
                 <div class="col-md-1">
                     <button class="btn btn-primary" ng-click="modDate(-1)">Prev</button>
                 </div>
@@ -283,7 +296,7 @@
                     <button class="btn btn-primary" ng-click="modDate(1)">Next</button>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-show="atualMarine">
                 <div class="col-md-6 table-responsive">
 
                     <table class="table ">
@@ -347,7 +360,7 @@
                     </table>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-show="atualMarine">
                 <div class="col-md-6" ng-repeat="item in resultMarine.weather">
                     <table class="table table-center" >
                         <tr>

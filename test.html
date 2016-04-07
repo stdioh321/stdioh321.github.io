@@ -6,28 +6,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="resources/lib/slick-carousel/slick/slick.css" />
-
-
-        <style type="text/css">
-            
-        </style>
-
+        <link rel="stylesheet" type="text/css" href="resources\lib\jquery-responsive-menu\dist\css\responsive-menu.css" />
+        
         <script src="resources/lib/angular/angular.js" ></script>
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
+        <script src="resources/lib/jquery-responsive-menu/dist/js/responsive-menu.js" ></script>
 
-        <script src="resources/lib/slick-carousel/slick/slick.js" ></script>
-        <script src="resources/lib/angular-slick/dist/slick.js" ></script>
+        
 
         <script type="text/javascript">
+
+
             var app = angular.module('ang', []);
             app.controller('angCtrl', function ($scope, $interval) {
                
             });
 
+
         </script>
+       
     </head>
     <body ng-controller="angCtrl">
-        
+        <div class="rm-container">
+        <a class="rm-toggle rm-button rm-nojs" href="#">Menu</a>
+        <nav class="rm-nav rm-nojs rm-lighten">
+            <ul>
+                <li>Abc1</li>
+                <li>Abc2</li>
+                <li>Abc3</li>
+            </ul>
+        </nav>
+        </div>
+        <script type="text/javascript">
+           jQuery(function ($) {
+            var menu = $('.rm-nav').rMenu({
+
+                // Optional Settings
+
+                minWidth: '960px'
+
+            });
+            console.log("ABC");
+        });
+        </script>
     </body>
 </html>
