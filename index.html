@@ -57,9 +57,18 @@
                 font-size: 10em;
                 margin: 0 auto;
                 -webkit-animation: load linear 1s infinite;
+                -moz-animation: load linear 1s infinite;
+                animation: load linear 1s infinite;
 
             }
             @-webkit-keyframes load{
+                from    {transform: rotateZ(0deg);}
+                to      {transform: rotateZ(360deg);}
+            } 
+            @-moz-keyframes load{
+                from    {transform: rotateZ(0deg);}
+                to      {transform: rotateZ(360deg);}
+            }@keyframes load{
                 from    {transform: rotateZ(0deg);}
                 to      {transform: rotateZ(360deg);}
             }            
