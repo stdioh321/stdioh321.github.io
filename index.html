@@ -218,7 +218,7 @@
                     $scope.indexDate = 0;
                     $scope.carregaChart($scope.resultMarine);
 
-                    //console.log($scope.resultMarine);
+                    console.log($scope.resultMarine);
 
                     $http({
                         method: "GET",
@@ -337,12 +337,13 @@
 {{swipedLeft}}
 <div class="row">
    <div class="col-md-12 col-sm-12" style="position:relative; overflow: auto;">
+    <br />  
     <div>
         <button class="menu-btn btn btn-primary">
             &#9776; Menu
         </button>
     </div>
-      
+    <br />  
    </div>
    
    
@@ -356,26 +357,11 @@
 </div>
 
 <div class="row" ng-show="atualMarine">
-   <div class="col-md-12">
-      <div class="text-center">
-        {{now| date:'fullDate' | uppercase}}
-        </div>
-      <div style="overflow: auto">
-        <button class="btn btn-primary pull-left" ng-click="modDate(-1)">Prev</button>
-         
-         <button class="btn btn-primary pull-right" ng-click="modDate(1)">Next</button>
-      </div>
-      <hr />
-      <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}" height="100"></canvas>
-   </div>
-   
-</div>
-<div class="row" ng-show="atualMarine">
    <div class="col-md-6 table-responsive">
       <table class="table table-now">
          <tr>
             <td>
-               Tamanho Onda
+                Tamanho Onda
             </td>
             <td>
                {{atualMarine.swellHeight_m}}m
@@ -484,11 +470,29 @@
             </td>
             <td>
                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
+               <img src="{{atualMarine.weatherIconUrl[0].value}}" />
             </td>
          </tr>
       </table>
    </div>
 </div>
+
+<div class="row" ng-show="atualMarine">
+   <div class="col-md-12">
+      <div class="text-center">
+        {{now| date:'fullDate' | uppercase}}
+        </div>
+      <div style="overflow: auto">
+        <button class="btn btn-primary pull-left" ng-click="modDate(-1)">Prev</button>
+         
+         <button class="btn btn-primary pull-right" ng-click="modDate(1)">Next</button>
+      </div>
+      <hr />
+      <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}" height="80"></canvas>
+   </div>
+   
+</div>
+
 <div class="row" ng-show="atualMarine">
    <div class="col-md-6 table-week" ng-repeat="item in resultMarine.weather">
       <table class="table table-center">
@@ -516,6 +520,7 @@
             <td>
                <span class="glyphicon glyphicon-time" title="Potência"></span>
             </td>
+            
          </tr>
          <tr ng-repeat="item2 in item.hourly">
             <td>
@@ -536,6 +541,7 @@
             <td>
                {{item2.WindGustKmph}}
             </td>
+
          </tr>
       </table>
    </div>
