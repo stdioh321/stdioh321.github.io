@@ -35,8 +35,6 @@
         <meta charset="UTF-8" /> 
         <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="resources/lib/angular-chart.js/dist/angular-chart.css">
-        <link rel="stylesheet" href="resources/lib/jquery-ui/themes/base/accordion.css">
-        <link rel="stylesheet" href="resources/lib/jquery-ui/themes/black-tie/jquery-ui.css">
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons.css">
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons-wind.css">
         <link rel="stylesheet" type="text/css" href="resources/lib/pushy/css/pushy.css" />
@@ -105,10 +103,10 @@
         <script type="text/javascript" src="angular-locale_pt-br.js"></script>
 
         <script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
-        <script type="text/javascript" src="resources/lib/jquery-ui/jquery-ui.js"></script>
-
+        
         <script src="resources/lib/Chart.js/Chart.js"></script>	
         <script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
+        <script src="resources/lib/angular-touch/angular-touch.js"></script>
 
 
         
@@ -126,7 +124,7 @@
 
 
 
-    var app = angular.module("noSurf", ['chart.js']);
+    var app = angular.module("noSurf", ['chart.js', 'ngTouch']);
     app.filter('toHour', function() {
         return function(input) {
 
@@ -162,12 +160,15 @@
         $scope.dataChart = [];
         $scope.labels = [];
         /*########## Chart Data ########## */
+        $scope.indexDate = 0;
+        
         window.showMenu = function(){
             bt = document.getElementsByClassName('menu-btn')[0];
             bt.dispatchEvent(new MouseEvent('click'));
         };
-        
-        $scope.indexDate = 0;
+        $scope.showMenu = function(){
+            window.showMenu();
+        };
 
         $scope.carregaCidade = function(tmpEstado) {
             var tmp = false;
@@ -303,7 +304,7 @@
 </script>
 
     </head>
-    <body ng-controller="noSurfCtrl">
+    <body ng-controller="noSurfCtrl" ng-swipe-right="showMenu()">
 <nav class="pushy pushy-left">
     <ul>
         <!-- Submenu -->
@@ -332,11 +333,12 @@
 
 <div class="site-overlay"></div>
 
-<div class="container " style="position:relative">
+<div class="container" style="position:relative" >
+{{swipedLeft}}
 <div class="row">
-   <div class="col-md-4 col-sm-4">
-    <div class="menu-btn">
-        <button class="btn btn-primary">
+   <div class="col-md-12 col-sm-12" style="position:relative; overflow: auto;">
+    <div>
+        <button class="menu-btn btn btn-primary">
             &#9776; Menu
         </button>
     </div>

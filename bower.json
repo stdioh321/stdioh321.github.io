@@ -37,6 +37,7 @@
     "angular-slick": "^0.2.1",
     "responsive-menu": "^2.0.0",
     "jquery-responsive-menu": "^0.2.1",
-    "pushy": "^1.0.0"
+    "pushy": "^1.0.0",
+    "angular-touch": "^1.5.3"
   }
 }
