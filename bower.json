@@ -36,6 +36,7 @@
     "angular-carousel": "^1.0.1",
     "angular-slick": "^0.2.1",
     "responsive-menu": "^2.0.0",
-    "jquery-responsive-menu": "^0.2.1"
+    "jquery-responsive-menu": "^0.2.1",
+    "pushy": "^1.0.0"
   }
 }

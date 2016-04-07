@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="resources\lib\jquery-responsive-menu\dist\css\responsive-menu.css" />
-        
+        <link rel="stylesheet" type="text/css" href="resources/lib/pushy/css/pushy.css" />
+       
         <script src="resources/lib/angular/angular.js" ></script>
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
-        <script src="resources/lib/jquery-responsive-menu/dist/js/responsive-menu.js" ></script>
-
+        
+       
         
 
         <script type="text/javascript">
@@ -29,5 +29,42 @@
         </style>
     </head>
     <body ng-controller="angCtrl">
+<!-- Pushy Menu -->
+<nav class="pushy pushy-right">
+    <ul>
+        <!-- Submenu -->
+        <li class="pushy-submenu">
+            <a href="#">Submenu</a>
+            <ul>
+                <li class="pushy-link"><a href="#">Item 1</a></li>
+                <li class="pushy-link"><a href="#">Item 2</a></li>
+                <li class="pushy-link"><a href="#">Item 3</a></li>
+            </ul>
+        </li>
+        <li class="pushy-link"><a href="#">Item 1</a></li>
+        <li class="pushy-link"><a href="#">Item 2</a></li>
+    </ul>
+</nav>
+
+<!-- Site Overlay -->
+<div class="site-overlay">
+asd
+</div>
+
+
+
+<!-- Your Content -->
+<div id="container">
+    <!-- Menu Button -->
+    <div class="menu-btn">&#9776; Menu</div>
+</div>
+<header class="push">
+    <h1>This is a Heading</h1>
+    <h2>This is a subheading</h2>
+</header>
+    <script type="text/javascript">
+    
+    </script>
+    <script src="resources/lib/pushy/js/pushy.js" ></script>
     </body>
 </html>

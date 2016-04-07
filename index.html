@@ -39,7 +39,7 @@
         <link rel="stylesheet" href="resources/lib/jquery-ui/themes/black-tie/jquery-ui.css">
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons.css">
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons-wind.css">
-
+        <link rel="stylesheet" type="text/css" href="resources/lib/pushy/css/pushy.css" />
 
 
 
@@ -68,7 +68,12 @@
 
             }
 
+            .pushy{
 
+            }
+            .pushy > ul{
+                padding: 0;
+            }
             .loading-div > div{
                 margin-top: 3em;
             }
@@ -157,7 +162,11 @@
         $scope.dataChart = [];
         $scope.labels = [];
         /*########## Chart Data ########## */
-
+        window.showMenu = function(){
+            bt = document.getElementsByClassName('menu-btn')[0];
+            bt.dispatchEvent(new MouseEvent('click'));
+        };
+        
         $scope.indexDate = 0;
 
         $scope.carregaCidade = function(tmpEstado) {
@@ -192,12 +201,13 @@
                 $scope.objPraias = {};
             }
         };
-
+        
         $scope.carregaWeather = function(praia) {
             if (praia != null) {
 
                 $scope.loading = true;
 
+                window.showMenu();
 
                 $http({
                     method: "GET",
@@ -288,37 +298,53 @@
             $scope.atualWeather = null;
             $scope.carregaCidade(null);
         }
+        window.showMenu();
     });
 </script>
 
     </head>
     <body ng-controller="noSurfCtrl">
-<div class="container" style="position:relative">
-<div class="row">
-   <div class="col-md-4 col-sm-4">
-      <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
-         <option value="">Selecione o Estado</option>
-      </select>
-   </div>
-   <div class="col-md-4 col-sm-4">
-      <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
-         <option value="">Selecione o Cidade (Cidades: {{objCidades.length}})</option>
-      </select>
-   </div>
-   <div class="col-md-4 col-sm-4">
-      <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
-         <option value="">Selecione o Praias (Praias: {{objPraias.length}})</option>
-      </select>
-   </div>
-   <hr/>
-   <div class="col-md-4 col-md-offset-4">
-      <button class="btn btn-primary" ng-click="limpa()" style="margin:auto; display:table;">
+<nav class="pushy pushy-left">
+    <ul>
+        <!-- Submenu -->
+        <li>
+            <button class="btn btn-primary" ng-click="limpa()" style="margin:auto; display:table;">
       Limpar<span class="pull right">&#9938;</span>
       </button>
+        </li>
+        <li class="pushy-submenu">
+            <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
+             <option value="">Selecione o Estado</option>
+          </select>
+        </li>
+        <li>
+            <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
+         <option value="">Selecione o Cidade (Cidades: {{objCidades.length}})</option>
+      </select>
+        </li>
+        <li>
+             <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
+                 <option value="">Selecione o Praias (Praias: {{objPraias.length}})</option>
+              </select>
+        </li>
+    </ul>
+</nav>
+
+<div class="site-overlay"></div>
+
+<div class="container push" style="position:relative">
+<div class="row">
+   <div class="col-md-4 col-sm-4">
+    <div class="menu-btn">
+        <button class="btn btn-primary">
+            &#9776; Menu
+        </button>
+    </div>
+      
    </div>
-   <hr/>
-   <br/>
-   <br/>
+   
+   
+   
 </div>
 
 <div class="row loading-div"   ng-show="loading">
@@ -512,6 +538,9 @@
       </table>
    </div>
 </div>
-<script type="text/javascript"></script>
+<script src="resources/lib/pushy/js/pushy.js" ></script>
+<script type="text/javascript">
+
+</script>
     </body>
 </html>
