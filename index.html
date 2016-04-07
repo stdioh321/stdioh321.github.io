@@ -185,7 +185,9 @@
                             url: urlBase + "marine.ashx?key=" + key + "&lang=pt&tide=yes&format=json&q=" + praia.lat + "," + praia.lon
                         }).then(function (data) {
                             $scope.resultMarine = data.data.data;
+                            $scope.indexDate = 0;
                             $scope.carregaChart($scope.resultMarine);
+
                             console.log($scope.resultMarine);
 
 
@@ -231,6 +233,7 @@
                 $scope.carregaChart = function (resultMarine) {
                     $scope.dataChart = [];
                     $scope.tmpLabel = [];
+                    
 
                     resultMarine.weather.forEach(function (elem, index, arr) {
                         if (index == $scope.indexDate) {
@@ -294,6 +297,7 @@
                     <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
                         <option value="">Selecione o Estado</option>
                     </select>
+
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
@@ -304,13 +308,13 @@
                     <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
                         <option value="">Selecione o Praias (Praias: {{objPraias.length}})</option>
                     </select>
-
+                    
 
                 </div>
                 <hr />
                 <div class="col-md-4 col-md-offset-4">
-                    <button class="btn btn-primary btn-block" ng-click="limpa()">
-                    Limpar
+                    <button class="btn btn-primary" ng-click="limpa()"  style="margin:auto; display:table;">
+                    &#9938;
                 </button>
                 </div>
                 <hr />
