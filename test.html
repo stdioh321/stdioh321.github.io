@@ -24,30 +24,54 @@
 
 
         </script>
-       
+        <style type="text/css">
+div :nth-child(1){
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    
+    -webkit-animation: example .4s infinite reverse;
+    -moz-animation: example .4s infinite reverse;
+    
+    
+
+}
+div:nth-child(2){
+     width: 100px;
+    height: 100px;
+    background-color: blue;
+    
+    -webkit-animation: example .4s infinite;
+    -moz-animation: example .4s infinite reverse;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    from    {transform: rotateX(0deg)   rotateY(0deg)   rotateZ(0deg);  opacity: 1;}
+    to      {transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg);    opacity: 0.4;}
+    
+}
+@-moz-keyframes example {
+    from    {transform: rotateX(0deg)   rotateY(0deg)   rotateZ(0deg);  opacity: 1;}
+    to      {transform: rotateX(0deg) rotateY(0deg) rotateZ(360deg);    opacity: 0.4;}
+    
+}
+/* Standard syntax */
+/*@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}*/
+        </style>
     </head>
     <body ng-controller="angCtrl">
-        <div class="rm-container">
-        <a class="rm-toggle rm-button rm-nojs" href="#">Menu</a>
-        <nav class="rm-nav rm-nojs rm-lighten">
-            <ul>
-                <li>Abc1</li>
-                <li>Abc2</li>
-                <li>Abc3</li>
-            </ul>
-        </nav>
-        </div>
-        <script type="text/javascript">
-           jQuery(function ($) {
-            var menu = $('.rm-nav').rMenu({
+        
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
 
-                // Optional Settings
+<div>
+    <div>
+       
+    </div>
+</div>
 
-                minWidth: '960px'
-
-            });
-            console.log("ABC");
-        });
-        </script>
+<p><b>Note:</b> When an animation is finished, it changes back to its original style.</p>
     </body>
 </html>

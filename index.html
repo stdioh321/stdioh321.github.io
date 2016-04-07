@@ -49,6 +49,20 @@
 
             }
             
+            .loading-opacity{
+                opacity: 0.3;
+            }
+
+            #loading{
+                font-size: 10em;
+                margin: 0 auto;
+                -webkit-animation: load linear 1s infinite;
+
+            }
+            @-webkit-keyframes load{
+                from    {transform: rotateZ(0deg);}
+                to      {transform: rotateZ(360deg);}
+            }            
         </style>	
         <script type="text/javascript" src="resources/lib/angular/angular.js"></script>
 
@@ -77,7 +91,16 @@
 
 
             var app = angular.module("noSurf", ['chart.js']);
-
+             app.config(function ($httpProvider) {
+                //$httpProvider.responseInterceptors.push('myHttpInterceptor');
+                var spinnerFunction = function (data, headersGetter) {
+                    // todo start the spinner here
+                    //alert('start spinner');
+                    console.log("Estou aqui");
+                    return data;
+                };
+                $httpProvider.defaults.transformRequest.push(spinnerFunction);
+            });
             app.filter('toHour', function () {
                 return function (input) {
 
@@ -106,7 +129,7 @@
                 $scope.estados = estados;
                 $scope.cidades = cidades;
                 $scope.praias = praias;
-
+                $scope.loading = false;
                 $scope.carregaCidade = function (tmpEstado) {
                     var tmp = false;
                     if (tmpEstado != null) {
@@ -145,6 +168,9 @@
                     if (praia != null) {
 
                         //weather.ashx?q=
+                        $scope.loading = true;
+                        
+
                         $http({
                             method: "GET",
                             url: urlBase + "marine.ashx?key=" + key + "&lang=pt&tide=yes&format=json&q=" + praia.lat + "," + praia.lon
@@ -159,6 +185,7 @@
                                 method: "GET",
                                 url: urlBase + "weather.ashx?key=" + key + "&lang=pt&showmap=yes&format=json&q=" + praia.lat + "," + praia.lon
                             }).then(function (data) {
+                                $scope.loading = false;
                                 $scope.resultWeather = data.data.data;
                                 $scope.carregaAtual();
                             }, function (data) {
@@ -244,7 +271,6 @@
                 $scope.limpa = function(){
                     $scope.atualMarine = null;
                     $scope.atualWeather = null;
-                    $scope.
                     $scope.carregaCidade(null);
                 }
             });
@@ -252,7 +278,7 @@
 
     </head>
     <body ng-controller="noSurfCtrl">
-        <div class="container">
+        <div class="container" ng-class="{'loading-opacity':loading}">
             <div class="row">
 
                 <div class="col-md-4 col-sm-4">
@@ -284,7 +310,13 @@
 
                 
             </div>
+            <div class="row" ng-show="loading">
+                <div class="col-md-6 col-md-offset-3" >
+                         <span style="margin:auto; display:table;" class="glyphicon glyphicon-refresh " id="loading"></span>
+                </div>
+            </div>
             <div class="row" ng-show="atualMarine">
+                
                 <div class="col-md-1">
                     <button class="btn btn-primary" ng-click="modDate(-1)">Prev</button>
                 </div>
@@ -412,6 +444,7 @@
 
 
             </div>
-
+            <script type="text/javascript">
+            </script>
     </body>
 </html>
