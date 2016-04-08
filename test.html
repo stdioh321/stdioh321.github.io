@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="resources/lib/pushy/css/pushy.css" />
-       
+        
+
         <script src="resources/lib/angular/angular.js" ></script>
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
         
@@ -25,46 +25,88 @@
 
         </script>
         <style type="text/css">
-        
+            body{
+                background-color: black;
+                position: relative;
+                overflow: hidden;
+            }
+            .menu{
+                width: 300px;
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                transition: linear all .5s;
+                background-color: red;
+                
+            }
+            .conteudo{
+                transition: linear all 0.5s;
+                background-color: gray;
+
+            }
+            .conteudo * div{
+                border: solid green 1px;
+            }
+            .menu-hide{
+                //opacity: 0;
+                //transform: translate(-100px);
+                z-index: -10;
+                width: 0;
+                height: 100%;
+                opacity: 0;
+                //overflow: hidden;
+            }
+            .menu-show{
+                transform: translate(-300px);
+                z-index: 100;
+            }
+            
+
+            .conteudo-hide{
+                transform: translate(300px);
+            }
+
         </style>
+        <script type="text/javascript">
+            function myFunc(){
+                console.log("EU");
+                
+                document.getElementsByClassName('menu')[0].classList.toggle('menu-show');
+                document.getElementsByClassName('menu')[0].classList.toggle('menu-hide');
+                document.getElementsByClassName('conteudo')[0].classList.toggle('conteudo-hide');
+            }
+        </script>
     </head>
-    <body ng-controller="angCtrl">
-<!-- Pushy Menu -->
-<nav class="pushy pushy-right">
-    <ul>
-        <!-- Submenu -->
-        <li class="pushy-submenu">
-            <a href="#">Submenu</a>
-            <ul>
-                <li class="pushy-link"><a href="#">Item 1</a></li>
-                <li class="pushy-link"><a href="#">Item 2</a></li>
-                <li class="pushy-link"><a href="#">Item 3</a></li>
+    <body ng-controller="angCtrl" >
+        
+        
+        <div class="container conteudo" >
+            <nav class="menu menu-hide">
+            <ul class="list-group">
+                <li class="list-group-item">Home</li>
+                <li class="list-group-item">Contato</li>
+                <li class="list-group-item">Contato</li>
+                <li class="list-group-item">Contato</li>
+                <li class="list-group-item">Contato</li>
+                <li class="list-group-item">Contato</li>
+                <li class="list-group-item">Contato</li>
+                <li class="list-group-item">Contato</li>
             </ul>
-        </li>
-        <li class="pushy-link"><a href="#">Item 1</a></li>
-        <li class="pushy-link"><a href="#">Item 2</a></li>
-    </ul>
-</nav>
-
-<!-- Site Overlay -->
-<div class="site-overlay">
-asd
-</div>
-
-
-
-<!-- Your Content -->
-<div id="container">
-    <!-- Menu Button -->
-    <div class="menu-btn">&#9776; Menu</div>
-</div>
-<header class="push">
-    <h1>This is a Heading</h1>
-    <h2>This is a subheading</h2>
-</header>
-    <script type="text/javascript">
-    
-    </script>
-    <script src="resources/lib/pushy/js/pushy.js" ></script>
+        </nav>
+            <div class="row">
+                <div class="col-md-4">
+                    <button class="btn btn-success" style="font-size:1em;" onclick="myFunc()">&#9776;</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">asdsa</div>
+                <div class="col-md-6 col-md-offset-3">asdsa</div>
+                <div class="col-md-6 col-md-offset-3">asdsa</div>
+                <div class="col-md-6 col-md-offset-3">asdsa</div>
+                <div class="col-md-6 col-md-offset-3">asdsa</div>
+                
+            </div>
+        </div>
     </body>
 </html>
