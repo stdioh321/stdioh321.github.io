@@ -86,6 +86,84 @@
                 background-color: rgba(100,100,100,0.2);
 
             }
+
+
+            .menu{
+                position: absolute;
+                transition: linear all .5s;
+                z-index: -100;
+                top: 0;
+                left: 0;
+                width: 60%;
+            }
+            .menu-right{
+                position: absolute;
+                transition: linear all .5s;
+                z-index: -100;
+                top: 0;
+                right: 0;
+                width: 60%;
+            }
+            .menu-top{
+                position: absolute;
+                transition: linear all .5s;
+                z-index: -100;
+                top: 0;
+                left: 0;
+                height: 100px;
+            }
+            .menu-bottom{
+                position: absolute;
+                transition: linear all .5s;
+                z-index: -100;
+                bottom: 0;
+                left: 0;
+                height: 100px;
+            }
+            
+            .content{
+                transition: linear all 0.5s;
+                background-color: white;
+                position: relative;
+            }
+            .menu-hide-right{
+                width: 0;
+                overflow: hidden;
+            }
+            .menu-hide{
+                width: 0;
+                overflow: hidden;
+            }
+            .menu-show-right{
+                margin-right: -60%;
+
+            }
+            .menu-show{
+                margin-left: -60%;
+                
+            }
+            .content-hide-right{
+                transform: translate(-60%);
+
+            }
+
+            .content-hide{
+                transform: translate(60%);
+                /*margin-left: 60%;*/
+
+            }
+            
+            .content-hide > .over, .content-hide-right > .over{
+                transition: linear all .5s;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                position: absolute;
+                background-color: rgba(0,0,0,.6);
+                z-index: 10;    
+            }
+            
             @-webkit-keyframes load{
                 from    {transform: rotateZ(0deg);}
                 to      {transform: rotateZ(360deg);}
@@ -339,7 +417,7 @@
    <div class="col-md-12 col-sm-12" style="position:relative; overflow: auto;">
     <br />  
     <div>
-        <button class="menu-btn btn btn-primary" style="font-size: 2em;">
+        <button class="menu-btn btn btn-primary">
             &#9776;
         </button>
         <img src="http://cdn.worldweatheronline.net/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png" />

@@ -6,10 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css" />
-        
+        <link rel="stylesheet" type="text/css" href="resources/lib/Slidebars/dist/slidebars.css" />
+                
 
         <script src="resources/lib/angular/angular.js" ></script>
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
+        <script src="resources/lib/bootstrap/dist/js/bootstrap.js" ></script>
+
+        <script src="resources/lib/Slidebars/dist/slidebars.js" ></script>
         
        
         
@@ -19,183 +23,148 @@
 
             var app = angular.module('ang', []);
             app.controller('angCtrl', function ($scope, $interval) {
-               
+               $scope.urls = [
+                "http://www.linuxdescomplicado.com.br/wp-content/uploads/2015/02/linux-aprender-curso.png",
+                "http://www.techreviewer.co.uk/wp-content/uploads/2014/12/Linux-Is-Sick-Look-Out-For-Turla.jpg",
+                "http://www.escolahacker.com.br/wp-content/uploads/2015/10/Linux.jpg"
+               ];
+
+               $scope.add = function(u){
+                    $scope.urls.push(u);
+                    $scope.u = "";
+               }
             });
 
 
         </script>
         <style type="text/css">
-            body{
-                background-color: black;
-                position: relative;
-                overflow-x: hidden;
+            .m{
+                //border: solid red 1px;
             }
-            .menu{
-                width: 60%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                position: absolute;
-                transition: linear all .5s;
-                
+            .fx{
+                position: absolute !important;
             }
-            .conteudo{
-                transition: linear all 0.5s;
-                background-color: gray;
-                position: relative;
-
-            }
-            .conteudo * div{
-                border: solid green 1px;
-            }
-            .menu-hide{
-                //opacity: 0;
-                //transform: translate(-100px);
-                z-index: -10;
-                width: 0;
-                //height: 100%;
-                opacity: 0;
-                //overflow: hidden;
-            }
-            .menu-show{
-                /*transform: translate(-100%);*/
-                margin-left: -60%;
-                z-index: 100;
-                height: 100%;
-            }
-            
-
-            .conteudo-hide{
-                transform: translate(60%);
-            }
-
         </style>
-        <script type="text/javascript">
-            function myFunc(){
-                console.log("EU");
-                
-                document.getElementsByClassName('menu')[0].classList.toggle('menu-show');
-                document.getElementsByClassName('menu')[0].classList.toggle('menu-hide');
-                document.getElementsByClassName('conteudo')[0].classList.toggle('conteudo-hide');
-            }
-        </script>
+
     </head>
     <body ng-controller="angCtrl" >
-        
-        
-        <div class="container conteudo" >
-            <nav class="menu menu-hide">
-            <ul class="list-group">
-                <li class="list-group-item">Home</li>
-                <li class="list-group-item">Contato</li>
-                <li class="list-group-item">Contato</li>
-                <li class="list-group-item">Contato</li>
-                <li class="list-group-item">Contato</li>
-                <li class="list-group-item">Contato</li>
-                <li class="list-group-item">Contato</li>
-                <li class="list-group-item">Contato</li>
-            </ul>
-        </nav>
-            <div class="row">
-                <div class="col-md-4">
-                    <button class="btn btn-success" style="font-size:1em;" onclick="myFunc()">&#9776;</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                <div class="col-md-6 col-md-offset-3">asdsa</div>
-                
+         <div class="sb-slidebar sb-left">
+            <!-- Your left Slidebar content. -->
+            <div style="color : white">
+                <ul>
+                    <li>ABC1</li>
+                    <li>ABC2</li>
+                    <li>ABC3</li>
+                    <li>ABC4</li>
+                </ul>
             </div>
         </div>
+        <div id="sb-site">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="" class="navbar-brand"><button class="btn btn-primary toggle-left">&#9776;</button></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+  
+
+            
+            <div class="container m" style="position: relative;">
+              <h3>Fixed Navbar</h3>
+                <div class="row">
+                </div>
+        
+            </div>
+
+        
+
+        <script>
+            (function($) {
+                $(document).ready(function() {
+                    var mySlidebars = new $.slidebars(); // Create new instance of Slidebars
+                    
+                    // Event handler
+                    function eventHandler(e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                    }
+                    
+                    // Toggle methods
+                    $('.toggle-left').on('click', function(e) {
+                        eventHandler(e);
+                        mySlidebars.slidebars.toggle('left');
+                    });
+                    
+                    $('.toggle-right').on('click', function(e) {
+                        eventHandler(e);
+                        mySlidebars.slidebars.toggle('right');
+                    });
+                    
+                    // Open methods
+                    $('.open-left').on('click', function(e) {
+                        eventHandler(e);
+                        mySlidebars.slidebars.open('left');
+                    });
+                    
+                    $('.open-right').on('click', function(e) {
+                        eventHandler(e);
+                        mySlidebars.slidebars.open('right');
+                    });
+                    
+                    // Close
+                    $('.close').on('click', function(e) {
+                        eventHandler(e);
+                        mySlidebars.slidebars.close();
+                    });
+                    
+                    // Test initialisation
+                    $('.test-slidebars-init').on('click', function(e) {
+                        eventHandler(e);
+                        if (mySlidebars.slidebars.init) { // Check if Slidebars has been initiated.
+                            alert('Slidebars has been initialised.');
+                        } else {
+                            alert('Slidebars has not been initialised.');
+                        }
+                    });
+                    
+                    // Test Slidebar active states
+                    $('.test-left-slidebar').on('click', function(e) {
+                        eventHandler(e);
+                        if (mySlidebars.slidebars.active('left')) { // Check if left Slidebar is active.
+                            alert('Left Slidebar is open.');
+                        } else {
+                            alert('Left Slidebar is closed.');
+                        }
+                    });
+                    
+                    $('.test-right-slidebar').on('click', function(e) {
+                        eventHandler(e);
+                        if (mySlidebars.slidebars.active('right')) { // Check if right Slidebar is active.
+                            alert('Right Slidebar is open.');
+                        } else {
+                            alert('Right Slidebar is closed.');
+                        }
+                    });
+                    
+                    // Destroy Slidebars
+                    $('.destroy-left-slidebar').on('click', function() {
+                        mySlidebars.slidebars.destroy('left');
+                        alert('Boom!');
+                    });
+                    
+                    $('.destroy-right-slidebar').on('click', function() {
+                        mySlidebars.slidebars.destroy('right');
+                        alert('Boom!');
+                    });
+                });
+            }) (jQuery);
+        </script>
     </body>
 </html>
