@@ -376,7 +376,7 @@
                  $scope.atualWeather = null;
                  $scope.carregaCidade(null);
              }
-             window.showMenu();
+
          });
       </script>
    </head>
@@ -617,6 +617,14 @@
          </div>
       </div>
       <script src="resources/lib/pushy/js/pushy.js" ></script>
+      <script type="text/javascript">
+      $(document).ready(function(){
+        window.setTimeout(function(){
+            window.showMenu();
+        }, 100);
+        console.log("showMenu");
+      });
+      </script>
       <script>
          (function($) {
              $(document).ready(function() {
