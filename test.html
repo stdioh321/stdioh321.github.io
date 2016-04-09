@@ -38,12 +38,23 @@
 
         </script>
         <style type="text/css">
-            .m{
-                //border: solid red 1px;
-            }
-            .fx{
-                position: absolute !important;
-            }
+         .test{
+            border: solid red 1px;
+            height: 300px;
+         }
+         .test > div{
+            border: solid blue 1px;
+            //display: table;
+            margin: auto;
+            width: 80%; 
+            height: 100%; 
+         }
+         .test > div > div{
+            border: solid green 1px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+         }
         </style>
 
     </head>
@@ -59,29 +70,22 @@
                 </ul>
             </div>
         </div>
-        <div id="sb-site">
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a href="" class="navbar-brand"><button class="btn btn-primary toggle-left">&#9776;</button></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
-  </div>
-</nav>
-  
-
-            
-            <div class="container m" style="position: relative;">
-              <h3>Fixed Navbar</h3>
+        <div id="sb-site" >
+            <div class="container">
                 <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary toggle-left">&#9776;</button>
+                    </div>
+                </div>    
+                <div class="row">
+                    <div class="col-md-12 test">
+                            <div>
+                                <div>abc</div>
+                            </div>
+                    </div>
                 </div>
-        
             </div>
+        </div>
 
         
 
