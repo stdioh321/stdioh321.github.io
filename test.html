@@ -40,11 +40,12 @@
         <style type="text/css">
          .test{
             border: solid red 1px;
-            height: 300px;
+            height: 10vh;
+            position: static;
          }
          .test > div{
             border: solid blue 1px;
-            //display: table;
+            display: table;
             margin: auto;
             width: 80%; 
             height: 100%; 
@@ -58,6 +59,11 @@
         </style>
 
     </head>
+<div  class="test">
+    <div>
+        <div>abc</div>
+    </div>  
+</div>
     <body ng-controller="angCtrl" >
          <div class="sb-slidebar sb-left">
             <!-- Your left Slidebar content. -->
@@ -79,9 +85,7 @@
                 </div>    
                 <div class="row">
                     <div class="col-md-12 test">
-                            <div>
-                                <div>abc</div>
-                            </div>
+                           
                     </div>
                 </div>
             </div>

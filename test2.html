@@ -26,138 +26,39 @@
 
         </script>
         <style type="text/css">
-        .navbar{
-          z-index: 10;
+         #main {
+    width: 350px;
+    height: 100px;
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+}
 
-        }
-        .navbar-header{
-          float: left;
-        }
-        .show-menu, .navbar-nav{
-          float: right;
-        }
+#main div {
+    -webkit-flex-grow: 1; /* Safari 6.1+ */
+    -webkit-flex-shrink: 1; /* Safari 6.1+ */
+    -webkit-flex-basis: 100px; /* Safari 6.1+ */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 100px;
+}
 
-        .navbar-nav{
-          margin: 0;
-          transition: linear all .5s;
-        }
-        .navbar-nav li{
-          display: inline-block;
-        }
-
-        
-        @media screen and (min-width: 701px){
-          .show-menu{
-            display: none;
-          }
-        }
-        @media screen and (max-width: 700px){
-            .navbar-nav{
-              position: absolute;
-              right: 0;
-              left: 0;
-              z-index: -19;
-              background-color: #222222;
-            }
-            .not-appear{
-              top: -200%;
-              
-              
-            }
-
-            .appear{
-              top: 101%;
-            }
-        }
-
+#main div:nth-of-type(2) {
+    -webkit-flex-shrink: 3; /* Safari 6.1+ */
+    flex-shrink: 3;
+}    
         </style>
 
     </head>
+
     <body ng-controller="angCtrl" >
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container" style="position:relative">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
-
-    <div class="show-menu hide-menu">
-      <button class="btn btn-primary " onclick="myFunc()">
-      &#9776;
-    </button>
-    </div>
-    
-    <ul class="nav navbar-nav not-appear">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-      <li><a href="#">Page 4</a></li>
-      <li><a href="#">Page 5</a></li>
-      <li><a href="#">Page 6</a></li>
-      <li><a href="#">Page 7</a></li>
-
-    </ul>
-    
-  </div>
- 
-</nav>
-  
-<div class="container">
-  <h3>Fixed Navbar</h3>
-  <div class="row">
-    <div class="col-md-4">
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>    
-    </div>
-    <div class="col-md-4"> 
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-    </div>
-    <div class="col-md-4"> 
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p> 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-4">
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>    
-    </div>
-    <div class="col-md-4"> 
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-    </div>
-    <div class="col-md-4"> 
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p>
-      <p>A fixed navigation bar stays visible in a fixed position (top or bottom) independent of the page scroll.</p> 
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12 mod">
-      <div>Banner</div>
-      <div>
-        <button class="btn btn-primary">
-          &#9776;
-        </button>
+      <div id="main">
+        <div style="background-color:coral;"></div>
+        <div style="background-color:lightblue;"></div>
+        <div style="background-color:khaki;"></div>
+        <div style="background-color:pink;"></div>
+        <div style="background-color:lightgrey;"></div>
       </div>
-      <div>
-        <ul>
-          <li>Home</li>
-          <li>Page#1</li>
-          <li>Page#2</li>
-        </ul>
-      </div>
-    </div>
-  </div>
 
-</div>
-
-<h1>Scroll this page to see the effect</h1>
-    <script type="text/javascript">
-      function myFunc(){
-        document.getElementsByClassName('nav')[0].classList.toggle('appear');
-        document.getElementsByClassName('nav')[0].classList.toggle('not-appear');
-      }
-    </script>
     </body>
 </html>
