@@ -7,172 +7,153 @@
 
         <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="resources/lib/Slidebars/dist/slidebars.css" />
-                
+
 
         <script src="resources/lib/angular/angular.js" ></script>
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
         <script src="resources/lib/bootstrap/dist/js/bootstrap.js" ></script>
 
-        <script src="resources/lib/Slidebars/dist/slidebars.js" ></script>
         
-       
-        
+
+
+
 
         <script type="text/javascript">
 
 
             var app = angular.module('ang', []);
             app.controller('angCtrl', function ($scope, $interval) {
-               $scope.urls = [
-                "http://www.linuxdescomplicado.com.br/wp-content/uploads/2015/02/linux-aprender-curso.png",
-                "http://www.techreviewer.co.uk/wp-content/uploads/2014/12/Linux-Is-Sick-Look-Out-For-Turla.jpg",
-                "http://www.escolahacker.com.br/wp-content/uploads/2015/10/Linux.jpg"
-               ];
+                $scope.urls = [
+                    "http://www.linuxdescomplicado.com.br/wp-content/uploads/2015/02/linux-aprender-curso.png",
+                    "http://www.techreviewer.co.uk/wp-content/uploads/2014/12/Linux-Is-Sick-Look-Out-For-Turla.jpg",
+                    "http://www.escolahacker.com.br/wp-content/uploads/2015/10/Linux.jpg"
+                ];
 
-               $scope.add = function(u){
+                $scope.add = function (u) {
                     $scope.urls.push(u);
                     $scope.u = "";
-               }
+                }
+
+                $scope.tb = [
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
+                ];
             });
 
 
         </script>
         <style type="text/css">
-         .test{
-            border: solid red 1px;
-            height: 10vh;
-            position: static;
-         }
-         .test > div{
-            border: solid blue 1px;
-            display: table;
-            margin: auto;
-            width: 80%; 
-            height: 100%; 
-         }
-         .test > div > div{
-            border: solid green 1px;
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
-         }
+            body{
+                background-color: white;
+
+            }
+            .menu{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 40%;
+                height: 100%;
+                background-color: #222222;
+                color: white;
+                z-index: -10;
+                opacity: 0;
+                transition: linear all .5s;
+            }
+            
+            body.menu-closed .content-all{
+                left: 0;
+            }
+            
+            body.menu-opened .content-all{
+                
+                left: 40%;
+            }
+            body.menu-opened .menu{
+                opacity: 1;
+            }
+            
+            .content-all{
+                position: relative;
+                
+            }
+            .over-layer{
+                transition: linear all .5s;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+            }
+            .menu-opened .over-layer{
+                background-color: rgba(0,0,0,.6);
+                z-index: 20;
+                width: 100%;
+                height: 100%;
+            }
+
         </style>
 
     </head>
-<div  class="test">
-    <div>
-        <div>abc</div>
-    </div>  
-</div>
-    <body ng-controller="angCtrl" >
-         <div class="sb-slidebar sb-left">
-            <!-- Your left Slidebar content. -->
-            <div style="color : white">
-                <ul>
-                    <li>ABC1</li>
-                    <li>ABC2</li>
-                    <li>ABC3</li>
-                    <li>ABC4</li>
-                </ul>
-            </div>
-        </div>
-        <div id="sb-site" >
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <button class="btn btn-primary toggle-left">&#9776;</button>
-                    </div>
-                </div>    
-                <div class="row">
-                    <div class="col-md-12 test">
-                           
-                    </div>
+    <body ng-controller="angCtrl" class="menu-closed">
+        <div class='container-fluid content-all '>
+            <div class="menu">Fixed</div>
+            <div class="over-layer"></div>
+            <div class="row menu-content">
+                <div class="col-md-12">
+                    <button class="btn btn-primary" onclick="myFunc()">&#9776;</button>
                 </div>
             </div>
-        </div>
 
-        
+            <h3>&nbsp;</h3>
+            <div class="container-fluid cont-in">
+                <div class="row">
+                    <div class="col-md-6">
 
-        <script>
-            (function($) {
-                $(document).ready(function() {
-                    var mySlidebars = new $.slidebars(); // Create new instance of Slidebars
-                    
-                    // Event handler
-                    function eventHandler(e) {
-                        e.stopPropagation();
-                        e.preventDefault();
+                        <table class="table">
+                            <tr ng-repeat="item in tb">
+                                <td ng-repeat="(key, value) in item">{{value}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+
+                        <table class="table">
+                            <tr ng-repeat="item in tb">
+                                <td ng-repeat="(key, value) in item">{{value}}</td>
+                            </tr>
+                        </table>
+                    </div>  
+                </div>
+
+            </div>
+
+        </div>  
+        <script type="text/javascript">
+                    function myFunc() {
+                        console.log(document.getElementsByTagName('body')[0].classList.toggle('menu-opened'));
+                        console.log(document.getElementsByTagName('body')[0].classList.toggle('menu-closed'));
                     }
-                    
-                    // Toggle methods
-                    $('.toggle-left').on('click', function(e) {
-                        eventHandler(e);
-                        mySlidebars.slidebars.toggle('left');
-                    });
-                    
-                    $('.toggle-right').on('click', function(e) {
-                        eventHandler(e);
-                        mySlidebars.slidebars.toggle('right');
-                    });
-                    
-                    // Open methods
-                    $('.open-left').on('click', function(e) {
-                        eventHandler(e);
-                        mySlidebars.slidebars.open('left');
-                    });
-                    
-                    $('.open-right').on('click', function(e) {
-                        eventHandler(e);
-                        mySlidebars.slidebars.open('right');
-                    });
-                    
-                    // Close
-                    $('.close').on('click', function(e) {
-                        eventHandler(e);
-                        mySlidebars.slidebars.close();
-                    });
-                    
-                    // Test initialisation
-                    $('.test-slidebars-init').on('click', function(e) {
-                        eventHandler(e);
-                        if (mySlidebars.slidebars.init) { // Check if Slidebars has been initiated.
-                            alert('Slidebars has been initialised.');
-                        } else {
-                            alert('Slidebars has not been initialised.');
-                        }
-                    });
-                    
-                    // Test Slidebar active states
-                    $('.test-left-slidebar').on('click', function(e) {
-                        eventHandler(e);
-                        if (mySlidebars.slidebars.active('left')) { // Check if left Slidebar is active.
-                            alert('Left Slidebar is open.');
-                        } else {
-                            alert('Left Slidebar is closed.');
-                        }
-                    });
-                    
-                    $('.test-right-slidebar').on('click', function(e) {
-                        eventHandler(e);
-                        if (mySlidebars.slidebars.active('right')) { // Check if right Slidebar is active.
-                            alert('Right Slidebar is open.');
-                        } else {
-                            alert('Right Slidebar is closed.');
-                        }
-                    });
-                    
-                    // Destroy Slidebars
-                    $('.destroy-left-slidebar').on('click', function() {
-                        mySlidebars.slidebars.destroy('left');
-                        alert('Boom!');
-                    });
-                    
-                    $('.destroy-right-slidebar').on('click', function() {
-                        mySlidebars.slidebars.destroy('right');
-                        alert('Boom!');
-                    });
-                });
-            }) (jQuery);
+                    document.getElementsByClassName('over-layer')[0].onclick = myFunc;
         </script>
     </body>
 </html>

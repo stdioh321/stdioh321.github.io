@@ -39,6 +39,7 @@
     "jquery-responsive-menu": "^0.2.1",
     "pushy": "^1.0.0",
     "angular-touch": "^1.5.3",
-    "Slidebars": "^0.10.3"
+    "Slidebars": "^0.10.3",
+    "angular-pageslide-directive": "ng-pageslide#^1.1.1"
   }
 }

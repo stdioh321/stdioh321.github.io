@@ -1,710 +1,590 @@
 <!DOCTYPE html>
 <html ng-app="noSurf">
-   <!--
-      API Key
-      51cb531a971ca10554a6ae517b90efe6
-      
-      http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=&appid=51cb531a971ca10554a6ae517b90efe6
-      
-      
-      http://api.openweathermap.org/data/2.5/forecast?lat=-23.43&lon=-45.07&appid=51cb531a971ca10554a6ae517b90efe6
-      
-      http://api.openweathermap.org/data/2.5/forecast?id={city ID}
-      
-      
-      http://api.openweathermap.org/data/2.5/weather?lat=-23.4741297&lon=-46.3927326&appid=51cb531a971ca10554a6ae517b90efe6
-      
-      
-      
-      FORECAST.IO
-      3633ce3ab311df404ee0fd9dc979541d
-      https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
-      
-      https://api.forecast.io/forecast/3633ce3ab311df404ee0fd9dc979541d/37.8267,-122.423
-      
-      
-      
-      WORLD WEATHER ONLINE
-      
-      http://api.worldweatheronline.com/free/v1/marine.ashx?key=d7pesx54engabthjcznhanfa&format=json&q=-25.8685,-48.5589
-      
-      -->
-   <head>
-      <title>Teste</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta charset="UTF-8" />
-      <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css">
-      <link rel="stylesheet" href="resources/lib/angular-chart.js/dist/angular-chart.css">
-      <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons.css">
-      <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons-wind.css">
-      <link rel="stylesheet" type="text/css" href="resources/lib/Slidebars/dist/slidebars.css" />
-      <style type="text/css">
-         #sb-site{
-            transition: linear all .5s;
-            position: relative;
-         }
-         .over-layer{
-            transition: linear all .5s;
+    <!--
+       API Key
+       51cb531a971ca10554a6ae517b90efe6
+       
+       http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=&appid=51cb531a971ca10554a6ae517b90efe6
+       
+       
+       http://api.openweathermap.org/data/2.5/forecast?lat=-23.43&lon=-45.07&appid=51cb531a971ca10554a6ae517b90efe6
+       
+       http://api.openweathermap.org/data/2.5/forecast?id={city ID}
+       
+       
+       http://api.openweathermap.org/data/2.5/weather?lat=-23.4741297&lon=-46.3927326&appid=51cb531a971ca10554a6ae517b90efe6
+       
+       
+       
+       FORECAST.IO
+       3633ce3ab311df404ee0fd9dc979541d
+       https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
+       
+       https://api.forecast.io/forecast/3633ce3ab311df404ee0fd9dc979541d/37.8267,-122.423
+       
+       
+       
+       WORLD WEATHER ONLINE
+       
+       http://api.worldweatheronline.com/free/v1/marine.ashx?key=d7pesx54engabthjcznhanfa&format=json&q=-25.8685,-48.5589
+       
+    -->
+    <head>
+        <title>Teste</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8" />
+
+        <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="resources/lib/angular-chart.js/dist/angular-chart.css">
+        <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons.css">
+        <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons-wind.css">
+
+        <style type="text/css">
+            html, body{
+                overflow-x: hidden;
             }
-         .sb-active .over-layer{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,.6);
-            z-index: 100;
-
-         }
-         .sb-slidebar > ul{
-            margin: 0;
-            padding: .2em;
+            .menu{
+                
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: #222222;
+                z-index: -10;
+                
+            }
             
-         }
-         .table-center tr:nth-child(2) td{
-         }
-         .table-now tr td:first-child{
-         font-weight: bolder;
-         }
-         .table-week{
-         border: solid 1px rgba(100,100,100,.1);
-         padding: .2em;
-         }
-         .table-week tr td:nth-child(even){
-         background-color: rgba(100,100,100,.1);
-         }
-        
-         .pushy{
-         }
-         .pushy > ul{
-         padding: 0;
-         }
-         .loading-div{
-             width: 100vw;
-             height: 100vh;
-             position: absolute;
-             top: 0;
-             left: 0;
-         }
-         .loading-div > div{
-             display: table;
-             width: 100%;
-             height: 100%;
-             z-index: 10;
-             margin: 0 auto;
-             background-color: rgba(0,0,0,0.2);
-         }
-        div > #loading{
-             
-             font-size: 10em;
-             display: table-cell;
-             vertical-align: middle;
-             text-align: center;
-             -webkit-animation: load linear 1s infinite;
-             -moz-animation: load linear 1s infinite;
-             animation: load linear 1s infinite;
-         }         
-         .menu{
-         position: absolute;
-         transition: linear all .5s;
-         z-index: -100;
-         top: 0;
-         left: 0;
-         width: 60%;
-         }
-         .menu-right{
-         position: absolute;
-         transition: linear all .5s;
-         z-index: -100;
-         top: 0;
-         right: 0;
-         width: 60%;
-         }
-         .menu-top{
-         position: absolute;
-         transition: linear all .5s;
-         z-index: -100;
-         top: 0;
-         left: 0;
-         height: 100px;
-         }
-         .menu-bottom{
-         position: absolute;
-         transition: linear all .5s;
-         z-index: -100;
-         bottom: 0;
-         left: 0;
-         height: 100px;
-         }
-         .content{
-         transition: linear all 0.5s;
-         background-color: white;
-         position: relative;
-         }
-         .menu-hide-right{
-         width: 0;
-         overflow: hidden;
-         }
-         .menu-hide{
-         width: 0;
-         overflow: hidden;
-         }
-         .menu-show-right{
-         margin-right: -60%;
-         }
-         .menu-show{
-         margin-left: -60%;
-         }
-         .content-hide-right{
-         transform: translate(-60%);
-         }
-         .content-hide{
-         transform: translate(60%);
-         /*margin-left: 60%;*/
-         }
-         .content-hide > .over, .content-hide-right > .over{
-         transition: linear all .5s;
-         width: 100%;
-         height: 100%;
-         top: 0;
-         left: 0;
-         position: absolute;
-         background-color: rgba(0,0,0,.6);
-         z-index: 10;    
-         }
-         @-webkit-keyframes load{
-         from    {transform: rotateZ(0deg);}
-         to      {transform: rotateZ(360deg);}
-         } 
-         @-moz-keyframes load{
-         from    {transform: rotateZ(0deg);}
-         to      {transform: rotateZ(360deg);}
-         }@keyframes load{
-         from    {transform: rotateZ(0deg);}
-         to      {transform: rotateZ(360deg);}
-         }            
-      </style>
-      <script type="text/javascript" src="resources/lib/angular/angular.js"></script>
-      <script type="text/javascript" src="angular-locale_pt-br.js"></script>
-      <script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
-      <script src="resources/lib/Slidebars/dist/slidebars.js" ></script>
-      <script src="resources/lib/Chart.js/Chart.js"></script>   
-      <script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
-      <script src="resources/lib/angular-touch/angular-touch.js"></script>
-      <script type="text/javascript" src="estados.js"></script>
-      <script type="text/javascript" src="cidades.js"></script>
-      <script type="text/javascript" src="praias.js"></script>
-      <script type="text/javascript">
-         var urlBase = "http://api.worldweatheronline.com/premium/v1/";
-         var url = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=f2ae69adff674902a3c13610160504&format=json&q=";
-         var key = "f2ae69adff674902a3c13610160504";
-         
-         
-         
-         var app = angular.module("noSurf", ['chart.js', 'ngTouch']);
-         app.filter('toHour', function() {
-             return function(input) {
-         
-                 if (input.length == 4) {
-                     input = input.substring(0, 2) + "h";
-                 } else
-                 if (input.length == 3) {
-                     input = "0" + input.substring(0, 1) + "h";
-                 } else
-         
-                 if (input.length == 1) {
-                     input = "00" + "h";
-                 }
-                 return input;
-             };
-         
-         });
-         
-         app.controller("noSurfCtrl", function($scope, $http, $filter) {
-             /*########## Select Data ########## */
-             $scope.estados = estados;
-             $scope.cidades = cidades;
-             $scope.praias = praias;
-             /*########## Select Data ########## */
-         
-             /*########## Is Loadgin ########## */
-             $scope.loading = false;
-             /*########## Is Loadgin ########## */
-         
-             /*########## Chart Data ########## */
-             $scope.series = ["Tamanho Onda(m)"];
-             $scope.data = [];
-             $scope.dataChart = [];
-             $scope.labels = [];
-             /*########## Chart Data ########## */
-             $scope.indexDate = 0;
-             
-             window.showMenu = function(){
-                 bt = document.getElementsByClassName('menu-btn')[0];
-                 bt.dispatchEvent(new MouseEvent('click'));
-             };
-             $scope.showMenu = function(){
-                 window.showMenu();
-             };
-         
-             $scope.carregaCidade = function(tmpEstado) {
-                 var tmp = false;
-                 if (tmpEstado != null) {
-         
-         
-                     tmp = $scope.cidades.some(function(elem) {
-                         if (elem.id_estado == tmpEstado.id) {
-                             $scope.objCidades = elem.cidades;
-                             return true;
-                         }
-                     });
-                 }
-                 if (tmp == false) {
-                     $scope.objCidades = {};
-                 }
-             };
-         
-             $scope.carregaPraia = function(tmpCidade) {
-                 var tmp = false;
-                 if (tmpCidade != null) {
-                     tmp = $scope.praias.some(function(elem) {
-                         if (elem.id_cidade == tmpCidade.id) {
-                             $scope.objPraias = elem.praias;
-                             return true;
-                         }
-                     });
-                 }
-         
-                 if (tmp == false) {
-                     $scope.objPraias = {};
-                 }
-             };
-             
-             $scope.carregaWeather = function(praia) {
-                 if (praia != null) {
-         
-                     $scope.loading = true;
-         
-                     window.showMenu();
-         
-                     $http({
-                         method: "GET",
-                         url: urlBase + "marine.ashx?key=" + key + "&lang=pt&tide=yes&format=json&q=" + praia.lat + "," + praia.lon
-                     }).then(function(data) {
-                         $scope.resultMarine = data.data.data;
-                         $scope.indexDate = 0;
-                         $scope.carregaChart($scope.resultMarine);
-         
-                         console.log($scope.resultMarine);
-         
-                         $http({
-                             method: "GET",
-                             url: urlBase + "weather.ashx?key=" + key + "&lang=pt&showmap=yes&format=json&q=" + praia.lat + "," + praia.lon
-                         }).then(function(data) {
-                             $scope.loading = false;
-                             $scope.resultWeather = data.data.data;
-                             $scope.carregaAtual();
-                         }, function(data) {
-                             console.log("ERROR");
-                             console.log(data);
-                         });
-         
-                     }, function(data) {
-                         console.log("ERROR");
-                         console.log(data);
-                     });
-         
-         
-         
-                 }
-             };
-         
-         
-             $scope.carregaChart = function(resultMarine) {
-                 $scope.dataChart = [];
-                 $scope.tmpLabel = [];
-         
-         
-                 resultMarine.weather.forEach(function(elem, index, arr) {
-                     if (index == $scope.indexDate) {
-                         $scope.now = elem.date;
-                         elem.hourly.filter(function(elem2) {
-                             $scope.dataChart.push(parseFloat(elem2.swellHeight_m));
-                             $scope.tmpLabel.push($filter('toHour')(elem2.time));
-                         });
-                     }
-                 });
-         
-         
-         
-                 $scope.labels = $scope.tmpLabel;
-                 $scope.data[0] = $scope.dataChart;
-         
-         
-         
-             };
-         
-             $scope.modDate = function(val) {
-                 if ($scope.indexDate + val < 0 || $scope.indexDate + val > 6) {
-         
-                 } else {
-                     $scope.indexDate += val;
-                     $scope.carregaChart($scope.resultMarine);
-                 }
-             };
-         
-             $scope.carregaAtual = function() {
-                 var a = [00, 03, 06, 09, 12, 15, 18, 21];
-                 d = new Date();
-                 var atual = 0;
-                 a = a.forEach(function(elem, index, arr) {
-                     if (d.getHours() >= 21) {
-                         atual = index;
-                     } else
-                     if (d.getHours() < elem) {
-                         atual = index - 1;
-                     }
-                 });
-         
-                 $scope.atualMarine = $scope.resultMarine.weather[0].hourly[atual];
-                 $scope.atualWeather = $scope.resultWeather.weather[0].hourly[atual];
-         
-             };
-         
-             $scope.limpa = function() {
-                 $scope.atualMarine = null;
-                 $scope.atualWeather = null;
-                 $scope.carregaCidade(null);
-             }
+            
+            .menu ul li{
+                background-color: #222222;
+                border: 0;
+                color: white;
+            }
+            .content-all{
+                transition: linear all .5s;
+                position: relative;
+                
+                min-height: 100vh;
+                background-color: white;
+            }
+            
+            
+            .menu-opened .menu{
+                z-index: 10;
+                
+            }
+            
+            .menu-content{
+                position: fixed;
+                background-color: #222222;
+                z-index: 10;
+                width: 100%;
+            }
+            
+            .over-layer{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -10;
+                
+            }
+            .menu-opened .over-layer{
+                background-color: rgba(10,10,10,.2);
+                z-index: 10;
+                
+            }
+            
+            .table-center tr:nth-child(2) td{
+            }
+            .table-now tr td:first-child{
+                font-weight: bolder;
+            }
+            .table-week{
+                border: solid 1px rgba(100,100,100,.1);
+                padding: .2em;
+            }
+            .table-week tr td:nth-child(even){
+                background-color: rgba(100,100,100,.1);
+            }
 
-         });
-      </script>
-   </head>
-   <body ng-controller="noSurfCtrl" ng-swipe-right="showMenu()">
-      <nav class="sb-slidebar sb-left">
-         <ul>
-            <!-- Submenu -->
-            <li>
-               <button class="btn btn-primary" ng-click="limpa()" style="margin:auto; display:table;">
-               Limpar<span class="pull right">&#9938;</span>
-               </button>
-            </li>
-            <li class="pushy-submenu">
-               <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
-                  <option value="">Selecione o Estado</option>
-               </select>
-            </li>
-            <li>
-               <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
-                  <option value="">Selecione o Cidade (Tot: {{objCidades.length || 0}})</option>
-               </select>
-            </li>
-            <li>
-               <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
-                  <option value="">Selecione o Praias (Tot: {{objPraias.length || 0}})</option>
-               </select>
-            </li>
-         </ul>
-      </nav>
-      <!-- <div class="site-overlay"></div> -->
-      <div id="sb-site">
-        <div class="over-layer"></div>
-      <div class="container" >
-         <div class="row">
-            <div class="col-md-12 col-sm-12" style="background-color: #222222; padding-top: .3em;padding-bottom: .3em;">
-               <div>
-                  <button class="menu-btn btn btn-primary toggle-left">
-                  &#9776;
-                  </button>
-                  <span style="color:white">{{pra.name}}</span>
-               </div>
-               
-            </div>
-         </div>
+            .loading{
+                z-index: 1000;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            #loading{
+                color: white;
+                font-size: 10em;
+                animation: load 1s infinite;
+            }
+            @-webkit-keyframes load{
+                from    {transform: rotateZ(0deg);}
+                to      {transform: rotateZ(360deg);}
+            } 
+            @-moz-keyframes load{
+                from    {transform: rotateZ(0deg);}
+                to      {transform: rotateZ(360deg);}
+            }@keyframes load{
+                from    {transform: rotateZ(0deg);}
+                to      {transform: rotateZ(360deg);}
+            }
 
-      <!--   <div style="border: solid red 1px; position: absolute; top: 0; left: 0;">
-            abc
-        </div> -->
+            @media screen and (min-width: 601px){
+                .menu{
+                    width: 40%;
+                }
+                .menu-opened .content-all{
+                    left: 40%;
+                }
+            }
+            
+            @media screen and (max-width: 600px){
+                .menu{
+                    width: 80%;
+                }
+                .menu-opened .content-all{
+                    left: 80%;
+                }
+            }
+        </style>
+        <script type="text/javascript" src="resources/lib/angular/angular.js"></script>
+        <script type="text/javascript" src="angular-locale_pt-br.js"></script>
+        <script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
+        <script src="resources/lib/Chart.js/Chart.js"></script>   
+        <script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
+        <script src="resources/lib/angular-touch/angular-touch.js"></script>
+        <script type="text/javascript" src="estados.js"></script>
+        <script type="text/javascript" src="cidades.js"></script>
+        <script type="text/javascript" src="praias.js"></script>
 
-         <div class="row loading-div" ng-show="loading">
-            <div class="col-md-12">
-               <span class="glyphicon glyphicon-refresh " id="loading"></span>
+        <script type="text/javascript">
+            var urlBase = "http://api.worldweatheronline.com/premium/v1/";
+            var url = "http://api.worldweatheronline.com/premium/v1/marine.ashx?key=f2ae69adff674902a3c13610160504&format=json&q=";
+            var key = "f2ae69adff674902a3c13610160504";
+
+
+
+            var app = angular.module("noSurf", ['chart.js', 'ngTouch']);
+            app.filter('toHour', function () {
+                return function (input) {
+
+                    if (input.length == 4) {
+                        input = input.substring(0, 2) + "h";
+                    } else
+                    if (input.length == 3) {
+                        input = "0" + input.substring(0, 1) + "h";
+                    } else
+
+                    if (input.length == 1) {
+                        input = "00" + "h";
+                    }
+                    return input;
+                };
+
+            });
+
+            app.controller("noSurfCtrl", function ($scope, $http, $filter) {
+                /*########## Select Data ########## */
+                $scope.estados = estados;
+                $scope.cidades = cidades;
+                $scope.praias = praias;
+                /*########## Select Data ########## */
+
+                /*########## Is Loadgin ########## */
+                $scope.loading = false;
+                /*########## Is Loadgin ########## */
+
+                /*########## Chart Data ########## */
+                $scope.series = ["Tamanho Onda(m)"];
+                $scope.data = [];
+                $scope.dataChart = [];
+                $scope.labels = [];
+                /*########## Chart Data ########## */
+                $scope.indexDate = 0;
+
+                window.showMenu = function () {
+                    bt = document.getElementsByClassName('menu-btn')[0];
+                    bt.dispatchEvent(new MouseEvent('click'));
+                };
+                $scope.showMenu = function () {
+                    window.showMenu();
+                };
+
+                $scope.carregaCidade = function (tmpEstado) {
+                    var tmp = false;
+                    if (tmpEstado != null) {
+
+
+                        tmp = $scope.cidades.some(function (elem) {
+                            if (elem.id_estado == tmpEstado.id) {
+                                $scope.objCidades = elem.cidades;
+                                return true;
+                            }
+                        });
+                    }
+                    if (tmp == false) {
+                        $scope.objCidades = {};
+                    }
+                };
+
+                $scope.carregaPraia = function (tmpCidade) {
+                    var tmp = false;
+                    if (tmpCidade != null) {
+                        tmp = $scope.praias.some(function (elem) {
+                            if (elem.id_cidade == tmpCidade.id) {
+                                $scope.objPraias = elem.praias;
+                                return true;
+                            }
+                        });
+                    }
+
+                    if (tmp == false) {
+                        $scope.objPraias = {};
+                    }
+                };
+
+                $scope.carregaWeather = function (praia) {
+                    if (praia != null) {
+
+                        $scope.loading = true;
+
+                        $http({
+                            method: "GET",
+                            url: urlBase + "marine.ashx?key=" + key + "&lang=pt&tide=yes&format=json&q=" + praia.lat + "," + praia.lon
+                        }).then(function (data) {
+                            $scope.resultMarine = data.data.data;
+                            $scope.indexDate = 0;
+                            $scope.carregaChart($scope.resultMarine);
+
+                            console.log($scope.resultMarine);
+                            toggleMenu();
+                            $http({
+                                method: "GET",
+                                url: urlBase + "weather.ashx?key=" + key + "&lang=pt&showmap=yes&format=json&q=" + praia.lat + "," + praia.lon
+                            }).then(function (data) {
+                                $scope.loading = false;
+                                $scope.resultWeather = data.data.data;
+                                $scope.carregaAtual();
+                            }, function (data) {
+                                console.log("ERROR");
+                                console.log(data);
+                            });
+
+                        }, function (data) {
+                            console.log("ERROR");
+                            console.log(data);
+                        });
+
+
+
+                    }
+                };
+
+
+                $scope.carregaChart = function (resultMarine) {
+                    $scope.dataChart = [];
+                    $scope.tmpLabel = [];
+
+
+                    resultMarine.weather.forEach(function (elem, index, arr) {
+                        if (index == $scope.indexDate) {
+                            $scope.now = elem.date;
+                            elem.hourly.filter(function (elem2) {
+                                $scope.dataChart.push(parseFloat(elem2.swellHeight_m));
+                                $scope.tmpLabel.push($filter('toHour')(elem2.time));
+                            });
+                        }
+                    });
+
+
+
+                    $scope.labels = $scope.tmpLabel;
+                    $scope.data[0] = $scope.dataChart;
+
+
+
+                };
+
+                $scope.modDate = function (val) {
+                    if ($scope.indexDate + val < 0 || $scope.indexDate + val > 6) {
+
+                    } else {
+                        $scope.indexDate += val;
+                        $scope.carregaChart($scope.resultMarine);
+                    }
+                };
+
+                $scope.carregaAtual = function () {
+                    var a = [00, 03, 06, 09, 12, 15, 18, 21];
+                    d = new Date();
+                    var atual = 0;
+                    a = a.forEach(function (elem, index, arr) {
+                        if (d.getHours() >= 21) {
+                            atual = index;
+                        } else
+                        if (d.getHours() < elem) {
+                            atual = index - 1;
+                        }
+                    });
+
+                    $scope.atualMarine = $scope.resultMarine.weather[0].hourly[atual];
+                    $scope.atualWeather = $scope.resultWeather.weather[0].hourly[atual];
+
+                };
+
+                $scope.limpa = function () {
+                    $scope.atualMarine = null;
+                    $scope.atualWeather = null;
+                    $scope.carregaCidade(null);
+                }
+
+            });
+        </script>
+    </head>
+    <body ng-controller="noSurfCtrl">
+        <div class="loading" ng-show="loading">
+                
+            <span class="glyphicon glyphicon-refresh " id="loading"></span>
+                
+        </div>
+        <div class="container-fluid content-all menu-closed">
+           
+            <div class="over-layer"></div>
+            <nav class="menu">
+                <ul class="list-group">
+                      
+                    <li class="list-group-item">
+                        Escolha sua Praia
+                    </li>
+                    <li class="list-group-item">
+                        <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
+                            <option value="">Selecione o Estado</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item">
+                        <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
+                            <option value="">Selecione o Cidade (Tot: {{objCidades.length|| 0}})</option>
+                        </select>
+                    </li>
+                    <li class="list-group-item">
+                        <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
+                            <option value="">Selecione o Praias (Tot: {{objPraias.length|| 0}})</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+            <div class="row menu-content">
+                <div class="col-md-12">
+                <button class="btn btn-primary" onclick="toggleMenu()">
+                    &#9776;
+                </button>
+                </div>
             </div>
-         </div>
-         <div class="row" ng-show="atualMarine">
-            <div class="col-md-6 table-responsive">
-               <table class="table table-now">
-                  <tr>
-                     <td>
-                        Tamanho Onda
-                     </td>
-                     <td>
-                        {{atualMarine.swellHeight_m}}m
-                     </td>
-                     <td>icon</td>
-                  </tr>
-                  <td>
-                     Direção
-                  </td>
-                  <td>
-                     <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
-                  </td>
-                  <td>icon</td>
-                  </tr>
-                  <td>
-                     Periodo
-                  </td>
-                  <td>
-                     {{atualMarine.swellPeriod_secs}}seg
-                  </td>
-                  <td>icon</td>
-                  </tr>
-                  <td>
-                     Potencia Onda
-                  </td>
-                  <td>
-                     {{atualMarine.WindGustKmph}}km/h
-                  </td>
-                  <td>icon</td>
-                  </tr>
-                  <td>
-                     Vento
-                  </td>
-                  <td>
-                     {{atualMarine.WindChillC}}&#176;c
-                  </td>
-                  <td>icon</td>
-                  </tr>
-                  <td>
-                     Direção Vento
-                  </td>
-                  <td>
-                     <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
-                  </td>
-                  <td>icon</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        Temperatura
-                     </td>
-                     <td>
-                        {{atualMarine.tempC}}&#176;c
-                     </td>
-                     <td>icon</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        Probabilidade
-                     </td>
-                     <td>
-                        {{atualWeather.chanceofrain}}%
-                     </td>
-                     <td>icon</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        Chuva
-                     </td>
-                     <td>
-                        {{atualWeather.precipMM}}mm
-                     </td>
-                     <td>icon</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        Nascer
-                     </td>
-                     <td>
-                        {{resultMarine.weather[0].astronomy[0].sunrise}}
-                     </td>
-                     <td>icon</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        Pôr do Sol
-                     </td>
-                     <td>
-                        {{resultMarine.weather[0].astronomy[0].sunset}}
-                     </td>
-                     <td>icon</td>
-                  </tr>
-                  <tr>
-                     <td>
-                        Lua
-                     </td>
-                     <td>Moon Icon</td>
-                     <td>icon</td>
-                  </tr>
-               </table>
+             <h3>&nbsp;</h3>
+            
+
+            <div class="row" ng-show="atualMarine">
+                <div class="col-md-6 table-responsive">
+                    <table class="table table-now">
+                        <tr>
+                            <td>
+                                Tamanho Onda
+                            </td>
+                            <td>
+                                {{atualMarine.swellHeight_m}}m
+                            </td>
+                            <td>icon</td>
+                        </tr>
+                        <td>
+                            Direção
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
+                        </td>
+                        <td>icon</td>
+                        </tr>
+                        <td>
+                            Periodo
+                        </td>
+                        <td>
+                            {{atualMarine.swellPeriod_secs}}seg
+                        </td>
+                        <td>icon</td>
+                        </tr>
+                        <td>
+                            Potencia Onda
+                        </td>
+                        <td>
+                            {{atualMarine.WindGustKmph}}km/h
+                        </td>
+                        <td>icon</td>
+                        </tr>
+                        <td>
+                            Vento
+                        </td>
+                        <td>
+                            {{atualMarine.WindChillC}}&#176;c
+                        </td>
+                        <td>icon</td>
+                        </tr>
+                        <td>
+                            Direção Vento
+                        </td>
+                        <td>
+                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
+                        </td>
+                        <td>icon</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Temperatura
+                            </td>
+                            <td>
+                                {{atualMarine.tempC}}&#176;c
+                            </td>
+                            <td>icon</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Probabilidade
+                            </td>
+                            <td>
+                                {{atualWeather.chanceofrain}}%
+                            </td>
+                            <td>icon</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Chuva
+                            </td>
+                            <td>
+                                {{atualWeather.precipMM}}mm
+                            </td>
+                            <td>icon</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Nascer
+                            </td>
+                            <td>
+                                {{resultMarine.weather[0].astronomy[0].sunrise}}
+                            </td>
+                            <td>icon</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Pôr do Sol
+                            </td>
+                            <td>
+                                {{resultMarine.weather[0].astronomy[0].sunset}}
+                            </td>
+                            <td>icon</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Lua
+                            </td>
+                            <td>Moon Icon</td>
+                            <td>icon</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                Vento
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
+                                <img src="{{atualMarine.weatherIconUrl[0].value}}" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <div class="col-md-6">
-               <table class="table">
-                  <tr>
-                     <td>
-                        Vento
-                     </td>
-                     <td>
-                        <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
-                        <img src="{{atualMarine.weatherIconUrl[0].value}}" />
-                     </td>
-                  </tr>
-               </table>
+            <div class="row" ng-show="atualMarine">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        {{now| date:'fullDate' | uppercase}}
+                    </div>
+                    <div style="overflow: auto">
+                        <button class="btn btn-primary pull-left" ng-click="modDate(-1)">Prev</button>
+                        <button class="btn btn-primary pull-right" ng-click="modDate(1)">Next</button>
+                    </div>
+                    <hr />
+                    <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}" height="80"></canvas>
+                </div>
             </div>
-         </div>
-         <div class="row" ng-show="atualMarine">
-            <div class="col-md-12">
-               <div class="text-center">
-                  {{now| date:'fullDate' | uppercase}}
-               </div>
-               <div style="overflow: auto">
-                  <button class="btn btn-primary pull-left" ng-click="modDate(-1)">Prev</button>
-                  <button class="btn btn-primary pull-right" ng-click="modDate(1)">Next</button>
-               </div>
-               <hr />
-               <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}" height="80"></canvas>
+            <div class="row" ng-show="atualMarine">
+                <div class="col-md-6 table-week" ng-repeat="item in resultMarine.weather">
+                    <table class="table table-center">
+                        <tr>
+                            <td colspan="7">
+                                {{item.date| date:'fullDate' | uppercase}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="glyphicon glyphicon-time" title="Horário"></span>
+                            </td>
+                            <td>
+                                <i class="wi tsunami" title="Direção Onda"></i>
+                            </td>
+                            <td>
+                                <i class="wi wi-barometer" title="Período (seg)"></i>
+                            </td>
+                            <td>
+                                <i class="wi wi-windy" title="Direção Vento"></i>
+                            </td>
+                            <td>
+                                <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-time" title="Potência"></span>
+                            </td>
+                        </tr>
+                        <tr ng-repeat="item2 in item.hourly">
+                            <td>
+                                {{item2.time| toHour}}
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
+                            </td>
+                            <td>
+                                {{item2.swellHeight_m}}M
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
+                            </td>
+                            <td>
+                                {{item2.windspeedKmph}}km/h
+                            </td>
+                            <td>
+                                {{item2.WindGustKmph}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-         </div>
-         <div class="row" ng-show="atualMarine">
-            <div class="col-md-6 table-week" ng-repeat="item in resultMarine.weather">
-               <table class="table table-center">
-                  <tr>
-                     <td colspan="7">
-                        {{item.date| date:'fullDate' | uppercase}}
-                     </td>
-                  </tr>
-                  <tr>
-                     <td>
-                        <span class="glyphicon glyphicon-time" title="Horário"></span>
-                     </td>
-                     <td>
-                        <i class="wi tsunami" title="Direção Onda"></i>
-                     </td>
-                     <td>
-                        <i class="wi wi-barometer" title="Período (seg)"></i>
-                     </td>
-                     <td>
-                        <i class="wi wi-windy" title="Direção Vento"></i>
-                     </td>
-                     <td>
-                        <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
-                     </td>
-                     <td>
-                        <span class="glyphicon glyphicon-time" title="Potência"></span>
-                     </td>
-                  </tr>
-                  <tr ng-repeat="item2 in item.hourly">
-                     <td>
-                        {{item2.time| toHour}}
-                     </td>
-                     <td>
-                        <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
-                     </td>
-                     <td>
-                        {{item2.swellHeight_m}}M
-                     </td>
-                     <td>
-                        <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
-                     </td>
-                     <td>
-                        {{item2.windspeedKmph}}km/h
-                     </td>
-                     <td>
-                        {{item2.WindGustKmph}}
-                     </td>
-                  </tr>
-               </table>
-            </div>
-         </div>
-      </div>
-      <script src="resources/lib/pushy/js/pushy.js" ></script>
-      <script type="text/javascript">
-      $(document).ready(function(){
-        window.setTimeout(function(){
-            window.showMenu();
-        }, 100);
-        
-      });
-      </script>
-      <script>
-         (function($) {
-             $(document).ready(function() {
-                 var mySlidebars = new $.slidebars(); // Create new instance of Slidebars
-                 
-                 // Event handler
-                 function eventHandler(e) {
-                     e.stopPropagation();
-                     e.preventDefault();
-                 }
-                 
-                 // Toggle methods
-                 $('.toggle-left').on('click', function(e) {
-                     eventHandler(e);
-                     mySlidebars.slidebars.toggle('left');
-                 });
-                 
-                 $('.toggle-right').on('click', function(e) {
-                     eventHandler(e);
-                     mySlidebars.slidebars.toggle('right');
-                 });
-                 
-                 // Open methods
-                 $('.open-left').on('click', function(e) {
-                     eventHandler(e);
-                     mySlidebars.slidebars.open('left');
-                 });
-                 
-                 $('.open-right').on('click', function(e) {
-                     eventHandler(e);
-                     mySlidebars.slidebars.open('right');
-                 });
-                 
-                 // Close
-                 $('.close').on('click', function(e) {
-                     eventHandler(e);
-                     mySlidebars.slidebars.close();
-                 });
-                 
-                 // Test initialisation
-                 $('.test-slidebars-init').on('click', function(e) {
-                     eventHandler(e);
-                     if (mySlidebars.slidebars.init) { // Check if Slidebars has been initiated.
-                         alert('Slidebars has been initialised.');
-                     } else {
-                         alert('Slidebars has not been initialised.');
-                     }
-                 });
-                 
-                 // Test Slidebar active states
-                 $('.test-left-slidebar').on('click', function(e) {
-                     eventHandler(e);
-                     if (mySlidebars.slidebars.active('left')) { // Check if left Slidebar is active.
-                         alert('Left Slidebar is open.');
-                     } else {
-                         alert('Left Slidebar is closed.');
-                     }
-                 });
-                 
-                 $('.test-right-slidebar').on('click', function(e) {
-                     eventHandler(e);
-                     if (mySlidebars.slidebars.active('right')) { // Check if right Slidebar is active.
-                         alert('Right Slidebar is open.');
-                     } else {
-                         alert('Right Slidebar is closed.');
-                     }
-                 });
-                 
-                 // Destroy Slidebars
-                 $('.destroy-left-slidebar').on('click', function() {
-                     mySlidebars.slidebars.destroy('left');
-                     alert('Boom!');
-                 });
-                 
-                 $('.destroy-right-slidebar').on('click', function() {
-                     mySlidebars.slidebars.destroy('right');
-                     alert('Boom!');
-                 });
-             });
-         }) (jQuery);
-      </script>
-   </body>
+        </div>
+
+        <script>
+            function toggleMenu() {
+                document.getElementsByTagName('body')[0].classList.toggle('menu-opened');
+                document.getElementsByTagName('body')[0].classList.toggle('menu-closed');
+            }
+            document.getElementsByClassName('over-layer')[0].onclick = toggleMenu;
+        </script>
+    </body>
 </html>
