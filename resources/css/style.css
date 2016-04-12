@@ -1,0 +1,124 @@
+html, body{
+    overflow-x: hidden;
+}
+.menu{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #222222;
+    z-index: -10;
+
+}
+
+
+.menu ul li{
+    background-color: #222222;
+    border: 0;
+    color: white;
+}
+.content-all{
+    transition: linear all .5s;
+    position: relative;
+
+    min-height: 100vh;
+    background-color: white;
+}
+
+
+.menu-opened .menu{
+    z-index: 10;
+
+}
+
+.menu-content{
+    position: fixed;
+    background-color: #222222;
+    z-index: 10;
+    width: 100%;
+}
+
+.over-layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+
+}
+.menu-opened .over-layer{
+    background-color: rgba(10,10,10,.2);
+    z-index: 10;
+
+}
+
+.table-center tr:nth-child(2) td{
+}
+.table-now tr td:first-child{
+    font-weight: bolder;
+}
+.table-week{
+    border: solid 1px rgba(100,100,100,.1);
+    padding: .2em;
+}
+.table-week tr td:nth-child(even){
+    background-color: rgba(100,100,100,.1);
+}
+
+.loading{
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#loading{
+    color: white;
+    font-size: 10em;
+    animation: load 1s infinite;
+}
+@-webkit-keyframes load{
+    from    {transform: rotateZ(0deg);}
+    to      {transform: rotateZ(360deg);}
+} 
+@-moz-keyframes load{
+    from    {transform: rotateZ(0deg);}
+    to      {transform: rotateZ(360deg);}
+}@keyframes load{
+    from    {transform: rotateZ(0deg);}
+    to      {transform: rotateZ(360deg);}
+}
+
+@media screen and (min-width: 601px){
+    .menu{
+        width: 40%;
+    }
+    .menu-opened .content-all{
+        left: 40%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .menu{
+        width: 80%;
+    }
+    .menu-opened .content-all{
+        left: 80%;
+    }
+}
+.cont{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    margin: 0 auto;
+}
