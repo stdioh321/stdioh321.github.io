@@ -40,8 +40,8 @@
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons-wind.css">
 
         <link rel="stylesheet" href="resources/css/style.css" >
-              
-        
+
+
         <script type="text/javascript" src="resources/lib/angular/angular.js"></script>
         <script type="text/javascript" src="resources/js/locale/angular-locale_pt-br.js"></script>
         <script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
@@ -50,25 +50,26 @@
         <script src="resources/lib/Chart.js/Chart.js"></script>   
         <script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
         <script src="resources/lib/angular-touch/angular-touch.js"></script>
-        
-        
+
+
         <script type="text/javascript" src="resources/json/estados.js"></script>
         <script type="text/javascript" src="resources/json/cidades.js"></script>
         <script type="text/javascript" src="resources/json/praias.js"></script>
-        
-        
+        <script type="text/javascript" src="resources/json/locais.js"></script>
+
+
         <script src="resources/js/app.js" ></script>
         <script src="resources/js/filters/filters.js" ></script>
         <script type="text/javascript" src="resources/js/controllers/noSurfCtrl.js"></script>
-        
+
     </head>
-    <body ng-controller="noSurfCtrl">
+    <body ng-controller="noSurfCtrl" class="menu-closed">
         <div class="loading" ng-show="loading">
 
             <span class="glyphicon glyphicon-refresh " id="loading"></span>
 
         </div>
-        <div class="container-fluid content-all menu-closed">
+        <div class="container-fluid content-all ">
 
             <div class="over-layer"></div>
             <nav class="menu">
@@ -77,7 +78,24 @@
                     <li class="list-group-item">
                         Escolha sua Praia
                     </li>
+                    
                     <li class="list-group-item">
+                    <select class="form-control" ng-options="item.name for item in locais" ng-model="obj_est">
+                        <option value="">Selecione o Estado</option>
+                    </select>
+                    </li>
+                    <li class="list-group-item">
+                    <select class="form-control" ng-options="item.name for item in obj_est.cidades" ng-model="obj_cid">
+                        <option value="">Selecione o Cidade (Tot: {{obj_est.cidades.length || 0}})</option>
+                    </select>
+                    </li>
+                    <li class="list-group-item">
+                    <select class="form-control" ng-options="item.name for item in obj_cid.praias" ng-model="obj_pra"  ng-change="carregaWeather(obj_pra)">
+                        <option value="">Selecione a Praia (Tot: {{obj_cid.praias.length || 0}})</option>
+                    </select>
+                    </li>
+                    
+<!--                    <li class="list-group-item">
                         <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
                             <option value="">Selecione o Estado</option>
                         </select>
@@ -91,6 +109,12 @@
                         <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
                             <option value="">Selecione o Praias (Tot: {{objPraias.length|| 0}})</option>
                         </select>
+                    </li>-->
+                    <li class="list-group-item">
+                        <input type="text" class="form-control" ng-model="busca" placeholder="Buscar"/>
+                        <div ng-repeat="item in locais | filter:busca">
+                            
+                        </div>
                     </li>
                 </ul>
             </nav>
@@ -99,13 +123,21 @@
                     <button class="btn btn-primary" onclick="toggleMenu()">
                         <span class="glyphicon glyphicon-align-justify" style="font-size: 2em;"></span>
                     </button>
+                    <span class="badge" style="font-size: 1.2em;">{{est.name}}</span> 
+                    <span class="badge" style="font-size: 1.2em;">{{cid.name}}</span>
+                    <span class="badge" style="font-size: 1.2em;">{{pra.name}}</span>
                 </div>
             </div>
             <h3>&nbsp;</h3>
-
-
+            
+            <div class="row">
+                <div class="col-md-12">
+                    
+                </div>
+            </div>
             <div class="row" ng-show="atualMarine">
                 <div class="col-md-6 table-responsive">
+                    <h2>Previsão Atual</h2>
                     <table class="table table-now">
                         <tr>
                             <td>
@@ -211,6 +243,7 @@
                     </table>
                 </div>
                 <div class="col-md-6">
+                    <h2>Direções</h2>
                     <table class="table">
                         <tr>
                             <td>
@@ -227,9 +260,11 @@
             </div>
             <div class="row" ng-show="atualMarine">
                 <div class="col-md-12">
+                    <h2>Previsão Semanal</h2>
                     <div class="text-center">
                         {{now| date:'fullDate' | uppercase}}
                     </div>
+                    <br />
                     <div style="overflow: auto">
                         <button class="btn btn-primary pull-left" ng-click="modDate(-1)">Prev</button>
                         <button class="btn btn-primary pull-right" ng-click="modDate(1)">Next</button>
@@ -239,7 +274,7 @@
                 </div>
             </div>
             <div class="row" ng-show="atualMarine">
-                </div>
+
                 <div class="col-md-6 table-week" ng-repeat="item in resultMarine.weather">
                     <table class="table table-center">
                         <tr>
@@ -291,6 +326,7 @@
                 </div>
             </div>
         </div>
+
 
         <script>
             function toggleMenu() {

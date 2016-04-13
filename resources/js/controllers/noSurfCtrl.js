@@ -3,6 +3,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
     $scope.estados = estados;
     $scope.cidades = cidades;
     $scope.praias = praias;
+    $scope.locais = locais;
     /*########## Select Data ########## */
 
     /*########## Is Loadgin ########## */
@@ -159,4 +160,67 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
             return "";
         }
     }
+
+    $scope.getEstados = function (id) {
+        
+    };
+    $scope.getCidades = function (id) {
+        $scope.locais.forEach(function (el){
+            if(el.id == id){
+                return el.cidades;
+            }
+        });
+    };
+
+    $scope.getPraias = function (id) {
+        var stop = false;
+        for(i=0; i<locais.length; i++){
+            for(j=0;j<locais[i].cidades.length; j++){
+                for(k=0;k<locais[i].cidades[j].praias.length; k++){
+                    
+                    if(stop == true) break;
+                }   
+                if(stop == true) break;
+            }
+            if(stop == true) break;
+        }
+    };
+
+
+//    var result = [];
+//    estados.forEach(function (el) {
+//        result.push(el);
+//    });
+//    cidades.forEach(function (el_c) {
+//        el_c.cidades.forEach(function (el_c2) {
+//            result.forEach(function (el_c3) {
+//                if (el_c3.id == el_c.id_estado) {
+//                    el_c3.cidades = el_c.cidades;
+//                }
+//            });
+//        });
+//    });
+//
+//    praias.forEach(function (el) {
+//        if (el.praias != null) {
+//            el.praias.forEach(function (el2) {
+//                result.forEach(function (est) {
+//                    est.cidades.forEach(function (cid) {
+//                        if (el.id_cidade == cid.id) {
+//                            cid.praias = el.praias;
+//                        }
+//                    });
+//                });
+//            });
+//        }
+//    });
+//    
+//    result.forEach(function (a){
+//        a.cidades.forEach(function (b){
+//            if(b.praias == undefined){
+//                b.praias = [];
+//            }
+//        });
+//    });
+
 });

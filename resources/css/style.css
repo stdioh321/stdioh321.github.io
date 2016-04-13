@@ -21,8 +21,6 @@ html, body{
 .content-all{
     transition: linear all .5s;
     position: relative;
-
-    min-height: 100vh;
     background-color: white;
 }
 
@@ -31,7 +29,9 @@ html, body{
     z-index: 10;
 
 }
-
+.menu-closed .menu{
+    display: none;
+}
 .menu-content{
     position: fixed;
     background-color: #222222;
