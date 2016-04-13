@@ -122,3 +122,31 @@ html, body{
     padding: 1em;
     margin: 0 auto;
 }
+
+.menu-content > div{
+    display: flex;
+}
+.nomes-locais{
+    display: flex;
+    align-items: center;
+}
+.nomes-locais div{
+    color: white;
+    font-size: 1.2em;
+    margin-left: 1em;
+    
+}
+.nomes-locais span:not(:nth-child(3)):after{
+    
+}
+
+.exibe-praias{
+    
+    height: 200px;
+    border: solid red 0px;
+    overflow: auto;
+}
+.exibe-praias > div > div > div{
+    background-color: white;
+    color: black;
+}

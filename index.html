@@ -78,42 +78,48 @@
                     <li class="list-group-item">
                         Escolha sua Praia
                     </li>
-                    
+
                     <li class="list-group-item">
-                    <select class="form-control" ng-options="item.name for item in locais" ng-model="obj_est">
-                        <option value="">Selecione o Estado</option>
-                    </select>
-                    </li>
-                    <li class="list-group-item">
-                    <select class="form-control" ng-options="item.name for item in obj_est.cidades" ng-model="obj_cid">
-                        <option value="">Selecione o Cidade (Tot: {{obj_est.cidades.length || 0}})</option>
-                    </select>
-                    </li>
-                    <li class="list-group-item">
-                    <select class="form-control" ng-options="item.name for item in obj_cid.praias" ng-model="obj_pra"  ng-change="carregaWeather(obj_pra)">
-                        <option value="">Selecione a Praia (Tot: {{obj_cid.praias.length || 0}})</option>
-                    </select>
-                    </li>
-                    
-<!--                    <li class="list-group-item">
-                        <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
+                        <select class="form-control" ng-options="item.name for item in locais" ng-model="obj_est">
                             <option value="">Selecione o Estado</option>
                         </select>
                     </li>
                     <li class="list-group-item">
-                        <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
-                            <option value="">Selecione o Cidade (Tot: {{objCidades.length|| 0}})</option>
+                        <select class="form-control" ng-options="item.name for item in obj_est.cidades" ng-model="obj_cid">
+                            <option value="">Selecione o Cidade (Tot: {{obj_est.cidades.length|| 0}})</option>
                         </select>
                     </li>
                     <li class="list-group-item">
-                        <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
-                            <option value="">Selecione o Praias (Tot: {{objPraias.length|| 0}})</option>
+                        <select class="form-control" ng-options="item.name for item in obj_cid.praias" ng-model="obj_pra"  ng-change="carregaWeather(obj_pra)">
+                            <option value="">Selecione a Praia (Tot: {{obj_cid.praias.length|| 0}})</option>
                         </select>
-                    </li>-->
+                    </li>
+
+                    <!--                    <li class="list-group-item">
+                                            <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
+                                                <option value="">Selecione o Estado</option>
+                                            </select>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
+                                                <option value="">Selecione o Cidade (Tot: {{objCidades.length|| 0}})</option>
+                                            </select>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
+                                                <option value="">Selecione o Praias (Tot: {{objPraias.length|| 0}})</option>
+                                            </select>
+                                        </li>-->
                     <li class="list-group-item">
                         <input type="text" class="form-control" ng-model="busca" placeholder="Buscar"/>
-                        <div ng-repeat="item in locais | filter:busca">
-                            
+                        <div  class="exibe-praias">
+                            <div ng-repeat="item in locais">
+                                <div ng-repeat="item2 in item.cidades">
+                                    <div ng-repeat="item3 in item2.praias | filter:{name:busca} | orderBy:name" ng-show="busca.length > 0">
+                                        <a href="" ng-click="carregaWeather(item3)">{{item3.name}} ({{item.name}} -> {{item2.name}})</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -123,16 +129,19 @@
                     <button class="btn btn-primary" onclick="toggleMenu()">
                         <span class="glyphicon glyphicon-align-justify" style="font-size: 2em;"></span>
                     </button>
-                    <span class="badge" style="font-size: 1.2em;">{{est.name}}</span> 
-                    <span class="badge" style="font-size: 1.2em;">{{cid.name}}</span>
-                    <span class="badge" style="font-size: 1.2em;">{{pra.name}}</span>
-                </div>
+
+                    <div class="nomes-locais">
+                        <div >{{obj_est.name}}</div> 
+                        <div >{{obj_cid.name}}</div>
+                        <div >{{obj_pra.name}}</div>
+                    </div>
+                </div>  
             </div>
             <h3>&nbsp;</h3>
-            
+
             <div class="row">
                 <div class="col-md-12">
-                    
+
                 </div>
             </div>
             <div class="row" ng-show="atualMarine">
