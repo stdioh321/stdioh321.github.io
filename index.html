@@ -280,7 +280,7 @@
                         <button class="btn btn-primary pull-right" ng-click="modDate(1)"  ng-disabled="indexDate > 5">Next</button>
                     </div>
                     <hr />
-                    <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}" height="80"></canvas>
+                    <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{ scaleStepWidth: 0.5}" height="100"></canvas>
                 </div>
             </div>
             <div class="row" ng-show="atualMarine">
@@ -297,7 +297,7 @@
                                 <span class="glyphicon glyphicon-time" title="Horário"></span>
                             </td>
                             <td>
-                                <i class="wi tsunami" title="Direção Onda"></i>
+                                <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
                             </td>
                             <td>
                                 <i class="wi wi-barometer" title="Período (seg)"></i>

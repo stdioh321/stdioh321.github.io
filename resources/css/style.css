@@ -54,16 +54,16 @@ html, body{
 
 }
 
-.table-center tr:nth-child(2) td{
+.table-center tr:not(:first-child) td{
+    text-align: center;
 }
 .table-now tr td:first-child{
     font-weight: bolder;
 }
-.table-week{
-    border: solid 1px rgba(100,100,100,.1);
-    padding: .2em;
+.table-week tr:first-child td{
+    text-align: center;
 }
-.table-week tr td:nth-child(even){
+.table-week tr:nth-child(even){
     background-color: rgba(100,100,100,.1);
 }
 
