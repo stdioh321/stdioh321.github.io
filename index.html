@@ -115,8 +115,8 @@
                         <div  class="exibe-praias">
                             <div ng-repeat="item in locais">
                                 <div ng-repeat="item2 in item.cidades">
-                                    <div ng-repeat="item3 in item2.praias | filter:{name:busca} | orderBy:name" ng-show="busca.length > 0">
-                                        <a href="" ng-click="carregaWeatherBusca(item3)">{{item3.name}} - {{item.code | uppercase}}, {{item2.name}}</a>
+                                    <div ng-repeat="item3 in item2.praias| filter:{name:busca} | orderBy:name" ng-show="busca.length > 0">
+                                        <a href="" ng-click="carregaWeatherBusca(item3)">{{item3.name}} - {{item.code| uppercase}}, {{item2.name}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -126,18 +126,19 @@
             </nav>
             <div class="row menu-content">
                 <div class="col-md-12">
-                    <button class="btn btn-primary" onclick="toggleMenu()">
-                        <span class="glyphicon glyphicon-align-justify" style="font-size: 2em;"></span>
-                    </button>
-
+                    <div>
+                        <button class="btn btn-primary" onclick="toggleMenu()">
+                            <span class="glyphicon glyphicon-align-justify" style="font-size: 1.5em;"></span>
+                        </button>
+                    </div>
                     <div class="nomes-locais">
-                        <div >{{obj_est.name}}</div> 
-                        <div >{{obj_cid.name}}</div>
-                        <div >{{obj_pra.name}}</div>
+                        <div ng-show="obj_est">{{obj_est.code | uppercase}} <span class="glyphicon glyphicon-menu-right"></span> </div> 
+                        <div ng-show="obj_cid">{{obj_cid.name}} <span class="glyphicon glyphicon-menu-right"></span> </div>
+                        <div ng-show="obj_pra">{{obj_pra.name}}</div>
                     </div>
                 </div>  
             </div>
-            <h3>&nbsp;</h3>
+            <h2>&nbsp;</h2>
 
             <div class="row">
                 <div class="col-md-12">
@@ -275,8 +276,8 @@
                     </div>
                     <br />
                     <div style="overflow: auto">
-                        <button class="btn btn-primary pull-left" ng-click="modDate(-1)">Prev</button>
-                        <button class="btn btn-primary pull-right" ng-click="modDate(1)">Next</button>
+                        <button class="btn btn-primary pull-left" ng-click="modDate(-1)" ng-disabled="indexDate < 1">Prev</button>
+                        <button class="btn btn-primary pull-right" ng-click="modDate(1)"  ng-disabled="indexDate > 5">Next</button>
                     </div>
                     <hr />
                     <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{}" height="80"></canvas>
