@@ -162,11 +162,11 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
     }
 
     $scope.getEstados = function (id) {
-        
+
     };
     $scope.getCidades = function (id) {
-        $scope.locais.forEach(function (el){
-            if(el.id == id){
+        $scope.locais.forEach(function (el) {
+            if (el.id == id) {
                 return el.cidades;
             }
         });
@@ -174,15 +174,18 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
 
     $scope.getPraias = function (id) {
         var stop = false;
-        for(i=0; i<locais.length; i++){
-            for(j=0;j<locais[i].cidades.length; j++){
-                for(k=0;k<locais[i].cidades[j].praias.length; k++){
-                    
-                    if(stop == true) break;
-                }   
-                if(stop == true) break;
+        for (i = 0; i < locais.length; i++) {
+            for (j = 0; j < locais[i].cidades.length; j++) {
+                for (k = 0; k < locais[i].cidades[j].praias.length; k++) {
+
+                    if (stop == true)
+                        break;
+                }
+                if (stop == true)
+                    break;
             }
-            if(stop == true) break;
+            if (stop == true)
+                break;
         }
     };
 
@@ -223,4 +226,31 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
 //        });
 //    });
 
+
+    $scope.carregaWeatherBusca = function (praia) {
+
+        var tmpEstado = $scope.infPraia(praia);
+        $scope.obj_est = tmpEstado.estado;
+        $scope.obj_cid = tmpEstado.cidade;
+        $scope.obj_pra = tmpEstado.praia;
+        $scope.busca = "";
+        $scope.carregaWeather(praia);
+
+    };
+
+    $scope.infPraia = function (praia) {
+        var result = {"estado": null, "cidade": null, "praia": praia};
+        $scope.locais.forEach(function (el) {
+            el.cidades.forEach(function (el2) {
+                el2.praias.forEach(function (el3) {
+                    if (el3.id == praia.id) {
+                        result.estado = el;
+                        result.cidade = el2;
+                    }
+                });
+            });
+        });
+
+        return result;
+    }
 });

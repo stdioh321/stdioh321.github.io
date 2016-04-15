@@ -116,7 +116,7 @@
                             <div ng-repeat="item in locais">
                                 <div ng-repeat="item2 in item.cidades">
                                     <div ng-repeat="item3 in item2.praias | filter:{name:busca} | orderBy:name" ng-show="busca.length > 0">
-                                        <a href="" ng-click="carregaWeather(item3)">{{item3.name}} ({{item.name}} -> {{item2.name}})</a>
+                                        <a href="" ng-click="carregaWeatherBusca(item3)">{{item3.name}} - {{item.code | uppercase}}, {{item2.name}}</a>
                                     </div>
                                 </div>
                             </div>

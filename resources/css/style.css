@@ -149,4 +149,11 @@ html, body{
 .exibe-praias > div > div > div{
     background-color: white;
     color: black;
+    box-shadow: 0px 0px 1px gray;
+    font-size: .9em;
+    padding: 0.3em 0;
+}
+.exibe-praias a:visited, .exibe-praias a:link{
+    font-style: none;
+    color: black;
 }
