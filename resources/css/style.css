@@ -32,12 +32,7 @@ html, body{
 .menu-closed .menu{
     display: none;
 }
-.menu-content{
-    position: fixed;
-    background-color: #222222;
-    z-index: 10;
-    width: 100%;
-}
+
 
 .over-layer{
     position: absolute;
@@ -97,12 +92,30 @@ html, body{
     to      {transform: rotateZ(360deg);}
 }
 
+
+.menu-content{
+    padding: 0;
+    background-color: #222222;
+    z-index: 10;
+    width: 110%;
+    
+
+}
+
+.menu-closed .menu-content{
+    position: fixed;
+}
+
+
 @media screen and (min-width: 601px){
     .menu{
         width: 40%;
     }
     .menu-opened .content-all{
         left: 40%;
+    }
+    .menu-opened .menu-content{
+        
     }
 }
 
@@ -131,19 +144,19 @@ html, body{
     padding: 0 !important;
 }
 .nomes-locais{
-    
-    
+
+
 }
 .nomes-locais div{
     font-size: .9em;
     display: inline-block;
 }
 .nomes-locais div:not(:nth-child(3)):after{
-    
+
 }
 
 .exibe-praias{
-    
+
     height: 200px;
     border: solid red 0px;
     overflow: auto;
