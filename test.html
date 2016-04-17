@@ -13,7 +13,7 @@
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
         <script src="resources/lib/bootstrap/dist/js/bootstrap.js" ></script>
 
-        
+
 
 
 
@@ -23,137 +23,37 @@
 
             var app = angular.module('ang', []);
             app.controller('angCtrl', function ($scope, $interval) {
-                $scope.urls = [
-                    "http://www.linuxdescomplicado.com.br/wp-content/uploads/2015/02/linux-aprender-curso.png",
-                    "http://www.techreviewer.co.uk/wp-content/uploads/2014/12/Linux-Is-Sick-Look-Out-For-Turla.jpg",
-                    "http://www.escolahacker.com.br/wp-content/uploads/2015/10/Linux.jpg"
-                ];
 
-                $scope.add = function (u) {
-                    $scope.urls.push(u);
-                    $scope.u = "";
-                }
-
-                $scope.tb = [
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                    {name: "Jao", email: "jao@gmail.com", number: "123456789", gender: "m", comment: "Sou jao"},
-                ];
             });
 
 
         </script>
         <style type="text/css">
-            body{
-                background-color: white;
-
-            }
-            .menu{
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 40%;
-                height: 100%;
-                background-color: #222222;
-                color: white;
-                z-index: -10;
-                opacity: 0;
-                transition: linear all .5s;
-            }
-            
-            body.menu-closed .content-all{
-                left: 0;
-            }
-            
-            body.menu-opened .content-all{
-                
-                left: 40%;
-            }
-            body.menu-opened .menu{
-                opacity: 1;
-            }
-            
-            .content-all{
-                position: relative;
-                
-            }
-            .over-layer{
-                transition: linear all .5s;
-                position: absolute;
-                top: 0;
-                left: 0;
-
-            }
-            .menu-opened .over-layer{
-                background-color: rgba(0,0,0,.6);
-                z-index: 20;
+            #map{
                 width: 100%;
-                height: 100%;
+                height: 300px;
             }
-
         </style>
 
     </head>
-    <body ng-controller="angCtrl" class="menu-closed">
-        <div class='container-fluid content-all '>
-            <div class="menu">Fixed</div>
-            <div class="over-layer"></div>
-            <div class="row menu-content">
-                <div class="col-md-12">
-                    <button class="btn btn-primary" onclick="myFunc()">&#9776;</button>
-                </div>
+    <body ng-controller="angCtrl">
+        <div class="container">
+            <div class="col-md-offset-3 col-md-6">
+                <div id="map"></div>
             </div>
-
-            <h3>&nbsp;</h3>
-            <div class="container-fluid cont-in">
-                <div class="row">
-                    <div class="col-md-6">
-
-                        <table class="table">
-                            <tr ng-repeat="item in tb">
-                                <td ng-repeat="(key, value) in item">{{value}}</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="col-md-6">
-
-                        <table class="table">
-                            <tr ng-repeat="item in tb">
-                                <td ng-repeat="(key, value) in item">{{value}}</td>
-                            </tr>
-                        </table>
-                    </div>  
-                </div>
-
-            </div>
-
-        </div>  
-        <script type="text/javascript">
-                    function myFunc() {
-                        console.log(document.getElementsByTagName('body')[0].classList.toggle('menu-opened'));
-                        console.log(document.getElementsByTagName('body')[0].classList.toggle('menu-closed'));
-                    }
-                    document.getElementsByClassName('over-layer')[0].onclick = myFunc;
-        </script>
+        </div>
     </body>
+    <script>
+
+        var map;
+        function initMap(lat, lng) {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: lat, lng: lng},
+                zoom: 8
+            });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTbk54QQ8sHvqi0QhZ0HAAoQa_pllO4Co&callback=initMap"
+    async defer></script>
 </html>
