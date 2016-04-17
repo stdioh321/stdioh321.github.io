@@ -76,7 +76,7 @@
                 <ul class="list-group">
 
                     <li class="list-group-item">
-                        Escolha sua Praia
+                        <h3>Escolha sua Praia</h3>
                     </li>
 
                     <li class="list-group-item">
@@ -95,21 +95,6 @@
                         </select>
                     </li>
 
-                    <!--                    <li class="list-group-item">
-                                            <select class="form-control" ng-model="est" ng-options="item.name for item in estados" ng-change="carregaCidade(est)">
-                                                <option value="">Selecione o Estado</option>
-                                            </select>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <select class="form-control" ng-model="cid" ng-options="item.name for item in objCidades" ng-change="carregaPraia(cid)">
-                                                <option value="">Selecione o Cidade (Tot: {{objCidades.length|| 0}})</option>
-                                            </select>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <select class="form-control" ng-model="pra" ng-options="item.name for item in objPraias" ng-change="carregaWeather(pra)">
-                                                <option value="">Selecione o Praias (Tot: {{objPraias.length|| 0}})</option>
-                                            </select>
-                                        </li>-->
                     <li class="list-group-item">
                         <input type="text" class="form-control" ng-model="busca" placeholder="Buscar"/>
                         <div  class="exibe-praias">
@@ -132,19 +117,14 @@
                         </button>
                     </div>
                     <div class="nomes-locais">
-                        <div ng-show="obj_est">{{obj_est.code | uppercase}} <span class="glyphicon glyphicon-menu-right"></span> </div> 
+                        <div ng-show="obj_est">{{obj_est.code| uppercase}} <span class="glyphicon glyphicon-menu-right"></span> </div> 
                         <div ng-show="obj_cid">{{obj_cid.name}} <span class="glyphicon glyphicon-menu-right"></span> </div>
-                        <div ng-show="obj_pra">{{obj_pra.name}}</div>
+                        <div ng-show="obj_pra" style="font-style: italic">{{obj_pra.name}}</div>
                     </div>
                 </div>  
             </div>
             <h2>&nbsp;</h2>
 
-            <div class="row">
-                <div class="col-md-12">
-
-                </div>
-            </div>
             <div class="row" ng-show="atualMarine">
                 <div class="col-md-6 table-responsive">
                     <h2>Previsão Atual</h2>
@@ -156,7 +136,9 @@
                             <td>
                                 {{atualMarine.swellHeight_m}}m
                             </td>
-                            <td>icon</td>
+                            <td>
+                                <img src="resources/img/tamanho_onda.png" class="img-responsive" />
+                            </td>
                         </tr>
                         <td>
                             Direção
@@ -164,7 +146,9 @@
                         <td>
                             <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
                         </td>
-                        <td>icon</td>
+                        <td>
+                            <img src="resources/img/direcao_onda.png" class="img-responsive" />
+                        </td>
                         </tr>
                         <td>
                             Periodo
@@ -172,7 +156,9 @@
                         <td>
                             {{atualMarine.swellPeriod_secs}}seg
                         </td>
-                        <td>icon</td>
+                        <td>
+                            <img src="resources/img/periodo.png" class="img-responsive" />
+                        </td>
                         </tr>
                         <td>
                             Potencia Onda
@@ -180,15 +166,19 @@
                         <td>
                             {{atualMarine.WindGustKmph}}km/h
                         </td>
-                        <td>icon</td>
+                        <td>
+                            <img src="resources/img/potencia.png" class="img-responsive" />
+                        </td>
                         </tr>
                         <td>
-                            Vento
+                            Vento Temp.
                         </td>
                         <td>
                             {{atualMarine.WindChillC}}&#176;c
                         </td>
-                        <td>icon</td>
+                        <td>
+                            <img src="resources/img/vento_temp.png" class="img-responsive" />
+                        </td>
                         </tr>
                         <td>
                             Direção Vento
@@ -196,7 +186,9 @@
                         <td>
                             <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
                         </td>
-                        <td>icon</td>
+                        <td>
+                            <img src="resources/img/direcao_vento.png" class="img-responsive" />
+                        </td>
                         </tr>
                         <tr>
                             <td>
@@ -205,7 +197,9 @@
                             <td>
                                 {{atualMarine.tempC}}&#176;c
                             </td>
-                            <td>icon</td>
+                            <td>
+                                <img src="resources/img/temperatura.png" class="img-responsive" />
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -214,7 +208,9 @@
                             <td>
                                 {{atualWeather.chanceofrain}}%
                             </td>
-                            <td>icon</td>
+                            <td>
+                                <img src="resources/img/proba.png" class="img-responsive" />
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -223,7 +219,9 @@
                             <td>
                                 {{atualWeather.precipMM}}mm
                             </td>
-                            <td>icon</td>
+                            <td>
+                                <img src="resources/img/chuva.png" class="img-responsive" />
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -232,7 +230,9 @@
                             <td>
                                 {{resultMarine.weather[0].astronomy[0].sunrise}}
                             </td>
-                            <td>icon</td>
+                            <td>
+                                <img src="resources/img/sol_cima.png" class="img-responsive" />
+                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -241,14 +241,18 @@
                             <td>
                                 {{resultMarine.weather[0].astronomy[0].sunset}}
                             </td>
-                            <td>icon</td>
+                            <td>
+                                <img src="resources/img/sol_baixo.png" class="img-responsive" />
+                            </td>
                         </tr>
                         <tr>
                             <td>
                                 Lua
                             </td>
                             <td>Moon Icon</td>
-                            <td>icon</td>
+                            <td>
+                                <img src="resources/img/lua.png" class="img-responsive" />
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -261,7 +265,17 @@
                             </td>
                             <td>
                                 <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
-                                <img src="{{atualMarine.weatherIconUrl[0].value}}" />
+
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Onda
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
+
                             </td>
                         </tr>
                     </table>
@@ -295,21 +309,27 @@
                         <tr>
                             <td>
                                 <span class="glyphicon glyphicon-time" title="Horário"></span>
+
                             </td>
                             <td>
                                 <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
+
                             </td>
                             <td>
                                 <i class="wi wi-barometer" title="Período (seg)"></i>
+
                             </td>
                             <td>
                                 <i class="wi wi-windy" title="Direção Vento"></i>
+
                             </td>
                             <td>
                                 <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
+
                             </td>
                             <td>
                                 <span class="glyphicon glyphicon-time" title="Potência"></span>
+
                             </td>
                         </tr>
                         <tr ng-repeat="item2 in item.hourly">

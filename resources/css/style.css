@@ -1,6 +1,10 @@
 html, body{
     overflow-x: hidden;
 }
+
+.img-icon{
+    border: solid red 1px;
+}
 .menu{
 
     position: fixed;
@@ -49,15 +53,16 @@ html, body{
 
 }
 
-.table-center tr:not(:first-child) td{
+
+.table-now img{
+    width: 35px;
+}
+
+.table-week tr td{
+    font-size: .8em;
     text-align: center;
 }
-.table-now tr td:first-child{
-    font-weight: bolder;
-}
-.table-week tr:first-child td{
-    text-align: center;
-}
+
 .table-week tr:nth-child(even){
     background-color: rgba(100,100,100,.1);
 }
@@ -98,7 +103,7 @@ html, body{
     background-color: #222222;
     z-index: 10;
     width: 110%;
-    
+    position: absolute;
 
 }
 
@@ -115,7 +120,7 @@ html, body{
         left: 40%;
     }
     .menu-opened .menu-content{
-        
+
     }
 }
 
@@ -171,4 +176,14 @@ html, body{
 .exibe-praias a:visited, .exibe-praias a:link{
     font-style: none;
     color: black;
+}
+
+
+.img-test > div > div:nth-child(1){
+    background: url("../img/icons_1.png") 0px 0 ;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    
+    
 }
