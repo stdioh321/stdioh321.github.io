@@ -4,4 +4,4 @@ var key = "f2ae69adff674902a3c13610160504";
 
 
 
-var app = angular.module("noSurf", ['chart.js', 'ngTouch']);
+var app = angular.module("noSurf", ['chart.js', 'angular-carousel']);

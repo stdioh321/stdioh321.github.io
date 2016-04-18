@@ -30,7 +30,7 @@
        
     -->
     <head>
-        <title>Teste</title>
+        <title>NoSurf</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="UTF-8" />
 
@@ -38,7 +38,7 @@
         <link rel="stylesheet" href="resources/lib/angular-chart.js/dist/angular-chart.css">
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons.css">
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons-wind.css">
-
+        <link rel="stylesheet" href="resources/lib/angular-carousel/dist/angular-carousel.css">
         <link rel="stylesheet" href="resources/css/style.css" >
 
 
@@ -49,13 +49,16 @@
 
         <script src="resources/lib/Chart.js/Chart.js"></script>   
         <script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
-        <script src="resources/lib/angular-touch/angular-touch.js"></script>
+        <script src="resources/lib/angular-touch/angular-touch.js" ></script>
+        <script src="resources/lib/angular-carousel/dist/angular-carousel.js" ></script>
 
 
         <script type="text/javascript" src="resources/json/estados.js"></script>
         <script type="text/javascript" src="resources/json/cidades.js"></script>
         <script type="text/javascript" src="resources/json/praias.js"></script>
         <script type="text/javascript" src="resources/json/locais.js"></script>
+
+
 
 
         <script src="resources/js/app.js" ></script>
@@ -73,6 +76,9 @@
         <div class="container-fluid content-all ">
 
             <div class="over-layer"></div>
+
+
+
             <nav class="menu">
                 <ul class="list-group">
 
@@ -102,7 +108,7 @@
                             <div ng-repeat="item in locais">
                                 <div ng-repeat="item2 in item.cidades">
                                     <div ng-repeat="item3 in item2.praias| filter:{name:busca} | orderBy:name" ng-show="busca.length > 0">
-                                        <a href="" ng-click="carregaWeatherBusca(item3)">{{item3.name}} - {{item.code| uppercase}}, {{item2.name}}</a>
+                                        <a href="" ng-click="carregaWeatherBusca(item3)">{{item3.name}}, {{item.code| uppercase}} - {{item2.name}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -312,76 +318,138 @@
                     <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{ scaleStepWidth: 0.5}" height="100"></canvas>
                 </div>
             </div>
+            <!--            <div class="row" ng-show="atualMarine">
+            
+                            <div class="col-md-6 table-week" ng-repeat="item in resultMarine.weather">
+                                <table class="table table-center">
+                                    <tr>
+                                        <td colspan="7">
+                                            {{item.date| date:'fullDate' | uppercase}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-time" title="Horário"></span>
+            
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
+            
+                                        </td>
+                                        <td>
+                                            <i class="wi wi-barometer" title="Período (seg)"></i>
+            
+                                        </td>
+                                        <td>
+                                            <i class="wi wi-windy" title="Direção Vento"></i>
+            
+                                        </td>
+                                        <td>
+                                            <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
+            
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-time" title="Potência"></span>
+            
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="item2 in item.hourly">
+                                        <td>
+                                            {{item2.time| toHour}}
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
+                                        </td>
+                                        <td>
+                                            {{item2.swellHeight_m}}M
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
+                                        </td>
+                                        <td>
+                                            {{item2.windspeedKmph}}km/h
+                                        </td>
+                                        <td>
+                                            {{item2.WindGustKmph}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>-->
             <div class="row" ng-show="atualMarine">
+                <div class="col-md-8 col-md-offset-2">
+                    <ul rn-carousel rn-carousel-transition="fadeAndSlide" class="rn-carousel">
+                        <li ng-repeat="item in resultMarine.weather">
+                            <div class="layer">
+                                <table class="table table-center">
+                                    <tr>
+                                        <td colspan="7">
+                                            {{item.date| date:'fullDate' | uppercase}}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="glyphicon glyphicon-time" title="Horário"></span>
 
-                <div class="col-md-6 table-week" ng-repeat="item in resultMarine.weather">
-                    <table class="table table-center">
-                        <tr>
-                            <td colspan="7">
-                                {{item.date| date:'fullDate' | uppercase}}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <span class="glyphicon glyphicon-time" title="Horário"></span>
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
 
-                            </td>
-                            <td>
-                                <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
+                                        </td>
+                                        <td>
+                                            <i class="wi wi-barometer" title="Período (seg)"></i>
 
-                            </td>
-                            <td>
-                                <i class="wi wi-barometer" title="Período (seg)"></i>
+                                        </td>
+                                        <td>
+                                            <i class="wi wi-windy" title="Direção Vento"></i>
 
-                            </td>
-                            <td>
-                                <i class="wi wi-windy" title="Direção Vento"></i>
+                                        </td>
+                                        <td>
+                                            <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
 
-                            </td>
-                            <td>
-                                <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-time" title="Potência"></span>
 
-                            </td>
-                            <td>
-                                <span class="glyphicon glyphicon-time" title="Potência"></span>
-
-                            </td>
-                        </tr>
-                        <tr ng-repeat="item2 in item.hourly">
-                            <td>
-                                {{item2.time| toHour}}
-                            </td>
-                            <td>
-                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
-                            </td>
-                            <td>
-                                {{item2.swellHeight_m}}M
-                            </td>
-                            <td>
-                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
-                            </td>
-                            <td>
-                                {{item2.windspeedKmph}}km/h
-                            </td>
-                            <td>
-                                {{item2.WindGustKmph}}
-                            </td>
-                        </tr>
-                    </table>
+                                        </td>
+                                    </tr>
+                                    <tr ng-repeat="item2 in item.hourly">
+                                        <td>
+                                            {{item2.time| toHour}}
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
+                                        </td>
+                                        <td>
+                                            {{item2.swellHeight_m}}M
+                                        </td>
+                                        <td>
+                                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
+                                        </td>
+                                        <td>
+                                            {{item2.windspeedKmph}}km/h
+                                        </td>
+                                        <td>
+                                            {{item2.WindGustKmph}}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
+
             </div>
         </div>
 
 
-        <script>
+        <script type="text/javascript">
             function toggleMenu() {
                 document.getElementsByTagName('body')[0].classList.toggle('menu-opened');
                 document.getElementsByTagName('body')[0].classList.toggle('menu-closed');
             }
             document.getElementsByClassName('over-layer')[0].onclick = toggleMenu;
             toggleMenu();
-        </script>
-        <script type="text/javascript">
             var map;
             function initMap(lat, lng) {
                 if (lat == undefined) {
@@ -390,13 +458,19 @@
                 if (lng == undefined) {
                     lng = 0;
                 }
-                console.log("MAP");
+                var myLatLng = {lat: lat, lng: lng};
                 map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: lat, lng: lng},
-                    scrollwheel: false,
-                    zoom: 15
+                    zoom: 15,
+                    center: myLatLng,
+                    scrollwheel: true
+                });
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Hello World!'
                 });
             }
+
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTbk54QQ8sHvqi0QhZ0HAAoQa_pllO4Co&callback=initMap"
         async defer></script>

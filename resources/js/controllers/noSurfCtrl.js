@@ -26,6 +26,8 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
         window.showMenu();
     };
 
+    
+
     $scope.carregaCidade = function (tmpEstado) {
         var tmp = false;
         if (tmpEstado != null) {
