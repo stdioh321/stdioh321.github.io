@@ -126,7 +126,9 @@
             </div>
             <h2>&nbsp;</h2>
 
-            <div class="row" ng-show="atualMarine">
+            <div class="row"
+                 ng-class="{esconde:!atualMarine}"
+                 >
                 <div class="col-md-6 table-responsive">
                     <h2>Previsão Atual</h2>
                     <table class="table table-now">
@@ -266,8 +268,9 @@
                             </td>
                             <td>
                                 <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
-
-
+                            </td>
+                            <td>
+                                {{atualMarine.winddir16Point}}
                             </td>
                         </tr>
                         <tr>
@@ -278,9 +281,14 @@
                                 <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
 
                             </td>
+                            <td>
+                                {{atualMarine.swellDir16Point}}
+                            </td>
                         </tr>
                     </table>
-                    <br />
+                    <div class="compass">
+                        <img src="resources/img/compass.png" class="img-responsive"/>
+                    </div>
                     <div id="map"></div>
 
                 </div>
@@ -376,11 +384,17 @@
         <script type="text/javascript">
             var map;
             function initMap(lat, lng) {
-
+                if (lat == undefined) {
+                    lat = 0;
+                }
+                if (lng == undefined) {
+                    lng = 0;
+                }
+                console.log("MAP");
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: lat, lng: lng},
                     scrollwheel: false,
-                    zoom: 8
+                    zoom: 15
                 });
             }
         </script>

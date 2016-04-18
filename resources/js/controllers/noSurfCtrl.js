@@ -74,9 +74,9 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
 
                 console.log($scope.resultMarine);
                 toggleMenu();
-                
+
                 initMap(praia.lat, praia.lon);
-                
+                window.scrollTo(0, 0);
                 $http({
                     method: "GET",
                     url: urlBase + "weather.ashx?key=" + key + "&lang=pt&showmap=yes&format=json&q=" + praia.lat + "," + praia.lon
@@ -84,6 +84,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
                     $scope.loading = false;
                     $scope.resultWeather = data.data.data;
                     $scope.carregaAtual();
+
                 }, function (data) {
                     console.log("ERROR");
                     console.log(data);
@@ -257,6 +258,6 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
         return result;
     }
 
-    
+
 
 });
