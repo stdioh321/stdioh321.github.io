@@ -15,6 +15,12 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
     $scope.data = [];
     $scope.dataChart = [];
     $scope.labels = [];
+    $scope.colours = [{
+            fillColor: 'rgba(0, 0, 255, 0.7)',
+            strokeColor: 'rgba(0, 0, 255, 0.7)'
+//            highlightFill: 'rgba(47, 132, 71, 0.8)',
+//            highlightStroke: 'rgba(47, 132, 71, 0.8)'
+        }];
     /*########## Chart Data ########## */
     $scope.indexDate = 0;
 
@@ -158,13 +164,6 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
         $scope.atualWeather = null;
         $scope.carregaCidade(null);
     }
-    $scope.isFirst = function (val) {
-        if (val == 0) {
-            return "active";
-        } else {
-            return "";
-        }
-    }
 
     $scope.getEstados = function (id) {
 
@@ -194,44 +193,6 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
         }
     };
 
-
-//    var result = [];
-//    estados.forEach(function (el) {
-//        result.push(el);
-//    });
-//    cidades.forEach(function (el_c) {
-//        el_c.cidades.forEach(function (el_c2) {
-//            result.forEach(function (el_c3) {
-//                if (el_c3.id == el_c.id_estado) {
-//                    el_c3.cidades = el_c.cidades;
-//                }
-//            });
-//        });
-//    });
-//
-//    praias.forEach(function (el) {
-//        if (el.praias != null) {
-//            el.praias.forEach(function (el2) {
-//                result.forEach(function (est) {
-//                    est.cidades.forEach(function (cid) {
-//                        if (el.id_cidade == cid.id) {
-//                            cid.praias = el.praias;
-//                        }
-//                    });
-//                });
-//            });
-//        }
-//    });
-//    
-//    result.forEach(function (a){
-//        a.cidades.forEach(function (b){
-//            if(b.praias == undefined){
-//                b.praias = [];
-//            }
-//        });
-//    });
-
-
     $scope.carregaWeatherBusca = function (praia) {
 
         var tmpEstado = $scope.infPraia(praia);
@@ -260,5 +221,8 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
     }
 
 
+    $scope.changeCaroulseIndex = function (idx) {
+        $scope.carouselIndex += idx;
+    }
 
 });

@@ -1,6 +1,17 @@
+body{
+    background: url(../img/beach.jpg);
+    background-size: 100% 100%;
 
+}
+body *{
+    color: white;
+}
 html, body{
     overflow-x: hidden;
+}
+
+.table-direcoes img{
+    width: 35px;
 }
 .compass{
     display: flex;
@@ -31,30 +42,23 @@ html, body{
 .img-icon{
     border: solid red 1px;
 }
+
 .menu{
 
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #222222;
+    min-height: 100vh;
+    background-color: rgba(34,34,34,0.5);
     z-index: -10;
 
+
 }
+.menu ul{
+    border: solid red 0px;
 
-
-.menu ul li{
-    background-color: #222222;
-    border: 0;
-    color: white;
 }
-.content-all{
-    transition: linear all .5s;
-    position: relative;
-    background-color: white;
-}
-
-
 .menu-opened .menu{
     z-index: 10;
 
@@ -62,6 +66,20 @@ html, body{
 .menu-closed .menu{
     display: none;
 }
+
+.menu ul li{
+    border: 0;
+    color: white;
+    background-color: rgba(0,0,0,0);
+}
+.content-all{
+    transition: linear all .5s;
+    position: relative;
+    //background-color: white;
+}
+
+
+
 
 
 .over-layer{
@@ -126,7 +144,7 @@ html, body{
 
 .menu-content{
     padding: 0;
-    background-color: #222222;
+    background-color: rgba(34,34,34,0.5);
     z-index: 10;
     width: 110%;
     position: absolute;
@@ -211,5 +229,39 @@ html, body{
     width: 60px;
     height: 60px;
 
+
+}
+
+
+.rn-carousel .arrow{
+
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    margin: auto auto;
+    opacity: .8;
+    box-shadow: 0px 0px 10px #222222;
+
+}
+.rn-carousel .arrow:hover{
+    cursor: pointer;
+}
+.rn-carousel .arrow:nth-child(1){
+    left: 0;
+}
+.rn-carousel .arrow:nth-child(2){
+    right: 0;
+}
+
+.table-semanal td{
+    text-align: center;
+}
+
+
+#line{
+
+}
+
+.chart-bar .chart-colours{
 
 }

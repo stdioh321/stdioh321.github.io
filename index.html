@@ -83,10 +83,8 @@
                 <ul class="list-group">
 
                     <li class="list-group-item">
-                        <h3>Escolha sua Praia
-                            <button ng-click="showScope()">
-                                Scope
-                            </button>
+                        <h3>
+                            Escolha sua Praia
                         </h3>
                     </li>
 
@@ -144,128 +142,116 @@
                     <table class="table table-now">
                         <tr>
                             <td>
+                                <img src="resources/img/tamanho_onda.png"  />
                                 Tamanho Onda
                             </td>
                             <td>
                                 {{atualMarine.swellHeight_m}}m
                             </td>
-                            <td>
-                                <img src="resources/img/tamanho_onda.png" class="img-responsive" />
-                            </td>
-                        </tr>
-                        <td>
-                            Direção
-                        </td>
-                        <td>
-                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
-                        </td>
-                        <td>
-                            <img src="resources/img/direcao_onda.png" class="img-responsive" />
-                        </td>
-                        </tr>
-                        <td>
-                            Periodo
-                        </td>
-                        <td>
-                            {{atualMarine.swellPeriod_secs}}seg
-                        </td>
-                        <td>
-                            <img src="resources/img/periodo.png" class="img-responsive" />
-                        </td>
-                        </tr>
-                        <td>
-                            Potencia Onda
-                        </td>
-                        <td>
-                            {{atualMarine.WindGustKmph}}km/h
-                        </td>
-                        <td>
-                            <img src="resources/img/potencia.png" class="img-responsive" />
-                        </td>
-                        </tr>
-                        <td>
-                            Vento Temp.
-                        </td>
-                        <td>
-                            {{atualMarine.WindChillC}}&#176;c
-                        </td>
-                        <td>
-                            <img src="resources/img/vento_temp.png" class="img-responsive" />
-                        </td>
-                        </tr>
-                        <td>
-                            Direção Vento
-                        </td>
-                        <td>
-                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
-                        </td>
-                        <td>
-                            <img src="resources/img/direcao_vento.png" class="img-responsive" />
-                        </td>
+
                         </tr>
                         <tr>
                             <td>
+                                <img src="resources/img/direcao_onda.png"  />
+                                Direção
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="resources/img/periodo.png"  />
+                                Periodo
+                            </td>
+                            <td>
+                                {{atualMarine.swellPeriod_secs}}seg
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="resources/img/potencia.png"  />
+                                Potência Onda
+                            </td>
+                            <td>
+                                {{atualMarine.WindGustKmph}}km/h
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="resources/img/vento_temp.png"  />
+                                Vento Temp.
+                            </td>
+                            <td>
+                                {{atualMarine.WindChillC}}&#176;c
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="resources/img/direcao_vento.png"  />
+                                Direção Vento
+                            </td>
+                            <td>
+                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="resources/img/temperatura.png"  />
                                 Temperatura
                             </td>
                             <td>
                                 {{atualMarine.tempC}}&#176;c
                             </td>
-                            <td>
-                                <img src="resources/img/temperatura.png" class="img-responsive" />
-                            </td>
+
                         </tr>
                         <tr>
                             <td>
+                                <img src="resources/img/proba.png"  />
                                 Probabilidade
                             </td>
                             <td>
                                 {{atualWeather.chanceofrain}}%
                             </td>
-                            <td>
-                                <img src="resources/img/proba.png" class="img-responsive" />
-                            </td>
+
                         </tr>
                         <tr>
                             <td>
+                                <img src="resources/img/chuva.png"  />
                                 Chuva
                             </td>
                             <td>
                                 {{atualWeather.precipMM}}mm
                             </td>
-                            <td>
-                                <img src="resources/img/chuva.png" class="img-responsive" />
-                            </td>
+
                         </tr>
                         <tr>
                             <td>
+                                <img src="resources/img/sol_cima.png"  />
                                 Nascer
                             </td>
                             <td>
                                 {{resultMarine.weather[0].astronomy[0].sunrise}}
                             </td>
-                            <td>
-                                <img src="resources/img/sol_cima.png" class="img-responsive" />
-                            </td>
+
                         </tr>
                         <tr>
                             <td>
+                                <img src="resources/img/sol_baixo.png"  />
                                 Pôr do Sol
                             </td>
                             <td>
                                 {{resultMarine.weather[0].astronomy[0].sunset}}
                             </td>
-                            <td>
-                                <img src="resources/img/sol_baixo.png" class="img-responsive" />
-                            </td>
                         </tr>
                         <tr>
                             <td>
+                                <img src="resources/img/lua.png"  />
                                 Lua
                             </td>
                             <td>Moon Icon</td>
-                            <td>
-                                <img src="resources/img/lua.png" class="img-responsive" />
-                            </td>
                         </tr>
                     </table>
                 </div>
@@ -277,7 +263,7 @@
                         <img src="resources/img/arrow_up_blue.png" class="img-responsive" style="transform: rotate({{atualMarine.winddirDegree}}deg)"/>
                         <img src="resources/img/compass.png" class="img-responsive"/>
                     </div>
-                    <table class="table">
+                    <table class="table table-direcoes">
                         <tr>
                             <td>
                                 <img src="resources/img/direcao_vento.png" />
@@ -303,88 +289,20 @@
                 <br />
             </div>
             <div class="row" ng-show="atualMarine">
+
+
                 <div class="col-md-12">
-                    <h2>Previsão Semanal</h2>
-                    <div class="row" ng-show="atualMarine">
-                        <div class="col-md-8 col-md-offset-2">
-                            <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex"></div>
-                            <ul rn-carousel rn-carousel-transition="slide" rn-carousel-index="carouselIndex" class="rn-carousel">
-                                <li ng-repeat="item in resultMarine.weather">
-                                    <div class="layer">
-                                        <table class="table table-center">
-                                            <tr>
-                                                <td colspan="7">
-                                                    {{item.date| date:'fullDate' | uppercase}}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-time" title="Horário"></span>
-
-                                                </td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
-
-                                                </td>
-                                                <td>
-                                                    <i class="wi wi-barometer" title="Período (seg)"></i>
-
-                                                </td>
-                                                <td>
-                                                    <i class="wi wi-windy" title="Direção Vento"></i>
-
-                                                </td>
-                                                <td>
-                                                    <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
-
-                                                </td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-time" title="Potência"></span>
-
-                                                </td>
-                                            </tr>
-                                            <tr ng-repeat="item2 in item.hourly">
-                                                <td>
-                                                    {{item2.time| toHour}}
-                                                </td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
-                                                </td>
-                                                <td>
-                                                    {{item2.swellHeight_m}}M
-                                                </td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
-                                                </td>
-                                                <td>
-                                                    {{item2.windspeedKmph}}km/h
-                                                </td>
-                                                <td>
-                                                    {{item2.WindGustKmph}}
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-
-                    <br />
-                    <div class="text-center">
-                        {{now| date:'fullDate' | uppercase}}
-                    </div>
-                    <br />
                     <hr />
-                    <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{ scaleStepWidth: 0.5}" height="100"></canvas>
+                    <h2>Previsão Semanal</h2>
                 </div>
-            </div>
-            <!--            <div class="row" ng-show="atualMarine">
-            
-                            <div class="col-md-6 table-week" ng-repeat="item in resultMarine.weather">
-                                <table class="table table-center">
+                <div class="col-md-6">
+                    <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex" style="display: flex; align-content: center; justify-content: center;"></div>
+                    <ul rn-carousel rn-carousel-index="carouselIndex" class="rn-carousel" st>
+                        <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-left" ng-click="prevSlide()" ng-disabled="carouselIndex < 1"></span>
+                        <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-right"  ng-click="nextSlide()"  ng-disabled="carouselIndex < resultMarine.weather.length - 1 "></span>
+                        <li ng-repeat="item in resultMarine.weather">
+                            <div class="layer">
+                                <table class="table table-semanal">
                                     <tr>
                                         <td colspan="7">
                                             {{item.date| date:'fullDate' | uppercase}}
@@ -393,27 +311,27 @@
                                     <tr>
                                         <td>
                                             <span class="glyphicon glyphicon-time" title="Horário"></span>
-            
+
                                         </td>
                                         <td>
                                             <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
-            
+
                                         </td>
                                         <td>
                                             <i class="wi wi-barometer" title="Período (seg)"></i>
-            
+
                                         </td>
                                         <td>
                                             <i class="wi wi-windy" title="Direção Vento"></i>
-            
+
                                         </td>
                                         <td>
                                             <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
-            
+
                                         </td>
                                         <td>
                                             <span class="glyphicon glyphicon-time" title="Potência"></span>
-            
+
                                         </td>
                                     </tr>
                                     <tr ng-repeat="item2 in item.hourly">
@@ -438,38 +356,49 @@
                                     </tr>
                                 </table>
                             </div>
-                        </div>-->
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-center">
+                        {{now| date:'fullDate' | uppercase}}
+                    </div>
+                    <br />
+                    <hr />
+                    <canvas chart-colours="colours" id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{ scaleStepWidth: 0.5, scaleLineColor: 'white', scaleFontColor: 'white', scaleGridLineColor : 'white'}" height="100"></canvas>
+                </div>
 
+
+            </div>
         </div>
 
-
         <script type="text/javascript">
-            function toggleMenu() {
-                document.getElementsByTagName('body')[0].classList.toggle('menu-opened');
-                document.getElementsByTagName('body')[0].classList.toggle('menu-closed');
-            }
-            document.getElementsByClassName('over-layer')[0].onclick = toggleMenu;
-            toggleMenu();
-            var map;
-            function initMap(lat, lng) {
-                if (lat == undefined) {
-                    lat = 0;
-                }
-                if (lng == undefined) {
-                    lng = 0;
-                }
-                var myLatLng = {lat: lat, lng: lng};
-                map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 15,
-                    center: myLatLng,
-                    scrollwheel: true
-                });
-                var marker = new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: 'Hello World!'
-                });
-            }
+                    function toggleMenu() {
+                        document.getElementsByTagName('body')[0].classList.toggle('menu-opened');
+                        document.getElementsByTagName('body')[0].classList.toggle('menu-closed');
+                    }
+                    document.getElementsByClassName('over-layer')[0].onclick = toggleMenu;
+                    toggleMenu();
+                    var map;
+                            function initMap(lat, lng) {
+                                if (lat == undefined) {
+                                    lat = 0;
+                                }
+                                if (lng == undefined) {
+                                    lng = 0;
+                                }
+                                var myLatLng = {lat: lat, lng: lng};
+                                map = new google.maps.Map(document.getElementById('map'), {
+                                    zoom: 15,
+                                    center: myLatLng,
+                                    scrollwheel: true
+                                });
+                                var marker = new google.maps.Marker({
+                                    position: myLatLng,
+                                    map: map,
+                                    title: 'Hello World!'
+                                });
+                            }
 
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTbk54QQ8sHvqi0QhZ0HAAoQa_pllO4Co&callback=initMap"
