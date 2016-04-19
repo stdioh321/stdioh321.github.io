@@ -101,6 +101,9 @@ html, body{
 .table-now img{
     width: 35px;
 }
+.table-now td{
+    font-size: 1.3em;
+}
 
 .table-week tr td{
     font-size: .8em;
@@ -249,7 +252,9 @@ html, body{
     font-size: 1.5em;
     
 }
-
+.table-semanal tr:nth-child(even){
+    background-color: #555555; 
+}
 #line{
 
 }
