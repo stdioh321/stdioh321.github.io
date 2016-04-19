@@ -37,7 +37,7 @@ html, body{
 }
 #map{
     width: 100%;
-    height: 300px;
+    
 }
 .img-icon{
     border: solid red 1px;
@@ -157,26 +157,7 @@ html, body{
 }
 
 
-@media screen and (min-width: 601px){
-    .menu{
-        width: 40%;
-    }
-    .menu-opened .content-all{
-        left: 40%;
-    }
-    .menu-opened .menu-content{
 
-    }
-}
-
-@media screen and (max-width: 600px){
-    .menu{
-        width: 80%;
-    }
-    .menu-opened .content-all{
-        left: 80%;
-    }
-}
 .cont{
     width: 80%;
     display: flex;
@@ -276,4 +257,32 @@ html, body{
     margin: 0 .2em;
     width: 35px;
     height: 35px;
+}
+
+
+@media screen and (min-width: 601px){
+    .menu{
+        width: 40%;
+    }
+    .menu-opened .content-all{
+        left: 40%;
+    }
+    .menu-opened .menu-content{
+
+    }
+    #map{
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .menu{
+        width: 80%;
+    }
+    .menu-opened .content-all{
+        left: 80%;
+    }
+    #map{
+        height: 200px;
+    }
 }
