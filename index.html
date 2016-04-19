@@ -130,7 +130,7 @@
                     <div class="nomes-locais">
                         <div ng-show="obj_est">{{obj_est.code| uppercase}} <span class="glyphicon glyphicon-menu-right"></span> </div> 
                         <div ng-show="obj_cid">{{obj_cid.name}} <span class="glyphicon glyphicon-menu-right"></span> </div>
-                        <div ng-show="obj_pra" style="font-style: italic">{{obj_pra.name}}</div>
+                        <div ng-show="obj_pra" style="font-size: 1.2em; text-decoration: underline">{{obj_pra.name| uppercase}}</div>
                     </div>
                 </div>  
             </div>
@@ -155,7 +155,7 @@
                         <tr>
                             <td>
                                 <img src="resources/img/direcao_onda.png"  />
-                                Direção
+                                Direção Onda
                             </td>
                             <td>
                                 <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
@@ -266,9 +266,9 @@
                         <img src="resources/img/compass.png" class="img-responsive"/>
                     </div>
                     <div class="legenda-direcoes">
-                        <div style="background-color: #337ab7; border-radius: 5px;"></div>
+                        <div style="background-color: #ffffff; border-radius: 5px;"></div>
                         <span>Vento</span>
-                        <div style="background-color: #5cb85c; border-radius: 5px;"></div>
+                        <div style="background-color: #e1a400; border-radius: 5px;"></div>
                         <span>Onda</span>
                     </div>
                     <hr />
@@ -303,29 +303,29 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span class="glyphicon glyphicon-time" title="Horário"></span>
+                                            <span class="glyphicon glyphicon-time" title="Horário" style="font-size: 35px;"></span>
 
                                         </td>
                                         <td>
-                                            <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
+                                            <img  src="resources/img/direcao_onda.png" title="Direção Onda" />
 
                                         </td>
                                         <td>
-                                            <i class="wi wi-barometer" title="Período (seg)"></i>
+                                            <img  src="resources/img/tamanho_onda.png" title="Tamanho (M)" />
+                                        </td>
+                                        <td>
+                                            <img  src="resources/img/potencia.png" title="Potência" />
+                                        </td>
+                                        <td>
+                                            
+                                            <img  src="resources/img/direcao_vento.png" title="Direção Vento" />
 
                                         </td>
                                         <td>
-                                            <i class="wi wi-windy" title="Direção Vento"></i>
+                                            <img  src="resources/img/direcao_vento.png" title="Velocidade (km/h)" />
 
                                         </td>
-                                        <td>
-                                            <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
-
-                                        </td>
-                                        <td>
-                                            <span class="glyphicon glyphicon-time" title="Potência"></span>
-
-                                        </td>
+                                        
                                     </tr>
                                     <tr ng-repeat="item2 in item.hourly">
                                         <td>
@@ -338,14 +338,15 @@
                                             {{item2.swellHeight_m}}M
                                         </td>
                                         <td>
+                                            {{item2.WindGustKmph}}
+                                        </td>
+                                        <td>
                                             <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
                                         </td>
                                         <td>
                                             {{item2.windspeedKmph}}km/h
                                         </td>
-                                        <td>
-                                            {{item2.WindGustKmph}}
-                                        </td>
+                                        
                                     </tr>
                                 </table>
                             </div>

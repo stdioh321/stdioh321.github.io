@@ -21,7 +21,7 @@ html, body{
 }
 .compass img:not(:last-child){
     position: absolute;
-    opacity: .5;
+    opacity: .7;
     left: 0;
     right: 0;
     margin: 0 auto;
@@ -76,7 +76,6 @@ html, body{
 .content-all{
     transition: linear all .5s;
     position: relative;
-    //background-color: white;
 }
 
 
@@ -237,6 +236,10 @@ html, body{
 
 .table-semanal td{
     text-align: center;
+}
+.table-semanal img{
+    width: 35px;
+    height: 35px;
 }
 .table-semanal td{
     text-align: center;
