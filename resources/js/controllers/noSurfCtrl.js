@@ -26,8 +26,6 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
         window.showMenu();
     };
 
-    
-
     $scope.carregaCidade = function (tmpEstado) {
         var tmp = false;
         if (tmpEstado != null) {
@@ -127,14 +125,15 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
 
     };
 
-    $scope.modDate = function (val) {
-        if ($scope.indexDate + val < 0 || $scope.indexDate + val > 6) {
-
-        } else {
-            $scope.indexDate += val;
+    $scope.$watch(function (scope) {
+        return scope.carouselIndex;
+    }, function (newVal, oldVal) {
+        if ($scope.resultMarine) {
+            $scope.indexDate = newVal;
             $scope.carregaChart($scope.resultMarine);
         }
-    };
+    });
+
 
     $scope.carregaAtual = function () {
         var a = [00, 03, 06, 09, 12, 15, 18, 21];

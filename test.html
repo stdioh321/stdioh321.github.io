@@ -21,18 +21,16 @@
 
 
             var app = angular.module('ang', ['angular-carousel']);
-            app.controller('angCtrl', function ($scope, $interval) {
-                $scope.itens = [
-                    {name: 'Carlos'},
-                    {name: 'Jao'},
-                    {name: 'Mario'},
-                    {name: 'Ana'}
+            app.controller('angCtrl', function ($scope, $interval, $parse) {
+                var getter = $parse('user.name');
+                var setter = getter.assign;
+                var context = {user: {name: 'angular'}};
+                var locals = {user: {name: 'local', email : "jao@gmail.com"}};
 
-                ];
-                $scope.add = function (item) {
-                    $scope.itens.push(item);
-                    $scope.item = "";
-                }
+                
+                $parse('user.email').assign(locals, "jaoTrocado@gmail.com");
+                
+                console.log(locals);
             });
 
 
@@ -40,30 +38,14 @@
 
 
         <style type="text/css">
-            .layer{
-                background: red;
-                border: solid blue 3px;
-                padding: 1em;
-            }
-            .image{
-                height: 100%;
-            }
+
         </style>
 
     </head>
     <body ng-controller="angCtrl">
         <div class="container">
-            <div class="col-md-12" style="height: 400px;">
-                <input type="text" ng-model="item.name" class="form-control" />
-                <button class="btn btn-primary btn-block" ng-click="add(item)">
-                    Add
-                </button>
-                <br />
-                <ul rn-carousel rn-carousel-index="1" class="images">
-                    <li ng-repeat="i in itens">
-                        <div class="layer">{{ i.name}}</div>
-                    </li>
-                </ul>
+            <div class="col-md-12" >
+
             </div>
         </div>
     </body>

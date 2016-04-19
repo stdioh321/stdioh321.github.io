@@ -83,7 +83,11 @@
                 <ul class="list-group">
 
                     <li class="list-group-item">
-                        <h3>Escolha sua Praia</h3>
+                        <h3>Escolha sua Praia
+                            <button ng-click="showScope()">
+                                Scope
+                            </button>
+                        </h3>
                     </li>
 
                     <li class="list-group-item">
@@ -267,34 +271,29 @@
                 </div>
                 <div class="col-md-6">
                     <h2>Direções</h2>
+
+                    <div class="compass">
+                        <img src="resources/img/arrow_up_green.png" class="img-responsive" style="transform: rotate({{atualMarine.swellDir}}deg)"/>
+                        <img src="resources/img/arrow_up_blue.png" class="img-responsive" style="transform: rotate({{atualMarine.winddirDegree}}deg)"/>
+                        <img src="resources/img/compass.png" class="img-responsive"/>
+                    </div>
                     <table class="table">
                         <tr>
                             <td>
+                                <img src="resources/img/direcao_vento.png" />
                                 Vento
                             </td>
-                            <td>
-                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.winddirDegree}}deg)" title="{{atualMarine.winddir16Point}}"></span>
-                            </td>
-                            <td>
-                                {{atualMarine.winddir16Point}}
-                            </td>
+                            <td>Azul</td>
                         </tr>
                         <tr>
                             <td>
+                                <img src="resources/img/direcao_onda.png" />
                                 Onda
                             </td>
-                            <td>
-                                <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{atualMarine.swellDir}}deg)" title="{{atualMarine.swellDir16Point}}"></span>
-
-                            </td>
-                            <td>
-                                {{atualMarine.swellDir16Point}}
-                            </td>
+                            <td>Verde</td>
                         </tr>
                     </table>
-                    <div class="compass">
-                        <img src="resources/img/compass.png" class="img-responsive"/>
-                    </div>
+
                     <div id="map"></div>
 
                 </div>
@@ -306,14 +305,78 @@
             <div class="row" ng-show="atualMarine">
                 <div class="col-md-12">
                     <h2>Previsão Semanal</h2>
+                    <div class="row" ng-show="atualMarine">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex"></div>
+                            <ul rn-carousel rn-carousel-transition="slide" rn-carousel-index="carouselIndex" class="rn-carousel">
+                                <li ng-repeat="item in resultMarine.weather">
+                                    <div class="layer">
+                                        <table class="table table-center">
+                                            <tr>
+                                                <td colspan="7">
+                                                    {{item.date| date:'fullDate' | uppercase}}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="glyphicon glyphicon-time" title="Horário"></span>
+
+                                                </td>
+                                                <td>
+                                                    <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
+
+                                                </td>
+                                                <td>
+                                                    <i class="wi wi-barometer" title="Período (seg)"></i>
+
+                                                </td>
+                                                <td>
+                                                    <i class="wi wi-windy" title="Direção Vento"></i>
+
+                                                </td>
+                                                <td>
+                                                    <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
+
+                                                </td>
+                                                <td>
+                                                    <span class="glyphicon glyphicon-time" title="Potência"></span>
+
+                                                </td>
+                                            </tr>
+                                            <tr ng-repeat="item2 in item.hourly">
+                                                <td>
+                                                    {{item2.time| toHour}}
+                                                </td>
+                                                <td>
+                                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
+                                                </td>
+                                                <td>
+                                                    {{item2.swellHeight_m}}M
+                                                </td>
+                                                <td>
+                                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
+                                                </td>
+                                                <td>
+                                                    {{item2.windspeedKmph}}km/h
+                                                </td>
+                                                <td>
+                                                    {{item2.WindGustKmph}}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                    <br />
                     <div class="text-center">
                         {{now| date:'fullDate' | uppercase}}
                     </div>
                     <br />
-                    <div style="overflow: auto">
-                        <button class="btn btn-primary pull-left" ng-click="modDate(-1)" ng-disabled="indexDate < 1">Prev</button>
-                        <button class="btn btn-primary pull-right" ng-click="modDate(1)"  ng-disabled="indexDate > 5">Next</button>
-                    </div>
                     <hr />
                     <canvas id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{ scaleStepWidth: 0.5}" height="100"></canvas>
                 </div>
@@ -376,70 +439,7 @@
                                 </table>
                             </div>
                         </div>-->
-            <div class="row" ng-show="atualMarine">
-                <div class="col-md-8 col-md-offset-2">
-                    <ul rn-carousel rn-carousel-transition="fadeAndSlide" class="rn-carousel">
-                        <li ng-repeat="item in resultMarine.weather">
-                            <div class="layer">
-                                <table class="table table-center">
-                                    <tr>
-                                        <td colspan="7">
-                                            {{item.date| date:'fullDate' | uppercase}}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <span class="glyphicon glyphicon-time" title="Horário"></span>
 
-                                        </td>
-                                        <td>
-                                            <span class="glyphicon glyphicon-tint" title="Direção Onda"></span>
-
-                                        </td>
-                                        <td>
-                                            <i class="wi wi-barometer" title="Período (seg)"></i>
-
-                                        </td>
-                                        <td>
-                                            <i class="wi wi-windy" title="Direção Vento"></i>
-
-                                        </td>
-                                        <td>
-                                            <i class="wi wi-wind-beaufort-6" title="Velodidade (km/h)"></i>
-
-                                        </td>
-                                        <td>
-                                            <span class="glyphicon glyphicon-time" title="Potência"></span>
-
-                                        </td>
-                                    </tr>
-                                    <tr ng-repeat="item2 in item.hourly">
-                                        <td>
-                                            {{item2.time| toHour}}
-                                        </td>
-                                        <td>
-                                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
-                                        </td>
-                                        <td>
-                                            {{item2.swellHeight_m}}M
-                                        </td>
-                                        <td>
-                                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
-                                        </td>
-                                        <td>
-                                            {{item2.windspeedKmph}}km/h
-                                        </td>
-                                        <td>
-                                            {{item2.WindGustKmph}}
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
         </div>
 
 
