@@ -299,7 +299,7 @@
                     <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex" style="display: flex; align-content: center; justify-content: center;"></div>
                     <ul rn-carousel rn-carousel-index="carouselIndex" class="rn-carousel" st>
                         <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-left" ng-click="prevSlide()" ng-disabled="carouselIndex < 1"></span>
-                        <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-right"  ng-click="nextSlide()"  ng-disabled="carouselIndex < resultMarine.weather.length - 1 "></span>
+                        <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-right"  ng-click="nextSlide()"  ng-disabled="carouselIndex < resultMarine.weather.length - 1"></span>
                         <li ng-repeat="item in resultMarine.weather">
                             <div class="layer">
                                 <table class="table table-semanal">
@@ -373,6 +373,7 @@
         </div>
 
         <script type="text/javascript">
+
                     function toggleMenu() {
                         document.getElementsByTagName('body')[0].classList.toggle('menu-opened');
                         document.getElementsByTagName('body')[0].classList.toggle('menu-closed');
