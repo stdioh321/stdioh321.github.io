@@ -86,7 +86,6 @@
                     <li class="list-group-item">
                         <h3>
                             Escolha sua Praia
-                            <img src="favicon.ico" class="pull-right" style="position: absolute; top: 0; left: 0;width: 32px; height: 32px; "/>
                         </h3>
                     </li>
 
@@ -126,6 +125,7 @@
                         <button class="btn btn-primary" onclick="toggleMenu()">
                             <span class="glyphicon glyphicon-align-justify" style="font-size: 1.5em;"></span>
                         </button>
+
                     </div>
                     <div class="nomes-locais">
                         <div ng-show="obj_est">{{obj_est.code| uppercase}} <span class="glyphicon glyphicon-menu-right"></span> </div> 
@@ -266,10 +266,10 @@
                         <img src="resources/img/compass.png" class="img-responsive"/>
                     </div>
                     <div class="legenda-direcoes">
-                        <div style="width: 35px; height: 35px; background-color: #337ab7; border-radius: 10px;"></div>
-                        <div>Vento</div>
-                        <div style="width: 35px; height: 35px; background-color: #5cb85c; border-radius: 10px;"></div>
-                        <div>Onda</div>
+                        <div style="background-color: #337ab7; border-radius: 5px;"></div>
+                        <span>Vento</span>
+                        <div style="background-color: #5cb85c; border-radius: 5px;"></div>
+                        <span>Onda</span>
                     </div>
                     <hr />
 
@@ -290,7 +290,7 @@
                 </div>
                 <div class="col-md-6">
                     <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex" style="display: flex; align-content: center; justify-content: center;"></div>
-                    <ul rn-carousel rn-carousel-index="carouselIndex" class="rn-carousel" st>
+                    <ul rn-carousel rn-carousel-index="carouselIndex" class="rn-carousel">
                         <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-left" ng-click="prevSlide()" ng-disabled="carouselIndex < 1"></span>
                         <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-right"  ng-click="nextSlide()"  ng-disabled="carouselIndex < resultMarine.weather.length - 1"></span>
                         <li ng-repeat="item in resultMarine.weather">
