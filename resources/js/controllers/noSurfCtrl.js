@@ -16,8 +16,8 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
     $scope.dataChart = [];
     $scope.labels = [];
     $scope.colours = [{
-            fillColor: 'rgba(0, 0, 255, 0.7)',
-            strokeColor: 'rgba(0, 0, 255, 0.7)'
+            fillColor: 'rgba(51, 122, 183, 0.7)',
+            strokeColor: 'rgba(51, 122, 183, 0.7)'
 //            highlightFill: 'rgba(47, 132, 71, 0.8)',
 //            highlightStroke: 'rgba(47, 132, 71, 0.8)'
         }];
