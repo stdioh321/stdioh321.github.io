@@ -1,10 +1,7 @@
 body{
     background: url(../img/beach.jpg);
     background-attachment: fixed;
-    
-}
-body *{
-    color: white;
+
 }
 html, body{
     overflow-x: hidden;
@@ -37,7 +34,7 @@ html, body{
 }
 #map{
     width: 100%;
-    
+
 }
 .img-icon{
     border: solid red 1px;
@@ -52,7 +49,7 @@ html, body{
     min-height: 100vh;
     background-color: rgba(34,34,34,0.5);
     z-index: -10;
-    
+
 
 
 }
@@ -147,9 +144,9 @@ html, body{
 
 .menu-content{
     padding: .5em 0;
-    background-color: rgba(34,34,34,0.5);
+    background-color: rgba(34,34,34,0.8);
     z-index: 10;
-    width: 110%;
+    width: 100%;
     position: absolute;
 
 }
@@ -250,7 +247,7 @@ html, body{
 }
 .table-semanal tr:nth-child(2) td{
     font-size: 1.5em;
-    
+
 }
 .table-semanal tr:nth-child(even){
     background-color: rgba(51, 122, 183, 0.7); 
@@ -269,12 +266,16 @@ html, body{
     justify-content: center;
 }
 .legenda-direcoes > span{
-    
+
 }
 .legenda-direcoes > div{
     margin: 0 .2em;
     width: 20px;
     height: 20px;
+}
+
+.row *{
+    color: white;
 }
 
 
@@ -304,3 +305,4 @@ html, body{
         height: 200px;
     }
 }
+

@@ -39,6 +39,7 @@
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons.css">
         <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons-wind.css">
         <link rel="stylesheet" href="resources/lib/angular-carousel/dist/angular-carousel.css">
+
         <link rel="stylesheet" href="resources/css/style.css" >
         <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
 
@@ -47,6 +48,7 @@
         <script type="text/javascript" src="resources/js/locale/angular-locale_pt-br.js"></script>
         <script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
         <script src="resources/lib/bootstrap/dist/js/bootstrap.js" ></script>
+        
 
         <script src="resources/lib/Chart.js/Chart.js"></script>   
         <script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
@@ -104,7 +106,7 @@
                             <option value="">Selecione a Praia (Tot: {{obj_cid.praias.length|| 0}})</option>
                         </select>
                     </li>
-
+                    
                     <li class="list-group-item">
                         <input type="text" class="form-control" ng-model="busca" placeholder="Buscar"/>
                         <div  class="exibe-praias">
@@ -264,6 +266,7 @@
                         <img src="resources/img/arrow_up_green.png" class="img-responsive" style="transform: rotate({{atualMarine.swellDir}}deg)"/>
                         <img src="resources/img/arrow_up_blue.png" class="img-responsive" style="transform: rotate({{atualMarine.winddirDegree}}deg)"/>
                         <img src="resources/img/compass.png" class="img-responsive"/>
+
                     </div>
                     <div class="legenda-direcoes">
                         <div style="background-color: #ffffff; border-radius: 5px;"></div>
@@ -317,7 +320,7 @@
                                             <img  src="resources/img/potencia.png" title="Potência" />
                                         </td>
                                         <td>
-                                            
+
                                             <img  src="resources/img/direcao_vento.png" title="Direção Vento" />
 
                                         </td>
@@ -325,7 +328,7 @@
                                             <img  src="resources/img/direcao_vento.png" title="Velocidade (km/h)" />
 
                                         </td>
-                                        
+
                                     </tr>
                                     <tr ng-repeat="item2 in item.hourly">
                                         <td>
@@ -346,7 +349,7 @@
                                         <td>
                                             {{item2.windspeedKmph}}km/h
                                         </td>
-                                        
+
                                     </tr>
                                 </table>
                             </div>
@@ -364,6 +367,7 @@
 
 
             </div>
+
         </div>
 
         <script type="text/javascript">
