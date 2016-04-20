@@ -34,8 +34,7 @@
     "tag": "2.0.10",
     "commit": "a85ba96d252d6729eb9a07aa2f0544049b291163"
   },
-  "_source": "git://github.com/erikflowers/weather-icons.git",
+  "_source": "https://github.com/erikflowers/weather-icons.git",
   "_target": "^2.0.10",
-  "_originalSource": "weather-icons",
-  "_direct": true
+  "_originalSource": "weather-icons"
 }

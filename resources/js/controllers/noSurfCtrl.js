@@ -1,8 +1,5 @@
-app.controller("noSurfCtrl", function ($scope, $http, $filter) {
+app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
     /*########## Select Data ########## */
-    $scope.estados = estados;
-    $scope.cidades = cidades;
-    $scope.praias = praias;
     $scope.locais = locais;
     /*########## Select Data ########## */
 
@@ -69,7 +66,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
         if (praia != null) {
 
             $scope.loading = true;
-
+            toggleMenu();
             $http({
                 method: "GET",
                 url: urlBase + "marine.ashx?key=" + key + "&lang=pt&tide=yes&format=json&q=" + praia.lat + "," + praia.lon
@@ -79,7 +76,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
                 $scope.carregaChart($scope.resultMarine);
 
                 console.log($scope.resultMarine);
-                toggleMenu();
+
 
                 initMap(praia.lat, praia.lon);
                 window.scrollTo(0, 0);
@@ -94,11 +91,15 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
                 }, function (data) {
                     console.log("ERROR");
                     console.log(data);
+                    $scope.loading = false;
+                    $scope.criaToast();
                 });
 
             }, function (data) {
                 console.log("ERROR");
                 console.log(data);
+                $scope.loading = false;
+                $scope.criaToast();
             });
 
 
@@ -224,5 +225,16 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter) {
     $scope.changeCaroulseIndex = function (idx) {
         $scope.carouselIndex += idx;
     }
+
+
+    $scope.criaToast = function () {
+        ngToast.create({
+            className: 'danger',
+            content: 'Não foi possivel baixar os dados.<br />Verifique seu acesso a internet e tente novamente',
+            dismissButton: true
+
+        });
+    }
+
 
 });

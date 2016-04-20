@@ -1,4 +1,4 @@
-	/*! Pushy - v1.0.0 - 2016-3-1
+/*! Pushy - v1.0.0 - 2016-3-1
 * Pushy is a responsive off-canvas navigation menu using CSS transforms & transitions.
 * https://github.com/christophery/pushy/
 * by Christopher Yee */
@@ -112,7 +112,6 @@
 		};
 
 		// Add it to the body to get the computed style
-		
 		document.body.insertBefore(el, null);
 
 		for(var t in transforms){

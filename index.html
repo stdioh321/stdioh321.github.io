@@ -36,9 +36,9 @@
 
         <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="resources/lib/angular-chart.js/dist/angular-chart.css">
-        <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons.css">
-        <link rel="stylesheet" href="resources/lib/weather-icons/css/weather-icons-wind.css">
         <link rel="stylesheet" href="resources/lib/angular-carousel/dist/angular-carousel.css">
+        <link rel="stylesheet" href="resources/lib/ngToast/dist/ngToast.css">
+
 
         <link rel="stylesheet" href="resources/css/style.css" >
         <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
@@ -48,7 +48,9 @@
         <script type="text/javascript" src="resources/js/locale/angular-locale_pt-br.js"></script>
         <script type="text/javascript" src="resources/lib/jquery/dist/jquery.js"></script>
         <script src="resources/lib/bootstrap/dist/js/bootstrap.js" ></script>
-        
+        <script src="resources/lib/angular-sanitize/angular-sanitize.js" ></script>
+        <script src="resources/lib/angular-animate/angular-animate.js" ></script>
+        <script src="resources/lib/ngToast/dist/ngToast.js" ></script>
 
         <script src="resources/lib/Chart.js/Chart.js"></script>   
         <script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
@@ -56,13 +58,8 @@
         <script src="resources/lib/angular-carousel/dist/angular-carousel.js" ></script>
 
 
-        <script type="text/javascript" src="resources/json/estados.js"></script>
-        <script type="text/javascript" src="resources/json/cidades.js"></script>
-        <script type="text/javascript" src="resources/json/praias.js"></script>
+
         <script type="text/javascript" src="resources/json/locais.js"></script>
-
-
-
 
         <script src="resources/js/app.js" ></script>
         <script src="resources/js/filters/filters.js" ></script>
@@ -71,12 +68,14 @@
 
     </head>
     <body ng-controller="noSurfCtrl" class="menu-closed">
+
         <div class="loading" ng-show="loading">
-
             <span class="glyphicon glyphicon-refresh " id="loading"></span>
-
         </div>
-        <div class="container-fluid content-all ">
+        
+        
+        <toast></toast>
+        <div class="container-fluid content-all">
 
             <div class="over-layer"></div>
 
@@ -106,7 +105,7 @@
                             <option value="">Selecione a Praia (Tot: {{obj_cid.praias.length|| 0}})</option>
                         </select>
                     </li>
-                    
+
                     <li class="list-group-item">
                         <input type="text" class="form-control" ng-model="busca" placeholder="Buscar"/>
                         <div  class="exibe-praias">
@@ -263,9 +262,9 @@
                     <h2>Direções</h2>
 
                     <div class="compass">
-                        <img src="resources/img/arrow_up_green.png" class="img-responsive" style="transform: rotate({{atualMarine.swellDir}}deg)"/>
-                        <img src="resources/img/arrow_up_blue.png" class="img-responsive" style="transform: rotate({{atualMarine.winddirDegree}}deg)"/>
-                        <img src="resources/img/compass.png" class="img-responsive"/>
+                        <img src="resources/img/arrow_up_swell.png" style="transform: rotate({{atualMarine.swellDir}}deg)"/>
+                        <img src="resources/img/arrow_up_wind.png" style="transform: rotate({{atualMarine.winddirDegree}}deg)"/>
+                        <img src="resources/img/compass.png" />
 
                     </div>
                     <div class="legenda-direcoes">
