@@ -63,7 +63,9 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
     };
 
     $scope.carregaWeather = function (praia) {
-        if (praia != null) {
+        if (!window.navigator.onLine) {
+            $scope.criaToast();
+        } else if (praia != null) {
 
             $scope.loading = true;
             toggleMenu();
@@ -231,7 +233,8 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
         ngToast.create({
             className: 'danger',
             content: 'Não foi possivel baixar os dados.<br />Verifique seu acesso a internet e tente novamente',
-            dismissButton: true
+            dismissButton: true,
+            animation: 'slide'
 
         });
     }
