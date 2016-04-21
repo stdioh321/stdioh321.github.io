@@ -44,6 +44,8 @@
     "flexslider": "^2.6.0",
     "bootstrap-select": "^1.10.0",
     "ngToast": "ngtoast#^2.0.0",
-    "angular-animate": "^1.5.5"
+    "angular-animate": "^1.5.5",
+    "jquery-mobile": "^1.4.5",
+    "hammerjs": "^2.0.6"
   }
 }

@@ -1,4 +1,2 @@
-components
-composer.lock
-vendor
-.DS_Store
+dist
+node_modules

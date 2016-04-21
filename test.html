@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+o<!DOCTYPE html>
 <html ng-app="ang">
     <head>
         <title>TODO supply a title</title>
@@ -9,11 +9,15 @@
         <link rel="stylesheet" type="text/css" href="resources/lib/angular-carousel/dist/angular-carousel.css" />
 
 
+
         <script src="resources/lib/angular/angular.js" ></script>
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
+
         <script src="resources/lib/bootstrap/dist/js/bootstrap.js" ></script>
         <script src="resources/lib/angular-touch/angular-touch.js" ></script>
         <script src="resources/lib/angular-carousel/dist/angular-carousel.js" ></script>
+
+        <script src="resources/lib/hammerjs/hammer.js" ></script>
 
 
 
@@ -22,15 +26,7 @@
 
             var app = angular.module('ang', ['angular-carousel']);
             app.controller('angCtrl', function ($scope, $interval, $parse) {
-                var getter = $parse('user.name');
-                var setter = getter.assign;
-                var context = {user: {name: 'angular'}};
-                var locals = {user: {name: 'local', email : "jao@gmail.com"}};
 
-                
-                $parse('user.email').assign(locals, "jaoTrocado@gmail.com");
-                
-                console.log(locals);
             });
 
 
@@ -38,16 +34,143 @@
 
 
         <style type="text/css">
+            .tab-menu{
+                //border: 1px solid red;
+            }
+            .tab-menu ul{ 
+                padding: 0;
+                margin: 0;
+                display: flex;
+                width: 50%;
+                
+            }
+            .tab-menu ul li{
+                flex :1;
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                list-style: none;
+                //box-shadow: 0px 0px 4px black;
 
+                margin: .3em;
+                padding: .3em;
+                font-size: 1.5em;
+
+            }
+            .tab-menu-active{
+                border-bottom: solid red .2em;
+            }
+            .tab-content{
+                border: solid green 1px;
+                height: 70vh;
+                overflow-x: hidden;
+            }
+            .tab-content-in{
+                //border: solid #EBDB8D 1px;
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+            }
+            .tab-content-animate{
+                transition: linear all .6s
+            }
+            .tab-content-in > div{
+                border: solid yellow 2px;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
         </style>
 
     </head>
     <body ng-controller="angCtrl">
         <div class="container">
             <div class="col-md-12" >
-
+                <div class="tab-menu">
+                    <ul >
+                        <li class="tab-menu-active"><a href="" >Tab1</a></li>
+                        <li><a href="" >Tab2</a></li>
+                        <li><a href="" >Tab3</a></li>
+                        <li><a href="" >Tab4</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-content-in">
+                        <div>Tab 1</div>
+                        <div>Tab 2</div>
+                        <div>Tab 3</div>
+                        <div>Tab 4</div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
+    <script type="text/javascript">
+        var tabMenus = $('.tab-menu > ul > li');
+        var tabContents = $('.tab-content-in > div');
 
+        $('.tab-content-in > div').each(function (index) {
+            if (index == 0) {
+                $(this).parent().attr("current", 0);
+            }
+            $(this).css({
+                transform: "translate(" + (index * 100) + "%)"
+            });
+        });
+
+        $('.tab-menu > ul > li > a').each(function (index) {
+            $(this).click(function (ev) {
+                changeTab(index);
+            });
+        });
+
+        function changeTab(idx) {
+            tmp = idx;
+            tmp = (-idx * 100) + "%";
+            tabContents[idx].parentNode.style.transform = "translate(" + tmp + ")";
+            tabContents[idx].parentNode.setAttribute('current', idx);
+            tabMenus.removeClass('tab-menu-active');
+            tabMenus[idx].classList.add('tab-menu-active');
+        }
+
+        //var mc = new Hammer($('.tab-content')[0]);
+        var cur = Number($('.tab-content-in')[0].getAttribute('current'));
+        var changeLimit = 20;
+        var totContent = $('.tab-content-in > div').length;
+
+        $('.tab-content-in > div').each(function (ind) {
+            mc = new Hammer(this, {
+                transform_always_block: true
+            });
+
+            mc.on('panleft panright', function (ev) {
+                $('.tab-content-in').removeClass("tab-content-animate");
+                prc = ev.deltaX * 100 / ev.target.offsetWidth;
+                //console.log(prc);
+                console.log(ev);
+                if ((ev.type == "panright" && ind < 1) || (ev.type == "panleft" && ind >= totContent - 1)) {
+
+                } else {
+                    $('.tab-content-in').css({
+                        transform: "translate(" + (prc + (ind * -100)) + "%)"
+                    });
+                    if (prc <= -changeLimit && cur < totContent - 1) {
+                        cur = ind + 1;
+                    } else if (prc >= changeLimit && cur > 0) {
+                        cur = ind - 1;
+                    } else {
+                        cur = ind;
+                    }
+                }
+            });
+
+            mc.on('panend', function (ev) {
+                $('.tab-content-in').addClass("tab-content-animate");
+                changeTab(cur);
+            });
+
+        });
+
+    </script>
 </html>
