@@ -266,95 +266,112 @@
                         </table>
                     </div>
                     <div  ng-show="atualMarine">
-                        <div class="col-md-12">
-
+                        <div class="col-md-offset-2 col-md-8" >
+                            <table class="table table-hover table-porHora" ng-repeat="item in resultWeather.weather[0].hourly">
+                                <tr ng-click="openModal('porHora', item)">
+                                    <td>
+                                        {{item.time| toHour}}
+                                    </td>
+                                    <td>
+                                        <img src="{{item.weatherIconUrl[0].value}}" />
+                                    </td>
+                                    <td>
+                                        {{item.lang_pt[0].value}}
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                     <div  ng-show="atualMarine">
-                        <div class="col-md-12">
+                        <div class="col-md-8 col-md-offset-2">
 
                             <table class="table table-hover table-semanal">
                                 <tr ng-repeat="item in resultMarine.weather" ng-click="openModal('semanal', $index)">
                                     <td>{{item.date| date:'d/M' }}<br />{{item.date| date:'EEE' }}</td>
-                                    <td>img</td>
-                                    <td>clima</td>
+                                    <td>
+                                        <img src="{{item.hourly[indexAtual].weatherIconUrl[0].value}}" />
+                                    </td>
+                                    <td>
+                                        {{resultWeather.weather[$index].hourly[indexAtual].lang_pt[0].value}}
+                                    </td>
                                     <td>{{item.maxtempC}}&#176;/{{item.mintempC}}&#176;</td>
                                 </tr>
                             </table>
                         </div>
-                        <div class="col-md-6">
-                            <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex" style="display: flex; align-content: center; justify-content: center;"></div>
-                            <ul rn-carousel rn-carousel-index="carouselIndex" class="rn-carousel">
-                                <span style="font-size: 2em; z-index: 100" class="rn-carousel-controls glyphicon glyphicon-chevron-left" ng-click="prevSlide()" ng-disabled="carouselIndex < 1"></span>
-                                <span style="font-size: 2em; z-index: 100" class="rn-carousel-controls glyphicon glyphicon-chevron-right"  ng-click="nextSlide()"  ng-disabled="carouselIndex < resultMarine.weather.length - 1"></span>
-                                <li ng-repeat="item in resultMarine.weather">
-                                    <div class="layer">
-                                        <table class="table table-weak">
-                                            <tr>
-                                                <td colspan="7">
-                                                    {{item.date| date:'fullDate' | uppercase}}
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-time" title="Horário" ></span>
-
-                                                </td>
-                                                <td>
-                                                    <img  src="resources/img/direcao_onda.png" title="Direção Onda" />
-
-                                                </td>
-                                                <td>
-                                                    <img  src="resources/img/tamanho_onda.png" title="Tamanho (M)" />
-                                                </td>
-                                                <td>
-                                                    <img  src="resources/img/potencia.png" title="Potência" />
-                                                </td>
-                                                <td>
-
-                                                    <img  src="resources/img/direcao_vento.png" title="Direção Vento" />
-
-                                                </td>
-                                                <td>
-                                                    <img  src="resources/img/direcao_vento.png" title="Velocidade (km/h)" />
-
-                                                </td>
-
-                                            </tr>
-                                            <tr ng-repeat="item2 in item.hourly">
-                                                <td>
-                                                    {{item2.time| toHour}}
-                                                </td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
-                                                </td>
-                                                <td>
-                                                    {{item2.swellHeight_m}}M
-                                                </td>
-                                                <td>
-                                                    {{item2.WindGustKmph}}
-                                                </td>
-                                                <td>
-                                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
-                                                </td>
-                                                <td>
-                                                    {{item2.windspeedKmph}}km/h
-                                                </td>
-
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="text-center">
-                                {{now| date:'fullDate' | uppercase}}
-                            </div>
-                            <br />
-                            <hr />
-                            <canvas chart-colours="colours" id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{ scaleStepWidth: 0.5}" height="100"></canvas>
-                        </div>
+                        <!--                        
+                                                <div class="col-md-6">
+                                                    <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex" style="display: flex; align-content: center; justify-content: center;"></div>
+                                                    <ul rn-carousel rn-carousel-index="carouselIndex" class="rn-carousel">
+                                                        <span style="font-size: 2em; z-index: 100" class="rn-carousel-controls glyphicon glyphicon-chevron-left" ng-click="prevSlide()" ng-disabled="carouselIndex < 1"></span>
+                                                        <span style="font-size: 2em; z-index: 100" class="rn-carousel-controls glyphicon glyphicon-chevron-right"  ng-click="nextSlide()"  ng-disabled="carouselIndex < resultMarine.weather.length - 1"></span>
+                                                        <li ng-repeat="item in resultMarine.weather">
+                                                            <div class="layer">
+                                                                <table class="table table-weak">
+                                                                    <tr>
+                                                                        <td colspan="7">
+                                                                            {{item.date| date:'fullDate' | uppercase}}
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <span class="glyphicon glyphicon-time" title="Horário" ></span>
+                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <img  src="resources/img/direcao_onda.png" title="Direção Onda" />
+                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <img  src="resources/img/tamanho_onda.png" title="Tamanho (M)" />
+                                                                        </td>
+                                                                        <td>
+                                                                            <img  src="resources/img/potencia.png" title="Potência" />
+                                                                        </td>
+                                                                        <td>
+                        
+                                                                            <img  src="resources/img/direcao_vento.png" title="Direção Vento" />
+                        
+                                                                        </td>
+                                                                        <td>
+                                                                            <img  src="resources/img/direcao_vento.png" title="Velocidade (km/h)" />
+                        
+                                                                        </td>
+                        
+                                                                    </tr>
+                                                                    <tr ng-repeat="item2 in item.hourly">
+                                                                        <td>
+                                                                            {{item2.time| toHour}}
+                                                                        </td>
+                                                                        <td>
+                                                                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
+                                                                        </td>
+                                                                        <td>
+                                                                            {{item2.swellHeight_m}}M
+                                                                        </td>
+                                                                        <td>
+                                                                            {{item2.WindGustKmph}}
+                                                                        </td>
+                                                                        <td>
+                                                                            <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
+                                                                        </td>
+                                                                        <td>
+                                                                            {{item2.windspeedKmph}}km/h
+                                                                        </td>
+                        
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="text-center">
+                                                        {{now| date:'fullDate' | uppercase}}
+                                                    </div>
+                                                    <br />
+                                                    <hr />
+                                                    <canvas chart-colours="colours" id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{ scaleStepWidth: 0.5}" height="100"></canvas>
+                                                </div>-->
 
 
                     </div>
@@ -524,7 +541,7 @@
 
                     <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal('semanal')"></span>
                     <div>
-                        Value
+                        {{obj_pra.name}}
                     </div>
 
                 </div>
@@ -537,6 +554,10 @@
                         </div>
                         <div>
                             <img src="{{resultMarine.weather[modalShow.index].hourly[indexAtual].weatherIconUrl[0].value}}" />
+
+                        </div>
+                        <div>
+                            {{resultWeather.weather[modalShow.index].hourly[indexAtual].lang_pt[0].value}}
                         </div>
                     </div>
                     <div class="modal-body-content">
@@ -544,7 +565,7 @@
 
                         <div class="col-md-6">
 
-                            <canvas chart-colours="colours" id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{scaleStepWidth: 0.5}" height="100"></canvas>
+                            <canvas chart-colours="colours" id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{scaleStepWidth: 0.5}" height="150"></canvas>
                         </div>
                         <div class="col-md-6">
                             <table class="table table-dia">
@@ -607,6 +628,40 @@
                          data-ad-slot="5075994036"></ins>
                     <script>
                                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container-fluid modal-default modal-semanal" ng-show="modalShow.value == true && modalShow.modal == 'porHora'" >
+            <div class="row">
+
+                <div class="col-md-12 modal-head">
+
+                    <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal()"></span>
+                    <div>
+                        {{obj_pra.name}}
+                    </div>
+
+                </div>
+                <div class="col-md-12 modal-body">
+                    <div class="modal-body-head">
+
+                    </div>
+                    <div class="modal-body-content">
+
+                    </div>
+                </div>
+                <div class="col-md-12 modal-foot">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:100%;height:90px;"
+                         data-ad-client="ca-pub-8292462256462069"
+                         data-ad-slot="5075994036"></ins>
+                    <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
 

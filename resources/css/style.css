@@ -267,11 +267,16 @@
 .table-semanal tr{
     cursor: pointer;
 }
+.table-porHora tr td{
+    
+}
 
 .modal-show{
     overflow: hidden;
 }
+
 .modal-default{
+    transition: linear all .5s;
     position: fixed;
     top: 0;
     left: 0;
@@ -320,24 +325,28 @@
 .table-dia tr td{
     text-align: center;
 }
-.modal-semanal > div{
+.modal-default > div{
     background-color: white;
-    height: 90%;
+    height: 100%;
 
 }
-.modal-semanal .modal-head{
+.modal-default .modal-head{
     //height: 10%;
     background-color: blue;
     font-size: 1.5em;
     color: white;
 
 }
-.modal-semanal .modal-head > *{
+.modal-default .modal-head > *{
     display: inline-block;
     margin-right: 15px;
 }
-.modal-semanal .modal-body{
-    height: 75%;
+.modal-default .modal-head > *:nth-child(1){
+    cursor: pointer;
+        
+}
+.modal-default .modal-body{
+    height: 85%;
     background-color: rgb(230,230,230);
 }
 
