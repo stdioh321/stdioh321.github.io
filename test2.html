@@ -29,23 +29,30 @@
         </script>
         <style type="text/css">
             .test{
-                width: 300px;
-                border: solid red 1px; 
-                overflow: hidden;
+                width: 500px;
+                //height: 50px;
+                border: solid red 3px;
+
             }
             .test > div{
-                border: solid green 1px;
-                width: 1000%;
-                height: 100%;
+                width: 100%;
+                
+                border: solid blue 1px;
                 position: relative;
-                overflow: auto;
             }
             .test > div > div{
-                border: solid blue 1px;
-                display: inline-block;
-                //width: 100%;
-                float: left;
-
+                border: solid green 1px;
+                width: 100%;
+            }
+            .test > div > div:not(:nth-child(2)){
+                position: absolute;
+                top: 0;
+            }
+            .test > div > div:nth-child(2){
+                transform: translate(100%);
+            }
+            .test > div > div:nth-child(3){
+                transform: translate(200%);
             }
         </style>
 
@@ -55,115 +62,14 @@
         <div class="test">
             <div>
                 <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
+                    ABC<br />
+                    ABC<br />
+                    ABC<br />
+                    ABC<br />
+                    ABC<br />
                 </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
-                <div>
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
+                <div>ABC</div>
+                <div>ABC</div>
             </div>
         </div>
     </body>

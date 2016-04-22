@@ -422,9 +422,9 @@
                         mc.on('panleft panright', function (ev) {
 
                             $('.tab-content-in').removeClass("tab-content-animate");
-                            prc = ev.deltaX * 100 / ev.target.offsetWidth;
+                            prc = ev.deltaX * 100 / $('.tab-content-in').outerWidth();
                             console.log(prc + " - " + cur);
-                            //console.log(ev);
+                            //console.log(ev.target);
                             $('.tab-content-in').css({
                                 transform: "translate(" + (prc + (ind * -100)) + "%)"
                             });
