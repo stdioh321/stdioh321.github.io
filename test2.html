@@ -6,83 +6,54 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" type="text/css" href="resources/lib/bootstrap/dist/css/bootstrap.css" />
-        
-                
+
+
 
         <script src="resources/lib/angular/angular.js" ></script>
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
         <script src="resources/lib/angular-pageslide-directive/dist/angular-pageslide-directive.js" ></script>
 
-        
-       
-        
+
+
+
 
         <script type="text/javascript">
 
 
             var app = angular.module('ang', ["pageslide-directive"]);
             app.controller('angCtrl', function ($scope, $interval) {
-                $scope.toggle = function(){
-                    $scope.checked = !$scope.checked;
-                }
-                $scope.arr = [
-                    "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"
-                ];
+
             });
 
 
         </script>
         <style type="text/css">
-         body{
-            overflow-x: hidden;
-         }
-
-        .menu{
-            background-color: #222222;
-            color: white;
-        }
-        .over-layer{
-            width: 100%;
-            height: 100%;
-            z-index: -10;
-            position: absolute;
-            transtion: linear all .5s;
-        }
-        .ng-pageslide-body-open .over-layer{
-            background-color: rgba(0,0,0,0.5);
-            z-index: 100;
-
-        }
+            .test{
+                width: 80%;
+                height: 500px;
+                border: solid red 1px; 
+                position: relative;
+            }
+            .test > div{
+                width: 100px;
+                height: 100px;
+                border: solid blue 1px;
+                position: absolute;
+                right: 0;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto auto;
+                
+                
+            }
         </style>
 
     </head>
 
     <body ng-controller="angCtrl" >
-        <pageslide ps-open="checked" class="menu" ps-side="left" ps-push="true" ps-squeeze="true" ps-body-class="slided" >  
-                    <div>
-                        <p>some random content...</p>
-                    </div>
-        </pageslide>
-    <div class="container-fluid" style="position: relative" style="border: solid blue 1px; ">
-            <div class="row over-layer" ng-click="checked = false"></div>        
-            <div class="row"  style="background-color: #222222; position: fixed; width: 100%; z-index: 10">
-                <div class="col-md-12"  >
-                  <button class="btn btn-primary" ng-click="toggle()">Open</button>
-                </div>
-
-            </div>
-    
-        <div class="container">
-    
-            <h2>&nbsp;</h2>
-            <div class="row">
-                <div class="col-md-12">
-                    <ul class="list-group">
-                        <li  class="list-group-item" ng-repeat="item in arr">{{item}}</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="test">
+            <div></div>
         </div>
-    </div>
     </body>
 </html>

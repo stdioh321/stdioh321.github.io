@@ -1,309 +1,32 @@
-/*body{
-    background: url(../img/beach.jpg);
-    background-attachment: fixed;
-
-}
-html, body{
-    overflow-x: hidden;
-}
-
-.table-direcoes img{
-    width: 35px;
-}
-.compass{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    position: relative;
-}
-.compass img:not(:last-child){
-    position: absolute;
-    opacity: .7;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-}
-.rn-carousel{
-    height: 305px;
-
-}
-
-
-.esconde{
-    opacity: 0;
-}
-#map{
-    width: 100%;
-
-}
-.img-icon{
-    border: solid red 1px;
-}
-
-.menu{
-    transition: linear all .5s;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    
-    min-height: 100vh;
-    background-color: rgba(34,34,34,1);
-    z-index: -10;
-
-
-
-}
-.menu ul{
-    border: solid red 0px;
-
-}
-.menu-opened .menu{
-    z-index: 10;
-
-}
-.menu-closed .menu{
-    display: none;
-}
-
-.menu ul li{
-    border: 0;
-    color: white;
-    background-color: rgba(0,0,0,0);
-}
-.content-all{
-    transition: linear all .5s;
-    position: relative;
-}
-
-.over-layer{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-
-}
-.menu-opened .over-layer{
-    background-color: rgba(10,10,10,.5);
-    z-index: 10;
-
-}
-
-
-.table-now img{
-    width: 35px;
-}
-.table-now td{
-    font-size: 1.3em;
-}
-
-.table-week tr td{
-    font-size: .8em;
-    text-align: center;
-}
-
-.table-week tr:nth-child(even){
-    background-color: rgba(100,100,100,.1);
-}
-
-.loading{
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#loading{
-    color: white;
-    font-size: 10em;
-    animation: load .8s infinite;
-}
-@-webkit-keyframes load{
-    from    {transform: rotateZ(0deg);}
-    to      {transform: rotateZ(360deg);}
-} 
-@-moz-keyframes load{
-    from    {transform: rotateZ(0deg);}
-    to      {transform: rotateZ(360deg);}
-}@keyframes load{
-    from    {transform: rotateZ(0deg);}
-    to      {transform: rotateZ(360deg);}
-}
-
-
-.menu-content{
-    padding: .5em 0;
-    background-color: rgba(34,34,34,0.8);
-    width: 100%;
-    position: absolute;
-
-}
-
-.menu-closed .menu-content{
-    position: fixed;
-}
-
-
-
-.cont{
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1em;
-    margin: 0 auto;
-}
-
-.menu-content > div > *{
-    display: inline-block;
-    color: white;
-}
-.menu-content > div{
-    padding: 0 !important;
-}
-.nomes-locais div{
-    font-size: .9em;
-    display: inline-block;
-}
-
-.exibe-praias{
-
-    height: 200px;
-    border: solid red 0px;
-    overflow: auto;
-}
-.exibe-praias > div > div > div{
-    background-color: white;
-    color: black;
-    box-shadow: 0px 0px 1px gray;
-    font-size: .9em;
-    padding: 0.3em 0;
-}
-.exibe-praias a:visited, .exibe-praias a:link{
-    font-style: none;
-    color: black;
-}
-
-
-.img-test > div > div:nth-child(1){
-    background: url("../img/icons_1.png") 0px 0 ;
-    background-repeat: no-repeat;
-    width: 60px;
-    height: 60px;
-
-
-}
-
-
-.rn-carousel .arrow{
-
-    position: absolute;
-    top: 50%;
-    bottom: 50%;
-    margin: auto auto;
-    opacity: .6;
-    box-shadow: 0px 0px 10px #222222;
-
-}
-.rn-carousel .arrow:hover{
-    cursor: pointer;
-}
-.rn-carousel .arrow:nth-child(1){
-    left: 0;
-}
-.rn-carousel .arrow:nth-child(2){
-    right: 0;
-}
-
-.table-semanal td{
-    text-align: center;
-}
-.table-semanal img{
-    width: 35px;
-    height: 35px;
-}
-.table-semanal td{
-    text-align: center;
-    padding: 4px 0px !important;
-}
-.table-semanal tr:nth-child(2) td{
-    font-size: 1.5em;
-
-}
-.table-semanal tr:nth-child(even){
-    background-color: rgba(51, 122, 183, 0.7); 
-}
-#line{
-
-}
-
-.chart-bar .chart-colours{
-
-}
-
-.legenda-direcoes{
-    display: flex;
-    align-content: center;
-    justify-content: center;
-}
-.legenda-direcoes > span{
-
-}
-.legenda-direcoes > div{
-    margin: 0 .2em;
-    width: 20px;
-    height: 20px;
-}
-
-.row *{
-    color: white;
-}
-
-@media screen and (min-width: 601px){
-    .menu{
-        width: 40%;
-    }
-    .menu-opened .content-all{
-        //left: 40%;
-    }
-    .menu-opened .menu-content{
-
-    }
-    #map{
-        height: 300px;
-    }
-}
-
-@media screen and (max-width: 600px){
-    .menu{
-        width: 80%;
-    }
-    .menu-opened .content-all{
-        //left: 80%;
-    }
-    #map{
-        height: 200px;
-    }
-}*/
-
-
-
 .menu{
     position: fixed;
     width: 50%;
     height: 100%;
-    background-color: #343434;
+    background-color: white;
     z-index: 10;
 }
 
+.menu > div:nth-child(1){
+    height: 15vh;
+    background-color: blue;
+    color: white;
+    position: relative;
+    font-size: 1.5em;
+}
+
+.menu > div:nth-child(1) > span:nth-child(1){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.menu > div:nth-child(1) > span:nth-child(2){
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.menu ul li{
+    background-color: rgba(0,0,0,0);
+}
 .menu-hide .menu{
     left: 100%;
 }
@@ -332,35 +55,49 @@ html, body{
 }
 
 .menu-top > div:nth-child(1){
-    display: flex;
     height: 50%;
-    align-content: center;
-
+    font-size: 1.2em;
 
 }
+.menu-top > div:nth-child(1) > *{
+    float: left;
+}
+.menu-top > div:nth-child(1) > div:nth-child(1){
+    margin-right: .5em;
+}
+
 .tab-menu{
     height: 50%;
 }
 .tab-menu ul{
-
+    height: 100%;
+    display: flex;
+    align-content: center;
     margin: 0;
     padding: 0;
 
 }
 .tab-menu li{
     display: inline-block;
-    
+    position: relative;
+
 }
 .tab-menu li a:visited, .tab-menu li a:link{
     color: white;
     text-decoration: none;
     font-size: 1.2em;
-    padding-right: 1em; 
+    padding: 0 1em; 
+    text-align: center;
+
 }
 
+.tab-menu-active{
+    border-bottom: solid orange .5em;
+}
 
 .tab-content{
     margin-top: 15vh;
+    padding-top: 15px;
     height: 75vh;
     overflow-x: hidden;
 }
@@ -408,8 +145,34 @@ html, body{
 
 .rn-carousel{
     height: 450px;
+    position: relative;
+}
+.rn-carousel-indicator{
+    font-size: 2.5em;   
 }
 
+.rn-carousel-controls{
+    position: absolute;
+    top: 50%;
+    opacity: .7;
+    cursor: pointer;
+}
+.rn-carousel-controls:nth-child(1){
+    left: 0;   
+}
+.rn-carousel-controls:nth-child(2){
+    right:  0;   
+}
+
+.table-weak tr:nth-child(2) td{
+    font-size: 20px;
+}
+.table-weak tr:nth-child(2) td img{
+    width: 20px;
+}
+.table-weak tr td{
+    text-align: center;
+}
 
 .container{
     background-color: rgba(230,230,230,1); 
@@ -417,4 +180,39 @@ html, body{
 .rodape{
     height: 10vh;
     overflow: hidden;
+}
+
+
+.compass{
+    display: flex;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+}
+
+.compass > img:not(:last-child){
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto auto;
+    opacity: .7;
+}
+
+.legenda-direcoes{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.legenda-direcoes > div{
+    width: 20px;
+    height: 20px;
+    margin: 0 .5em;
+}
+
+.table-now tr td img{
+    width: 30px;
 }

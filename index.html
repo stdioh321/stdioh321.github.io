@@ -73,6 +73,14 @@
         </div>
 
         <nav class="menu">
+            <div class="col-md-12">
+
+                <span >{{obj_pra.name||'Local'}}</span>
+
+
+                <span>{{atualMarine.WindChillC}}&#176;C</span>
+
+            </div>
             <ul class="list-group">
 
                 <li class="list-group-item">
@@ -112,7 +120,7 @@
             </ul>
         </nav>
         <div class="over-layer"></div>
-        <div class="container ">
+        <div class="container">
             <div class="row menu-top">
 
                 <div class="col-md-12">
@@ -274,11 +282,11 @@
                         <div class="col-md-6">
                             <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex" style="display: flex; align-content: center; justify-content: center;"></div>
                             <ul rn-carousel rn-carousel-index="carouselIndex" class="rn-carousel">
-                                <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-left" ng-click="prevSlide()" ng-disabled="carouselIndex < 1"></span>
-                                <span style="font-size: 2em; z-index: 100" class="arrow glyphicon glyphicon-chevron-right"  ng-click="nextSlide()"  ng-disabled="carouselIndex < resultMarine.weather.length - 1"></span>
+                                <span style="font-size: 2em; z-index: 100" class="rn-carousel-controls glyphicon glyphicon-chevron-left" ng-click="prevSlide()" ng-disabled="carouselIndex < 1"></span>
+                                <span style="font-size: 2em; z-index: 100" class="rn-carousel-controls glyphicon glyphicon-chevron-right"  ng-click="nextSlide()"  ng-disabled="carouselIndex < resultMarine.weather.length - 1"></span>
                                 <li ng-repeat="item in resultMarine.weather">
                                     <div class="layer">
-                                        <table class="table table-semanal">
+                                        <table class="table table-weak">
                                             <tr>
                                                 <td colspan="7">
                                                     {{item.date| date:'fullDate' | uppercase}}
@@ -357,7 +365,7 @@
                          data-ad-client="ca-pub-8292462256462069"
                          data-ad-slot="5075994036"></ins>
                     <script>
-                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
             </div>
@@ -387,15 +395,11 @@
                             transform: "translate(" + (index * 100) + "%)"
                         });
                     });
-
                     $('.tab-menu > ul > li > a').each(function (index) {
                         $(this).click(function (ev) {
                             changeTab(index);
                         });
                     });
-
-
-
                     function changeTab(idx) {
                         tmp = idx;
                         tmp = (-idx * 100) + "%";
@@ -408,14 +412,13 @@
                     var cur = Number($('.tab-content-in')[0].getAttribute('current'));
                     var changeLimit = 20;
                     var totContent = $('.tab-content-in > div').length;
-
                     $('.tab-content-in > div').each(function (ind) {
-                        mc = new Hammer(this);
-
+                        mc = new Hammer(this, {domEvents: true});
                         mc.on('panleft panright', function (ev) {
                             $('.tab-content-in').removeClass("tab-content-animate");
                             prc = ev.deltaX * 100 / ev.target.offsetWidth;
-                            console.log(prc + " - " + cur);
+                            //console.log(prc + " - " + cur);
+                            console.log(ev);
                             $('.tab-content-in').css({
                                 transform: "translate(" + (prc + (ind * -100)) + "%)"
                             });
@@ -428,12 +431,10 @@
                             }
 
                         });
-
                         mc.on('panend', function (ev) {
                             $('.tab-content-in').addClass("tab-content-animate");
                             changeTab(cur);
                         });
-
                     });
         </script>
 
@@ -483,7 +484,6 @@
                         a.src = g;
                         m.parentNode.insertBefore(a, m)
                     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
                     ga('create', 'UA-76655658-1', 'auto');
                     ga('send', 'pageview');
 
