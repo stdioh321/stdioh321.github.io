@@ -13,8 +13,8 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
     $scope.dataChart = [];
     $scope.labels = [];
     $scope.colours = [{
-            fillColor: 'rgba(51, 122, 183, 0.7)',
-            strokeColor: 'rgba(51, 122, 183, 0.7)'
+            fillColor: 'rgba(0, 0, 0, .7)',
+            strokeColor: 'rgba(0, 0, 0, .7)'
 //            highlightFill: 'rgba(47, 132, 71, 0.8)',
 //            highlightStroke: 'rgba(47, 132, 71, 0.8)'
         }];
@@ -229,15 +229,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
     }
 
 
-    $scope.criaToast = function () {
-        ngToast.create({
-            className: 'danger',
-            content: 'Não foi possivel baixar os dados.<br />Verifique seu acesso a internet e tente novamente',
-            dismissButton: true,
-            animation: 'slide'
-
-        });
-    }
+    
 
 
 });
