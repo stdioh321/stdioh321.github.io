@@ -540,55 +540,63 @@
                         </div>
                     </div>
                     <div class="modal-body-content">
-                        <table class="table table-dia">
-                            <tr>
-                                <td>
-                                    <span class="glyphicon glyphicon-time" title="Horário" ></span>
+                        <hr />
 
-                                </td>
-                                <td>
-                                    <img  src="resources/img/direcao_onda.png" title="Direção Onda" />
+                        <div class="col-md-6">
 
-                                </td>
-                                <td>
-                                    <img  src="resources/img/tamanho_onda.png" title="Tamanho (M)" />
-                                </td>
-                                <td>
-                                    <img  src="resources/img/potencia.png" title="Potência" />
-                                </td>
-                                <td>
+                            <canvas chart-colours="colours" id="line" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-options="{scaleStepWidth: 0.5}" height="100"></canvas>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-dia">
+                                <tr>
+                                    <td>
+                                        <span class="glyphicon glyphicon-time" title="Horário" ></span>
 
-                                    <img  src="resources/img/direcao_vento.png" title="Direção Vento" />
+                                    </td>
+                                    <td>
+                                        <img  src="resources/img/direcao_onda.png" title="Direção Onda" />
 
-                                </td>
-                                <td>
-                                    <img  src="resources/img/direcao_vento.png" title="Velocidade (km/h)" />
+                                    </td>
+                                    <td>
+                                        <img  src="resources/img/tamanho_onda.png" title="Tamanho (M)" />
+                                    </td>
+                                    <td>
+                                        <img  src="resources/img/potencia.png" title="Potência" />
+                                    </td>
+                                    <td>
 
-                                </td>
+                                        <img  src="resources/img/direcao_vento.png" title="Direção Vento" />
 
-                            </tr>
-                            <tr ng-repeat="item2 in resultMarine.weather[modalShow.index].hourly">
-                                <td>
-                                    {{item2.time| toHour}}
-                                </td>
-                                <td>
-                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
-                                </td>
-                                <td>
-                                    {{item2.swellHeight_m}}M
-                                </td>
-                                <td>
-                                    {{item2.WindGustKmph}}
-                                </td>
-                                <td>
-                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
-                                </td>
-                                <td>
-                                    {{item2.windspeedKmph}}km/h
-                                </td>
+                                    </td>
+                                    <td>
+                                        <img  src="resources/img/direcao_vento.png" title="Velocidade (km/h)" />
 
-                            </tr>
-                        </table>
+                                    </td>
+
+                                </tr>
+                                <tr ng-repeat="item2 in resultMarine.weather[modalShow.index].hourly">
+                                    <td>
+                                        {{item2.time| toHour}}
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
+                                    </td>
+                                    <td>
+                                        {{item2.swellHeight_m}}M
+                                    </td>
+                                    <td>
+                                        {{item2.WindGustKmph}}
+                                    </td>
+                                    <td>
+                                        <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
+                                    </td>
+                                    <td>
+                                        {{item2.windspeedKmph}}km/h
+                                    </td>
+
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12 modal-foot">
@@ -598,7 +606,7 @@
                          data-ad-client="ca-pub-8292462256462069"
                          data-ad-slot="5075994036"></ins>
                     <script>
-                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
 

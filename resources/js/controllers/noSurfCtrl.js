@@ -144,7 +144,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
     };
 
     $scope.$watch(function (scope) {
-        return scope.carouselIndex;
+        return scope.modalShow.index;
     }, function (newVal, oldVal) {
         if ($scope.resultMarine) {
             $scope.indexDate = newVal;
