@@ -128,6 +128,9 @@
                     <div class="nomes-locais">
                         <div ng-show="obj_pra" style="font-size: 1.2em;">{{obj_pra.name| uppercase}}</div>
                     </div>
+                    <div class="option">
+                        <span class="glyphicon glyphicon-option-vertical"></span>
+                    </div>
                 </div>
                 <div class="col-md-12 tab-menu">
                     <ul>
@@ -259,25 +262,6 @@
                             </tr>
                         </table>
                     </div>
-                    <div  >
-                        <div class="col-md-6">
-                            <div class="compass">
-                                <img src="resources/img/arrow_up_swell.png" style="transform: rotate({{atualMarine.swellDir}}deg)"/>
-                                <img src="resources/img/arrow_up_wind.png" style="transform: rotate({{atualMarine.winddirDegree}}deg)"/>
-                                <img src="resources/img/compass.png" />
-
-                            </div>
-                            <div class="legenda-direcoes">
-                                <div style="background-color: #ffffff; border-radius: 5px;"></div>
-                                <span>Vento</span>
-                                <div style="background-color: #e1a400; border-radius: 5px;"></div>
-                                <span>Onda</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="map"></div>
-                        </div>
-                    </div>
                     <div  ng-show="atualMarine">
                         <div class="col-md-6">
                             <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex" style="display: flex; align-content: center; justify-content: center;"></div>
@@ -355,6 +339,25 @@
 
 
                     </div>
+                    <div  >
+                        <div class="col-md-6">
+                            <div class="compass">
+                                <img src="resources/img/arrow_up_swell.png" style="transform: rotate({{atualMarine.swellDir}}deg)"/>
+                                <img src="resources/img/arrow_up_wind.png" style="transform: rotate({{atualMarine.winddirDegree}}deg)"/>
+                                <img src="resources/img/compass.png" />
+
+                            </div>
+                            <div class="legenda-direcoes">
+                                <div style="background-color: #ffffff; border-radius: 5px;"></div>
+                                <span>Vento</span>
+                                <div style="background-color: #e1a400; border-radius: 5px;"></div>
+                                <span>Onda</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="map"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row rodape">
@@ -423,8 +426,8 @@
 
                             $('.tab-content-in').removeClass("tab-content-animate");
                             prc = ev.deltaX * 100 / $('.tab-content-in').outerWidth();
-                            console.log(prc + " - " + cur);
-                            //console.log(ev.target);
+                            //console.log(prc + " - " + cur);
+                            console.log(ev);
                             $('.tab-content-in').css({
                                 transform: "translate(" + (prc + (ind * -100)) + "%)"
                             });
