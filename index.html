@@ -412,9 +412,14 @@
                     var cur = Number($('.tab-content-in')[0].getAttribute('current'));
                     var changeLimit = 20;
                     var totContent = $('.tab-content-in > div').length;
+                    Hammer.defaults.domEvents = true;
+
                     $('.tab-content-in > div').each(function (ind) {
-                        mc = new Hammer(this, {domEvents: true});
+
+                        mc = new Hammer(this);
+
                         mc.on('panleft panright', function (ev) {
+
                             $('.tab-content-in').removeClass("tab-content-animate");
                             prc = ev.deltaX * 100 / ev.target.offsetWidth;
                             //console.log(prc + " - " + cur);
