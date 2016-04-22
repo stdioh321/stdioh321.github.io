@@ -63,9 +63,10 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
     };
 
     $scope.carregaWeather = function (praia) {
-        if (!window.navigator.onLine) {
-            $scope.criaToast();
-        } else if (praia != null) {
+//        if (!window.navigator.onLine) {
+//            
+//        } else 
+            if (praia != null) {
 
             $scope.loading = true;
             toggleMenu();
@@ -94,14 +95,14 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
                     console.log("ERROR");
                     console.log(data);
                     $scope.loading = false;
-                    $scope.criaToast();
+                    
                 });
 
             }, function (data) {
                 console.log("ERROR");
                 console.log(data);
                 $scope.loading = false;
-                $scope.criaToast();
+                
             });
 
 

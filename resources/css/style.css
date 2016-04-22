@@ -1,9 +1,9 @@
 .menu{
     position: fixed;
-    width: 50%;
     height: 100%;
     background-color: white;
     z-index: 10;
+    transition: linear all .5s;
 }
 
 .menu > div:nth-child(1){
@@ -28,19 +28,27 @@
     background-color: rgba(0,0,0,0);
 }
 .menu-hide .menu{
-    left: 100%;
+
+}
+.menu-show .menu{
+    left: 0;
 }
 
 .over-layer{
     position: absolute;
     top: 0;
     left: 0;
-
-}
-.menu-show .over-layer{
     width: 100%;
     height: 100%;
     z-index: 5;
+    transition: linear all .5s;
+}
+.menu-hide .over-layer{
+    background-color: rgba(0,0,0,0);
+    visibility: hidden;
+}
+.menu-show .over-layer{
+    visibility: visible;
     background-color: rgba(0,0,0,.7);
 }
 
@@ -49,6 +57,7 @@
     position: fixed;
     height: 15vh;
     background-color: blue;
+    left: 15px;
     width: 100%;
     z-index: 1;
     color: white;
@@ -56,7 +65,7 @@
 
 .menu-top > div:nth-child(1){
     height: 50%;
-    font-size: 1.2em;
+    font-size: 1.5em;
 
 }
 .menu-top > div:nth-child(1) > *{
@@ -64,6 +73,8 @@
 }
 .menu-top > div:nth-child(1) > div:nth-child(1){
     margin-right: .5em;
+
+    cursor: pointer;
 }
 
 .tab-menu{
@@ -72,14 +83,13 @@
 .tab-menu ul{
     height: 100%;
     display: flex;
-    align-content: center;
     margin: 0;
     padding: 0;
 
 }
 .tab-menu li{
-    display: inline-block;
-    position: relative;
+    /*    display: inline-block;
+        position: relative;*/
 
 }
 .tab-menu li a:visited, .tab-menu li a:link{
@@ -98,19 +108,28 @@
 .tab-content{
     margin-top: 15vh;
     padding-top: 15px;
-    height: 75vh;
     overflow-x: hidden;
+    //height: 75vh;
 }
 .tab-content-in{
     width: 100%;
-    height: 100%;
     position: relative;
 }
 .tab-content-in > div{
-    overflow-y: auto;
     width: 100%;
-    height: 100%;
+    border: solid red 1px;
+}
+.tab-content-in > div:not(.tab-content-active){
     position: absolute;
+    overflow: hidden;
+    top: 0;
+    height: 100%;
+
+
+}
+.tab-content-in > div.tab-content-active{
+    //border: solid red 1px;
+    overflow:auto; 
 
 }
 .tab-content-animate{
@@ -136,6 +155,22 @@
     margin: 0 auto;
     top: 50%;
     bottom: 50%;
+    animation: load linear infinite .5s;
+    -moz-animation: load linear infinite .5s;
+    -webkit-animation: load linear infinite .5s;
+}
+
+@keyframes load{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+@-webkit-keyframes load{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}
+@-moz-keyframes load{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
 }
 
 #map{
@@ -174,8 +209,9 @@
     text-align: center;
 }
 
-.container{
+.container-fluid, .container{
     background-color: rgba(230,230,230,1); 
+
 }
 .rodape{
     height: 10vh;
@@ -215,4 +251,33 @@
 
 .table-now tr td img{
     width: 30px;
+}
+
+
+@media screen and (min-width: 601px){
+    .menu{
+        width: 40%;
+    }
+    .menu-hide .menu{
+        left: -40%;
+    }
+
+    .tab-menu li{
+        display: inline-block;
+        list-style: none;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 600px){
+    .menu{
+        width: 85%;
+    }
+    .menu-hide .menu{
+        left: -85%;
+    }
+    .tab-menu li{
+        flex: 1;
+        list-style: none;
+        text-align: center;
+    }
 }

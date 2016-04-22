@@ -120,7 +120,7 @@
             </ul>
         </nav>
         <div class="over-layer"></div>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row menu-top">
 
                 <div class="col-md-12">
@@ -390,6 +390,7 @@
                     $('.tab-content-in > div').each(function (index) {
                         if (index == 0) {
                             $(this).parent().attr("current", 0);
+                            $(this).addClass("tab-content-active");
                         }
                         $(this).css({
                             transform: "translate(" + (index * 100) + "%)"
@@ -405,6 +406,8 @@
                         tmp = (-idx * 100) + "%";
                         $('.tab-content-in > div')[idx].parentNode.style.transform = "translate(" + tmp + ")";
                         $('.tab-content-in > div')[idx].parentNode.setAttribute('current', idx);
+                        $('.tab-content-in > div').removeClass("tab-content-active");
+                        $('.tab-content-in > div')[idx].classList.add("tab-content-active");
                         $('.tab-menu > ul > li').removeClass('tab-menu-active');
                         $('.tab-menu > ul > li')[idx].classList.add('tab-menu-active');
                     }
@@ -413,17 +416,15 @@
                     var changeLimit = 20;
                     var totContent = $('.tab-content-in > div').length;
                     Hammer.defaults.domEvents = true;
-
                     $('.tab-content-in > div').each(function (ind) {
 
                         mc = new Hammer(this);
-
                         mc.on('panleft panright', function (ev) {
 
                             $('.tab-content-in').removeClass("tab-content-animate");
                             prc = ev.deltaX * 100 / ev.target.offsetWidth;
-                            //console.log(prc + " - " + cur);
-                            console.log(ev);
+                            console.log(prc + " - " + cur);
+                            //console.log(ev);
                             $('.tab-content-in').css({
                                 transform: "translate(" + (prc + (ind * -100)) + "%)"
                             });
