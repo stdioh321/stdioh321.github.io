@@ -1,4 +1,4 @@
-app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
+app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModal) {
     /*########## Select Data ########## */
     $scope.locais = locais;
     /*########## Select Data ########## */
@@ -20,6 +20,9 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
         }];
     /*########## Chart Data ########## */
     $scope.indexDate = 0;
+
+    $scope.indexAtual = new Date().getHours();
+    $scope.modalShow = {value: false, modal: "", modalVal: ""};
 
     window.showMenu = function () {
         bt = document.getElementsByClassName('menu-btn')[0];
@@ -66,13 +69,13 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
 //        if (!window.navigator.onLine) {
 //            
 //        } else 
-            if (praia != null) {
+        if (praia != null) {
 
             $scope.loading = true;
             toggleMenu();
             $http({
                 method: "GET",
-                url: urlBase + "marine.ashx?key=" + key + "&lang=pt&tide=yes&format=json&q=" + praia.lat + "," + praia.lon
+                url: urlMarine + praia.lat + "," + praia.lon
             }).then(function (data) {
                 $scope.resultMarine = data.data.data;
                 $scope.indexDate = 0;
@@ -85,24 +88,25 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
                 window.scrollTo(0, 0);
                 $http({
                     method: "GET",
-                    url: urlBase + "weather.ashx?key=" + key + "&lang=pt&showmap=yes&format=json&q=" + praia.lat + "," + praia.lon
+                    url: urlWeather + praia.lat + "," + praia.lon
                 }).then(function (data) {
                     $scope.loading = false;
                     $scope.resultWeather = data.data.data;
+                    console.log($scope.resultWeather);
                     $scope.carregaAtual();
 
                 }, function (data) {
                     console.log("ERROR");
                     console.log(data);
                     $scope.loading = false;
-                    
+
                 });
 
             }, function (data) {
                 console.log("ERROR");
                 console.log(data);
                 $scope.loading = false;
-                
+
             });
 
 
@@ -120,8 +124,12 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
             if (index == $scope.indexDate) {
                 $scope.now = elem.date;
                 elem.hourly.filter(function (elem2) {
-                    $scope.dataChart.push(parseFloat(elem2.swellHeight_m));
-                    $scope.tmpLabel.push($filter('toHour')(elem2.time));
+
+                    if ((elem2.time / 100) % 2 == 0) {
+                        $scope.dataChart.push(parseFloat(elem2.swellHeight_m));
+                        $scope.tmpLabel.push($filter('toHour')(elem2.time));
+                    }
+
                 });
             }
         });
@@ -145,16 +153,32 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
     });
 
 
+//    $scope.carregaAtual = function () {
+//        var a = [00, 03, 06, 09, 12, 15, 18, 21];
+////        var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
+//        d = new Date();
+//        var atual = 0;
+//        a = a.forEach(function (elem, index, arr) {
+//            if (d.getHours() >= 21) {
+//                atual = index;
+//            } else
+//            if (d.getHours() < elem) {
+//                atual = index - 1;
+//            }
+//        });
+//
+//        $scope.atualMarine = $scope.resultMarine.weather[0].hourly[atual];
+//        $scope.atualWeather = $scope.resultWeather.weather[0].hourly[atual];
+//
+//    };
     $scope.carregaAtual = function () {
-        var a = [00, 03, 06, 09, 12, 15, 18, 21];
+//        var a = [00, 03, 06, 09, 12, 15, 18, 21];
+        var a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23];
         d = new Date();
         var atual = 0;
         a = a.forEach(function (elem, index, arr) {
-            if (d.getHours() >= 21) {
-                atual = index;
-            } else
-            if (d.getHours() < elem) {
-                atual = index - 1;
+            if (d.getHours() == elem) {
+                atual = elem;
             }
         });
 
@@ -230,7 +254,15 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast) {
     }
 
 
-    
 
+    $scope.openModal = function (modal, index) {
+        $scope.modalShow = {value: true, modal: modal, index: index};
 
+    };
+    $scope.closeModal = function () {
+        $scope.modalShow = false;
+    };
+    $scope.trocaIndexAtual = function (val) {
+        $scope.modalShow.index = $scope.modalShow.index + val;
+    };
 });

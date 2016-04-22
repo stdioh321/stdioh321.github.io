@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="noSurf" class="menu-hide">
+<html ng-app="noSurf" class="menu-hide" >
     <!--
        API Key
        51cb531a971ca10554a6ae517b90efe6
@@ -38,6 +38,7 @@
         <link rel="stylesheet" href="resources/lib/angular-chart.js/dist/angular-chart.css">
         <link rel="stylesheet" href="resources/lib/angular-carousel/dist/angular-carousel.css">
         <link rel="stylesheet" href="resources/lib/ngToast/dist/ngToast.css">
+        <link rel="stylesheet" href="resources/lib/angular-bootstrap/ui-bootstrap-csp.css">
 
 
         <link rel="stylesheet" href="resources/css/style.css" >
@@ -51,6 +52,7 @@
         <script src="resources/lib/angular-sanitize/angular-sanitize.js" ></script>
         <script src="resources/lib/angular-animate/angular-animate.js" ></script>
         <script src="resources/lib/ngToast/dist/ngToast.js" ></script>
+        <script src="resources/lib/angular-bootstrap/ui-bootstrap.js" ></script>
 
         <script src="resources/lib/Chart.js/Chart.js"></script>   
         <script src="resources/lib/angular-chart.js/dist/angular-chart.js"></script>
@@ -67,7 +69,7 @@
 
 
     </head>
-    <body ng-controller="noSurfCtrl">
+    <body ng-controller="noSurfCtrl" ng-class="{'modal-show':modalShow.value}">
         <div class="loading" ng-show="loading">
             <span class="glyphicon glyphicon-refresh "></span>
         </div>
@@ -124,7 +126,7 @@
             <div class="row menu-top">
 
                 <div class="col-md-12">
-                    <div class="glyphicon glyphicon-align-justify" style="font-size: 1.5em;"  onclick="toggleMenu()"></div>
+                    <div class="bt-toggle glyphicon glyphicon-align-justify" style="font-size: 1.5em;"  onclick="toggleMenu()"></div>
                     <div class="nomes-locais">
                         <div ng-show="obj_pra" style="font-size: 1.2em;">{{obj_pra.name| uppercase}}</div>
                     </div>
@@ -135,6 +137,7 @@
                 <div class="col-md-12 tab-menu">
                     <ul>
                         <li class="tab-menu-active"><a href="">Agora</a></li>
+                        <li><a href="">Cada Hora</a></li>
                         <li><a href="">Semanal</a></li>
                         <li><a href="">Mapas</a></li>
                     </ul>
@@ -263,6 +266,22 @@
                         </table>
                     </div>
                     <div  ng-show="atualMarine">
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+                    <div  ng-show="atualMarine">
+                        <div class="col-md-12">
+
+                            <table class="table table-hover table-semanal">
+                                <tr ng-repeat="item in resultMarine.weather" ng-click="openModal('semanal', $index)">
+                                    <td>{{item.date| date:'d/M' }}<br />{{item.date| date:'EEE' }}</td>
+                                    <td>img</td>
+                                    <td>clima</td>
+                                    <td>{{item.maxtempC}}&#176;/{{item.mintempC}}&#176;</td>
+                                </tr>
+                            </table>
+                        </div>
                         <div class="col-md-6">
                             <div rn-carousel-indicators ng-if="resultMarine.weather.length > 1" slides="resultMarine.weather" rn-carousel-index="carouselIndex" style="display: flex; align-content: center; justify-content: center;"></div>
                             <ul rn-carousel rn-carousel-index="carouselIndex" class="rn-carousel">
@@ -497,5 +516,94 @@
                     ga('send', 'pageview');
 
         </script>
+
+        <div class="container-fluid modal-default modal-semanal" ng-show="modalShow.value == true && modalShow.modal == 'semanal'" >
+            <div class="row">
+
+                <div class="col-md-12 modal-head">
+
+                    <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal('semanal')"></span>
+                    <div>
+                        Value
+                    </div>
+
+                </div>
+                <div class="col-md-12 modal-body">
+                    <div class="modal-body-head">
+                        <span class="glyphicon glyphicon-arrow-left" ng-click="trocaIndexAtual(-1)" ng-hide="modalShow.index < 1"></span>
+                        <span class="glyphicon glyphicon-arrow-right" ng-click="trocaIndexAtual(1)" ng-hide="modalShow.index > 5" ></span>
+                        <div>
+                            {{resultMarine.weather[modalShow.index].date| date:'fullDate'}}
+                        </div>
+                        <div>
+                            <img src="{{resultMarine.weather[modalShow.index].hourly[indexAtual].weatherIconUrl[0].value}}" />
+                        </div>
+                    </div>
+                    <div class="modal-body-content">
+                        <table class="table table-dia">
+                            <tr>
+                                <td>
+                                    <span class="glyphicon glyphicon-time" title="Horário" ></span>
+
+                                </td>
+                                <td>
+                                    <img  src="resources/img/direcao_onda.png" title="Direção Onda" />
+
+                                </td>
+                                <td>
+                                    <img  src="resources/img/tamanho_onda.png" title="Tamanho (M)" />
+                                </td>
+                                <td>
+                                    <img  src="resources/img/potencia.png" title="Potência" />
+                                </td>
+                                <td>
+
+                                    <img  src="resources/img/direcao_vento.png" title="Direção Vento" />
+
+                                </td>
+                                <td>
+                                    <img  src="resources/img/direcao_vento.png" title="Velocidade (km/h)" />
+
+                                </td>
+
+                            </tr>
+                            <tr ng-repeat="item2 in resultMarine.weather[modalShow.index].hourly">
+                                <td>
+                                    {{item2.time| toHour}}
+                                </td>
+                                <td>
+                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.swellDir}}deg)" title="{{item2.swellDir16Point}}"></span>
+                                </td>
+                                <td>
+                                    {{item2.swellHeight_m}}M
+                                </td>
+                                <td>
+                                    {{item2.WindGustKmph}}
+                                </td>
+                                <td>
+                                    <span class="glyphicon glyphicon-arrow-up" style="transform:rotate({{item2.winddirDegree}}deg)" title="{{item2.winddir16Point}}"></span>
+                                </td>
+                                <td>
+                                    {{item2.windspeedKmph}}km/h
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-12 modal-foot">
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:100%;height:90px;"
+                         data-ad-client="ca-pub-8292462256462069"
+                         data-ad-slot="5075994036"></ins>
+                    <script>
+                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
     </body>
 </html>
