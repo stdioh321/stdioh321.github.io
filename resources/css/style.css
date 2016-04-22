@@ -108,6 +108,7 @@
 .tab-content{
     margin-top: 15vh;
     padding-top: 15px;
+    min-height: 70vh;
     overflow: hidden;
  
 }
@@ -215,7 +216,7 @@
 
 }
 .rodape{
-    height: 10vh;
+    height: 15vh;
     overflow: hidden;
 }
 
