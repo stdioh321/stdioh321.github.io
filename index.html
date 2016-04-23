@@ -69,7 +69,10 @@
 
 
     </head>
-    <body ng-controller="noSurfCtrl" ng-class="{'modal-show':modalShow.value}">
+    <body class="splash" ng-controller="noSurfCtrl" ng-class="{'modal-show':modalShow.value}">
+        <div id="splash" class="splash-remove">
+
+        </div> 
         <div class="loading" ng-show="loading">
             <span class="glyphicon glyphicon-refresh "></span>
         </div>
@@ -109,7 +112,7 @@
 
                 <li class="list-group-item">
                     <input type="text" class="form-control" ng-model="busca" placeholder="Buscar"/>
-                    <div  class="exibe-praias">
+                    <div  class="busca-praias">
                         <div ng-repeat="item in locais">
                             <div ng-repeat="item2 in item.cidades">
                                 <div ng-repeat="item3 in item2.praias| filter:{name:busca} | orderBy:name" ng-show="busca.length > 0">
@@ -429,6 +432,13 @@
 
 
         <script type="text/javascript">
+
+                    $(document).ready(function () {
+                        setTimeout(function () {
+                            $("body").removeClass('splash');
+                            $("body").remove('.splash-remove');
+                        }, 1000);
+                    });
                     $('.tab-content-in > div').each(function (index) {
                         if (index == 0) {
                             $(this).parent().attr("current", 0);
@@ -736,7 +746,7 @@
                                     {{resultWeather.weather[0].astronomy[0].sunset}}
                                 </td>
                             </tr>
-                            
+
                         </table>
 
                     </div>
@@ -755,5 +765,8 @@
 
             </div>
         </div>
+
+
+        
     </body>
 </html>
