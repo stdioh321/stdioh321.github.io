@@ -657,32 +657,90 @@
                     </div>
 
                 </div>
-                <div class="col-md-12 modal-body">
-                    <div class="modal-body-head">
-                        <span class="glyphicon glyphicon-arrow-left" ng-click="trocaIndexAtual(-1)" ng-hide="modalShow.index < 1"></span>
-                        <span class="glyphicon glyphicon-arrow-right" ng-click="trocaIndexAtual(1)" ng-hide="modalShow.index >= resultMarine.weather[0].hourly.length - 1" ></span>
-                        <div>
-                            {{resultMarine.weather[0].hourly[modalShow.index].time| toHour}}
-                        </div>
-                        <div>
-                            <img src="{{resultMarine.weather[0].hourly[modalShow.index].weatherIconUrl[0].value}}" />
-                        </div>
-                        <div>
-                            {{resultMarine.weather[0].hourly[modalShow.index].lang_pt[0].value}}
-                        </div>
+                <div class="col-md-12 modal-body-head">
+                    <span class="glyphicon glyphicon-circle-arrow-left" ng-click="trocaIndexAtual(-1)" ng-hide="modalShow.index < 1"></span>
+                    <span class="glyphicon glyphicon-circle-arrow-right" ng-click="trocaIndexAtual(1)" ng-hide="modalShow.index >= resultMarine.weather[0].hourly.length - 1" ></span>
+                    <div>
+                        {{resultMarine.weather[0].hourly[modalShow.index].time| toHour}}
                     </div>
+                    <div>
+                        <img src="{{resultMarine.weather[0].hourly[modalShow.index].weatherIconUrl[0].value}}" />
+                    </div>
+                    <div>
+                        {{resultMarine.weather[0].hourly[modalShow.index].lang_pt[0].value}}
+                    </div>
+                </div>
+                <div class="col-md-12 modal-body">
+
                     <div class="modal-body-content">
+                        <hr />
                         <table class="table">
                             <tr>
-                                <td>Tamanho Onda</td>
-                                <td>{{resultMarine.weather[0].hourly[modalShow.index].swellHeight_m}}M</td>
+                                <td>Tamanho da Onda</td>
+                                <td>
+                                    {{resultMarine.weather[0].hourly[modalShow.index].swellHeight_m}}M
+                                </td>
                             </tr>
                             <tr>
-                                <td>Direção Onda</td>
-                                <td>{{resultMarine.weather[0].hourly[modalShow.index].swellDir16Point}}</td>
+                                <td>Direção da Onda</td>
+                                <td>
+                                    {{resultMarine.weather[0].hourly[modalShow.index].swellDir16Point}}
+                                </td>
                             </tr>
+                            <tr>
+                                <td>Periodo da Onda</td>
+                                <td>
+                                    {{resultMarine.weather[0].hourly[modalShow.index].swellPeriod_secs}}s
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Potência da Onda</td>
+                                <td>
+                                    {{resultMarine.weather[0].hourly[modalShow.index].WindGustKmph}}km/h
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Temperatura do Vento</td>
+                                <td>
+                                    {{resultMarine.weather[0].hourly[modalShow.index].WindChillC}}&#176;C
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Direção do Vento</td>
+                                <td>
+                                    {{resultMarine.weather[0].hourly[modalShow.index].winddir16Point}}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Probabilidade de Chuva</td>
+                                <td>
+                                    {{resultWeather.weather[0].hourly[modalShow.index].chanceofrain}}%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Chuva</td>
+                                <td>
+                                    {{resultWeather.weather[0].hourly[modalShow.index].precipMM}}mm
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Nascer do Sol</td>
+                                <td>
+                                    {{resultWeather.weather[0].astronomy[0].sunrise}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Pôr do Sol</td>
+                                <td>
+                                    {{resultWeather.weather[0].astronomy[0].sunset}}
+                                </td>
+                            </tr>
+                            
                         </table>
+
                     </div>
+
                 </div>
                 <div class="col-md-12 modal-foot">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -691,12 +749,11 @@
                          data-ad-client="ca-pub-8292462256462069"
                          data-ad-slot="5075994036"></ins>
                     <script>
-                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                                (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
 
             </div>
-
         </div>
     </body>
 </html>
