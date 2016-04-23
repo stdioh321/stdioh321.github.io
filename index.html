@@ -554,21 +554,22 @@
                     </div>
 
                 </div>
-                <div class="col-md-12 modal-body">
-                    <div class="modal-body-head">
-                        <span class="glyphicon glyphicon-arrow-left" ng-click="trocaIndexAtual(-1)" ng-hide="modalShow.index < 1"></span>
-                        <span class="glyphicon glyphicon-arrow-right" ng-click="trocaIndexAtual(1)" ng-hide="modalShow.index >= resultMarine.weather.length - 1" ></span>
-                        <div>
-                            {{resultMarine.weather[modalShow.index].date| date:'fullDate'}}
-                        </div>
-                        <div>
-                            <img src="{{resultMarine.weather[modalShow.index].hourly[indexAtual].weatherIconUrl[0].value}}" />
-
-                        </div>
-                        <div>
-                            {{resultWeather.weather[modalShow.index].hourly[indexAtual].lang_pt[0].value}}
-                        </div>
+                <div class="col-md-12 modal-body-head">
+                    <span class="glyphicon glyphicon-circle-arrow-left" ng-click="trocaIndexAtual(-1)" ng-hide="modalShow.index < 1"></span>
+                    <span class="glyphicon glyphicon-circle-arrow-right" ng-click="trocaIndexAtual(1)" ng-hide="modalShow.index >= resultMarine.weather.length - 1" ></span>
+                    <div>
+                        {{resultMarine.weather[modalShow.index].date| date:'fullDate'}}
                     </div>
+                    <div>
+                        <img src="{{resultMarine.weather[modalShow.index].hourly[indexAtual].weatherIconUrl[0].value}}" />
+
+                    </div>
+                    <div>
+                        {{resultWeather.weather[modalShow.index].hourly[indexAtual].lang_pt[0].value}}
+                    </div>
+                </div>
+                <div class="col-md-12 modal-body">
+
                     <div class="modal-body-content">
                         <hr />
 
@@ -628,6 +629,7 @@
                             </table>
                         </div>
                     </div>
+
                 </div>
                 <div class="col-md-12 modal-foot">
                     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -689,7 +691,7 @@
                          data-ad-client="ca-pub-8292462256462069"
                          data-ad-slot="5075994036"></ins>
                     <script>
-                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
 
