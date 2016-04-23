@@ -267,8 +267,8 @@
                     </div>
                     <div  ng-show="atualMarine">
                         <div class="col-md-offset-2 col-md-8" >
-                            <table class="table table-hover table-porHora" ng-repeat="item in resultWeather.weather[0].hourly">
-                                <tr ng-click="openModal('porHora', item)">
+                            <table class="table table-hover table-porHora" >
+                                <tr ng-repeat="item in resultWeather.weather[0].hourly" ng-click="openModal('porHora', item)">
                                     <td>
                                         {{item.time| toHour}}
                                     </td>
