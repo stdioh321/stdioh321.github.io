@@ -141,12 +141,13 @@ body{
 }
 .tab-content-in > div{
     width: 100%;
-
+    
 }
 .tab-content-in > div:not(.tab-content-active){
     position: absolute;
     overflow: hidden;
     top: 0;
+    
 
 
 

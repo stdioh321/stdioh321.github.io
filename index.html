@@ -268,7 +268,7 @@
                     <div  ng-show="atualMarine">
                         <div class="col-md-offset-2 col-md-8" >
                             <table class="table table-hover table-porHora" >
-                                <tr ng-repeat="item in resultWeather.weather[0].hourly" ng-click="openModal('porHora', item)">
+                                <tr ng-repeat="item in resultWeather.weather[0].hourly" ng-click="openModal('porHora', $index)">
                                     <td>
                                         {{item.time| toHour}}
                                     </td>
@@ -277,6 +277,9 @@
                                     </td>
                                     <td>
                                         {{item.lang_pt[0].value}}
+                                    </td>
+                                    <td>
+                                        {{item.tempC}}&#176;
                                     </td>
                                 </tr>
                             </table>
@@ -440,26 +443,17 @@
                             changeTab(index);
                         });
                     });
-                    function changeTab(idx) {
-                        tmp = idx;
-                        tmp = (-idx * 100) + "%";
-                        $('.tab-content-in > div')[idx].parentNode.style.transform = "translate(" + tmp + ")";
-                        $('.tab-content-in > div')[idx].parentNode.setAttribute('current', idx);
-                        $('.tab-content-in > div').removeClass("tab-content-active");
-                        $('.tab-content-in > div')[idx].classList.add("tab-content-active");
-                        $('.tab-menu > ul > li').removeClass('tab-menu-active');
-                        $('.tab-menu > ul > li')[idx].classList.add('tab-menu-active');
-                    }
 
                     var cur = Number($('.tab-content-in')[0].getAttribute('current'));
                     var changeLimit = 20;
                     var totContent = $('.tab-content-in > div').length;
+                    var indBefore = 0;
                     Hammer.defaults.domEvents = true;
                     $('.tab-content-in > div').each(function (ind) {
 
                         mc = new Hammer(this);
                         mc.on('panleft panright', function (ev) {
-
+                            indBefore = ind;
                             $('.tab-content-in').removeClass("tab-content-animate");
                             prc = ev.deltaX * 100 / $('.tab-content-in').outerWidth();
                             //console.log(prc + " - " + cur);
@@ -481,6 +475,21 @@
                             changeTab(cur);
                         });
                     });
+
+                    function changeTab(idx) {
+                        tmp = idx;
+                        tmp = (-idx * 100) + "%";
+                        $('.tab-content-in > div')[idx].parentNode.style.transform = "translate(" + tmp + ")";
+                        $('.tab-content-in > div')[idx].parentNode.setAttribute('current', idx);
+                        $('.tab-content-in > div').removeClass("tab-content-active");
+                        $('.tab-content-in > div')[idx].classList.add("tab-content-active");
+                        $('.tab-menu > ul > li').removeClass('tab-menu-active');
+                        $('.tab-menu > ul > li')[idx].classList.add('tab-menu-active');
+                        if (idx != indBefore) {
+                            window.scrollTo(0, 0);
+                        }
+                    }
+
         </script>
 
         <script type="text/javascript">
@@ -548,7 +557,7 @@
                 <div class="col-md-12 modal-body">
                     <div class="modal-body-head">
                         <span class="glyphicon glyphicon-arrow-left" ng-click="trocaIndexAtual(-1)" ng-hide="modalShow.index < 1"></span>
-                        <span class="glyphicon glyphicon-arrow-right" ng-click="trocaIndexAtual(1)" ng-hide="modalShow.index > 5" ></span>
+                        <span class="glyphicon glyphicon-arrow-right" ng-click="trocaIndexAtual(1)" ng-hide="modalShow.index >= resultMarine.weather.length - 1" ></span>
                         <div>
                             {{resultMarine.weather[modalShow.index].date| date:'fullDate'}}
                         </div>
@@ -648,10 +657,29 @@
                 </div>
                 <div class="col-md-12 modal-body">
                     <div class="modal-body-head">
-
+                        <span class="glyphicon glyphicon-arrow-left" ng-click="trocaIndexAtual(-1)" ng-hide="modalShow.index < 1"></span>
+                        <span class="glyphicon glyphicon-arrow-right" ng-click="trocaIndexAtual(1)" ng-hide="modalShow.index >= resultMarine.weather[0].hourly.length - 1" ></span>
+                        <div>
+                            {{resultMarine.weather[0].hourly[modalShow.index].time| toHour}}
+                        </div>
+                        <div>
+                            <img src="{{resultMarine.weather[0].hourly[modalShow.index].weatherIconUrl[0].value}}" />
+                        </div>
+                        <div>
+                            {{resultMarine.weather[0].hourly[modalShow.index].lang_pt[0].value}}
+                        </div>
                     </div>
                     <div class="modal-body-content">
-
+                        <table class="table">
+                            <tr>
+                                <td>Tamanho Onda</td>
+                                <td>{{resultMarine.weather[0].hourly[modalShow.index].swellHeight_m}}M</td>
+                            </tr>
+                            <tr>
+                                <td>Direção Onda</td>
+                                <td>{{resultMarine.weather[0].hourly[modalShow.index].swellDir16Point}}</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
                 <div class="col-md-12 modal-foot">
@@ -661,7 +689,7 @@
                          data-ad-client="ca-pub-8292462256462069"
                          data-ad-slot="5075994036"></ins>
                     <script>
-                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
                 </div>
 
