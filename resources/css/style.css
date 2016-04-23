@@ -33,7 +33,9 @@
 .menu-show .menu{
     left: 0;
 }
-
+body{
+    position: relative;
+}
 .over-layer{
     position: absolute;
     top: 0;
@@ -70,7 +72,7 @@
     overflow: hidden;
     background-color: blue;
 }
-.menu-top > div:nth-child(2){
+.menu-top > div:nth-child(2) li{
 
 }
 .menu-top > div:nth-child(1) > *:not(:last-child){
@@ -100,13 +102,15 @@
     //display: inline-block;
     flex: 1;
     list-style: none;
+    text-align: center;
+    
 }
 .tab-menu li a:visited, .tab-menu li a:link{
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
+
     padding: 0 1em; 
-    text-align: center;
+
 
 }
 
@@ -268,7 +272,7 @@
     cursor: pointer;
 }
 .table-porHora tr td{
-    
+
 }
 
 .modal-show{
@@ -343,7 +347,7 @@
 }
 .modal-default .modal-head > *:nth-child(1){
     cursor: pointer;
-        
+
 }
 .modal-default .modal-body{
     height: 85%;
@@ -367,6 +371,7 @@
         display: inline-block;
         list-style: none;
         text-align: center;
+        font-size: 1em;
     }
 
     #map{
@@ -384,6 +389,7 @@
         flex: 1;
         list-style: none;
         text-align: center;
+        font-size: .6em;
     }
     #map{
         height: 200px;

@@ -260,7 +260,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
 
     };
     $scope.closeModal = function () {
-        $scope.modalShow = false;
+        $scope.modalShow.value = false;
     };
     $scope.trocaIndexAtual = function (val) {
         $scope.modalShow.index = $scope.modalShow.index + val;
