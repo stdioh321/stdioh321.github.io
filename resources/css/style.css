@@ -6,7 +6,7 @@
 .splash #splash > div{
     height: 100%;
     border: solid blue 1px;
-    
+
 
 }
 .splash #splash > div img{
@@ -69,9 +69,15 @@
 }
 
 .busca-praias{
-    height: 100px;
+    max-height: 200px;
+    padding: 0 15px;
     overflow-y: auto;
     font-size: 1.5em;
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    width: 100%;
+    left: 0;
 }
 
 body{
@@ -103,7 +109,7 @@ body{
     width: 100%;
     z-index: 1;
     color: white;
-    height: 90px;
+    height: 20vh;
 }
 
 .menu-top > div{
@@ -173,35 +179,34 @@ body{
 }
 
 .tab-content{
-    margin-top: 90px;
+    margin-top: 20vh;
     padding-top: 15px;
-    min-height: 70vh;
-    overflow: hidden;
+    height: 70vh;
+    overflow-y:hidden;
+    overflow-x:hidden;
 
 }
 .tab-content-in{
     width: 100%;
     position: relative;
-
+    
 }
 .tab-content-in > div{
     width: 100%;
 
 }
-.tab-content-in > div:not(.tab-content-active){
-    position: absolute;
-    raoverflow: hidden;
-    top: 0;
-
-
-
-
-}
 .tab-content-in > div.tab-content-active{
-    //border: solid red 1px;
+    height: 70vh;
     overflow:auto; 
 
 }
+.tab-content-in > div:not(.tab-content-active){
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    
+}
+
 .tab-content-animate{
     transition: linear all .6s
 }
@@ -284,7 +289,7 @@ body{
 
 }
 .rodape{
-    //height: 15vh;
+    height: 10vh;
     //border: solid red 1px;
     overflow: hidden;
 }
