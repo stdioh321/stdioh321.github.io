@@ -30,22 +30,22 @@
         <style type="text/css">
             .test{
                 border: solid red 1px;
-                width: 500px;
+                width: 100%;
                 height: 50vh;
-                position: relative;
-                //overflow-x: hidden;
+                display: flex;
 
             }
             .test > div{
-                width: 100%;
-                position: absolute;
-
-                border: solid blue 1px;
-                vertical-align: middle;
-                height: 50px;
-                top: 0;
-
-
+                border: solid blue 4px;
+                flex: 1;
+                flex-basis: 40%;
+                
+            }
+            .test > div{
+                margin: 15px 15px;
+            }
+            .test > div:nth-child(2){
+                flex-shrink: 60;
             }
 
         </style>
@@ -59,12 +59,22 @@
             <div>SBT3</div>
 
         </div>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Praianos3 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-8292462256462069"
+             data-ad-slot="6774236433"
+             data-ad-format="auto"></ins>
+        <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
     </body>
     <script>
-        $('.test  > div').each(function (index) {
-            $(this).css({
-                'transform': 'translate(' + (index * (100)) + '%)'
-            });
-        });
+//        $('.test  > div').each(function (index) {
+//            $(this).css({
+//                'transform': 'translate(' + (index * (100)) + '%)'
+//            });
+//        });
     </script>
 </html>

@@ -1,3 +1,20 @@
+.loadError{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.loadError > div{
+    padding: 1em;
+    font-size: 1.5em;
+    
+}
 .splash {
     overflow: hidden;
 }
@@ -160,6 +177,7 @@ body{
     justify-content: center;
     list-style: none;
     text-align: center;
+    cursor: pointer;
 }
 
 .tab-menu li a{
@@ -188,7 +206,7 @@ body{
 .tab-content-in{
     width: 100%;
     position: relative;
-    
+
 }
 .tab-content-in > div{
     width: 100%;
@@ -204,7 +222,7 @@ body{
     position: absolute;
     overflow: hidden;
     top: 0;
-    
+
 }
 
 .tab-content-animate{
@@ -219,7 +237,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,.7);
-    z-index: 6;
+    z-index: 15;
 
 }
 
@@ -372,7 +390,7 @@ body{
 
     .tab-menu li{
         display: inline-block;
- tab-menu       list-style: none;
+        tab-menu       list-style: none;
         text-align: center;
         font-size: 1em;
     }
@@ -471,9 +489,9 @@ body{
 }
 .modal-head > *:first-child{
     cursor: pointer;
-    
-    
-    
+
+
+
 }
 
 

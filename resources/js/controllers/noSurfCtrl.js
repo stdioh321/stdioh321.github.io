@@ -1,4 +1,33 @@
-app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModal) {
+//       API Key
+//       51cb531a971ca10554a6ae517b90efe6
+//       
+//       http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=&appid=51cb531a971ca10554a6ae517b90efe6
+//       
+//       
+//       http://api.openweathermap.org/data/2.5/forecast?lat=-23.43&lon=-45.07&appid=51cb531a971ca10554a6ae517b90efe6
+//       
+//       http://api.openweathermap.org/data/2.5/forecast?id={city ID}
+//       
+//       
+//       http://api.openweathermap.org/data/2.5/weather?lat=-23.4741297&lon=-46.3927326&appid=51cb531a971ca10554a6ae517b90efe6
+//       
+//       
+//       
+//       FORECAST.IO
+//       3633ce3ab311df404ee0fd9dc979541d
+//       https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
+//       
+//       https://api.forecast.io/forecast/3633ce3ab311df404ee0fd9dc979541d/37.8267,-122.423
+//       
+//       
+//       
+//       WORLD WEATHER ONLINE
+//       
+//       http://api.worldweatheronline.com/free/v1/marine.ashx?key=d7pesx54engabthjcznhanfa&format=json&q=-25.8685,-48.5589
+//       
+
+
+app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModal, $timeout) {
     /*########## Select Data ########## */
     $scope.locais = locais;
     /*########## Select Data ########## */
@@ -72,7 +101,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
         if (praia != null) {
 
             $scope.loading = true;
-            toggleMenu();
+
             $http({
                 method: "GET",
                 url: urlMarine + praia.lat + "," + praia.lon
@@ -90,6 +119,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
                     method: "GET",
                     url: urlWeather + praia.lat + "," + praia.lon
                 }).then(function (data) {
+                    toggleMenu();
                     $scope.loading = false;
                     $scope.resultWeather = data.data.data;
                     console.log($scope.resultWeather);
@@ -100,12 +130,15 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
                     console.log(data);
                     $scope.loading = false;
 
+                    $scope.showMsgError();
                 });
 
             }, function (data) {
                 console.log("ERROR");
                 console.log(data);
                 $scope.loading = false;
+                $scope.showMsgError();
+
 
             });
 
@@ -114,7 +147,13 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
         }
     };
 
+    $scope.showMsgError = function () {
+        $scope.loadError = true;
+        $timeout(function () {
+            $scope.loadError = false;
 
+        }, 3000);
+    }
     $scope.carregaChart = function (resultMarine) {
         $scope.dataChart = [];
         $scope.tmpLabel = [];
