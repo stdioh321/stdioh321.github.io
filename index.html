@@ -392,11 +392,22 @@
             </div>
             <div class="row rodape">
                 <div class="col-md-12">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!--                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                         Praianos 
+                                        <ins class="adsbygoogle"
+                                             style="display:inline-block;width:728px;height:70px"
+                                             data-ad-client="ca-pub-8292462256462069"
+                                             data-ad-slot="5075994036"></ins>
+                                        <script>
+                                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>-->
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Praianos3 -->
                     <ins class="adsbygoogle"
-                         style="display:inline-block;width:100%;height:70px;"
+                         style="display:block"
                          data-ad-client="ca-pub-8292462256462069"
-                         data-ad-slot="5075994036"></ins>
+                         data-ad-slot="6774236433"
+                         data-ad-format="auto"></ins>
                     <script>
                                             (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
@@ -441,7 +452,6 @@
                             changeTab(index);
                         });
                     });
-
                     var cur = Number($('.tab-content-in')[0].getAttribute('current'));
                     var changeLimit = 20;
                     var totContent = $('.tab-content-in > div').length;
@@ -473,7 +483,6 @@
                             changeTab(cur);
                         });
                     });
-
                     function changeTab(idx) {
                         tmp = idx;
                         tmp = (-idx * 100);
@@ -540,7 +549,6 @@
                     })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
                     ga('create', 'UA-76655658-1', 'auto');
                     ga('send', 'pageview');
-
         </script>
 
         <div class="container-fluid modal-default modal-semanal" ng-show="modalShow.value == true && modalShow.modal == 'semanal'" >
@@ -548,7 +556,9 @@
 
                 <div class="col-md-12 modal-head">
 
-                    <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal('semanal')"></span>
+                    <div>
+                        <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal('semanal')"></span>
+                    </div>
                     <div>
                         {{obj_pra.name}}
                     </div>
@@ -650,8 +660,9 @@
             <div class="row">
 
                 <div class="col-md-12 modal-head">
-
-                    <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal()"></span>
+                    <div>
+                        <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal()"></span>
+                    </div>
                     <div>
                         {{obj_pra.name}}
                     </div>

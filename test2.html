@@ -29,48 +29,42 @@
         </script>
         <style type="text/css">
             .test{
+                border: solid red 1px;
                 width: 500px;
-                //height: 50px;
-                border: solid red 3px;
+                height: 50vh;
+                position: relative;
+                //overflow-x: hidden;
 
             }
             .test > div{
                 width: 100%;
-                
-                border: solid blue 1px;
-                position: relative;
-            }
-            .test > div > div{
-                border: solid green 1px;
-                width: 100%;
-            }
-            .test > div > div:not(:nth-child(2)){
                 position: absolute;
+
+                border: solid blue 1px;
+                vertical-align: middle;
+                height: 50px;
                 top: 0;
+
+
             }
-            .test > div > div:nth-child(2){
-                transform: translate(100%);
-            }
-            .test > div > div:nth-child(3){
-                transform: translate(200%);
-            }
+
         </style>
 
     </head>
 
     <body ng-controller="angCtrl" >
         <div class="test">
-            <div>
-                <div>
-                    ABC<br />
-                    ABC<br />
-                    ABC<br />
-                    ABC<br />
-                    ABC<br />
-                </div>
-                <div>ABC</div>
-                <div>ABC</div>
-            </div>
+            <div>SBT1</div>
+            <div>SBT2</div>
+            <div>SBT3</div>
+
         </div>
     </body>
+    <script>
+        $('.test  > div').each(function (index) {
+            $(this).css({
+                'transform': 'translate(' + (index * (100)) + '%)'
+            });
+        });
+    </script>
 </html>

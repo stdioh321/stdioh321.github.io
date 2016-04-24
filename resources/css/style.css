@@ -179,7 +179,7 @@ body{
 
 .tab-content{
     margin-top: 20vh;
-    padding-top: 15px;
+    //padding-top: 15px;
     height: 70vh;
     overflow-y:hidden;
     overflow-x:hidden;
@@ -195,9 +195,10 @@ body{
 
 }
 .tab-content-in > div.tab-content-active{
-    height: 70vh;
+    height: 67vh;
     overflow:auto; 
-
+    padding-top: 15px;
+    border: solid red 0px;
 }
 .tab-content-in > div:not(.tab-content-active){
     position: absolute;
@@ -289,7 +290,7 @@ body{
 }
 .rodape{
     height: 10vh;
-    //border: solid red 1px;
+    border: solid blue 0px;
     overflow: hidden;
 }
 
@@ -371,7 +372,7 @@ body{
 
     .tab-menu li{
         display: inline-block;
-        list-style: none;
+ tab-menu       list-style: none;
         text-align: center;
         font-size: 1em;
     }
@@ -463,10 +464,16 @@ body{
     float: left;
     margin-right: 15px;
     font-size: 1.5em;
-
+    height: 100%;
+    display: flex;
+    align-items:center;
+    justify-content:center;
 }
 .modal-head > *:first-child{
     cursor: pointer;
+    
+    
+    
 }
 
 
