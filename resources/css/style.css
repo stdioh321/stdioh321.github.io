@@ -197,11 +197,9 @@ body{
 
 .tab-content{
     margin-top: 20vh;
-    //padding-top: 15px;
-    height: 70vh;
     overflow-y:hidden;
     overflow-x:hidden;
-
+    min-height: 65vh;
 }
 .tab-content-in{
     width: 100%;
@@ -213,10 +211,11 @@ body{
 
 }
 .tab-content-in > div.tab-content-active{
-    height: 67vh;
+    height: 65vh;
     overflow:auto; 
     padding-top: 15px;
     border: solid red 0px;
+    padding-bottom: 15px;
 }
 .tab-content-in > div:not(.tab-content-active){
     position: absolute;
@@ -307,9 +306,17 @@ body{
 
 }
 .rodape{
-    height: 10vh;
-    border: solid blue 0px;
+    height: 14vh;
     overflow: hidden;
+    border: solid red 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.rodape > div{
+    border: solid blue 0px;
+    height: 45px;
+    width: 100%;
 }
 
 
