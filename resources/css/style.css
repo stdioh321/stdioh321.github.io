@@ -308,13 +308,13 @@ body{
 .rodape{
     height: 15vh;
     overflow: hidden;
-    border: solid red 1px;
+    border: solid red 0px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .rodape > div{
-    border: solid blue 1px;
+    border: solid blue 0px;
     height: 50px;
     width: 100%;
 }
