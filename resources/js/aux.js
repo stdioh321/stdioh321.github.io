@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     setTimeout(function () {
         $("body").removeClass('splash');
         $("body").remove('.splash-remove');

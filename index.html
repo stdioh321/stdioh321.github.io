@@ -58,7 +58,7 @@
         <nav class="menu">
             <div class="col-md-12">
 
-                <div >{{obj_pra.name||'Local'}}</div>
+                <div >{{objPraiaAtual.name||'Local'}}</div>
 
 
                 <div>{{atualMarine.WindChillC}}&#176;C</div>
@@ -67,9 +67,17 @@
             <ul class="list-group" style="position: relative;">
 
                 <li class="list-group-item">
-                    <h3>
+                    <h4>
                         Escolha sua Praia
-                    </h3>
+                    </h4>
+                </li>
+                <li class="list-group-item search-praias">
+                    <input type="text" class="form-control" ng-model="busca" ng-change="buscaPraias(busca)" placeholder="Busca" />
+                    <div>
+                        <div ng-repeat="item in result| orderBy:'name'" ng-click="carregaWeatherBusca(item)">
+                            {{item.name}}, {{item.tmp}}
+                        </div>
+                    </div>
                 </li>
                 <li class="list-group-item">
                     <select class="form-control" ng-options="item.name for item in locais" ng-model="obj_est">
@@ -86,19 +94,7 @@
                         <option value="">Selecione a Praia (Tot: {{obj_cid.praias.length|| 0}})</option>
                     </select>
                 </li>
-                <li class="list-group-item">
-                    <input type="text" class="form-control" ng-model="busca" />
-                    <div class="search-praias">
-                        <div ng-repeat="it1 in locais">
-                            <div  ng-repeat="it2 in it1.cidades">
-                                <div  ng-repeat="it3 in it2.praias| filter:{'name':busca}">
-                                    {{it3.name}}
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </nav>
         <div class="over-layer"></div>
@@ -108,7 +104,7 @@
                 <div class="col-md-12">
                     <div class="bt-toggle glyphicon glyphicon-align-justify" style="font-size: 1.5em;"  onclick="toggleMenu()"></div>
                     <div class="nomes-locais">
-                        <div ng-show="obj_pra" style="font-size: 1.2em;">{{obj_pra.name| uppercase}}</div>
+                        <div ng-show="objPraiaAtual" style="font-size: 1.2em;">{{objPraiaAtual.name| uppercase}}</div>
                     </div>
                     <div class="option">
                         <span class="glyphicon glyphicon-option-vertical"></span>
@@ -117,7 +113,7 @@
                 <div class="col-md-12 tab-menu">
                     <ul>
                         <li class="tab-menu-active"><a href="">Agora</a></li>
-                        <li><a href="">Cada Hora</a></li>
+                        <li><a href="">Hora</a></li>
                         <li><a href="">Semanal</a></li>
                         <li><a href="">Mapas</a></li>
                     </ul>
@@ -314,7 +310,7 @@
                          data-ad-slot="5297503230"
                          data-ad-format="link"></ins>
                     <script>
-                                                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
                     </script>
 
 
@@ -345,7 +341,7 @@
                         <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal('semanal')"></span>
                     </div>
                     <div>
-                        {{obj_pra.name}}
+                        {{objPraiaAtual.name}}
                     </div>
 
                 </div>
@@ -449,7 +445,7 @@
                         <span class="glyphicon glyphicon-arrow-left" ng-click="closeModal()"></span>
                     </div>
                     <div>
-                        {{obj_pra.name}}
+                        {{objPraiaAtual.name}}
                     </div>
 
                 </div>

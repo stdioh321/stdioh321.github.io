@@ -1,3 +1,21 @@
+.search-praias > *:nth-child(2) {
+    position: absolute;
+    max-height: 100px;
+    overflow-y: auto;
+    background-color: white;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    width: 86%;
+    margin: 0 auto;
+    box-shadow: 0 0 5px gray;
+    
+}
+.search-praias > *:nth-child(2) > *:hover{
+    background-color: rgb(230,230,230);
+}
+
+
 .loadError{
     position: fixed;
     top: 0;
@@ -13,11 +31,12 @@
 .loadError > div{
     padding: 1em;
     font-size: 1.5em;
-    
+
 }
 .splash {
     overflow: hidden;
 }
+
 
 
 .splash #splash > div{
@@ -75,7 +94,7 @@
 
 .menu > div:nth-child(1) > div:nth-child(1){
     float: left;
-    
+
 }
 .menu > div:nth-child(1) > div:nth-child(2){
     float: right;
