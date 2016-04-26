@@ -58,22 +58,27 @@
 }
 
 .menu > div:nth-child(1){
-    height: 15vh;
-    background-color: blue;
+
+    height: 10vh;
+    background-color: #3366FF;
     color: white;
     position: relative;
     font-size: 1.5em;
 }
 
-.menu > div:nth-child(1) > span:nth-child(1){
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.menu > div:nth-child(1) > *{
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: flex-end
 }
-.menu > div:nth-child(1) > span:nth-child(2){
-    position: absolute;
-    bottom: 0;
-    right: 0;
+
+.menu > div:nth-child(1) > div:nth-child(1){
+    float: left;
+    
+}
+.menu > div:nth-child(1) > div:nth-child(2){
+    float: right;
 }
 .menu ul li{
     background-color: rgba(0,0,0,0);
@@ -121,7 +126,7 @@ body{
 
 .menu-top{
     position: fixed;
-    background-color: blue;
+    background-color: #3366FF;
     left: 15px;
     width: 100%;
     z-index: 1;
@@ -135,7 +140,7 @@ body{
 }
 .menu-top > div:nth-child(1){
 
-    background-color: blue;
+    //background-color: blue;
     height: 50%;
 }
 
@@ -169,6 +174,7 @@ body{
     padding: 0;
     display: flex;
     height: 100%;
+    //width: 100%;
 }
 .tab-menu li{
     display: flex;
@@ -482,7 +488,7 @@ body{
 
 }
 .modal-head {
-    background-color: blue;
+    background-color: #3366FF;
     color: white;
 }
 .modal-head > *{

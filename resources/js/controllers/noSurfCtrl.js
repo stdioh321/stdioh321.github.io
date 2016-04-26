@@ -304,4 +304,16 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
     $scope.trocaIndexAtual = function (val) {
         $scope.modalShow.index = $scope.modalShow.index + val;
     };
+    
+    
+    $scope.buscaPraias = function (busca){
+        var result = [];
+        
+        names = [
+            {name: "Jão"},  
+            {name: "Carlos"},  
+            {name: "Mario"},  
+            {name: "Félix"}  
+        ];
+    }
 });
