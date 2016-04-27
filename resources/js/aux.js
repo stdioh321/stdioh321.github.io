@@ -5,11 +5,11 @@ $(document).ready(function () {
         $("body").remove('.splash-remove');
     }, 1000);
 });
+
+$('.tab-content-in').attr("current", 0);
+$('.tab-content-in').addClass("tab-content-active");
+
 $('.tab-content-in > div').each(function (index) {
-    if (index == 0) {
-        $(this).parent().attr("current", 0);
-        $(this).addClass("tab-content-active");
-    }
     $(this).css({
         transform: "translate(" + (index * 100) + "%)"
     });
@@ -19,6 +19,7 @@ $('.tab-menu > ul > li').each(function (index) {
         changeTab(index);
     });
 });
+
 var cur = Number($('.tab-content-in')[0].getAttribute('current'));
 var changeLimit = 20;
 var totContent = $('.tab-content-in > div').length;
@@ -107,3 +108,10 @@ function initMap(lat, lng) {
 })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 ga('create', 'UA-76655658-1', 'auto');
 ga('send', 'pageview');
+
+
+
+
+
+
+changeTab(0);

@@ -28,53 +28,57 @@
 
         </script>
         <style type="text/css">
-            .test{
-                border: solid red 1px;
-                width: 100%;
-                height: 50vh;
-                display: flex;
+            .test > div:nth-child(1){
 
-            }
-            .test > div{
-                border: solid blue 4px;
-                flex: 1;
-                flex-basis: 40%;
-                
-            }
-            .test > div{
-                margin: 15px 15px;
+                border: solid blue 1px;
+
+                height: 15vh;
+
             }
             .test > div:nth-child(2){
-                flex-shrink: 60;
-            }
+                height: 60vh;
+                border: solid green 1px;
 
+            }
+            .ad > div{
+                border: solid yellow 1px;
+                max-height: 60px;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+            .ad{
+                position: relative;
+                border: solid red 1px;
+                
+                width: 100%;
+                height: 25vh;
+                
+            }
+                      
         </style>
 
     </head>
 
     <body ng-controller="angCtrl" >
-        <div class="test">
-            <div>SBT1</div>
-            <div>SBT2</div>
-            <div>SBT3</div>
+        <div class="container test">
+            <div class="col-md-12"></div>
+            <div class="col-md-12"></div>
+            <div class="ad">
+                <div>
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Praianos3 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8292462256462069"
+                         data-ad-slot="6774236433"
+                         data-ad-format="auto"></ins>
+                    <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
 
         </div>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Praianos3 -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-8292462256462069"
-             data-ad-slot="6774236433"
-             data-ad-format="auto"></ins>
-        <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
     </body>
-    <script>
-//        $('.test  > div').each(function (index) {
-//            $(this).css({
-//                'transform': 'translate(' + (index * (100)) + '%)'
-//            });
-//        });
-    </script>
 </html>

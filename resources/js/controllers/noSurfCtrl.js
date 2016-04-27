@@ -306,13 +306,14 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
     $scope.result = [];
     $scope.buscaPraias = function (busca) {
         $scope.result = [];
+        busca = busca.toLowerCase();
         if (busca != "") {
 
 
             $scope.locais.forEach(function (el) {
                 el.cidades.forEach(function (el2) {
                     el2.praias.forEach(function (el3) {
-                        if (removeDiacritics(el3.name).toLocaleString().indexOf(busca) != -1) {
+                        if (removeDiacritics(el3.name).indexOf(busca) != -1) {
                             el3.tmp = el.code.toUpperCase() + ' - ' + el2.name;
                             $scope.result.push(el3);
                         }
@@ -416,7 +417,7 @@ app.controller("noSurfCtrl", function ($scope, $http, $filter, ngToast, $uibModa
             str = str.replace(defaultDiacriticsRemovalMap[i].letters, defaultDiacriticsRemovalMap[i].base);
         }
 
-        return str;
+        return str.toLowerCase();
 
     }
 });

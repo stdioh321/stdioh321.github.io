@@ -106,9 +106,9 @@
                     <div class="nomes-locais">
                         <div ng-show="objPraiaAtual" style="font-size: 1.2em;">{{objPraiaAtual.name| uppercase}}</div>
                     </div>
-                    <div class="option">
+<!--                    <div class="option">
                         <span class="glyphicon glyphicon-option-vertical"></span>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="col-md-12 tab-menu">
                     <ul>
@@ -232,13 +232,7 @@
                                     {{resultMarine.weather[0].astronomy[0].sunset}}
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <img src="resources/img/lua.png"  />
-                                    Lua
-                                </td>
-                                <td>Moon Icon</td>
-                            </tr>
+
                         </table>
                     </div>
                     <div  ng-show="atualMarine">
@@ -273,7 +267,7 @@
                                     <td>
                                         {{resultWeather.weather[$index].hourly[indexAtual].lang_pt[0].value}}
                                     </td>
-                                    <td>{{item.maxtempC}}&#176;/{{item.mintempC}}&#176;</td>
+                                    <td>{{item.mintempC}}&#176;/{{item.maxtempC}}&#176;</td>
                                 </tr>
                             </table>
                         </div>

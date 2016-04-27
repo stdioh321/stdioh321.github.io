@@ -262,16 +262,15 @@ body{
     height: 100%;
     background-color: rgba(0,0,0,.7);
     z-index: 15;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .loading > span{
     color: white;
     font-size: 10em;
-    display: table;
-    margin: 0 auto;
-    top: 50%;
-    bottom: 50%;
+    
     animation: load linear infinite .5s;
     -moz-animation: load linear infinite .5s;
     -webkit-animation: load linear infinite .5s;
@@ -388,7 +387,7 @@ body{
 }
 
 .table-semanal tr td img, .table-porHora tr td img{
-    width: 20px;
+    width: 30px;
 }
 .table-semanal tr td, .table-porHora tr td{
     padding: 5px;
