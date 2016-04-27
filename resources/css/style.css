@@ -9,7 +9,7 @@
     width: 86%;
     margin: 0 auto;
     box-shadow: 0 0 5px gray;
-    
+
 }
 .search-praias > *:nth-child(2) > *:hover{
     background-color: rgb(230,230,230);
@@ -224,7 +224,8 @@ body{
     margin-top: 20vh;
     overflow-y:hidden;
     overflow-x:hidden;
-    min-height: 65vh;
+    min-height: 60vh;
+    border: solid red 0px;
 }
 .tab-content-in{
     width: 100%;
@@ -236,7 +237,7 @@ body{
 
 }
 .tab-content-in > div.tab-content-active{
-    height: 65vh;
+    height: 60vh;
     overflow:auto; 
     padding-top: 15px;
     border: solid red 0px;
@@ -270,7 +271,7 @@ body{
 .loading > span{
     color: white;
     font-size: 10em;
-    
+
     animation: load linear infinite .5s;
     -moz-animation: load linear infinite .5s;
     -webkit-animation: load linear infinite .5s;
@@ -330,17 +331,18 @@ body{
 
 }
 .rodape{
-    height: 15vh;
+    height: 20vh;
     overflow: hidden;
-    border: solid red 0px;
+    border: solid blue 0px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .rodape > div{
     border: solid blue 0px;
-    height: 50px;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 
@@ -475,7 +477,7 @@ body{
 }
 
 .modal-default .modal-head{
-    height: 35px;
+    height: 10vh;
     width: 100%;
     position: fixed;
     z-index: 40;
@@ -483,27 +485,38 @@ body{
 
 }
 .modal-default .modal-body-head{
-    height: 90px;
+    height: 30vh;
     width: 100%;
     z-index: 40;
     left: 0;
     top: 0;
-    margin: 35px 0px 0px 0px;
+    margin: 10vh 0px 0px 0px;
     padding: 0;
     position: fixed;
     background-color: rgb(230,230,230);
     padding: 0 15px;
-}
-.modal-default .modal-body-content{
-    margin-top: 125px;  
+    border: solid red 0px;
 
 }
 .modal-default .modal-body{
     overflow-y: auto;
-    height: 80vh;
+    margin-top: 40vh;
+    height: 40vh;
+    border: solid red 0px;
 }
 .modal-foot{
 
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.modal-foot > div{
+    width: 100%;
+    height: 100%;
+    border: solid 0px blue;
+    overflow: hidden;
 }
 .modal-head {
     background-color: #3366FF;
@@ -554,3 +567,4 @@ body{
 .modal-body-head > span:nth-child(2){
     right: 15px;
 }
+
