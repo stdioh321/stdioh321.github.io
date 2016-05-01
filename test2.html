@@ -75,12 +75,15 @@
                 overflow: hidden;
             }
             .content{
+            
                 border: solid blue 1px;
                 min-height: 100vh;
                 position: relative;
                 transition: all linear .5s;
             }
-
+            .content > div > div{
+                border: solid green 1px;
+            }
             @media screen and (min-width: 601px){
                 .menu{
                     width: 40%;
@@ -113,14 +116,10 @@
         <div class="container content">
             <div class="overlayer"></div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8 col-md-offset-2">
                     <a href="" id="btMenu">
                         Menu
                     </a>
-
-                </div>
-                <div class="col-md-6">
-                    def
 
                 </div>
             </div>
@@ -177,10 +176,10 @@
         var isClosed = false;
         var pullVal = 0;
 
-        hc = new Hammer($('html')[0]);
-        hc2 = new Hammer($('.menu')[0]);
+        hcClosed = new Hammer($('html')[0]);
+        hcOpened = new Hammer($('.menu')[0]);
 
-        hc.on('panstart', function (ev) {
+        hcClosed.on('panstart', function (ev) {
             prc = ev.changedPointers[0].clientX * 100 / $('html').outerWidth();
             console.log(prc);
 
@@ -189,7 +188,7 @@
                 $('.menu').removeClass('menu-animate');
             }
         });
-        hc.on('panright panleft', function (ev) {
+        hcClosed.on('panright panleft', function (ev) {
             prc = ev.deltaX * 100 / $('.menu').outerWidth();
             if (isClosed && prc < 100) {
                 pullVal = prc;
@@ -202,7 +201,7 @@
 
 
         });
-        hc.on('panend', function (ev) {
+        hcClosed.on('panend', function (ev) {
             $('.menu').addClass('menu-animate');
             if (isClosed) {
                 if (pullVal > 20) {
@@ -220,12 +219,12 @@
 
 
 
-        hc2.on('panstart', function (ev) {
+        hcOpened.on('panstart', function (ev) {
             isOpened = $("html").hasClass('menu-show');
             $('.menu').removeClass('menu-animate');
 
         });
-        hc2.on('panleft panright', function (ev) {
+        hcOpened.on('panleft panright', function (ev) {
 
             prc = ev.deltaX * 100 / $('.menu').outerWidth();
 
@@ -238,7 +237,7 @@
                 mvMenu(0);
             }
         });
-        hc2.on('panend', function (ev) {
+        hcOpened.on('panend', function (ev) {
             $('.menu').addClass('menu-animate');
             if (isOpened) {
                 if (pullVal < -20) {

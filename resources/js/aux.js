@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     setTimeout(function () {
         $("body").removeClass('splash');
         $("body").remove('.splash-remove');
@@ -110,8 +110,89 @@ ga('create', 'UA-76655658-1', 'auto');
 ga('send', 'pageview');
 
 
+var isOpened = false;
+var isClosed = false;
+var pullVal = 0;
+
+hcClosed = new Hammer($('html')[0]);
+hcOpened = new Hammer($('.menu')[0]);
+
+hcClosed.on('panstart', function (ev) {
+    prc = ev.changedPointers[0].clientX * 100 / $('html').outerWidth();
+    
+    if (prc < 7 && $("html").hasClass('menu-hide')) {
+        isClosed = true;
+        $('.menu').removeClass('menu-animate');
+    }
+});
+hcClosed.on('panright panleft', function (ev) {
+    prc = ev.deltaX * 100 / $('.menu').outerWidth();
+    if (isClosed && prc < 100) {
+        pullVal = prc;
+        mvMenu(prc);
+
+    }
+    if (prc >= 100) {
+        mvMenu(100);
+    }
+
+
+});
+hcClosed.on('panend', function (ev) {
+    $('.menu').addClass('menu-animate');
+    if (isClosed) {
+        if (pullVal > 20) {
+            toggleMenu();
+            mvMenu(0);
+        } else {
+            mvMenu(0);
+        }
+    } else {
+        mvMenu(0);
+    }
+    isClosed = false;
+
+});
 
 
 
+hcOpened.on('panstart', function (ev) {
+    isOpened = $("html").hasClass('menu-show');
+    $('.menu').removeClass('menu-animate');
+
+});
+hcOpened.on('panleft panright', function (ev) {
+
+    prc = ev.deltaX * 100 / $('.menu').outerWidth();
+
+    if (isOpened && prc < 0) {
+        pullVal = prc;
+        mvMenu(prc)
+        console.log(prc);
+    }
+    if (prc >= 0) {
+        mvMenu(0);
+    }
+});
+hcOpened.on('panend', function (ev) {
+    $('.menu').addClass('menu-animate');
+    if (isOpened) {
+        if (pullVal < -20) {
+            toggleMenu();
+            mvMenu(0);
+        } else {
+            mvMenu(0);
+        }
+    } else {
+        mvMenu(0);
+    }
+    isOpened = false;
+});
+
+function mvMenu(val) {
+    $('.menu').css({
+        transform: "translate(" + val + "%)"
+    });
+}
 
 changeTab(0);

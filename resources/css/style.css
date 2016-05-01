@@ -73,9 +73,11 @@
     height: 100%;
     background-color: white;
     z-index: 10;
-    transition: linear all .5s;
+    
 }
-
+.menu-animate{
+    transition: all linear .5s;
+}
 .menu > div:nth-child(1){
 
     height: 10vh;
