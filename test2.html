@@ -138,41 +138,37 @@
             toggleMenu();
         });
 
-        var pullOk = false;
+        var isOpened = false;
+        var isClosed = false;
         var pullVal = 0;
 
         hc = new Hammer($('html')[0]);
         hc2 = new Hammer($('.menu')[0]);
+
         hc.on('panstart', function (ev) {
             prc = ev.changedPointers[0].clientX * 100 / $('html').outerWidth();
             isClosed = $("html").hasClass('menu-hide');
             if (prc < 7 && isClosed) {
-                pullOk = true;
+                isClosed = true;
                 $('.menu').removeClass('menu-animate');
             }
         });
         hc.on('panright panleft', function (ev) {
-
             prc = ev.deltaX * 100 / $('.menu').outerWidth();
-
-            if (pullOk && prc < 100) {
+            if (isClosed && prc < 100) {
                 pullVal = prc;
-                $('.menu').css({
-                    transform: "translate(" + prc + "%)"
-                });
-                console.log(prc);
+                mvMenu(prc);
+
             }
             if (prc >= 100) {
-                $('.menu').css({
-                    transform: "translate(" + 100 + "%)"
-                });
+                mvMenu(100);
             }
 
 
         });
         hc.on('panend', function (ev) {
             $('.menu').addClass('menu-animate');
-            if (pullOk) {
+            if (isClosed) {
                 if (pullVal > 20) {
                     toggleMenu();
                     mvMenu(0);
@@ -182,42 +178,43 @@
             } else {
                 mvMenu(0);
             }
-            pullOk = false;
+            isClosed = false;
 
         });
 
 
-        var isOpened = false;
+
         hc2.on('panstart', function (ev) {
             isOpened = $("html").hasClass('menu-show');
             $('.menu').removeClass('menu-animate');
-            if (isOpened) {
-                console.log("not Close");
-            }
+
         });
         hc2.on('panleft panright', function (ev) {
 
             prc = ev.deltaX * 100 / $('.menu').outerWidth();
 
             if (isOpened && prc < 0) {
-
                 pullVal = prc;
                 mvMenu(prc)
                 console.log(prc);
             }
-            if (prc > 0) {
+            if (prc >= 0) {
                 mvMenu(0);
             }
         });
         hc2.on('panend', function (ev) {
-
-            if (pullVal < -20) {
-                toggleMenu();
-                mvMenu(0);
+            $('.menu').addClass('menu-animate');
+            if (isOpened) {
+                if (pullVal < -20) {
+                    toggleMenu();
+                    mvMenu(0);
+                } else {
+                    mvMenu(0);
+                }
             } else {
                 mvMenu(0);
             }
-
+            isOpened = false;
         });
 
         function mvMenu(val) {
