@@ -336,10 +336,10 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
 }
 .rodape > div{
-    border: solid red 0px;
+
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -588,7 +588,7 @@ body{
     }
     .rodape{
         height: 15vh;
-        border: solid red 0px;
+
     }
 }
 @media screen and (orientation:landscape){

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="ang">
+<html ng-app="ang" class="menu-hide">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -12,7 +12,7 @@
         <script src="resources/lib/angular/angular.js" ></script>
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
         <script src="resources/lib/angular-pageslide-directive/dist/angular-pageslide-directive.js" ></script>
-
+        <script src="resources/lib/hammerjs/hammer.js" ></script>
 
 
 
@@ -28,45 +28,202 @@
 
         </script>
         <style type="text/css">
-            .test > div{
-                border: solid red 1px;
+            .overlayer{
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                transition: all linear .5s;
             }
-            .test > div:nth-child(1){
+            .menu{
+                border: solid red 1px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background-color: rgb(230,230,230);
+                z-index: 5;
+
+            }
+            .menu-animate{
+                transition: all linear .5s;
+            }
+            .menu ul{
+                background-color: transparent;
+
+            }
+            .menu ul li{
+                background-color: transparent;
+            }
+
+            .menu-hide body .overlayer{
                 visibility: hidden;
+
+            }
+            .menu-show body .menu{
+                left: 0%;
+            }
+            .menu-show body .overlayer{
+                background-color: rgba(0,0,0,.7);
+            }
+            .menu-show{
+                overflow: hidden;
+            }
+            .content{
+                border: solid blue 1px;
+                min-height: 100vh;
+                background-color: yellow;
+                position: relative;
+                transition: all linear .5s;
+            }
+
+            @media screen and (min-width: 601px){
+                .menu{
+                    width: 40%;
+                }
+                .menu-hide .menu{
+                    left: -40%;
+                }
+            }
+            @media screen and (max-width: 600px){
+                .menu{
+                    width: 80%;
+                }
+                .menu-hide .menu{
+                    left: -80%;
+                }
             }
         </style>
 
     </head>
 
     <body ng-controller="angCtrl" >
-        <div class="test">
-            <div>
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Praianos3 -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-8292462256462069"
-                     data-ad-slot="6774236433"
-                     data-ad-format="auto"></ins>
-                <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+        <nav class="menu menu-animate">
+            <ul class="list-group">
+                <li class="list-group-item">Item 1</li>
+                <li class="list-group-item">Item 2</li>
+                <li class="list-group-item">Item 3</li>
+
+            </ul>
+        </nav>
+        <div class="container content">
+            <div class="overlayer"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="" id="btMenu">
+                        Menu
+                    </a>
+                    abc
+                </div>
+                <div class="col-md-6">
+                    def
+
+                </div>
             </div>
-            <div>
-                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- Praianos3 -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-8292462256462069"
-                     data-ad-slot="6774236433"
-                     data-ad-format="auto"></ins>
-                <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+            <div class="row">
+                <div class="col-md-12">
+                    abc
+                </div>
             </div>
         </div>
     </body>
     <script>
+        function toggleMenu() {
+            $('html').toggleClass("menu-hide");
+            $('html').toggleClass("menu-show");
+        }
+        $('#btMenu, .overlayer').click(function (ev) {
+            toggleMenu();
+        });
 
+        var pullOk = false;
+        var pullVal = 0;
+
+        hc = new Hammer($('html')[0]);
+        hc2 = new Hammer($('.menu')[0]);
+        hc.on('panstart', function (ev) {
+            prc = ev.changedPointers[0].clientX * 100 / $('html').outerWidth();
+            isClosed = $("html").hasClass('menu-hide');
+            if (prc < 7 && isClosed) {
+                pullOk = true;
+                $('.menu').removeClass('menu-animate');
+            }
+        });
+        hc.on('panright panleft', function (ev) {
+
+            prc = ev.deltaX * 100 / $('.menu').outerWidth();
+
+            if (pullOk && prc < 100) {
+                pullVal = prc;
+                $('.menu').css({
+                    transform: "translate(" + prc + "%)"
+                });
+                console.log(prc);
+            }
+            if (prc >= 100) {
+                $('.menu').css({
+                    transform: "translate(" + 100 + "%)"
+                });
+            }
+
+
+        });
+        hc.on('panend', function (ev) {
+            $('.menu').addClass('menu-animate');
+            if (pullOk) {
+                if (pullVal > 20) {
+                    toggleMenu();
+                    mvMenu(0);
+                } else {
+                    mvMenu(0);
+                }
+            } else {
+                mvMenu(0);
+            }
+            pullOk = false;
+
+        });
+
+
+        var isOpened = false;
+        hc2.on('panstart', function (ev) {
+            isOpened = $("html").hasClass('menu-show');
+            $('.menu').removeClass('menu-animate');
+            if (isOpened) {
+                console.log("not Close");
+            }
+        });
+        hc2.on('panleft panright', function (ev) {
+
+            prc = ev.deltaX * 100 / $('.menu').outerWidth();
+
+            if (isOpened && prc < 0) {
+
+                pullVal = prc;
+                mvMenu(prc)
+                console.log(prc);
+            }
+            if (prc > 0) {
+                mvMenu(0);
+            }
+        });
+        hc2.on('panend', function (ev) {
+
+            if (pullVal < -20) {
+                toggleMenu();
+                mvMenu(0);
+            } else {
+                mvMenu(0);
+            }
+
+        });
+
+        function mvMenu(val) {
+            $('.menu').css({
+                transform: "translate(" + val + "%)"
+            });
+        }
     </script>
 </html>
