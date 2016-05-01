@@ -36,6 +36,14 @@
                 left: 0;
                 z-index: 1;
                 transition: all linear .5s;
+
+            }
+            .menu-show body .overlayer{
+                background-color: rgba(0,0,0,.7);
+            }
+            .menu-hide body .overlayer{
+                visibility: hidden;
+
             }
             .menu{
                 border: solid red 1px;
@@ -58,23 +66,17 @@
                 background-color: transparent;
             }
 
-            .menu-hide body .overlayer{
-                visibility: hidden;
 
-            }
             .menu-show body .menu{
                 left: 0%;
             }
-            .menu-show body .overlayer{
-                background-color: rgba(0,0,0,.7);
-            }
+
             .menu-show{
                 overflow: hidden;
             }
             .content{
                 border: solid blue 1px;
                 min-height: 100vh;
-                background-color: yellow;
                 position: relative;
                 transition: all linear .5s;
             }
@@ -115,7 +117,7 @@
                     <a href="" id="btMenu">
                         Menu
                     </a>
-                    abc
+
                 </div>
                 <div class="col-md-6">
                     def
@@ -124,7 +126,40 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    abc
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
+                    abc<br />
                 </div>
             </div>
         </div>
@@ -147,8 +182,9 @@
 
         hc.on('panstart', function (ev) {
             prc = ev.changedPointers[0].clientX * 100 / $('html').outerWidth();
-            isClosed = $("html").hasClass('menu-hide');
-            if (prc < 7 && isClosed) {
+            console.log(prc);
+
+            if (prc < 7 && $("html").hasClass('menu-hide')) {
                 isClosed = true;
                 $('.menu').removeClass('menu-animate');
             }
