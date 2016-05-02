@@ -13,7 +13,13 @@
         <script src="resources/lib/jquery/dist/jquery.js" ></script>
         <script src="resources/lib/angular-pageslide-directive/dist/angular-pageslide-directive.js" ></script>
         <script src="resources/lib/hammerjs/hammer.js" ></script>
-
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-8292462256462069",
+                enable_page_level_ads: true
+            });
+        </script>
 
 
 
@@ -75,14 +81,29 @@
                 overflow: hidden;
             }
             .content{
-            
+
                 border: solid blue 1px;
                 min-height: 100vh;
                 position: relative;
                 transition: all linear .5s;
             }
-            .content > div > div{
-                border: solid green 1px;
+            .ad-hide{
+
+                width: 100%;
+
+            }
+            .ad{
+                border: solid red 1px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .ad > *{
+
+                width: 100%;
+                /*border: solid blue 3px;*/
+
             }
             @media screen and (min-width: 601px){
                 .menu{
@@ -91,6 +112,7 @@
                 .menu-hide .menu{
                     left: -40%;
                 }
+
             }
             @media screen and (max-width: 600px){
                 .menu{
@@ -98,6 +120,17 @@
                 }
                 .menu-hide .menu{
                     left: -80%;
+                }
+
+            }
+            @media screen and (orientation:portrait){
+                .ad{
+                    height: 15vh;
+                }
+            }
+            @media screen and (orientation:landscape){
+                .ad{
+                    height: 20vh;
                 }
             }
         </style>
@@ -116,16 +149,58 @@
         <div class="container content">
             <div class="overlayer"></div>
             <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-6">
                     <a href="" id="btMenu">
                         Menu
                     </a>
 
                 </div>
+                <div class="col-md-6">
+                    <a href="" id="troca">
+                        Troca
+                    </a>
+
+                </div>
+                <div class="col-md-12   ad">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Praianos3 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8292462256462069"
+                         data-ad-slot="6774236433"
+                         data-ad-format="auto"></ins>
+                    <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <div class="col-md-12 ad-hide" style="height: 20vh;width: 100%; border: solid red 1px;"> 
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Praianos3 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8292462256462069"
+                         data-ad-slot="6774236433"
+                         data-ad-format="auto"></ins>
+                    <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                <div class="col-md-12">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Praianos2 -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-8292462256462069"
+                         data-ad-slot="5297503230"
+                         data-ad-format="link"></ins>
+                    <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    abc<br />
+                    abcd<br />
                     abc<br />
                     abc<br />
                     abc<br />
@@ -257,5 +332,10 @@
                 transform: "translate(" + val + "%)"
             });
         }
+
+        $('#troca').click(function (ev) {
+            $('.ad-hide').removeClass("ad-hide");
+        });
     </script>
+
 </html>
