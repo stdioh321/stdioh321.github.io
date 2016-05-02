@@ -34,308 +34,58 @@
 
         </script>
         <style type="text/css">
-            .overlayer{
-                width: 100%;
-                height: 100%;
-                position: fixed;
-                top: 0;
-                left: 0;
-                z-index: 1;
-                transition: all linear .5s;
-
-            }
-            .menu-show body .overlayer{
-                background-color: rgba(0,0,0,.7);
-            }
-            .menu-hide body .overlayer{
-                visibility: hidden;
-
-            }
-            .menu{
+            .test{
                 border: solid red 1px;
-                position: fixed;
-                top: 0;
-                left: 0;
-                height: 100%;
-                background-color: rgb(230,230,230);
-                z-index: 5;
-
-            }
-            .menu-animate{
-                transition: all linear .5s;
-            }
-            .menu ul{
-                background-color: transparent;
-
-            }
-            .menu ul li{
-                background-color: transparent;
-            }
-
-
-            .menu-show body .menu{
-                left: 0%;
-            }
-
-            .menu-show{
+                //height: 50vh;
                 overflow: hidden;
             }
-            .content{
-
+            .test > div {
                 border: solid blue 1px;
-                min-height: 100vh;
-                position: relative;
-                transition: all linear .5s;
-            }
-            .ad-hide{
 
-                width: 100%;
-
-            }
-            .ad{
-                border: solid red 1px;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .ad > *{
-
-                width: 100%;
-                /*border: solid blue 3px;*/
-
-            }
-            @media screen and (min-width: 601px){
-                .menu{
-                    width: 40%;
-                }
-                .menu-hide .menu{
-                    left: -40%;
-                }
-
-            }
-            @media screen and (max-width: 600px){
-                .menu{
-                    width: 80%;
-                }
-                .menu-hide .menu{
-                    left: -80%;
-                }
-
-            }
-            @media screen and (orientation:portrait){
-                .ad{
-                    height: 15vh;
-                }
-            }
-            @media screen and (orientation:landscape){
-                .ad{
-                    height: 20vh;
-                }
             }
         </style>
 
     </head>
 
     <body ng-controller="angCtrl" >
-        <nav class="menu menu-animate">
-            <ul class="list-group">
-                <li class="list-group-item">Item 1</li>
-                <li class="list-group-item">Item 2</li>
-                <li class="list-group-item">Item 3</li>
-
-            </ul>
-        </nav>
-        <div class="container content">
-            <div class="overlayer"></div>
-            <div class="row">
-                <div class="col-md-6">
-                    <a href="" id="btMenu">
-                        Menu
-                    </a>
-
-                </div>
-                <div class="col-md-6">
-                    <a href="" id="troca">
-                        Troca
-                    </a>
-
-                </div>
-                <div class="col-md-12   ad">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Praianos3 -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-8292462256462069"
-                         data-ad-slot="6774236433"
-                         data-ad-format="auto"></ins>
-                    <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-                <div class="col-md-12 ad-hide" style="height: 20vh;width: 100%; border: solid red 1px;"> 
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Praianos3 -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-8292462256462069"
-                         data-ad-slot="6774236433"
-                         data-ad-format="auto"></ins>
-                    <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
-                <div class="col-md-12">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <!-- Praianos2 -->
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-8292462256462069"
-                         data-ad-slot="5297503230"
-                         data-ad-format="link"></ins>
-                    <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+        <div class="test col-md-12">
+            <div>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Praianos3 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8292462256462069"
+                     data-ad-slot="6774236433"
+                     data-ad-format="auto"></ins>
+                <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    abcd<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                    abc<br />
-                </div>
+            <div>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Praianos3 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8292462256462069"
+                     data-ad-slot="6774236433"
+                     data-ad-format="auto"></ins>
+                <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+            <div>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- Praianos2 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-8292462256462069"
+                     data-ad-slot="5297503230"
+                     data-ad-format="link"></ins>
+                <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
             </div>
         </div>
     </body>
-    <script>
-        function toggleMenu() {
-            $('html').toggleClass("menu-hide");
-            $('html').toggleClass("menu-show");
-        }
-        $('#btMenu, .overlayer').click(function (ev) {
-            toggleMenu();
-        });
-
-        var isOpened = false;
-        var isClosed = false;
-        var pullVal = 0;
-
-        hcClosed = new Hammer($('html')[0]);
-        hcOpened = new Hammer($('.menu')[0]);
-
-        hcClosed.on('panstart', function (ev) {
-            prc = ev.changedPointers[0].clientX * 100 / $('html').outerWidth();
-            console.log(prc);
-
-            if (prc < 7 && $("html").hasClass('menu-hide')) {
-                isClosed = true;
-                $('.menu').removeClass('menu-animate');
-            }
-        });
-        hcClosed.on('panright panleft', function (ev) {
-            prc = ev.deltaX * 100 / $('.menu').outerWidth();
-            if (isClosed && prc < 100) {
-                pullVal = prc;
-                mvMenu(prc);
-
-            }
-            if (prc >= 100) {
-                mvMenu(100);
-            }
-
-
-        });
-        hcClosed.on('panend', function (ev) {
-            $('.menu').addClass('menu-animate');
-            if (isClosed) {
-                if (pullVal > 20) {
-                    toggleMenu();
-                    mvMenu(0);
-                } else {
-                    mvMenu(0);
-                }
-            } else {
-                mvMenu(0);
-            }
-            isClosed = false;
-
-        });
-
-
-
-        hcOpened.on('panstart', function (ev) {
-            isOpened = $("html").hasClass('menu-show');
-            $('.menu').removeClass('menu-animate');
-
-        });
-        hcOpened.on('panleft panright', function (ev) {
-
-            prc = ev.deltaX * 100 / $('.menu').outerWidth();
-
-            if (isOpened && prc < 0) {
-                pullVal = prc;
-                mvMenu(prc)
-                console.log(prc);
-            }
-            if (prc >= 0) {
-                mvMenu(0);
-            }
-        });
-        hcOpened.on('panend', function (ev) {
-            $('.menu').addClass('menu-animate');
-            if (isOpened) {
-                if (pullVal < -20) {
-                    toggleMenu();
-                    mvMenu(0);
-                } else {
-                    mvMenu(0);
-                }
-            } else {
-                mvMenu(0);
-            }
-            isOpened = false;
-        });
-
-        function mvMenu(val) {
-            $('.menu').css({
-                transform: "translate(" + val + "%)"
-            });
-        }
-
-        $('#troca').click(function (ev) {
-            $('.ad-hide').removeClass("ad-hide");
-        });
-    </script>
 
 </html>
