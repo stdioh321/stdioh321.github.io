@@ -241,7 +241,7 @@ body{
 .tab-content-in > div.tab-content-active{
     height: 60vh;
     overflow:auto; 
-    padding-top: 15px;
+    //padding-top: 15px;
     border: solid red 0px;
     padding-bottom: 15px;
 }
