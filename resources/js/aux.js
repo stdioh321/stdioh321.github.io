@@ -144,9 +144,9 @@ hcClosed.on('panright panleft', function (ev) {
     if (isClosed && prc < 100) {
         pullVal = prc;
         mvMenu(prc);
-
+        console.log('test');
     }
-    if (prc >= 100) {
+    if (isClosed && prc >= 100) {
         mvMenu(100);
     }
 
