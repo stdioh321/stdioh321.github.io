@@ -24,31 +24,46 @@ var cur = Number($('.tab-content-in')[0].getAttribute('current'));
 var changeLimit = 20;
 var totContent = $('.tab-content-in > div').length;
 var indBefore = 0;
+var pullAllowed = false;
 Hammer.defaults.domEvents = true;
 $('.tab-content-in > div').each(function (ind) {
 
     mc = new Hammer(this);
-    mc.on('panleft panright', function (ev) {
-        indBefore = ind;
-        $('.tab-content-in').removeClass("tab-content-animate");
-        prc = ev.deltaX * 100 / $('.tab-content-in').outerWidth();
-        //console.log(prc + " - " + cur);
-        console.log(ev);
-        $('.tab-content-in').css({
-            transform: "translate(" + (prc + (ind * -100)) + "%)"
-        });
-        if (prc <= -changeLimit && ind < totContent - 1) {
-            cur = ind + 1;
-        } else if (prc >= changeLimit && ind > 0) {
-            cur = ind - 1;
-        } else {
-            cur = ind;
+    mc.on('panstart', function (ev) {
+        prc = ev.changedPointers[0].clientX * 100 / $('.tab-content-in > div').outerWidth();
+        console.log(prc);
+        if (prc > 7) {
+            pullAllowed = true;
         }
+    });
+    mc.on('panleft panright', function (ev) {
+        if (pullAllowed) {
+            indBefore = ind;
+            $('.tab-content-in').removeClass("tab-content-animate");
+            prc = ev.deltaX * 100 / $('.tab-content-in').outerWidth();
+            //console.log(prc + " - " + cur);
+            //console.log(ev);
+            $('.tab-content-in').css({
+                transform: "translate(" + (prc + (ind * -100)) + "%)"
+            });
+            if (prc <= -changeLimit && ind < totContent - 1) {
+                cur = ind + 1;
+            } else if (prc >= changeLimit && ind > 0) {
+                cur = ind - 1;
+            } else {
+                cur = ind;
+            }
+        }
+
 
     });
     mc.on('panend', function (ev) {
-        $('.tab-content-in').addClass("tab-content-animate");
-        changeTab(cur);
+        if (pullAllowed) {
+            $('.tab-content-in').addClass("tab-content-animate");
+            changeTab(cur);
+        }
+        pullAllowed = false;
+
     });
 });
 function changeTab(idx) {
@@ -119,7 +134,6 @@ hcOpened = new Hammer($('.menu')[0]);
 
 hcClosed.on('panstart', function (ev) {
     prc = ev.changedPointers[0].clientX * 100 / $('html').outerWidth();
-    
     if (prc < 7 && $("html").hasClass('menu-hide')) {
         isClosed = true;
         $('.menu').removeClass('menu-animate');
