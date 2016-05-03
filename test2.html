@@ -14,7 +14,7 @@
         <script src="resources/lib/angular-pageslide-directive/dist/angular-pageslide-directive.js" ></script>
         <script src="resources/lib/hammerjs/hammer.js" ></script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        
+
         <script type="text/javascript">
 
 
@@ -31,12 +31,20 @@
                                 overflow: hidden;*/
             }
             .test > div {
-                border: solid blue 1px;
-                /*height: 200px;*/
+                /*                border: solid blue 1px;
+                                height: 200px;*/
+                transition: all linear .5s;
             }
-            ins{
+            .modal-show{
+                border:solid red 1px;
 
             }
+            .modal-hide{
+                visibility: hidden;
+                opacity: 0;
+                height: 0;
+            }
+
         </style>
 
     </head>
@@ -44,6 +52,12 @@
     <body ng-controller="angCtrl" >
         <div class="test">
             <div class="col-md-12">
+                <button class="btn btn-block btn-success" ng-click="showModal = !showModal">
+                    Mostrar
+                </button>
+
+            </div>
+            <div class="col-md-12" ng-class="{'modal-show':showModal,'modal-hide':!showModal}">
                 <!-- Praianos3 -->
                 <ins class="adsbygoogle"
                      style="display:block"
@@ -51,7 +65,7 @@
                      data-ad-slot="6774236433"
                      data-ad-format="auto"></ins>
                 <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                            (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
             <div class="col-md-12">
@@ -62,7 +76,7 @@
                      data-ad-slot="6774236433"
                      data-ad-format="auto"></ins>
                 <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                            (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
             <div class="col-md-12">
@@ -73,7 +87,7 @@
                      data-ad-slot="5297503230"
                      data-ad-format="link"></ins>
                 <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
+                            (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
             </div>
         </div>

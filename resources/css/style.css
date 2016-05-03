@@ -1,3 +1,9 @@
+.modal-default:not(.modal-mostrar){
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+}
 .search-praias > *:nth-child(2) {
     position: absolute;
     max-height: 100px;
@@ -444,7 +450,7 @@ body{
     z-index: 25;    
     top: 0;
     left: 0;
-    //overflow-y: auto; 
+
 }
 
 .modal-default .modal-head{

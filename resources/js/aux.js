@@ -26,12 +26,12 @@ var totContent = $('.tab-content-in > div').length;
 var indBefore = 0;
 var pullAllowed = false;
 Hammer.defaults.domEvents = true;
-$('.tab-content-in > div').each(function (ind) {
+$('.tab-content-in > div ').each(function (ind) {
 
     mc = new Hammer(this);
     mc.on('panstart', function (ev) {
         prc = ev.changedPointers[0].clientX * 100 / $('.tab-content-in > div').outerWidth();
-        console.log(prc);
+        console.log(ev);
         if (prc > 7) {
             pullAllowed = true;
         }

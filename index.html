@@ -38,7 +38,7 @@
         <script src="resources/js/app.js" ></script>
         <script src="resources/js/filters/filters.js" ></script>
         <script type="text/javascript" src="resources/js/controllers/noSurfCtrl.js"></script>
-        
+
         <script src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     </head>
@@ -318,7 +318,7 @@
         ------------MODAL START------------
         -->
 
-        <div class="container-fluid modal-default modal-semanal" ng-show="modalShow.value == true && modalShow.modal == 'semanal'" >
+        <div class="container-fluid modal-default modal-semanal" ng-class="{'modal-mostrar':modalShow.value == true && modalShow.modal == 'semanal'}" >
             <div class="row">
 
                 <div class="col-md-12 modal-head">
@@ -428,7 +428,7 @@
 
         </div>
 
-        <div class="container-fluid modal-default modal-semanal"  ng-show="modalShow.value == true && modalShow.modal == 'porHora'">
+        <div class="container-fluid modal-default modal-semanal" ng-class="{'modal-mostrar':modalShow.value == true && modalShow.modal == 'porHora'}" >
             <div class="row">
 
                 <div class="col-md-12 modal-head">
