@@ -269,20 +269,21 @@ body{
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(255,255,255,.4);
     z-index: 15;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.loading > span{
-    color: white;
+.loading > img{
+
+    /*    color: white;
     font-size: 10em;
 
     animation: load linear infinite .5s;
     -moz-animation: load linear infinite .5s;
-    -webkit-animation: load linear infinite .5s;
+    -webkit-animation: load linear infinite .5s;*/
 }
 
 @keyframes load{
