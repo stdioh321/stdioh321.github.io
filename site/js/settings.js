@@ -48,7 +48,7 @@ $(document).ready(function() {
    ========================================================================== */
    
 		progressBar(99, $('#progressBar'));
-		progressBar(92, $('#progressBar2'));
+		progressBar(86, $('#progressBar2'));
 		progressBar(30, $('#progressBar3'));
 		
 /* ==========================================================================
