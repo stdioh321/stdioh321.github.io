@@ -27,13 +27,14 @@
                 if(validateForm()){
                   $("#successmsg").html("<i class=\"fa fa-spinner fa-spin\"></i> Sending message...");  
                  e.preventDefault();
-                  $.ajax({type: "POST",
-                          url: "/SendMail",
-                          data:$("#form1").serialize(),
-                          success:function(result){
-                          $("#successmsg").html(result);
+                  // $.ajax({type: "POST",
+                  //         url: "/SendMail",
+                  //         data:$("#form1").serialize(),
+                  //         success:function(result){
+                  //         $("#successmsg").html(result);
                           
-                        }}); 
+                  //       }}); 
+                  $("#successmsg").html(result);
                   $("#name").val('');
                   $("#email").val('');
                   $("#message").val('');
