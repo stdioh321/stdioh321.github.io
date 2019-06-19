@@ -8,4 +8,7 @@
 	$headers = "From: ". $email;
 
 	mail($to,$subject,$msg,$headers);
+
+	echo "Hello, I'm sendmail.php"
 ?>
+
